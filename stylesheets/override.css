@@ -1,0 +1,117 @@
+/* line 1 */
+fieldset {
+  margin-top: 10px;
+}
+
+/* line 5 */
+legend {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 980px) {
+  /* line 13 */
+  .visible-phone {
+    display: none !important;
+  }
+
+  /* line 14 */
+  .visible-tablet {
+    display: none !important;
+  }
+
+  /* line 15 */
+  .visible-desktop {
+    display: inherit;
+  }
+
+  /* line 16 */
+  .hidden-phone {
+    display: inherit;
+  }
+
+  /* line 17 */
+  .hidden-tablet {
+    display: inherit;
+  }
+
+  /* line 18 */
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 23 */
+  .visible-phone {
+    display: none !important;
+  }
+
+  /* line 24 */
+  .visible-tablet {
+    display: inherit;
+  }
+
+  /* line 25 */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 26 */
+  .hidden-phone {
+    display: inherit;
+  }
+
+  /* line 27 */
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  /* line 28 */
+  .hidden-desktop {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  /* line 34 */
+  .visible-tablet {
+    display: none !important;
+  }
+
+  /* line 35 */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 36 */
+  .hidden-phone {
+    display: none !important;
+  }
+
+  /* line 37 */
+  .hidden-tablet {
+    display: inherit;
+  }
+
+  /* line 38 */
+  .hidden-desktop {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  /* line 42 */
+  .dl-horizontal dt {
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+
+  /* line 48 */
+  .dl-horizontal dd {
+    margin-left: 9px;
+  }
+}
+@media (max-width:1490px) {
+  /* line 54 */
+  .github-fork {
+    display: none !important;
+  }
+}
