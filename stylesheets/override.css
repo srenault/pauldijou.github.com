@@ -64,82 +64,81 @@ legend {
 
   /* line 40 */
   #container {
-    padding-right: 20px;
-    padding-left: 20px;
+    margin-top: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 48 */
+  /* line 47 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 49 */
+  /* line 48 */
   .visible-tablet {
     display: inherit;
   }
 
-  /* line 50 */
+  /* line 49 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 51 */
+  /* line 50 */
   .hidden-phone {
     display: inherit;
   }
 
-  /* line 52 */
+  /* line 51 */
   .hidden-tablet {
     display: none !important;
   }
 
-  /* line 53 */
+  /* line 52 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 767px) {
-  /* line 59 */
+  /* line 58 */
   .visible-tablet {
+    display: none !important;
+  }
+
+  /* line 59 */
+  .visible-desktop {
     display: none !important;
   }
 
   /* line 60 */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 61 */
   .hidden-phone {
     display: none !important;
   }
 
-  /* line 62 */
+  /* line 61 */
   .hidden-tablet {
     display: inherit;
   }
 
-  /* line 63 */
+  /* line 62 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 767px) {
-  /* line 67 */
+  /* line 66 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 73 */
+  /* line 72 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
 }
 @media (max-width:1490px) {
-  /* line 79 */
+  /* line 78 */
   .github-fork {
     display: none !important;
   }
