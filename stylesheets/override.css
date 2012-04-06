@@ -58,93 +58,97 @@ legend {
   /* line 34 */
   .navbar-fixed-top {
     margin-bottom: 0px;
+  }
+
+  /* line 38 */
+  header {
     padding-right: 20px;
     padding-left: 20px;
   }
 
-  /* line 40 */
+  /* line 43 */
   .title {
     margin-top: 0px;
   }
 
-  /* line 44 */
+  /* line 47 */
   #container {
     padding-right: 20px;
     padding-left: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 52 */
+  /* line 55 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 53 */
+  /* line 56 */
   .visible-tablet {
     display: inherit;
-  }
-
-  /* line 54 */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 55 */
-  .hidden-phone {
-    display: inherit;
-  }
-
-  /* line 56 */
-  .hidden-tablet {
-    display: none !important;
   }
 
   /* line 57 */
-  .hidden-desktop {
-    display: inherit;
-  }
-}
-@media (max-width: 767px) {
-  /* line 63 */
-  .visible-tablet {
-    display: none !important;
-  }
-
-  /* line 64 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 65 */
+  /* line 58 */
   .hidden-phone {
-    display: none !important;
-  }
-
-  /* line 66 */
-  .hidden-tablet {
     display: inherit;
   }
 
-  /* line 67 */
+  /* line 59 */
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  /* line 60 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 767px) {
-  /* line 71 */
+  /* line 66 */
+  .visible-tablet {
+    display: none !important;
+  }
+
+  /* line 67 */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 68 */
+  .hidden-phone {
+    display: none !important;
+  }
+
+  /* line 69 */
+  .hidden-tablet {
+    display: inherit;
+  }
+
+  /* line 70 */
+  .hidden-desktop {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  /* line 74 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 77 */
+  /* line 80 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
 }
 @media (max-width:1490px) {
-  /* line 83 */
+  /* line 86 */
   .github-fork {
     display: none !important;
   }
