@@ -1,116 +1,150 @@
 /* line 1 */
+body {
+  padding: 0px;
+}
+
+/* line 5 */
 fieldset {
   margin-top: 10px;
 }
 
-/* line 5 */
+/* line 9 */
 legend {
   margin-bottom: 10px;
 }
 
+/* line 13 */
+.well > ul.nav {
+  padding: 0px;
+}
+
 @media (min-width: 980px) {
-  /* line 13 */
+  /* line 21 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 14 */
+  /* line 22 */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 15 */
+  /* line 23 */
   .visible-desktop {
     display: inherit;
   }
 
-  /* line 16 */
-  .hidden-phone {
-    display: inherit;
-  }
-
-  /* line 17 */
-  .hidden-tablet {
-    display: inherit;
-  }
-
-  /* line 18 */
-  .hidden-desktop {
-    display: none !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  /* line 23 */
-  .visible-phone {
-    display: none !important;
-  }
-
   /* line 24 */
-  .visible-tablet {
+  .hidden-phone {
     display: inherit;
   }
 
   /* line 25 */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 26 */
-  .hidden-phone {
+  .hidden-tablet {
     display: inherit;
   }
 
-  /* line 27 */
-  .hidden-tablet {
+  /* line 26 */
+  .hidden-desktop {
     display: none !important;
   }
 
   /* line 28 */
-  .hidden-desktop {
-    display: inherit;
+  #container {
+    margin-top: 60px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width:979px) {
   /* line 34 */
-  .visible-tablet {
+  .navbar-fixed-top {
+    margin-bottom: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  /* line 40 */
+  .title {
+    margin-top: 0px;
+  }
+
+  /* line 44 */
+  #container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 52 */
+  .visible-phone {
     display: none !important;
   }
 
-  /* line 35 */
+  /* line 53 */
+  .visible-tablet {
+    display: inherit;
+  }
+
+  /* line 54 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 36 */
+  /* line 55 */
   .hidden-phone {
-    display: none !important;
-  }
-
-  /* line 37 */
-  .hidden-tablet {
     display: inherit;
   }
 
-  /* line 38 */
+  /* line 56 */
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  /* line 57 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 767px) {
-  /* line 42 */
+  /* line 63 */
+  .visible-tablet {
+    display: none !important;
+  }
+
+  /* line 64 */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 65 */
+  .hidden-phone {
+    display: none !important;
+  }
+
+  /* line 66 */
+  .hidden-tablet {
+    display: inherit;
+  }
+
+  /* line 67 */
+  .hidden-desktop {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  /* line 71 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 48 */
+  /* line 77 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
 }
 @media (max-width:1490px) {
-  /* line 54 */
+  /* line 83 */
   .github-fork {
     display: none !important;
   }

@@ -64,13 +64,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 3 */
-body {
-  padding-top: 60px;
+p, dd {
+  text-align: justify;
 }
 
 /* line 7 */
-p, dd {
-  text-align: justify;
+.center {
+  text-align: center !important;
 }
 
 /* line 11 */
@@ -79,18 +79,23 @@ p, dd {
 }
 
 /* line 15 */
+.prettyprint {
+  text-align: left !important;
+}
+
+/* line 19 */
 a.icon32 {
   height: 30px;
 }
 
-/* line 19 */
+/* line 23 */
 ul.icons li {
   float: left;
   margin-right: 5px;
   margin-bottom: 10px;
 }
 
-/* line 25 */
+/* line 29 */
 .social-menu {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -98,45 +103,84 @@ ul.icons li {
   padding: 10px;
 }
 
-/* line 32 */
+/* line 36 */
 .social-item {
   float: left;
   margin-right: 10px;
 }
 
-/* line 37 */
+/* line 41 */
 .social-menu .social-item:last-child {
   margin-right: 0px;
 }
 
-/* line 41 */
+/* line 45 */
 .social-menu .delicious {
   text-align: center;
 }
 
-/* line 45 */
+/* line 49 */
 .post-date {
   margin-bottom: 5px;
 }
 
-/* line 53 */
+/* line 57 */
 .project dl.dl-horizontal dt, .project dl.dl-horizontal dd {
   margin-bottom: 5px;
 }
 
-/* line 57 */
+/* line 61 */
 li.pdf, li.odt {
   background-repeat: no-repeat;
   padding-left: 25px;
   margin-bottom: 5px;
 }
 
-/* line 63 */
+/* line 67 */
 li.pdf {
   background-image: url("/images/icons/pdf_16.png");
 }
 
-/* line 67 */
+/* line 71 */
 li.odt {
   background-image: url("/images/icons/odt_16.png");
+}
+
+/* line 75 */
+.title {
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #DDDDDD;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  line-height: 1;
+}
+
+/* line 84 */
+.title h1 {
+  font-family: "Playfair Display",serif;
+  font-size: 60px;
+  font-style: italic;
+  letter-spacing: -1px;
+  line-height: 65px;
+  text-shadow: 0px 2px 3px #555555;
+}
+
+/* line 93 */
+.title h6 {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+/* line 98 */
+ul.twitter-list li {
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* line 104 */
+ul.twitter-list li.nav-header {
+  margin-top: 0px;
+  border-bottom: 0px;
 }
