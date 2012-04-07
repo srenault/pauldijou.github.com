@@ -63,90 +63,126 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 3 */
+/* line 5 */
 p, dd {
   text-align: justify;
 }
 
-/* line 7 */
+/* line 9 */
+footer {
+  padding-bottom: 30px;
+}
+
+/* line 13 */
 .center {
   text-align: center !important;
 }
 
-/* line 11 */
+/* line 17 */
 .post-comments {
   float: right;
 }
 
-/* line 15 */
+/* line 21 */
 .prettyprint {
   text-align: left !important;
 }
 
-/* line 19 */
+/* line 25 */
 a.icon32 {
   height: 30px;
 }
 
-/* line 23 */
+/* line 29 */
 ul.icons li {
   float: left;
   margin-right: 5px;
   margin-bottom: 10px;
 }
 
-/* line 29 */
+/* line 35 */
 .social-menu {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
-/* line 36 */
-.social-item {
-  float: left;
-  margin-right: 10px;
+/* line 46 */
+.posts .post {
+  margin-bottom: 40px;
 }
 
-/* line 41 */
-.social-menu .social-item:last-child {
-  margin-right: 0px;
+/* line 51 */
+.post h2 > a {
+  margin-right: 15px;
+}
+/* line 55 */
+.post h2, .post .content, .post .footer {
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 10px;
+}
+/* line 60 */
+.post .footer {
+  padding-bottom: 10px;
+}
+/* line 64 */
+.post h2 a:hover {
+  text-decoration: none;
+}
+/* line 68 */
+.post .meta {
+  margin-bottom: 10px;
+}
+/* line 72 */
+.post a.tag {
+  background-color: #999999;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: white;
+  padding: 2px 4px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 82 */
+.post a.tag:hover {
+  background-color: #B94A48;
 }
 
-/* line 45 */
-.social-menu .delicious {
-  text-align: center;
-}
-
-/* line 49 */
+/* line 87 */
 .post-date {
   margin-bottom: 5px;
 }
 
-/* line 57 */
+/* line 95 */
 .project dl.dl-horizontal dt, .project dl.dl-horizontal dd {
   margin-bottom: 5px;
 }
 
-/* line 61 */
+/* line 99 */
 li.pdf, li.odt {
   background-repeat: no-repeat;
   padding-left: 25px;
   margin-bottom: 5px;
 }
 
-/* line 67 */
+/* line 105 */
 li.pdf {
   background-image: url("/images/icons/pdf_16.png");
 }
 
-/* line 71 */
+/* line 109 */
 li.odt {
   background-image: url("/images/icons/odt_16.png");
 }
 
-/* line 75 */
+/* line 113 */
 .title {
   background: url("/images/titlebackground.png") repeat scroll 0 0 #474747;
   border-bottom: 1px solid #DDDDDD;
@@ -156,30 +192,30 @@ li.odt {
   line-height: 1;
 }
 
-/* line 84 */
+/* line 122 */
 .title h1 {
   font-family: Helvetica,Arial,Sans-Serif;
   font-size: 60px;
   letter-spacing: -1px;
   line-height: 65px;
   color: #999999;
-  text-shadow: 0 3px 8px #2A2A2A;
+  text-shadow: #2a2a2a 0px 3px 8px;
 }
 
-/* line 93 */
+/* line 131 */
 .title h6 {
   font-size: 16px;
   line-height: 30px;
 }
 
-/* line 98 */
+/* line 136 */
 ul.twitter-list li {
   padding-bottom: 6px;
   margin-bottom: 6px;
   border-bottom: 1px solid #E5E5E5;
 }
 
-/* line 104 */
+/* line 142 */
 ul.twitter-list li.nav-header {
   margin-top: 0px;
   border-bottom: 0px;

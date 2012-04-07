@@ -13,132 +13,144 @@ legend {
   padding: 0px;
 }
 
+/* line 13 */
+dl.dl-horizontal dt h6 {
+  position: relative;
+  top: 1px;
+}
+
 @media (min-width: 980px) {
-  /* line 17 */
+  /* line 22 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 18 */
+  /* line 23 */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 19 */
+  /* line 24 */
   .visible-desktop {
     display: inherit;
   }
 
-  /* line 20 */
+  /* line 25 */
   .hidden-phone {
     display: inherit;
   }
 
-  /* line 21 */
+  /* line 26 */
   .hidden-tablet {
     display: inherit;
   }
 
-  /* line 22 */
+  /* line 27 */
   .hidden-desktop {
     display: none !important;
   }
 
-  /* line 24 */
+  /* line 29 */
   #container {
     margin-top: 60px;
   }
 }
 @media (max-width:979px) {
-  /* line 30 */
+  /* line 35 */
   .navbar-fixed-top {
     margin-bottom: 0px;
   }
 
-  /* line 34 */
+  /* line 39 */
   .title {
     margin-top: 0px;
     width: 100%;
     margin-left: -20px;
   }
 
-  /* line 40 */
+  /* line 45 */
   #container {
     margin-top: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 47 */
+  /* line 52 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 48 */
+  /* line 53 */
   .visible-tablet {
     display: inherit;
   }
 
-  /* line 49 */
+  /* line 54 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 50 */
+  /* line 55 */
   .hidden-phone {
     display: inherit;
   }
 
-  /* line 51 */
+  /* line 56 */
   .hidden-tablet {
     display: none !important;
   }
 
-  /* line 52 */
+  /* line 57 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 767px) {
-  /* line 58 */
+  /* line 63 */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 59 */
+  /* line 64 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 60 */
+  /* line 65 */
   .hidden-phone {
     display: none !important;
   }
 
-  /* line 61 */
-  .hidden-tablet {
-    display: inherit;
-  }
-
-  /* line 62 */
-  .hidden-desktop {
-    display: inherit;
-  }
-}
-@media (max-width: 767px) {
   /* line 66 */
+  .hidden-tablet {
+    display: inherit;
+  }
+
+  /* line 67 */
+  .hidden-desktop {
+    display: inherit;
+  }
+}
+@media (max-width: 767px) {
+  /* line 71 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 72 */
+  /* line 77 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
+
+  /* line 81 */
+  .title h1 {
+    font-size: 50px;
+    line-height: 55px;
+  }
 }
 @media (max-width:1490px) {
-  /* line 78 */
+  /* line 88 */
   .github-fork {
     display: none !important;
   }
