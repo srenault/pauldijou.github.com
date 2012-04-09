@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <feed xml:lang='en-US' xmlns='http://www.w3.org/2005/Atom'>
-  <id>http://localhost:4242/</id>
+  <id>http://www.pauldijou.fr/</id>
   <title>Paul Dijou</title>
   <updated>2012-03-12T00:00:00Z</updated>
-  <link href='http://localhost:4242/blog.atom' rel='self' type='application/atom+xml' />
-  <link href='http://localhost:4242/' rel='alternate' type='text/html' />
+  <link href='http://www.pauldijou.fr/blog.atom' rel='self' type='application/atom+xml' />
+  <link href='http://www.pauldijou.fr/' rel='alternate' type='text/html' />
   <entry>
-    <id>http://localhost:4242/blog/2012/03/12/test.html</id>
+    <id>http://www.pauldijou.fr/blog/2012/03/12/test.html</id>
     <title>Title 2012-03</title>
     <updated>2012-03-12T00:00:00Z</updated>
-    <link href='http://localhost:4242/blog/2012/03/12/test.html' rel='alternate' type='text/html' />
+    <link href='http://www.pauldijou.fr/blog/2012/03/12/test.html' rel='alternate' type='text/html' />
     <author>
       <name>Paul Dijou</name>
     </author>
@@ -28,10 +28,10 @@
     </content>
   </entry>
   <entry>
-    <id>http://localhost:4242/blog/2011/03/12/test.html</id>
+    <id>http://www.pauldijou.fr/blog/2011/03/12/test.html</id>
     <title>Test 2011-03</title>
     <updated>2011-03-12T00:00:00Z</updated>
-    <link href='http://localhost:4242/blog/2011/03/12/test.html' rel='alternate' type='text/html' />
+    <link href='http://www.pauldijou.fr/blog/2011/03/12/test.html' rel='alternate' type='text/html' />
     <author>
       <name>Paul Dijou</name>
     </author>
@@ -50,10 +50,10 @@
     </content>
   </entry>
   <entry>
-    <id>http://localhost:4242/blog/2010/03/12/test-bis.html</id>
+    <id>http://www.pauldijou.fr/blog/2010/03/12/test-bis.html</id>
     <title>Title 2010-03</title>
     <updated>2010-03-12T00:00:00Z</updated>
-    <link href='http://localhost:4242/blog/2010/03/12/test-bis.html' rel='alternate' type='text/html' />
+    <link href='http://www.pauldijou.fr/blog/2010/03/12/test-bis.html' rel='alternate' type='text/html' />
     <author>
       <name>Paul Dijou</name>
     </author>
@@ -72,10 +72,10 @@
     </content>
   </entry>
   <entry>
-    <id>http://localhost:4242/blog/2009/03/12/test.html</id>
+    <id>http://www.pauldijou.fr/blog/2009/03/12/test.html</id>
     <title>Title 2009-03</title>
     <updated>2009-03-12T00:00:00Z</updated>
-    <link href='http://localhost:4242/blog/2009/03/12/test.html' rel='alternate' type='text/html' />
+    <link href='http://www.pauldijou.fr/blog/2009/03/12/test.html' rel='alternate' type='text/html' />
     <author>
       <name>Paul Dijou</name>
     </author>

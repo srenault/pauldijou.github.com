@@ -54,7 +54,7 @@
                   <a href='/projects/'>Projects</a>
                 </li>
                 <li>
-                  <a href='/about/'>About me</a>
+                  <a href='/about/'>About</a>
                 </li>
                 <li>
                   <a href='/todo/'>TODO</a>
@@ -78,237 +78,239 @@
         //]]>
       </script>
     </header>
-    <div class='todo'>
-      <div class='title'>
-        <h1>Jedi TODO List</h1>
-        <h6>Choose your level</h6>
-        <h6>Choose your task</h6>
-        <h6>Do... or do not. There is no try.</h6>
-        <a class='btn' data-parent='#levels' data-toggle='collapse' href='#padawan'>Padawan</a>
-        <a class='btn' data-parent='#levels' data-toggle='collapse' href='#knight'>Knight</a>
-        <a class='btn' data-parent='#levels' data-toggle='collapse' href='#master'>Master</a>
-        <a class='btn btn-success' data-parent='#levels' data-toggle='collapse' href='#yoda'>Yoda</a>
-      </div>
-      <div class='container' id='container' style='margin-top:20px;'>
-        <div class='row'>
-          <div class='span6 offset3'>
-            <div id='levels'>
-              <div class='collapse' id='padawan'>
-                <ul class='nav nav-list well'>
-                  <li class='nav-header'>Padawan</li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-repeat'></i>
-                    Having a cool website
-                    <div class='progress progress-striped active'>
-                      <div class='bar' style='width:60%;'></div>
+    <div class='page'>
+      <div class='todo'>
+        <div class='title'>
+          <h1>Jedi TODO List</h1>
+          <h6>Choose your level</h6>
+          <h6>Choose your task</h6>
+          <h6>Do... or do not. There is no try.</h6>
+          <a class='btn' data-parent='#levels' data-toggle='collapse' href='#padawan'>Padawan</a>
+          <a class='btn' data-parent='#levels' data-toggle='collapse' href='#knight'>Knight</a>
+          <a class='btn' data-parent='#levels' data-toggle='collapse' href='#master'>Master</a>
+          <a class='btn btn-success' data-parent='#levels' data-toggle='collapse' href='#yoda'>Yoda</a>
+        </div>
+        <div id='levels'>
+          <div class='container no-footer' id='container'>
+            <div class='row'>
+              <div class='span6 offset3'>
+                <div class='collapse' id='padawan'>
+                  <ul class='nav nav-list well'>
+                    <li class='nav-header'>Padawan</li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-repeat'></i>
+                      Having a cool website
+                      <div class='progress progress-striped active'>
+                        <div class='bar' style='width:60%;'></div>
+                      </div>
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-ok-sign'></i>
+                      Send a successfull GitHub pull request
+                      <a href='https://github.com/forge/website/pull/1' target='_blank'>Learn more...</a>
+                    </li>
+                    <li class='divider'></li>
+                    <div class='row' style='margin-top:10px;'>
+                      <div class='span2'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Legend</li>
+                          <li>
+                            <i class='icon-ok-sign'></i>
+                            Done
+                          </li>
+                          <li>
+                            <i class='icon-repeat'></i>
+                            In progress
+                          </li>
+                          <li>
+                            <i class='icon-question-sign'></i>
+                            Not yet try
+                          </li>
+                          <li>
+                            <i class='icon-remove-sign'></i>
+                            Fail
+                          </li>
+                        </ul>
+                      </div>
+                      <div class='span3'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Show progression</li>
+                          <li>
+                            <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
+                              <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
+                              <div class='btn btn-no active' onclick='hideProgress();'>No</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-ok-sign'></i>
-                    Send a successfull GitHub pull request
-                    <a href='https://github.com/forge/website/pull/1' target='_blank'>Learn more...</a>
-                  </li>
-                  <li class='divider'></li>
-                  <div class='row' style='margin-top:10px;'>
-                    <div class='span2'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Legend</li>
-                        <li>
-                          <i class='icon-ok-sign'></i>
-                          Done
-                        </li>
-                        <li>
-                          <i class='icon-repeat'></i>
-                          In progress
-                        </li>
-                        <li>
-                          <i class='icon-question-sign'></i>
-                          Not yet try
-                        </li>
-                        <li>
-                          <i class='icon-remove-sign'></i>
-                          Fail
-                        </li>
-                      </ul>
+                  </ul>
+                </div>
+                <div class='collapse' id='knight'>
+                  <ul class='nav nav-list well'>
+                    <li class='nav-header'>Knight</li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-repeat'></i>
+                      Become committer on an Apache Fundation project
+                      <div class='progress progress-striped active'>
+                        <div class='bar' style='width:10%;'></div>
+                      </div>
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Give a conference at a JUG
+                    </li>
+                    <li class='divider'></li>
+                    <div class='row' style='margin-top:10px;'>
+                      <div class='span2'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Legend</li>
+                          <li>
+                            <i class='icon-ok-sign'></i>
+                            Done
+                          </li>
+                          <li>
+                            <i class='icon-repeat'></i>
+                            In progress
+                          </li>
+                          <li>
+                            <i class='icon-question-sign'></i>
+                            Not yet try
+                          </li>
+                          <li>
+                            <i class='icon-remove-sign'></i>
+                            Fail
+                          </li>
+                        </ul>
+                      </div>
+                      <div class='span3'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Show progression</li>
+                          <li>
+                            <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
+                              <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
+                              <div class='btn btn-no active' onclick='hideProgress();'>No</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div class='span3'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Show progression</li>
-                        <li>
-                          <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
-                            <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
-                            <div class='btn btn-no active' onclick='hideProgress();'>No</div>
-                          </div>
-                        </li>
-                      </ul>
+                  </ul>
+                </div>
+                <div class='collapse' id='master'>
+                  <ul class='nav nav-list well'>
+                    <li class='nav-header'>Master</li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Become an Apache Fundation Mentor
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Give a conference at JavaOne
+                    </li>
+                    <li class='divider'></li>
+                    <div class='row' style='margin-top:10px;'>
+                      <div class='span2'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Legend</li>
+                          <li>
+                            <i class='icon-ok-sign'></i>
+                            Done
+                          </li>
+                          <li>
+                            <i class='icon-repeat'></i>
+                            In progress
+                          </li>
+                          <li>
+                            <i class='icon-question-sign'></i>
+                            Not yet try
+                          </li>
+                          <li>
+                            <i class='icon-remove-sign'></i>
+                            Fail
+                          </li>
+                        </ul>
+                      </div>
+                      <div class='span3'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Show progression</li>
+                          <li>
+                            <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
+                              <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
+                              <div class='btn btn-no active' onclick='hideProgress();'>No</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                </ul>
-              </div>
-              <div class='collapse' id='knight'>
-                <ul class='nav nav-list well'>
-                  <li class='nav-header'>Knight</li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-repeat'></i>
-                    Become committer on an Apache Fundation project
-                    <div class='progress progress-striped active'>
-                      <div class='bar' style='width:10%;'></div>
+                  </ul>
+                </div>
+                <div class='collapse' id='yoda'>
+                  <ul class='nav nav-list well'>
+                    <li class='nav-header'>Yoda</li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Develop a new JVM compliant language (and make it replace Java)
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Get a Nobel prize
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Save the planet
+                    </li>
+                    <li class='divider'></li>
+                    <li class='task'>
+                      <i class='icon-question-sign'></i>
+                      Go to Mars (or Tatooine)
+                    </li>
+                    <li class='divider'></li>
+                    <div class='row' style='margin-top:10px;'>
+                      <div class='span2'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Legend</li>
+                          <li>
+                            <i class='icon-ok-sign'></i>
+                            Done
+                          </li>
+                          <li>
+                            <i class='icon-repeat'></i>
+                            In progress
+                          </li>
+                          <li>
+                            <i class='icon-question-sign'></i>
+                            Not yet try
+                          </li>
+                          <li>
+                            <i class='icon-remove-sign'></i>
+                            Fail
+                          </li>
+                        </ul>
+                      </div>
+                      <div class='span3'>
+                        <ul class='nav nav-list'>
+                          <li class='nav-header'>Show progression</li>
+                          <li>
+                            <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
+                              <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
+                              <div class='btn btn-no active' onclick='hideProgress();'>No</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Give a conference at a JUG
-                  </li>
-                  <li class='divider'></li>
-                  <div class='row' style='margin-top:10px;'>
-                    <div class='span2'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Legend</li>
-                        <li>
-                          <i class='icon-ok-sign'></i>
-                          Done
-                        </li>
-                        <li>
-                          <i class='icon-repeat'></i>
-                          In progress
-                        </li>
-                        <li>
-                          <i class='icon-question-sign'></i>
-                          Not yet try
-                        </li>
-                        <li>
-                          <i class='icon-remove-sign'></i>
-                          Fail
-                        </li>
-                      </ul>
-                    </div>
-                    <div class='span3'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Show progression</li>
-                        <li>
-                          <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
-                            <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
-                            <div class='btn btn-no active' onclick='hideProgress();'>No</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </ul>
-              </div>
-              <div class='collapse' id='master'>
-                <ul class='nav nav-list well'>
-                  <li class='nav-header'>Master</li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Become an Apache Fundation Mentor
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Give a conference at JavaOne
-                  </li>
-                  <li class='divider'></li>
-                  <div class='row' style='margin-top:10px;'>
-                    <div class='span2'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Legend</li>
-                        <li>
-                          <i class='icon-ok-sign'></i>
-                          Done
-                        </li>
-                        <li>
-                          <i class='icon-repeat'></i>
-                          In progress
-                        </li>
-                        <li>
-                          <i class='icon-question-sign'></i>
-                          Not yet try
-                        </li>
-                        <li>
-                          <i class='icon-remove-sign'></i>
-                          Fail
-                        </li>
-                      </ul>
-                    </div>
-                    <div class='span3'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Show progression</li>
-                        <li>
-                          <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
-                            <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
-                            <div class='btn btn-no active' onclick='hideProgress();'>No</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </ul>
-              </div>
-              <div class='collapse' id='yoda'>
-                <ul class='nav nav-list well'>
-                  <li class='nav-header'>Yoda</li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Develop a new JVM compliant language (and make it replace Java)
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Get a Nobel prize
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Save the planet
-                  </li>
-                  <li class='divider'></li>
-                  <li class='task'>
-                    <i class='icon-question-sign'></i>
-                    Go to Mars (or Tatooine)
-                  </li>
-                  <li class='divider'></li>
-                  <div class='row' style='margin-top:10px;'>
-                    <div class='span2'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Legend</li>
-                        <li>
-                          <i class='icon-ok-sign'></i>
-                          Done
-                        </li>
-                        <li>
-                          <i class='icon-repeat'></i>
-                          In progress
-                        </li>
-                        <li>
-                          <i class='icon-question-sign'></i>
-                          Not yet try
-                        </li>
-                        <li>
-                          <i class='icon-remove-sign'></i>
-                          Fail
-                        </li>
-                      </ul>
-                    </div>
-                    <div class='span3'>
-                      <ul class='nav nav-list'>
-                        <li class='nav-header'>Show progression</li>
-                        <li>
-                          <div class='btn-group btn-show-progression' data-toggle='buttons-radio'>
-                            <div class='btn btn-yes' onclick='showProgress();'>Yes</div>
-                            <div class='btn btn-no active' onclick='hideProgress();'>No</div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </ul>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
