@@ -24,7 +24,6 @@
     <![endif]-->
   </head>
   <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css' />
     <header>
       <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
         <img alt='Fork me on GitHub' src='https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
@@ -58,6 +57,9 @@
                   <a href='/about/'>About me</a>
                 </li>
                 <li>
+                  <a href='/todo/'>TODO</a>
+                </li>
+                <li>
                   <a href='/contact/'>Contact</a>
                 </li>
               </ul>
@@ -87,10 +89,10 @@
         </div>
       </div>
     </div>
-    <div class='container' id='container' style='margin-top:20px;'>
+    <div class='container index' id='container'>
       <div class='row'>
         <div class='span4'>
-          <div class='well last-posts' style='position:relative;right:3000px'>
+          <div class='well last-posts'>
             <ul class='nav nav-list'>
               <li class='nav-header'>Last posts</li>
               <li>
@@ -127,10 +129,14 @@
               <li class='divider'></li>
             </ul>
             <a class='btn btn-inverse' href='/blog/'>Read my blog</a>
+            <a class='btn btn-inverse' href='/blog.atom'>
+              <img src='/images/icons/rss_16.png' />
+              Subscribe
+            </a>
           </div>
         </div>
         <div class='span4'>
-          <div class='well last-projects' style='position:relative;top:2000px;'>
+          <div class='well last-projects'>
             <ul class='nav nav-list'>
               <li class='nav-header'>Last projects</li>
               <li>
@@ -160,7 +166,7 @@
           </div>
         </div>
         <div class='span4'>
-          <div class='well last-tweets' style='position:relative;left:3000px;'>
+          <div class='well last-tweets'>
             <ul class='nav nav-list twitter-list'>
               <li class='nav-header'>Last tweets</li>
               <div id='twitter_update_list'></div>
@@ -179,9 +185,9 @@
       <script type='text/javascript'>
         //<![CDATA[
           $(document).ready(function() {
-            $('#container .row .span4 .last-posts').animate({right:'0px'}, 1500);
+            $('#container .row .span4 .last-posts').animate({top:'0px'}, 1000);
             $('#container .row .span4 .last-projects').animate({top:'0px'}, 1500);
-            $('#container .row .span4 .last-tweets').animate({left:'0px'}, 1500);
+            $('#container .row .span4 .last-tweets').animate({top:'0px'}, 2000);
           });
         //]]>
       </script>

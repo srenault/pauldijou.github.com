@@ -155,34 +155,59 @@ ul.icons li {
   background-color: #B94A48;
 }
 
-/* line 87 */
+/* line 88 */
+.todo a.btn {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+/* line 94 */
+.todo .title a.btn:last-child {
+  margin-right: 0px;
+}
+/* line 99 */
+.todo #levels li.task a {
+  white-space: nowrap;
+  display: inline;
+  margin-left: 0px;
+}
+/* line 105 */
+.todo #levels .progress {
+  display: none;
+}
+/* line 110 */
+.todo #levels.show-progress .progress {
+  display: block;
+}
+
+/* line 115 */
 .post-date {
   margin-bottom: 5px;
 }
 
-/* line 95 */
+/* line 123 */
 .project dl.dl-horizontal dt, .project dl.dl-horizontal dd {
   margin-bottom: 5px;
 }
 
-/* line 99 */
+/* line 127 */
 li.pdf, li.odt {
   background-repeat: no-repeat;
   padding-left: 25px;
   margin-bottom: 5px;
 }
 
-/* line 105 */
+/* line 133 */
 li.pdf {
   background-image: url("/images/icons/pdf_16.png");
 }
 
-/* line 109 */
+/* line 137 */
 li.odt {
   background-image: url("/images/icons/odt_16.png");
 }
 
-/* line 113 */
+/* line 141 */
 .title {
   background: url("/images/titlebackground.png") repeat scroll 0 0 #474747;
   border-bottom: 1px solid #DDDDDD;
@@ -192,7 +217,7 @@ li.odt {
   line-height: 1;
 }
 
-/* line 122 */
+/* line 150 */
 .title h1 {
   font-family: Helvetica,Arial,Sans-Serif;
   font-size: 60px;
@@ -202,20 +227,20 @@ li.odt {
   text-shadow: #2a2a2a 0px 3px 8px;
 }
 
-/* line 131 */
+/* line 159 */
 .title h6 {
   font-size: 16px;
   line-height: 30px;
 }
 
-/* line 136 */
+/* line 164 */
 ul.twitter-list li {
   padding-bottom: 6px;
   margin-bottom: 6px;
   border-bottom: 1px solid #E5E5E5;
 }
 
-/* line 142 */
+/* line 170 */
 ul.twitter-list li.nav-header {
   margin-top: 0px;
   border-bottom: 0px;
