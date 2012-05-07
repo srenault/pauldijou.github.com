@@ -26,7 +26,7 @@
   <body data-offset='60' data-spy='scroll' data-target='.spynav'>
     <header>
       <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-        <img alt='Fork me on GitHub' src='https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
+        <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
       </a>
       <div class='navbar navbar-fixed-top'>
         <div class='navbar-inner'>
@@ -72,7 +72,6 @@
           $(document).ready(function() {
             var indexOfSharp = window.location.pathname.indexOf('#');
             var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-            console.log(pathname)
             $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
           });
         //]]>
@@ -81,6 +80,60 @@
     <div class='page'>
       <div class='title'>
         <h1>About</h1>
+      </div>
+      <div class='container' id='container'>
+        <div class='row'>
+          <div class='span6'>
+            <div class='well'>
+              <h6>About me</h6>
+              <p class='clearfix'>
+                <img class='pull-left' src='https://secure.gravatar.com/avatar/083b6c8764b4c418ce359f23aababbae?size=60' style='margin-right:20px;' />
+                Hi guys!
+              </p>
+              <p>So</p>
+              <div class='clearfix'>
+                <ul class='unstyled icons'>
+                  <li data-original-title='Twitter' rel='tooltip-bottom'>
+                    <a class='icon32' href='https://twitter.com/#!/paul_dijou' target='_blank'>
+                      <img src='/images/icons/twitter_32.png' />
+                    </a>
+                  </li>
+                  <li data-original-title='GitHub' rel='tooltip-bottom'>
+                    <a class='icon32' href='https://github.com/pauldijou' target='_blank'>
+                      <img src='/images/icons/github_32.png' />
+                    </a>
+                  </li>
+                  <li data-original-title='Google+' rel='tooltip-bottom'>
+                    <a class='icon32' href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>
+                      <img src='/images/icons/google_plus_32.png' />
+                    </a>
+                  </li>
+                  <li data-original-title='Klout' rel='tooltip-bottom'>
+                    <a class='icon32' href='http://klout.com/#/paul_dijou' target='_blank'>
+                      <img src='/images/icons/klout_32.png' />
+                    </a>
+                  </li>
+                  <li data-original-title='RSS' rel='tooltip-bottom'>
+                    <a class='icon32' href='/blog.atom' target='_blank'>
+                      <img src='/images/icons/rss_32.png' />
+                    </a>
+                  </li>
+                  <li data-original-title='Email' rel='tooltip-bottom'>
+                    <a class='icon32' href='mailto:paul.dijou.dev@gmail.com' target='_blank'>
+                      <img src='/images/icons/email_32.png' />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class='span6'>
+            <div class='well'>
+              <h6>About the website</h6>
+              <p></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

@@ -26,7 +26,7 @@
   <body data-offset='60' data-spy='scroll' data-target='.spynav'>
     <header>
       <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-        <img alt='Fork me on GitHub' src='https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
+        <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
       </a>
       <div class='navbar navbar-fixed-top'>
         <div class='navbar-inner'>
@@ -72,7 +72,6 @@
           $(document).ready(function() {
             var indexOfSharp = window.location.pathname.indexOf('#');
             var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-            console.log(pathname)
             $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
           });
         //]]>
@@ -86,21 +85,60 @@
               <div class='posts'>
                 <div class='post'>
                   <h2>
-                    <a href='/blog/2012/03/12/test/'>
+                    <a href='/blog/2012/04/18/icons-less/'>
                       Title 2012-03
                     </a>
-                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2012-03" data-url='http://www.pauldijou.fr/blog/2012/03/12/test/' href='https://twitter.com/share'>Tweet</a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2012-03" data-url='http://pauldijou.github.com/blog/2012/04/18/icons-less/' href='https://twitter.com/share'>Tweet</a>
                   </h2>
                   <div class='meta'>
                     Posted by
-                    <span class='label'>Paul Dijou</span>
+                    <span class='authors'> Paul Dijou</span>
                     on
-                    <span class='label label-important' style='margin-right: 10px;'>Mar 12, 2012</span>
+                    <span class='date' style='margin-right: 10px;'>Apr 18, 2012</span>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                   </div>
                   <div class='content'>
-                    <!-- %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary)) -->
+                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
+                    <h3>Section 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
+                    <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
+                    <h3>Section 2</h3>
+                    <p>Morbi a dictum tortor. Morbi felis velit, posuere cursus luctus et, vestibulum ut purus. Duis sodales suscipit eros ac varius. Nulla ut adipiscing lectus. Morbi fringilla nunc ut nulla commodo accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec aliquam velit id erat rhoncus faucibus. Nulla vehicula, dolor vel ullamcorper aliquet, enim ipsum sodales leo, sit amet convallis justo urna quis risus. Cras vel dui eu diam pellentesque vulputate. Praesent sed metus a risus placerat suscipit. Nullam non nunc sem. Fusce gravida, est vel auctor condimentum, felis justo scelerisque elit, eget accumsan sem nisl eu elit. Pellentesque fringilla facilisis turpis ac hendrerit.</p>
+                    <p>Aliquam eu lectus diam, id volutpat nisl. Morbi sit amet tortor eget dui sagittis tincidunt. Integer eleifend placerat orci id consequat. Mauris sodales purus vitae lacus scelerisque semper tempus orci lobortis. Cras ultrices venenatis mollis. Praesent non sapien mi. Cras ac mauris nisl, non lobortis nibh. Vestibulum nec diam a diam facilisis blandit eu vitae orci. Aenean tempus vulputate orci, ac aliquam diam tempus rhoncus. Fusce id viverra enim. Nulla posuere nisl sed orci laoreet posuere.</p>
+                    <p>Pellentesque faucibus ullamcorper justo non malesuada. Cras at ligula pretium sapien ullamcorper faucibus non ut lectus. Aliquam ut metus quis metus consectetur vehicula pellentesque vel orci. Aliquam eu erat quis tortor mollis consequat. Aenean ligula eros, luctus eu convallis sed, vehicula sit amet quam. In cursus viverra felis ut rutrum. Donec molestie ornare ipsum, non auctor massa interdum a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed erat libero, dignissim non varius accumsan, ullamcorper nec sapien.</p>
+                  </div>
+                  <div class='footer'>
+                    <a href='/blog/2012/04/18/icons-less/'>Permalink</a>
+                    |
+                    
+                    |
+                    <span class='tags'>
+                      <i class='icon-tags'></i>
+                      Tags :
+                      <a class='tag' href='/blog/tags/misc/'>misc</a>
+                      <a class='tag' href='/blog/tags/test/'>test</a>
+                      <a class='tag' href='/blog/tags/java/'>java</a>
+                    </span>
+                  </div>
+                </div>
+                <div class='post'>
+                  <h2>
+                    <a href='/blog/2012/03/12/test/'>
+                      Title 2012-03
+                    </a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2012-03" data-url='http://pauldijou.github.com/blog/2012/03/12/test/' href='https://twitter.com/share'>Tweet</a>
+                  </h2>
+                  <div class='meta'>
+                    Posted by
+                    <span class='authors'> Paul Dijou</span>
+                    on
+                    <span class='date' style='margin-right: 10px;'>Mar 12, 2012</span>
+                    |
+                    
+                  </div>
+                  <div class='content'>
+                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
                     <h3>Section 1</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
                     <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
@@ -112,7 +150,7 @@
                   <div class='footer'>
                     <a href='/blog/2012/03/12/test/'>Permalink</a>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                     |
                     <span class='tags'>
                       <i class='icon-tags'></i>
@@ -128,18 +166,18 @@
                     <a href='/blog/2011/03/12/test/'>
                       Test 2011-03
                     </a>
-                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Test 2011-03" data-url='http://www.pauldijou.fr/blog/2011/03/12/test/' href='https://twitter.com/share'>Tweet</a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Test 2011-03" data-url='http://pauldijou.github.com/blog/2011/03/12/test/' href='https://twitter.com/share'>Tweet</a>
                   </h2>
                   <div class='meta'>
                     Posted by
-                    <span class='label'>Paul Dijou</span>
+                    <span class='authors'> Paul Dijou</span>
                     on
-                    <span class='label label-important' style='margin-right: 10px;'>Mar 12, 2011</span>
+                    <span class='date' style='margin-right: 10px;'>Mar 12, 2011</span>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                   </div>
                   <div class='content'>
-                    <!-- %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary)) -->
+                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
                     <h3>Section 1</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
                     <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
@@ -151,7 +189,7 @@
                   <div class='footer'>
                     <a href='/blog/2011/03/12/test/'>Permalink</a>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                     |
                     <span class='tags'>
                       <i class='icon-tags'></i>
@@ -167,18 +205,18 @@
                     <a href='/blog/2010/03/12/test-bis/'>
                       Title 2010-03
                     </a>
-                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2010-03" data-url='http://www.pauldijou.fr/blog/2010/03/12/test-bis/' href='https://twitter.com/share'>Tweet</a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2010-03" data-url='http://pauldijou.github.com/blog/2010/03/12/test-bis/' href='https://twitter.com/share'>Tweet</a>
                   </h2>
                   <div class='meta'>
                     Posted by
-                    <span class='label'>Paul Dijou</span>
+                    <span class='authors'> Paul Dijou</span>
                     on
-                    <span class='label label-important' style='margin-right: 10px;'>Mar 12, 2010</span>
+                    <span class='date' style='margin-right: 10px;'>Mar 12, 2010</span>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                   </div>
                   <div class='content'>
-                    <!-- %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary)) -->
+                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
                     <h3>Section 1</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
                     <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
@@ -190,7 +228,7 @@
                   <div class='footer'>
                     <a href='/blog/2010/03/12/test-bis/'>Permalink</a>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                     |
                     <span class='tags'>
                       <i class='icon-tags'></i>
@@ -205,18 +243,18 @@
                     <a href='/blog/2009/03/12/test/'>
                       Title 2009-03
                     </a>
-                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2009-03" data-url='http://www.pauldijou.fr/blog/2009/03/12/test/' href='https://twitter.com/share'>Tweet</a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Title 2009-03" data-url='http://pauldijou.github.com/blog/2009/03/12/test/' href='https://twitter.com/share'>Tweet</a>
                   </h2>
                   <div class='meta'>
                     Posted by
-                    <span class='label'>Paul Dijou</span>
+                    <span class='authors'> Paul Dijou</span>
                     on
-                    <span class='label label-important' style='margin-right: 10px;'>Mar 12, 2009</span>
+                    <span class='date' style='margin-right: 10px;'>Mar 12, 2009</span>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                   </div>
                   <div class='content'>
-                    <!-- %p= summarize(html_to_text(post.content), (post.summary == 0 ? site.default_summary_size : post.summary)) -->
+                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
                     <h3>Section 1</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
                     <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
@@ -228,7 +266,7 @@
                   <div class='footer'>
                     <a href='/blog/2009/03/12/test/'>Permalink</a>
                     |
-                     <a href="/blog/#disqus_thread">Comments</a>
+                    
                     |
                     <span class='tags'>
                       <i class='icon-tags'></i>
@@ -240,47 +278,53 @@
                   </div>
                 </div>
               </div>
+              <div class='visible-phone'>
+                <ul class='pager'>
+                  <li class='previous disabled'>
+                    <a href='#'>Previous</a>
+                  </li>
+                  <li class='disabled'>
+                    <a href='#'>1 of 1</a>
+                  </li>
+                  <li class='next disabled'>
+                    <a href='#'>Next</a>
+                  </li>
+                </ul>
+              </div>
+              <div class='pagination pagination-centered hidden-phone'>
+                <ul>
+                  <li class='disabled'>
+                    <a href='#'>First</a>
+                  </li>
+                  <li class='disabled'>
+                    <a href='#'>Previous</a>
+                  </li>
+                  <li class='active'>
+                    <a href='#'>1 of 1</a>
+                  </li>
+                  <li class='disabled'>
+                    <a href='#'>Next</a>
+                  </li>
+                  <li class='disabled'>
+                    <a href='#'>Last</a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class='span3'>
-              <ul class='unstyled icons'>
-                <li data-original-title='Twitter' rel='tooltip-bottom'>
-                  <a class='icon32' href='https://twitter.com/#!/paul_dijou' target='_blank'>
-                    <img src='/images/icons/twitter_32.png' />
-                  </a>
-                </li>
-                <li data-original-title='GitHub' rel='tooltip-bottom'>
-                  <a class='icon32' href='https://github.com/pauldijou' target='_blank'>
-                    <img src='/images/icons/github_32.png' />
-                  </a>
-                </li>
-                <li data-original-title='Google+' rel='tooltip-bottom'>
-                  <a class='icon32' href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>
-                    <img src='/images/icons/google_plus_32.png' />
-                  </a>
-                </li>
-                <li data-original-title='Klout' rel='tooltip-bottom'>
-                  <a class='icon32' href='http://klout.com/#/paul_dijou' target='_blank'>
-                    <img src='/images/icons/klout_32.png' />
-                  </a>
-                </li>
-                <li data-original-title='RSS' rel='tooltip-bottom'>
-                  <a class='icon32' href='/blog.atom' target='_blank'>
-                    <img src='/images/icons/rss_32.png' />
-                  </a>
-                </li>
-                <li data-original-title='Email' rel='tooltip-bottom'>
-                  <a class='icon32' href='mailto:paul.dijou.dev@gmail.com' target='_blank'>
-                    <img src='/images/icons/email_32.png' />
-                  </a>
-                </li>
-              </ul>
+              <div style='margin-bottom:20px;text-align:center;'>
+                <a class='btn' href='/blog.atom'>
+                  <img src='/images/icons/rss_16.png' />
+                  Subscribe
+                </a>
+              </div>
               <ul class='nav nav-list well' style='clear:both;'>
                 <li class='nav-header'>
                   Tag Cloud
                 </li>
                 <li>
                   <div class='tag-cloud'>
-                    <span class='tag tag-2'>
+                    <span class='tag tag-3'>
                       <a href='/blog/tags/java/'>java</a>
                     </span>
                     <span class='tag tag-0'>
@@ -296,38 +340,6 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class='visible-phone'>
-            <ul class='pager'>
-              <li class='previous disabled'>
-                <a href='#'>Previous</a>
-              </li>
-              <li class='disabled'>
-                <a href='#'>1 of 1</a>
-              </li>
-              <li class='next disabled'>
-                <a href='#'>Next</a>
-              </li>
-            </ul>
-          </div>
-          <div class='pagination pagination-centered hidden-phone'>
-            <ul>
-              <li class='disabled'>
-                <a href='#'>First</a>
-              </li>
-              <li class='disabled'>
-                <a href='#'>Previous</a>
-              </li>
-              <li class='active'>
-                <a href='#'>1 of 1</a>
-              </li>
-              <li class='disabled'>
-                <a href='#'>Next</a>
-              </li>
-              <li class='disabled'>
-                <a href='#'>Last</a>
-              </li>
-            </ul>
           </div>
           <script type='text/javascript'>
             //<![CDATA[
@@ -370,16 +382,16 @@
               Always connected!
             </li>
             <li>
-              <a href='https://twitter.com/#!/' target='_blank'>Twitter</a>
+              <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
             </li>
             <li>
-              <a href='https://github.com/' target='_blank'>GitHub</a>
+              <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
             </li>
             <li>
-              <a href='https://plus.google.com/u/0/' target='_blank'>Google+</a>
+              <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
             </li>
             <li>
-              <a href='http://klout.com/#/' target='_blank'>Klout</a>
+              <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
             </li>
             <li>
               <a href='/blog.atom' target='_blank'>RSS</a>

@@ -26,7 +26,7 @@
   <body data-offset='60' data-spy='scroll' data-target='.spynav'>
     <header>
       <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-        <img alt='Fork me on GitHub' src='https://a248.e.akamai.net/assets.github.com/img/5d21241b64dc708fcbb701f68f72f41e9f1fadd6/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
+        <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
       </a>
       <div class='navbar navbar-fixed-top'>
         <div class='navbar-inner'>
@@ -72,7 +72,6 @@
           $(document).ready(function() {
             var indexOfSharp = window.location.pathname.indexOf('#');
             var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-            console.log(pathname)
             $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
           });
         //]]>
@@ -98,10 +97,18 @@
                 <li class='nav-header'>Last posts</li>
                 <li>
                   <h3>
+                    <a href='/blog/2012/04/18/icons-less/'>Title 2012-03</a>
+                  </h3>
+                  Posted on
+                  <span class='date'>Apr 18, 2012</span>
+                </li>
+                <li class='divider'></li>
+                <li>
+                  <h3>
                     <a href='/blog/2012/03/12/test/'>Title 2012-03</a>
                   </h3>
                   Posted on
-                  <span class='label label-important'>Mar 12, 2012</span>
+                  <span class='date'>Mar 12, 2012</span>
                 </li>
                 <li class='divider'></li>
                 <li>
@@ -109,7 +116,7 @@
                     <a href='/blog/2011/03/12/test/'>Test 2011-03</a>
                   </h3>
                   Posted on
-                  <span class='label label-important'>Mar 12, 2011</span>
+                  <span class='date'>Mar 12, 2011</span>
                 </li>
                 <li class='divider'></li>
                 <li>
@@ -117,7 +124,7 @@
                     <a href='/blog/2010/03/12/test-bis/'>Title 2010-03</a>
                   </h3>
                   Posted on
-                  <span class='label label-important'>Mar 12, 2010</span>
+                  <span class='date'>Mar 12, 2010</span>
                 </li>
                 <li class='divider'></li>
                 <li>
@@ -125,7 +132,7 @@
                     <a href='/blog/2009/03/12/test/'>Title 2009-03</a>
                   </h3>
                   Posted on
-                  <span class='label label-important'>Mar 12, 2009</span>
+                  <span class='date'>Mar 12, 2009</span>
                 </li>
                 <li class='divider'></li>
               </ul>
