@@ -3,6 +3,9 @@
   <head>
     <meta charset='utf-8' />
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta content='no-cache' http-equiv='pragma' />
+    <meta content='no-cache' http-equiv='cache-control' />
+    <meta content='0' http-equiv='expires' />
     <title>
       Paul Dijou / Computer Science Engineer
     </title>
@@ -85,40 +88,42 @@
               <div class='posts'>
                 <div class='post'>
                   <h2>
-                    <a href='/blog/2011/03/12/test/'>
-                      Test 2011-03
+                    <a href='/blog/2012/05/08/jsf-bootstrap-render-all/'>
+                      JSF, Bootstrap and calling render=@all
                     </a>
-                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : Test 2011-03" data-url='http://pauldijou.github.com/blog/2011/03/12/test/' href='https://twitter.com/share'>Tweet</a>
+                    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : JSF, Bootstrap and calling render=@all" data-url='http://pauldijou.github.com/blog/2012/05/08/jsf-bootstrap-render-all/' href='https://twitter.com/share'>Tweet</a>
                   </h2>
                   <div class='meta'>
                     Posted by
                     <span class='authors'> Paul Dijou</span>
                     on
-                    <span class='date' style='margin-right: 10px;'>Mar 12, 2011</span>
+                    <span class='date'>May 08, 2012</span>
                     |
-                    
+                     <a href="/blog/2012/05/08/jsf-bootstrap-render-all/#disqus_thread" data-disqus-identifier="07ba810e7e93243e084fcbd3fc31c56f578b9c12">Comments</a>
                   </div>
                   <div class='content'>
-                    <!-- %p= summarize(html_to_text(page.post.content), (page.post.summary == 0 ? site.default_summary_size : page.post.summary)) -->
-                    <h3>Section 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est ligula. Suspendisse potenti. Nam porta accumsan malesuada. Fusce mi ante, facilisis ac commodo at, suscipit nec ligula. In ac nisl dui. Mauris fringilla enim in felis sollicitudin aliquam. Praesent lacinia, ipsum vitae pharetra dapibus, nisi eros pellentesque metus, eu convallis metus magna quis enim. Donec ultricies pharetra egestas. Suspendisse et magna id turpis malesuada iaculis. Fusce purus purus, dignissim sed pharetra id, euismod quis erat. Pellentesque sit amet neque non diam condimentum rutrum. Cras faucibus dictum gravida. In eu libero ligula, at facilisis mauris. Curabitur luctus ullamcorper magna sed vehicula.</p>
-                    <p>Donec a eros sed velit lobortis posuere eu auctor neque. Phasellus cursus justo quis eros elementum feugiat. Mauris id pretium orci. Aliquam ut ullamcorper purus. Pellentesque ac tortor non tortor euismod ultrices. Phasellus eu est vel ligula faucibus aliquam. Curabitur sagittis tincidunt diam in imperdiet. Duis enim turpis, mattis eget lobortis vulputate, auctor id neque. Vestibulum tristique est id nulla sollicitudin tincidunt condimentum sapien convallis. Sed semper est non lorem posuere eu vestibulum orci porta.</p>
-                    <h3>Section 2</h3>
-                    <p>Morbi a dictum tortor. Morbi felis velit, posuere cursus luctus et, vestibulum ut purus. Duis sodales suscipit eros ac varius. Nulla ut adipiscing lectus. Morbi fringilla nunc ut nulla commodo accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec aliquam velit id erat rhoncus faucibus. Nulla vehicula, dolor vel ullamcorper aliquet, enim ipsum sodales leo, sit amet convallis justo urna quis risus. Cras vel dui eu diam pellentesque vulputate. Praesent sed metus a risus placerat suscipit. Nullam non nunc sem. Fusce gravida, est vel auctor condimentum, felis justo scelerisque elit, eget accumsan sem nisl eu elit. Pellentesque fringilla facilisis turpis ac hendrerit.</p>
-                    <p>Aliquam eu lectus diam, id volutpat nisl. Morbi sit amet tortor eget dui sagittis tincidunt. Integer eleifend placerat orci id consequat. Mauris sodales purus vitae lacus scelerisque semper tempus orci lobortis. Cras ultrices venenatis mollis. Praesent non sapien mi. Cras ac mauris nisl, non lobortis nibh. Vestibulum nec diam a diam facilisis blandit eu vitae orci. Aenean tempus vulputate orci, ac aliquam diam tempus rhoncus. Fusce id viverra enim. Nulla posuere nisl sed orci laoreet posuere.</p>
-                    <p>Pellentesque faucibus ullamcorper justo non malesuada. Cras at ligula pretium sapien ullamcorper faucibus non ut lectus. Aliquam ut metus quis metus consectetur vehicula pellentesque vel orci. Aliquam eu erat quis tortor mollis consequat. Aenean ligula eros, luctus eu convallis sed, vehicula sit amet quam. In cursus viverra felis ut rutrum. Donec molestie ornare ipsum, non auctor massa interdum a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed erat libero, dignissim non varius accumsan, ullamcorper nec sapien.</p>
+                    <h3>The problem</h3>
+                    <p>So, the other day, I was playing with <a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a> on a <span class="caps">JSF</span> application. Everything was fine until I decide to use a <code>render="@all"</code> somewhere in the page in order to refresh all my components after quite an heavy operation. Working fine.</p>
+                    <p>But Bootstrap was no longuer fully healthy. The <span class="caps">CSS</span> and design were ok, but the Javascript was all broken : nearly all effects didn&#8217;t appear anymore. It was a bit strange so I hit F5 and everything was fine, all Javascript events were back. But the moment my <code>render="@all"</code> was called, they dissapear again.</p>
+                    <h3>Why?</h3>
+                    <p>After some investigations, the reason was that Bootstrap calls a Javascript function that will attach most of its events to the <code>&lt;body&gt;</code> when the <span class="caps">HTML</span> <span class="caps">DOM</span> is ready. Its doing so in order to catch all user interactions when they bubble up to the <code>&lt;body&gt;</code> tag which wrap the whole page. With that, you can use Ajax as much as you want and update your <span class="caps">DOM</span> since there is no event attach to a particular <span class="caps">HTML</span> tag, they are all in the <code>&lt;body&gt;</code> tag.</p>
+                    <p>That&#8217;s really good but that&#8217;s also the reason of the problem. I said Ajax is always fine, and it&#8217;s true as long as you don&#8217;t touch the <code>&lt;body&gt;</code> tag. The moment you update this tag, it will probably be reset to it&#8217;s initial state, without any Javascript event, and since the Bootstrap Javascript function is only called once when the <span class="caps">DOM</span> is ready the first time, Javascript events will not come back. Guess what, <code>render="@all"</code> will render your <code>&lt;h:body&gt;</code> and so will broke all Bootstrap Javascipt events.</p>
+                    <h3>A workaround</h3>
+                    <p>The true solution would be to call the Bootstrap Javascript function after each <code>render="@all"</code> in order to attach all Javascript events again. But since I have no idea to do that right now, I have choosen to use a easier workaround.</p>
+                    <p>Just wrapping your whole page in a <span class="caps">JSF</span> panel and render it instead of <code>render="@all"</code> should be enough in most use case. It is not exactly the same behaviour, but in most case, when calling <code>render="@all"</code>, what you really want is just refreshing your whole page using Ajax. For example:</p>
+                    <pre class="prettyprint linenums"><code class="prettyprint linenums">&lt;!DOCTYPE html&gt;&#x000A;&lt;html lang="en-US"&#x000A;      xmlns="http://www.w3.org/1999/xhtml"&#x000A;      xmlns:h="http://java.sun.com/jsf/html"&#x000A;      xmlns:f="http://java.sun.com/jsf/core"&#x000A;      xmlns:ui="http://java.sun.com/jsf/facelets"&gt;&#x000A;&lt;h:head&gt;&#x000A;    &lt;title&gt;Site title&lt;/title&gt;&#x000A;&lt;/h:head&gt;&#x000A;&lt;h:body&gt;&#x000A;    &lt;h:panelGroup id="all"&gt;&#x000A;        ... your code...&#x000A;    &lt;/h:panelGroup&gt;&#x000A;&lt;/h:body&gt;&#x000A;&lt;/html&gt;</code></pre>
+                    <p>And replace all your <code>render="@all"</code> with <code>render="all"</code>.</p>
                   </div>
                   <div class='footer'>
-                    <a href='/blog/2011/03/12/test/'>Permalink</a>
+                    <a href='/blog/2012/05/08/jsf-bootstrap-render-all/'>Permalink</a>
                     |
-                    
+                     <a href="/blog/2012/05/08/jsf-bootstrap-render-all/#disqus_thread" data-disqus-identifier="07ba810e7e93243e084fcbd3fc31c56f578b9c12">Comments</a>
                     |
                     <span class='tags'>
                       <i class='icon-tags'></i>
                       Tags :
-                      <a class='tag' href='/blog/tags/misc/'>misc</a>
-                      <a class='tag' href='/blog/tags/test/'>test</a>
-                      <a class='tag' href='/blog/tags/jee/'>jee</a>
+                      <a class='tag' href='/blog/tags/jsf/'>jsf</a>
+                      <a class='tag' href='/blog/tags/bootstrap/'>bootstrap</a>
                     </span>
                   </div>
                 </div>
@@ -157,33 +162,52 @@
               </div>
             </div>
             <div class='span3'>
-              <div style='margin-bottom:20px;text-align:center;'>
-                <a class='btn' href='/blog.atom'>
-                  <img src='/images/icons/rss_16.png' />
-                  Subscribe
-                </a>
+              <div class='follow-scroll hidden-phone'>
+                <div style='margin-bottom:20px;text-align:center;'>
+                  <a class='btn' href='/blog.atom'>
+                    <img src='/images/icons/rss_16.png' />
+                    Subscribe
+                  </a>
+                </div>
+                <ul class='nav nav-list well' style='clear:both;'>
+                  <li class='nav-header'>
+                    Tag Cloud
+                  </li>
+                  <li>
+                    <div class='tag-cloud'>
+                      <span class='tag tag-0'>
+                        <a href='/blog/tags/bootstrap/'>bootstrap</a>
+                      </span>
+                      <span class='tag tag-0'>
+                        <a href='/blog/tags/jsf/'>jsf</a>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <ul class='nav nav-list well' style='clear:both;'>
-                <li class='nav-header'>
-                  Tag Cloud
-                </li>
-                <li>
-                  <div class='tag-cloud'>
-                    <span class='tag tag-3'>
-                      <a href='/blog/tags/java/'>java</a>
-                    </span>
-                    <span class='tag tag-0'>
-                      <a href='/blog/tags/jee/'>jee</a>
-                    </span>
-                    <span class='tag tag-6'>
-                      <a href='/blog/tags/misc/'>misc</a>
-                    </span>
-                    <span class='tag tag-6'>
-                      <a href='/blog/tags/test/'>test</a>
-                    </span>
-                  </div>
-                </li>
-              </ul>
+              <div class='visible-phone'>
+                <div style='margin-bottom:20px;text-align:center;'>
+                  <a class='btn' href='/blog.atom'>
+                    <img src='/images/icons/rss_16.png' />
+                    Subscribe
+                  </a>
+                </div>
+                <ul class='nav nav-list well' style='clear:both;'>
+                  <li class='nav-header'>
+                    Tag Cloud
+                  </li>
+                  <li>
+                    <div class='tag-cloud'>
+                      <span class='tag tag-0'>
+                        <a href='/blog/tags/bootstrap/'>bootstrap</a>
+                      </span>
+                      <span class='tag tag-0'>
+                        <a href='/blog/tags/jsf/'>jsf</a>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <script type='text/javascript'>
