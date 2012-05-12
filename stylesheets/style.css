@@ -278,3 +278,8 @@ ul.twitter-list li.nav-header {
 .bot20 {
   margin-bottom: 20px;
 }
+
+/* line 203 */
+.required {
+  color: red;
+}

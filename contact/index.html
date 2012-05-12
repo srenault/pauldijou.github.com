@@ -87,6 +87,85 @@
       </div>
       <div class='container' id='container'>
         <div class='row'>
+          <div class='span8'>
+            <div class='well'>
+              <h6 class='bot10'>Contact form</h6>
+              <form class='form-horizontal' style='margin:0px;'>
+                <div class='control-group'>
+                  <div class='control-label'>
+                    Name
+                    <span class='required'>*</span>
+                  </div>
+                  <div class='controls'>
+                    <input class='input-xlarge' id='contactName' name='contactName' type='text' />
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <div class='control-label'>
+                    Email
+                    <span class='required'>*</span>
+                  </div>
+                  <div class='controls'>
+                    <input class='input-xlarge' id='contactEmail' name='contactEmail' type='text' />
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <div class='control-label'>
+                    Subject
+                    <span class='required'>*</span>
+                  </div>
+                  <div class='controls'>
+                    <input class='input-xlarge' id='contactSubject' name='contactSubject' type='text' />
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <div class='control-label'>
+                    Message
+                    <span class='required'>*</span>
+                  </div>
+                  <div class='controls'>
+                    <textarea class='input-xlarge' id='contactMessage' name='contactMessage'></textarea>
+                  </div>
+                </div>
+                <div class='form-actions' style='margin:0px -19px -19px -19px;'>
+                  <button class='btn btn-primary' onclick='submitContact();return false;' type='button'>
+                    Submit
+                  </button>
+                  <button class='btn' type='reset'>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+              <script type='text/javascript'>
+                //<![CDATA[
+                  $(function() { $('#contactMessage').autogrow(); })
+                  
+                  function submitContact() {
+                    var contactName = $("input#contactName").val();
+                    var contactEmail = $("input#contactEmail").val();
+                    var contactSubject = $("input#contactSubject").val();
+                    var contactMessage = $("textarea#contactMessage").val();
+                    
+                    var request = $.ajax({
+                      type: "POST",
+                      url: "http://ptools.pauldijou.fr/contact.php",
+                      data: {contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage}
+                    });
+                    
+                    request.done(function(msg) {
+                      alert(msg);
+                    });
+                    
+                    request.fail(function(jqXHR, textStatus) {
+                      alert( "Request failed: " + textStatus );
+                    });
+                    
+                    return false;
+                  }
+                //]]>
+              </script>
+            </div>
+          </div>
           <div class='span4'>
             <div class='well'>
               <h6 class='bot10'>Email</h6>
@@ -113,8 +192,6 @@
                 </script>
               </p>
             </div>
-          </div>
-          <div class='span4'>
             <div class='well'>
               <h6>IRC</h6>
               <p>
@@ -132,14 +209,6 @@
               <p>
                 If you don't have an IRC client, just click on this link:
                 <a href='http://webchat.freenode.net/' target='_blank'>webchat.freenode.net</a>
-              </p>
-            </div>
-          </div>
-          <div class='span4'>
-            <div class='well'>
-              <h6 class='bot10'>Contact form</h6>
-              <p>
-                May be one day... In the meantime, you can send me a mail.
               </p>
             </div>
           </div>
