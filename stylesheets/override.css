@@ -175,27 +175,35 @@ dl.dl-horizontal dt h6 {
     display: inherit;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   /* line 116 */
+  .form-horizontal .control-label {
+    float: none;
+    text-align: left;
+    width: auto;
+  }
+}
+@media (max-width: 767px) {
+  /* line 124 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 122 */
+  /* line 130 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
 
-  /* line 126 */
+  /* line 134 */
   .title h1 {
     font-size: 50px;
     line-height: 55px;
   }
 }
 @media (max-width:1490px) {
-  /* line 133 */
+  /* line 141 */
   .github-fork {
     display: none !important;
   }
