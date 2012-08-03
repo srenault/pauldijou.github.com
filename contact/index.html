@@ -81,233 +81,244 @@
       </script>
     </header>
     <div class='page'>
-      <div class='title'>
-        <h1>Contact</h1>
-        <h6>Choose your weapon!</h6>
-      </div>
-      <div class='container' id='container'>
-        <div class='row'>
-          <div class='span8'>
-            <div class='well'>
-              <h6 class='bot10'>Contact form</h6>
-              <div id='contactFeedback'></div>
-              <form class='form-horizontal' id='formContact' style='margin:0px;'>
-                <div class='control-group contactName'>
-                  <label class='control-label' for='contactName'>
-                    Name
-                    <span class='required'>*</span>
-                  </label>
-                  <div class='controls'>
-                    <input class='span4' id='contactName' name='contactName' type='text' />
-                  </div>
-                </div>
-                <div class='control-group contactEmail'>
-                  <label class='control-label' for='contactEmail'>
-                    Email
-                    <span class='required'>*</span>
-                  </label>
-                  <div class='controls'>
-                    <input class='span4' id='contactEmail' name='contactEmail' type='text' />
-                  </div>
-                </div>
-                <div class='control-group contactSubject' for='contactSubject'>
-                  <label class='control-label' for='contactSubject'>
-                    Subject
-                    <span class='required'>*</span>
-                  </label>
-                  <div class='controls'>
-                    <input class='span4' id='contactSubject' name='contactSubject' type='text' />
-                  </div>
-                </div>
-                <div class='control-group contactMessage'>
-                  <label class='control-label' for='contactMessage'>
-                    Message
-                    <span class='required'>*</span>
-                  </label>
-                  <div class='controls'>
-                    <textarea class='span4' id='contactMessage' name='contactMessage'></textarea>
-                  </div>
-                </div>
-                <div class='form-actions' style='margin:0px -19px -19px -19px;'>
-                  <button class='btn btn-primary' onclick='submitContact();return false;' type='button'>
-                    Submit
-                  </button>
-                  <button class='btn' type='reset'>
-                    Cancel
-                  </button>
-                </div>
-              </form>
-              <script type='text/javascript'>
-                //<![CDATA[
-                  $(function() { $('#contactMessage').autogrow(); })
-                  
-                  function submitContact() {
-                    cleanForm("#formContact");
-                    
-                    var contactTo = "paul.dijou.dev" + "@" + "gmail" + ".com";
-                    var contactName = $("input#contactName").val();
-                    var contactEmail = $("input#contactEmail").val();
-                    var contactSubject = $("input#contactSubject").val();
-                    var contactMessage = $("textarea#contactMessage").val();
-                    
-                    var hasErrors = false;
-                    var errorMsgRequired="Required field";
-                    
-                    if(contactName.length == 0) {
-                      hasErrors = true;
-                      addErrorMessage("contactName", errorMsgRequired);
-                    }
-                    
-                    if(contactEmail.length == 0) {
-                      hasErrors = true;
-                      addErrorMessage("contactEmail", errorMsgRequired);
-                    }
-                    
-                    if(contactSubject.length == 0) {
-                      hasErrors = true;
-                      addErrorMessage("contactSubject", errorMsgRequired);
-                    }
-                    
-                    if(contactMessage.length == 0) {
-                      hasErrors = true;
-                      addErrorMessage("contactMessage", errorMsgRequired);
-                    }
-                    
-                    if(!hasErrors) {
-                      var request = $.ajax({
-                        type: "POST",
-                        url: "http://ptools.pauldijou.fr/?page=contact",
-                        dataType: "html",
-                        data: {contactTo: contactTo, contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage},
-                        success: function(data, textStatus, jqXHR) {
-                          $('#contactFeedback ').html('<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
-                          $("input#contactName").val("");
-                          $("input#contactEmail").val("");
-                          $("input#contactSubject").val("");
-                          $("textarea#contactMessage").val("");
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                          $('#contactFeedback ').html('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it\'s persist, send me a mail instead. Really sorry...</div>');
-                        }
-                      });
-                    }
-                    
-                    return false;
-                  }
-                  
-                  function cleanForm(selector) {
-                    $('#contactFeedback .alert').remove();
-                    $(selector + ' .control-group').removeClass('error');
-                    $(selector + ' .control-group .help-block').remove();
-                  }
-                  
-                  function addErrorMessage(selector, msg) {
-                    $('#formContact .control-group.'+selector).addClass('error');
-                    $('#formContact .control-group.'+selector+' .controls').append('<p class="help-block">'+msg+'</p>');
-                  }
-                //]]>
-              </script>
+  <div class='title'>
+  <h1>Contact</h1>
+  <h6>Choose your weapon!</h6>
+</div>
+<div class='container' id='container'>
+  <div class='row'>
+    <div class='span8'>
+      <div class='well'>
+        <h6 class='bot10'>Contact form</h6>
+        <div id='contactFeedback'></div>
+        <form class='form-horizontal' id='formContact' style='margin:0px;'>
+          <div class='control-group contactName'>
+            <label class='control-label' for='contactName'>
+              Name
+              <span class='required'>*</span>
+            </label>
+            <div class='controls'>
+              <input class='span4' id='contactName' name='contactName' type='text' />
             </div>
           </div>
-          <div class='span4'>
-            <div class='well'>
-              <h6 class='bot10'>Email</h6>
-              <p>
-                paul.dijou.dev at gmail.com
-              </p>
-            </div>
-            <div class='well'>
-              <h6 class='bot10'>Twitter</h6>
-              <p>
-                <a class='twitter-follow-button' href='https://twitter.com/paul_dijou'>Follow @paul_dijou</a>
-                <script type='text/javascript'>
-                  //<![CDATA[
-                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                  //]]>
-                </script>
-              </p>
-              <p>
-                <a class='twitter-mention-button' data-related='paul_dijou' href='https://twitter.com/intent/tweet?screen_name=paul_dijou'>Tweet to @paul_dijou</a>
-                <script type='text/javascript'>
-                  //<![CDATA[
-                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-                  //]]>
-                </script>
-              </p>
-            </div>
-            <div class='well'>
-              <h6>IRC</h6>
-              <p>
-                I'm killing time on
-                <a href='http://freenode.net/'>irc.freenode.net</a>
-                on one of the following channel:
-              </p>
-              <ul class='unstyled' style='margin-left:20px;'>
-                <li>#richfaces</li>
-                <li>#deltaspike</li>
-                <li>#jbosstesting</li>
-                <li>#forge</li>
-                <li>#seam-dev</li>
-              </ul>
-              <p>
-                If you don't have an IRC client, just click on this link:
-                <a href='http://webchat.freenode.net/' target='_blank'>webchat.freenode.net</a>
-              </p>
+          <div class='control-group contactEmail'>
+            <label class='control-label' for='contactEmail'>
+              Email
+              <span class='required'>*</span>
+            </label>
+            <div class='controls'>
+              <input class='span4' id='contactEmail' name='contactEmail' type='text' />
             </div>
           </div>
-        </div>
+          <div class='control-group contactSubject' for='contactSubject'>
+            <label class='control-label' for='contactSubject'>
+              Subject
+              <span class='required'>*</span>
+            </label>
+            <div class='controls'>
+              <input class='span4' id='contactSubject' name='contactSubject' type='text' />
+            </div>
+          </div>
+          <div class='control-group contactMessage'>
+            <label class='control-label' for='contactMessage'>
+              Message
+              <span class='required'>*</span>
+            </label>
+            <div class='controls'>
+              <textarea class='span4' id='contactMessage' name='contactMessage'></textarea>
+            </div>
+          </div>
+          <div class='form-actions' style='margin:0px -19px -19px -19px;'>
+            <button class='btn btn-primary' onclick='submitContact();return false;' type='button'>
+              Submit
+            </button>
+            <button class='btn' type='reset'>
+              Cancel
+            </button>
+          </div>
+        </form>
+        <script type='text/javascript'>
+          //<![CDATA[
+            $(function() { $('#contactMessage').autogrow(); })
+            
+            function submitContact() {
+              cleanForm("#formContact");
+              
+              var contactTo = "paul.dijou.dev" + "@" + "gmail" + ".com";
+              var contactName = $("input#contactName").val();
+              var contactEmail = $("input#contactEmail").val();
+              var contactSubject = $("input#contactSubject").val();
+              var contactMessage = $("textarea#contactMessage").val();
+              
+              var hasErrors = false;
+              var errorMsgRequired="Required field";
+              
+              if(contactName.length == 0) {
+                hasErrors = true;
+                addErrorMessage("contactName", errorMsgRequired);
+              }
+              
+              if(contactEmail.length == 0) {
+                hasErrors = true;
+                addErrorMessage("contactEmail", errorMsgRequired);
+              }
+              
+              if(contactSubject.length == 0) {
+                hasErrors = true;
+                addErrorMessage("contactSubject", errorMsgRequired);
+              }
+              
+              if(contactMessage.length == 0) {
+                hasErrors = true;
+                addErrorMessage("contactMessage", errorMsgRequired);
+              }
+              
+              if(!hasErrors) {
+                var request = $.ajax({
+                  type: "POST",
+                  url: "http://ptools.pauldijou.fr/?page=contact",
+                  dataType: "html",
+                  data: {contactTo: contactTo, contactName: contactName, contactEmail: contactEmail, contactSubject: contactSubject, contactMessage: contactMessage},
+                  success: function(data, textStatus, jqXHR) {
+                    $('#contactFeedback ').html('<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
+                    $("input#contactName").val("");
+                    $("input#contactEmail").val("");
+                    $("input#contactSubject").val("");
+                    $("textarea#contactMessage").val("");
+                  },
+                  error: function(jqXHR, textStatus, errorThrown) {
+                    $('#contactFeedback ').html('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it\'s persist, send me a mail instead. Really sorry...</div>');
+                  }
+                });
+              }
+              
+              return false;
+            }
+            
+            function cleanForm(selector) {
+              $('#contactFeedback .alert').remove();
+              $(selector + ' .control-group').removeClass('error');
+              $(selector + ' .control-group .help-block').remove();
+            }
+            
+            function addErrorMessage(selector, msg) {
+              $('#formContact .control-group.'+selector).addClass('error');
+              $('#formContact .control-group.'+selector+' .controls').append('<p class="help-block">'+msg+'</p>');
+            }
+          //]]>
+        </script>
       </div>
     </div>
-    <hr />
-    <footer class='container'>
-      <div class='row'>
-        <div class='hidden-phone'>
-          <div class='span2'>
-            <ul class='nav nav-list'>
-              <li class='nav-header'>
-                Powered with
-              </li>
-              <li>
-                <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
-              </li>
-              <li>
-                <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
-              </li>
-              <li>
-                <a href='http://github.com/' target='_blank'>GitHub</a>
-              </li>
-              <li>
-                <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
-              </li>
-              <li>
-                <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
-              </li>
+    <div class='span4'>
+      <div class='well'>
+        <h6 class='bot10'>Email</h6>
+        <p>
+          paul.dijou.dev at gmail.com
+        </p>
+      </div>
+      <div class='well'>
+        <h6 class='bot10'>Twitter</h6>
+        <p>
+          <a class='twitter-follow-button' href='https://twitter.com/paul_dijou'>Follow @paul_dijou</a>
+          <script type='text/javascript'>
+            //<![CDATA[
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+            //]]>
+          </script>
+        </p>
+        <p>
+          <a class='twitter-mention-button' data-related='paul_dijou' href='https://twitter.com/intent/tweet?screen_name=paul_dijou'>Tweet to @paul_dijou</a>
+          <script type='text/javascript'>
+            //<![CDATA[
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+            //]]>
+          </script>
+        </p>
+      </div>
+      <div class='well'>
+        <h6>IRC</h6>
+        <p>
+          I'm killing time on
+          <a href='http://freenode.net/'>irc.freenode.net</a>
+          on one of the following channels:
+        </p>
+        <div class='row-fluid'>
+          <div class='span6'>
+            <ul class='unstyled' style='margin-left:20px;'>
+              <li>#richfaces</li>
+              <li>#deltaspike</li>
+              <li>#agorava</li>
+              <li>#jbosstesting</li>
+            </ul>
+          </div>
+          <div class='span6'>
+            <ul class='unstyled' style='margin-left:20px;'>
+              <li>#forge</li>
+              <li>#aerogear</li>
+              <li>#awestruct</li>
+              <li>#seam-dev</li>
             </ul>
           </div>
         </div>
-        <div class='span2'>
-          <ul class='nav nav-list'>
-            <li class='nav-header'>
-              Always connected!
-            </li>
-            <li>
-              <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-            </li>
-            <li>
-              <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-            </li>
-            <li>
-              <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-            </li>
-            <li>
-              <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-            </li>
-            <li>
-              <a href='/blog.atom' target='_blank'>RSS</a>
-            </li>
-          </ul>
-        </div>
+        <p>
+          If you don't have an IRC client, just click on this link:
+          <a href='http://webchat.freenode.net/' target='_blank'>webchat.freenode.net</a>
+        </p>
       </div>
-    </footer>
+    </div>
+  </div>
+</div>
+</div>
+<hr />
+<footer class='container'>
+  <div class='row'>
+    <div class='hidden-phone'>
+      <div class='span2'>
+        <ul class='nav nav-list'>
+          <li class='nav-header'>
+            Powered with
+          </li>
+          <li>
+            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
+          </li>
+          <li>
+            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
+          </li>
+          <li>
+            <a href='http://github.com/' target='_blank'>GitHub</a>
+          </li>
+          <li>
+            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
+          </li>
+          <li>
+            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='span2'>
+      <ul class='nav nav-list'>
+        <li class='nav-header'>
+          Always connected!
+        </li>
+        <li>
+          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
+        </li>
+        <li>
+          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
+        </li>
+        <li>
+          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
+        </li>
+        <li>
+          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
+        </li>
+        <li>
+          <a href='/blog.atom' target='_blank'>RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
   </body>
 </html>
