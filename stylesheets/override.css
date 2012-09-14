@@ -1,48 +1,39 @@
-/* line 1 */
 fieldset {
   margin-top: 10px;
 }
 
-/* line 5 */
 legend {
   margin-bottom: 10px;
 }
 
-/* line 9 */
 .well > ul.nav {
   padding: 0px;
 }
 
-/* line 13 */
 dl.dl-horizontal dt h6 {
   position: relative;
   top: 1px;
 }
 
-/* line 19 */
 .page #container {
   margin-top: 20px;
   overflow: hidden;
 }
-/* line 24 */
 .page .no-footer {
   padding-bottom: 50px;
 }
 
-/* line 30 */
 #container.index .well {
   position: relative;
   top: 1500px;
 }
 
-/* line 37 */
 #levels .task .progress {
   background-color: white;
   background-image: none;
   margin-top: 5px;
 }
 
-/* line 44 */
 .nav-list > li.resume > a {
   padding: 3px 15px;
   -webkit-border-top-left-radius: 7px;
@@ -53,141 +44,115 @@ dl.dl-horizontal dt h6 {
   border-bottom-left-radius: 7px;
 }
 
-/* line 54 */
 .btn-wrapper {
   position: relative;
   left: -50%;
   float: right;
 }
-/* line 59 */
 .btn-wrapper .btn-group {
   position: relative;
   left: 50%;
 }
 
 @media (min-width: 980px) {
-  /* line 69 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 70 */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 71 */
   .visible-desktop {
     display: inherit;
   }
 
-  /* line 72 */
   .hidden-phone {
     display: inherit;
   }
 
-  /* line 73 */
   .hidden-tablet {
     display: inherit;
   }
 
-  /* line 74 */
   .hidden-desktop {
     display: none !important;
   }
 
-  /* line 76 */
   #container {
     margin-top: 60px;
   }
 }
 @media (max-width:979px) {
-  /* line 82 */
   .navbar-fixed-top {
     margin-bottom: 0px;
   }
 
-  /* line 86 */
   .title {
     margin-top: 0px;
     width: 100%;
     margin-left: -20px;
   }
 
-  /* line 92 */
   #container {
     margin-top: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 99 */
   .visible-phone {
     display: none !important;
   }
 
-  /* line 100 */
   .visible-tablet {
     display: inherit;
   }
 
-  /* line 101 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 102 */
   .hidden-phone {
     display: inherit;
   }
 
-  /* line 103 */
   .hidden-tablet {
     display: none !important;
   }
 
-  /* line 104 */
   .hidden-desktop {
     display: inherit;
   }
 
-  /* line 106 */
   #container.index .well a.btn {
     margin-bottom: 10px;
   }
 
-  /* line 110 */
   #container.index .well a.btn:last-child {
     margin-bottom: 0px;
   }
 }
 @media (max-width: 767px) {
-  /* line 118 */
   .visible-tablet {
     display: none !important;
   }
 
-  /* line 119 */
   .visible-desktop {
     display: none !important;
   }
 
-  /* line 120 */
   .hidden-phone {
     display: none !important;
   }
 
-  /* line 121 */
   .hidden-tablet {
     display: inherit;
   }
 
-  /* line 122 */
   .hidden-desktop {
     display: inherit;
   }
 }
 @media (max-width: 480px) {
-  /* line 126 */
   .form-horizontal .control-label {
     float: none;
     text-align: left;
@@ -195,26 +160,22 @@ dl.dl-horizontal dt h6 {
   }
 }
 @media (max-width: 767px) {
-  /* line 134 */
   .dl-horizontal dt {
     float: none;
     text-align: left;
     width: auto;
   }
 
-  /* line 140 */
   .dl-horizontal dd {
     margin-left: 9px;
   }
 
-  /* line 144 */
   .title h1 {
     font-size: 50px;
     line-height: 55px;
   }
 }
 @media (max-width:1490px) {
-  /* line 151 */
   .github-fork {
     display: none !important;
   }

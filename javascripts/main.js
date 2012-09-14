@@ -1,5 +1,5 @@
 $(function() {
-    var test = '#{site.default_page_title}';
+    var test = 'Computer Science Engineer';
     
     $("[rel=tooltip]").tooltip();
     $("[rel=tooltip-top]").tooltip({

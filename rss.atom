@@ -3,7 +3,7 @@
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
   <updated>2012-08-07T00:00:00Z</updated>
-  <link href='http://pauldijou.fr/feed.atom' rel='self' type='application/atom+xml' />
+  <link href='http://pauldijou.fr/rss.atom' rel='self' type='application/atom+xml' />
   <link href='http://pauldijou.fr/' rel='alternate' type='text/html' />
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>

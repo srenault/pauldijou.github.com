@@ -86,7 +86,7 @@
       <div class='row'>
   <div class='span9'>
     <div class='posts'>
-      <div class='post'>
+      <article class='post'>
   <h2>
     <a href='/blog/2012/08/07/news-richfaces-bootstrap/'>
       News about RichFaces Bootstrap
@@ -99,7 +99,7 @@
     on
     <span class='date'>Aug 07, 2012</span>
     |
-     <a href="/blog/2012/08/07/news-richfaces-bootstrap/#disqus_thread" data-disqus-identifier="41ae9aa21e19b000f4b5e20f777ddcf2325b9902">Comments</a>
+     <a href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap/#disqus_thread" data-disqus-identifier="41ae9aa21e19b000f4b5e20f777ddcf2325b9902">Comments</a>
   </div>
   <div class='content'>
     <ul class="nav nav-tabs">
@@ -122,8 +122,8 @@
 <div class="alert alert-info"><strong>Pro tip</strong> Even if <strong>popover</strong> content only supports text, you can still put some light <span class="caps">HTML</span> in it. You just need to escape chevrons with <code>&amp;lt;</code> and <code>&amp;gt;</code>.</div>
 <p>Finally, <a href="http://bootstrap-richfaces.rhcloud.com/component/orderingList/">orderingList</a> is the new RichFaces ordering list to allow you to re-arrange the order of some items. It already supports single drag-and-drop, multiple selection and &#8220;table&#8221; layout. Next features will be multiple drag-and-drop, maybe keyboard selection using <span class="caps">SHIFT</span> (<span class="caps">CTRL</span> is already supported). Thanks to Brian work, it is the first component mixing the power of the jQuery UI widget factory with Bootstrap design. If we can do it once, we can do it for lots of other widgets!</p>
 <p>New EL functions are also there. <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L156">jQuery</a> and <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L126">jQuerySelector</a> are part of RichFaces Core but have been created to help RichFaces Bootstrap. They will allow you to retrieve a jQuery object or the jQuery selector from a server-side <span class="caps">JSF</span> id.</p>
-<p>Next are more <a href="http://bootstrap-richfaces.rhcloud.com/component/el/">specific Bootstrap EL functions</a>. If you have take a look at Bootstrap JavaScript <span class="caps">API</span>, you might have noticed that lots of JavaScript components have a set of functions with the following syntax: <code>$(selector).componentName('singleStringParameter');</code>, like for example: <code>$('#myModal').modal('show');</code> for a <strong>modal</strong>. The first approach to use it in <span class="caps">JSF</span> component was to use the previous <strong>jQuery</strong> function like: <code>onclick="#{rich:jQuery('myModal')}.modal('show')"</code>. It works fine but obviously, that wasn&#8217;t enough for Lukas since he built a different approach from scratch.</p>
-<p>The new concept is that the <code>componentName</code> part of the call is nearly useless if you can retrieve it from the component returned from the jQuery call. In the previous example, if you know that <code>#{rich:jQuery('myModal')}</code> is actually a <strong>modal</strong> component, then you also know that you will have to call the <strong>modal</strong> function, only remains with importance the <strong>singleStringParameter</strong>. So here is the new syntax: <code>#{b:singleStringParameter(selector)}</code>. The previous example becomes: <code>onclick="#{b:show('myModal')}"</code>. Much more concise and readable, isn&#8217;t it? Right now, RichFaces Bootstrap supports <strong>show</strong>, <strong>hide</strong> and <strong>toggle</strong> functions but others will follow soon.</p>
+<p>Next are more <a href="http://bootstrap-richfaces.rhcloud.com/component/el/">specific Bootstrap EL functions</a>. If you have take a look at Bootstrap JavaScript <span class="caps">API</span>, you might have noticed that lots of JavaScript components have a set of functions with the following syntax: <code>$(sel).compName('singleParameter');</code>, like for example: <code>$('#myModal').modal('show');</code> for a <strong>modal</strong>. The first approach to use it in <span class="caps">JSF</span> component was to use the previous <strong>jQuery</strong> function like: <code>onclick="#{rich:jQuery( 'myModal' )}.modal('show')"</code>. It works fine but obviously, that wasn&#8217;t enough for Lukas since he built a different approach from scratch.</p>
+<p>The new concept is that the <code>compName</code> part of the call is nearly useless if you can retrieve it from the component returned from the jQuery call. In the previous example, if you know that <code>#{rich:jQuery('myModal')}</code> is actually a <strong>modal</strong> component, then you also know that you will have to call the <strong>modal</strong> function, only remains with importance the <strong>singleParameter</strong>. So here is the new syntax: <code>#{b:singleParameter(sel)}</code>. The previous example becomes: <code>onclick="#{b:show('myModal')}"</code>. Much more concise and readable, isn&#8217;t it? Right now, RichFaces Bootstrap supports <strong>show</strong>, <strong>hide</strong> and <strong>toggle</strong> functions but others will follow soon.</p>
 <div class="alert alert-info"><strong>Pro tip</strong> Want to know how the EL function retrieves the name of the component? Easy. When the selector will be used to find the <span class="caps">JSF</span> component, it will find a <strong>UIComponent</strong> (like a <strong>UIModal</strong>) which, according to RichFaces <span class="caps">CDK</span> design, will extend an <strong>AbstractComponent</strong> (like <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java">AbstractModal</a>). And if the <strong>AbstractComponent</strong> supports Bootstrap EL functions, it will be annotated with <code>@BootstrapJSPlugin</code> (like at <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L43">line 43 of AbstractModal</a>) and it&#8217;s the <code>name</code> attribute of that annotation that will give us the <code>componentName</code>. As I told you, really easy!</div>
 <p><strong><span class="caps">LESS</span> support</strong> is no longer a dream (for those who doesn&#8217;t know <span class="caps">LESS</span>, it&#8217;s a more powerful way to write <span class="caps">CSS</span>, see the <a href="http://lesscss.org/">project website</a> for more infos). Thanks to Lukas&#8217; awesome work, a first prototype of that feature is already working. You can <a href="http://rik-ansikter.blogspot.fr/2012/08/jsf-meets-skinning-awesomeness-of-less.html">read his post</a> to know more about that. There is still work to do but it&#8217;s an incredible starting point.</p>
 <h3>What&#8217;s coming?</h3>
@@ -147,8 +147,8 @@
 <div class="alert alert-info"><strong>Pro tip</strong> Même si <strong>popover</strong> ne supporte que du contenu textuel pour le moment, vous pouvez quand même utiliser un peu de <span class="caps">HTML</span> dedans. Il vous faudra juste écharper les chevrons en les remplaçant par <code>&amp;lt;</code> et <code>&amp;gt;</code>.</div>
 <p>Enfin, <a href="http://bootstrap-richfaces.rhcloud.com/component/orderingList/">orderingList</a> est la nouvelle version de RichFaces pour son composant oderingList et vous permet de réorganiser l&#8217;ordre des éléments d&#8217;une liste. Il supporte d&#8217;ores et déjà le drag-and-drop (glisser-déposer) d&#8217;un élément individuel, la sélection multiple et un design en forme de &#8220;table&#8221;. Les fonctionnalités à venir sont le drap-and-drop de plusieurs éléments à la fois et peut être la sélection en utilisant la touche <span class="caps">SHIFT</span> du clavier (<span class="caps">CTRL</span> est déjà supporté). Grâce au travail de Brian, il s&#8217;agit du tout premier composant utilisant à la fois la puissance de jQuery UI widget factory avec un design Bootstrap. Si nous pouvons le faire une fois, alors nous pouvons également le faire pour bien d&#8217;autres widgets jQuery.</p>
 <p>De nouvelles fonctions EL sont également de la partie. <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L156">jQuery</a> et <a href="https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L126">jQuerySelector</a> se trouvent directement dans RichFaces Core mais ont été créées avant tout dans l&#8217;optique d&#8217;être utilisées dans RichFaces Bootstrap. Elles vous permettent de récupérer un objet jQuery ou un sélecteur jQuery à partir de l&#8217;id <span class="caps">JSF</span> côté serveur.</p>
-<p>Ensuite viennent des <a href="http://bootstrap-richfaces.rhcloud.com/component/el/">fonctions EL spécifiques à Bootstrap</a>. Si vous regardez l&#8217;API JavaScript de Bootstrap, vous noterez que nombre de composants JavaScript possèdent une liste de fonctions avec la syntaxe suivante : <code>$(selecteur).nomDuComposant('parametreUnique');</code>, comme par exemple : <code>$('#monModal').modal('show');</code> pour un <strong>modal</strong>. La première approche pour les utiliser dans une page <span class="caps">JSF</span> est de de servir de la fonction <strong>jQuery</strong> vue précédemment de la manière suivante : <code>onclick="#{rich:jQuery('monModal')}.modal('show')"</code>. Cela fonctionne à merveille mais ce n&#8217;était visiblement pas suffisant pour Lukas qui s&#8217;est offert le luxe de coder depuis zéro une autre approche.</p>
-<p>Le nouveau concept vient du fait que la partie <code>nomDuComposant</code> est inutile si vous pouvez récupérer ledit nom depuis le composant retourné par l&#8217;appel à jQuery. Dans l&#8217;exemple précédent, si l&#8217;on sait que <code>#{rich:jQuery('monModal')}</code> va retourner un <strong>modal</strong> alors on sait également que c&#8217;est la fonction <strong>modal</strong> qu&#8217;il faudra appeler, si bien que la seule inconnue restante est le <strong>parametreUnique</strong>. Voici donc la nouvelle syntaxe : <code>#{b:parametreUnique(selecteur)}</code>. L&#8217;exemple précédent devient : <code>onclick="#{b:show('monModal')}"</code>. Bien moins verbeux et bien plus lisible n&#8217;est-ce pas ? A l&#8217;heure actuelle, RichFaces Bootstrap possède les fonctions <strong>show</strong>, <strong>hide</strong> et <strong>toggle</strong> mais d&#8217;autres suivront bientôt.</p>
+<p>Ensuite viennent des <a href="http://bootstrap-richfaces.rhcloud.com/component/el/">fonctions EL spécifiques à Bootstrap</a>. Si vous regardez l&#8217;API JavaScript de Bootstrap, vous noterez que nombre de composants JavaScript possèdent une liste de fonctions avec la syntaxe suivante : <code>$(sel).nomDuComposant('paramUnique');</code>, comme par exemple : <code>$('#monModal').modal('show');</code> pour un <strong>modal</strong>. La première approche pour les utiliser dans une page <span class="caps">JSF</span> est de de servir de la fonction <strong>jQuery</strong> vue précédemment de la manière suivante : <code>onclick="#{rich:jQuery( 'monModal' )}.modal('show')"</code>. Cela fonctionne à merveille mais ce n&#8217;était visiblement pas suffisant pour Lukas qui s&#8217;est offert le luxe de coder depuis zéro une autre approche.</p>
+<p>Le nouveau concept vient du fait que la partie <code>nomComp</code> est inutile si vous pouvez récupérer ledit nom depuis le composant retourné par l&#8217;appel à jQuery. Dans l&#8217;exemple précédent, si l&#8217;on sait que <code>#{rich:jQuery('monModal')}</code> va retourner un <strong>modal</strong> alors on sait également que c&#8217;est la fonction <strong>modal</strong> qu&#8217;il faudra appeler, si bien que la seule inconnue restante est le <strong>paramUnique</strong>. Voici donc la nouvelle syntaxe : <code>#{b:paramUnique(sel)}</code>. L&#8217;exemple précédent devient : <code>onclick="#{b:show('monModal')}"</code>. Bien moins verbeux et bien plus lisible n&#8217;est-ce pas ? A l&#8217;heure actuelle, RichFaces Bootstrap possède les fonctions <strong>show</strong>, <strong>hide</strong> et <strong>toggle</strong> mais d&#8217;autres suivront bientôt.</p>
 <div class="alert alert-info"><strong>Pro tip</strong> Envie de savoir comment la fonction EL récupère le nom du composant ? Facile. Quand le sélecteur est utilisé pour récupérer le composant <span class="caps">JSF</span>, il va retourner un <strong>UIComponent</strong> (par exemple un <strong>UIModal</strong>) qui, en accord avec la syntaxe du <span class="caps">CDK</span> RichFaces, devra étendre un <strong>AbstractComponent</strong> (comme <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java">AbstractModal</a>). Et si cet <strong>AbstractComponent</strong> supporte les fonctions EL spécifiques à Bootstrap, alors il sera annoté de <code>@BootstrapJSPlugin</code> (comme on peut le voir à <a href="https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L43">la ligne 43 de AbstractModal</a>) et c&#8217;est l&#8217;attribute <code>name</code> de l&#8217;annotation qui nous fournit le <code>nomDuComposant</code>. Comme je vous l&#8217;avais dit, super facile !</div>
 <p><strong>Le support de <span class="caps">LESS</span></strong> n&#8217;est plus un rêve mais désormais une réalité (pour ceux qui ne connaissent pas <span class="caps">LESS</span>, il s&#8217;agit d&#8217;une syntaxe permettant d&#8217;écrire du <span class="caps">CSS</span> de manière bien plus puissante et élégante, je vous encourage à consulter le <a href="http://lesscss.org/">site du projet</a> pour de plus amples informations). Grâce au travail incroyable de Lukas, un premier prototype est déjà fonctionnel. N&#8217;hésitez pas à <a href="http://rik-ansikter.blogspot.fr/2012/08/jsf-meets-skinning-awesomeness-of-less.html">lire son article</a> à ce sujet pour en savoir plus (anglais uniquement). Il y a encore du travail à faire, mais il s&#8217;agit un bon point de départ.</p>
 <h3>Qu&#8217;avons nous en approche ?</h3>
@@ -162,7 +162,7 @@
   <div class='footer'>
     <a href='/blog/2012/08/07/news-richfaces-bootstrap/'>Permalink</a>
     |
-     <a href="/blog/2012/08/07/news-richfaces-bootstrap/#disqus_thread" data-disqus-identifier="41ae9aa21e19b000f4b5e20f777ddcf2325b9902">Comments</a>
+     <a href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap/#disqus_thread" data-disqus-identifier="41ae9aa21e19b000f4b5e20f777ddcf2325b9902">Comments</a>
     |
     <span class='tags'>
       <i class='icon-tags'></i>
@@ -174,8 +174,8 @@
       <a class='tag' href='/blog/tags/jquery/'>jquery</a>
     </span>
   </div>
-</div>
-      <div class='post'>
+</article>
+      <article class='post'>
   <h2>
     <a href='/blog/2012/08/01/news-richfaces-cdk/'>
       News about RichFaces CDK
@@ -188,7 +188,7 @@
     on
     <span class='date'>Aug 01, 2012</span>
     |
-     <a href="/blog/2012/08/01/news-richfaces-cdk/#disqus_thread" data-disqus-identifier="3cee0065c99a141c320530fc05198b02b8814bf2">Comments</a>
+     <a href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk/#disqus_thread" data-disqus-identifier="3cee0065c99a141c320530fc05198b02b8814bf2">Comments</a>
   </div>
   <div class='content'>
     <h3>Table of Content</h3>
@@ -226,7 +226,7 @@
   <div class='footer'>
     <a href='/blog/2012/08/01/news-richfaces-cdk/'>Permalink</a>
     |
-     <a href="/blog/2012/08/01/news-richfaces-cdk/#disqus_thread" data-disqus-identifier="3cee0065c99a141c320530fc05198b02b8814bf2">Comments</a>
+     <a href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk/#disqus_thread" data-disqus-identifier="3cee0065c99a141c320530fc05198b02b8814bf2">Comments</a>
     |
     <span class='tags'>
       <i class='icon-tags'></i>
@@ -237,7 +237,16 @@
       <a class='tag' href='/blog/tags/cdk/'>cdk</a>
     </span>
   </div>
-</div>
+</article>
+      
+                  <script type="text/javascript">
+                  var disqus_shortname = 'pauldijou';
+                  (function () {
+                    var s = document.createElement('script'); s.async = true;
+                    s.src = "http://disqus.com/forums/pauldijou/count.js";
+                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                  }());
+                  </script>
     </div>
     <div class='visible-phone'>
       <ul class='pager'>
@@ -287,25 +296,25 @@
         <li>
           <div class='tag-cloud'>
             <span class='tag tag-3'>
-              <a href='/blog/tags/bootstrap/'>bootstrap</a>
+              <a href='http://pauldijou.fr/blog/tags/bootstrap/'>bootstrap</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/cdk/'>cdk</a>
+              <a href='http://pauldijou.fr/blog/tags/cdk/'>cdk</a>
             </span>
             <span class='tag tag-6'>
-              <a href='/blog/tags/en/'>en</a>
+              <a href='http://pauldijou.fr/blog/tags/en/'>en</a>
             </span>
             <span class='tag tag-3'>
-              <a href='/blog/tags/fr/'>fr</a>
+              <a href='http://pauldijou.fr/blog/tags/fr/'>fr</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/jquery/'>jquery</a>
+              <a href='http://pauldijou.fr/blog/tags/jquery/'>jquery</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/jsf/'>jsf</a>
+              <a href='http://pauldijou.fr/blog/tags/jsf/'>jsf</a>
             </span>
             <span class='tag tag-3'>
-              <a href='/blog/tags/richfaces/'>richfaces</a>
+              <a href='http://pauldijou.fr/blog/tags/richfaces/'>richfaces</a>
             </span>
           </div>
         </li>
@@ -325,25 +334,25 @@
         <li>
           <div class='tag-cloud'>
             <span class='tag tag-3'>
-              <a href='/blog/tags/bootstrap/'>bootstrap</a>
+              <a href='http://pauldijou.fr/blog/tags/bootstrap/'>bootstrap</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/cdk/'>cdk</a>
+              <a href='http://pauldijou.fr/blog/tags/cdk/'>cdk</a>
             </span>
             <span class='tag tag-6'>
-              <a href='/blog/tags/en/'>en</a>
+              <a href='http://pauldijou.fr/blog/tags/en/'>en</a>
             </span>
             <span class='tag tag-3'>
-              <a href='/blog/tags/fr/'>fr</a>
+              <a href='http://pauldijou.fr/blog/tags/fr/'>fr</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/jquery/'>jquery</a>
+              <a href='http://pauldijou.fr/blog/tags/jquery/'>jquery</a>
             </span>
             <span class='tag tag-0'>
-              <a href='/blog/tags/jsf/'>jsf</a>
+              <a href='http://pauldijou.fr/blog/tags/jsf/'>jsf</a>
             </span>
             <span class='tag tag-3'>
-              <a href='/blog/tags/richfaces/'>richfaces</a>
+              <a href='http://pauldijou.fr/blog/tags/richfaces/'>richfaces</a>
             </span>
           </div>
         </li>
