@@ -33,11 +33,11 @@
 </section>
 <section>
   <h2>Le plan</h2>
-  <div class='centered' style='width: 250px;'>
+  <div class='centered' style='width: 300px;'>
     <ul>
-      <li>Le Bootstrap</li>
-      <li>Le cinq</li>
-      <li>L'au-delà</li>
+      <li>Bootstrap</li>
+      <li>Vers RichFaces 5...</li>
+      <li>Et au-delà !</li>
     </ul>
     <img src='/slides/assets/20121108/buzz.png' style='width:500px;' />
   </div>
@@ -46,13 +46,13 @@
   <h2>A quicky by...</h2>
   <p>Paul Dijou</p>
   <p>Juste développeur...</p>
-  <p>Totalement sans emploi</p>
+  <p>Contributeur RichFaces</p>
   <p>
     <img src='/slides/assets/20121108/codefood.jpg' style='float:right;width:450px;' />
   </p>
 </section>
 <section>
-  <h1>Le Bootstrap</h1>
+  <h1>Bootstrap</h1>
 </section>
 <section>
   <h2>This is Bootstrap!</h2>
@@ -149,27 +149,39 @@
 </section>
 <section>
   <h2>RichFaces CDK</h2>
+  <p>A partir de :</p>
   <ul>
-    <li>Le composant : Abstract[Nom]</li>
-    <li>Son renderer : [Nom]RendererBase</li>
+    <li>L'API du composant : Abstract[Nom]</li>
+    <li>Son renderer abstrait : [Nom]RendererBase</li>
     <li>Son template : [nom].template.xml</li>
+  </ul>
+  <p>Va générer :</p>
+  <ul>
+    <li>Le composant : UI[Nom]</li>
+    <li>Son renderer : [Nom]Renderer</li>
+    <li>La taglib des composants : [nom].taglib.xml</li>
+    <li>Toutes les ressources correctement packagées</li>
   </ul>
 </section>
 <section>
-  <h2>Le composant</h2>
+  <h2>L'API du composant</h2>
   <pre class='prettyprint'>@JsfComponent(&#x000A;    type = AbstractLabel.COMPONENT_TYPE,&#x000A;    family = AbstractLabel.COMPONENT_FAMILY,&#x000A;    renderer = @JsfRenderer(type = LabelRendererBase.RENDERER_TYPE),&#x000A;    tag = @Tag(name="label"))&#x000A;public abstract class AbstractLabel extends UIOutput implements CoreProps {&#x000A;    public static final String COMPONENT_FAMILY = "org.richfaces.bootstrap.Label";&#x000A;    public static final String COMPONENT_TYPE = "org.richfaces.bootstrap.Label";&#x000A;    &#x000A;    @Attribute&#x000A;    public abstract String getSeverity(); &#x000A;}&#x000A;</pre>
 </section>
 <section>
-  <h2>Son renderer</h2>
+  <h2>Son renderer abstrait</h2>
   <pre class='prettyprint'>@ResourceDependencies({&#x000A;  @ResourceDependency(library = "org.richfaces", name = "ajax.reslib"),&#x000A;  @ResourceDependency(library = "org.richfaces", name = "base-component.reslib"),&#x000A;  @ResourceDependency(library = "org.richfaces", name = "bootstrap-css.reslib")})&#x000A;public abstract class LabelRendererBase extends RendererBase {&#x000A;    public static final String RENDERER_TYPE = "org.richfaces.bootstrap.LabelRenderer";&#x000A;}&#x000A;</pre>
 </section>
 <section>
   <h2>Son template</h2>
-  <pre class='prettyprint'>&lt;cc:implementation&gt;&#x000A;    &lt;span id=&quot;#{clientId}&quot;&#x000A;        class=&quot;label #{component.severity != null ? component.severity.labelClass : &#039;&#039;} #{component.attributes[&#039;styleClass&#039;]}&quot;&#x000A;        cdk:passThrough=&quot;style&quot;&gt;&#x000A;        &lt;c:if test=&quot;#{component.value != null and !component.value.equals(&#039;&#039;)}&quot;&gt;#{component.value}&lt;/c:if&gt;&#x000A;        &lt;cdk:body /&gt;&#x000A;    &lt;/span&gt;&#x000A;&lt;/cc:implementation&gt;&#x000A;</pre>
+  <pre class='prettyprint'>&lt;cc:implementation&gt;&#x000A;    &lt;span id=&quot;#{clientId}&quot;&#x000A;        class=&quot;label #{component.severity != null ? 'label-'.concat(component.severity) : &#039;&#039;} #{component.attributes[&#039;styleClass&#039;]}&quot;&#x000A;        cdk:passThrough=&quot;style&quot;&gt;&#x000A;        &lt;c:if test=&quot;#{component.value != null and !component.value.equals(&#039;&#039;)}&quot;&gt;#{component.value}&lt;/c:if&gt;&#x000A;        &lt;cdk:body /&gt;&#x000A;    &lt;/span&gt;&#x000A;&lt;/cc:implementation&gt;&#x000A;</pre>
 </section>
 <section>
   <h2>Résultat</h2>
+  <h3>Code JSF</h3>
   <pre class='prettyprint'>&lt;b:label severity=&quot;success&quot;&gt;&#x000A;  C'est un véritable succès !&#x000A;&lt;/b:label&gt;</pre>
+  <h3>Code HTML généré</h3>
+  <pre class='prettyprint'>&lt;span class=&quot;label label-success&quot;&gt;&#x000A;  C'est un véritable succès !&#x000A;&lt;/span&gt;</pre>
+  <h3>Rendu visuel</h3>
   <p>
     <span class='label label-success'>C'est un véritable succès !</span>
   </p>
@@ -178,6 +190,7 @@
   <h2>Où en est-on ?</h2>
   <ul>
     <li>Presque tous les composants Bootstrap ont été portés</li>
+    <li>Responsive design</li>
     <li>Support des fonctions JavaScript</li>
     <li>Support de LESS</li>
     <li>Nouvelle approche sémantique</li>
@@ -188,7 +201,7 @@
   <img src='/slides/assets/20121108/chantier.jpg' style='float:right;' />
 </section>
 <section>
-  <h1>Le cinq</h1>
+  <h1>Vers RichFaces 5...</h1>
   <div style='text-align:center;margin-top:40px;'>
     <span class='label label-important'>Top-secret (et non officiel)</span>
   </div>
@@ -207,6 +220,10 @@
     </li>
     <li>Support de LESS</li>
     <li>Nouveau skin basé sur Bootstrap</li>
+    <li>
+      <span class='label label-warning'>Quand ?</span>
+      Fin Q1 2013... Début Q2 2013
+    </li>
   </ul>
 </section>
 <section>
@@ -215,34 +232,31 @@
     <li>Intégration progressive des composants RichFaces Bootstrap</li>
     <li>Ajout de nouvelles fonctionnalités</li>
     <li>JSF 2.2</li>
+    <li>
+      <span class='label label-warning'>Quand ?</span>
+      Rapidement. Approche itérative avec releases fréquentes prévue.
+    </li>
   </ul>
 </section>
 <section>
-  <h1>L'au-delà</h1>
+  <h1>Et au-delà !</h1>
 </section>
 <section>
-  <h2>jQuery UI & CO. (plugins)</h2>
+  <h2>En approche...</h2>
   <ul>
-    <li>Nouveaux effets</li>
-    <li>Nouvelles fonctionnalités</li>
     <li>
-      Nouveaux composants
+      jQuery UI & CO. (plugins)
       <ul>
         <li>PickList : jQuery UI</li>
         <li>OrderingList : jQuery UI</li>
         <li>Autocomplete: Select2</li>
       </ul>
     </li>
-  </ul>
-</section>
-<section>
-  <h2>Nouvelles fonctionnalités</h2>
-  <ul>
     <li>Surcharge de la valeur par défaut d'un attribut JSF</li>
   </ul>
 </section>
 <section>
-  <h2>Vers JSF et au-delà</h2>
+  <h2>Vers JSF et au-delà !</h2>
   <p>Composants visuels => standalone widgets</p>
   <p>Peuvent donc être utilisés dans pratiquement n'importe quel projet...</p>
   <ul>
@@ -254,7 +268,11 @@
 </section>
 <section>
   <h2>Example : PickList</h2>
-  <pre class='prettyprint'>&lt;script&gt;var pluginOptions1 = {header: &quot;List layout&quot;};&lt;/script&gt;&#x000A;&#x000A;&lt;div id=&quot;pickListDemo&quot;&gt;&#x000A;    &lt;ol class=&quot;source&quot;&gt;&#x000A;        &lt;li data-key=&quot;1&quot; class=&quot;num&quot;&gt;Item 1&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;2&quot; class=&quot;num&quot;&gt;Item 2&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;3&quot; class=&quot;num&quot;&gt;Item 3&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;4&quot; class=&quot;num&quot;&gt;Item 4&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;5&quot; class=&quot;num&quot;&gt;Item 5&lt;/li&gt;&#x000A;    &lt;/ol&gt;&#x000A;    &lt;ol class=&quot;target&quot;&gt;&#x000A;        &lt;li data-key=&quot;6&quot; class=&quot;num&quot;&gt;Item 6&lt;/li&gt;&#x000A;    &lt;/ol&gt;&#x000A;&lt;/div&gt;&#x000A;&#x000A;&lt;script&gt;$(&quot;#pickListDemo&quot;).pickList(pluginOptions1);&lt;/script&gt;&#x000A;</pre>
+  <pre class='prettyprint'>&lt;script&gt;var pluginOptions1 = {header: &quot;List layout&quot;};&lt;/script&gt;&#x000A;&#x000A;&lt;div id=&quot;pickListDemo&quot;&gt;&#x000A;    &lt;ol class=&quot;source&quot;&gt;&#x000A;        &lt;li data-key=&quot;1&quot; class=&quot;num&quot;&gt;Item 1&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;2&quot; class=&quot;num&quot;&gt;Item 2&lt;/li&gt;&#x000A;        &lt;li data-key=&quot;3&quot; class=&quot;num&quot;&gt;Item 3&lt;/li&gt;&#x000A;    &lt;/ol&gt;&#x000A;    &lt;ol class=&quot;target&quot;&gt;&#x000A;        &lt;li data-key=&quot;4&quot; class=&quot;num&quot;&gt;Item 4&lt;/li&gt;&#x000A;    &lt;/ol&gt;&#x000A;&lt;/div&gt;&#x000A;&#x000A;&lt;script&gt;$(&quot;#pickListDemo&quot;).pickList(pluginOptions1);&lt;/script&gt;&#x000A;</pre>
+</section>
+<section>
+  <h2>Example : PickList</h2>
+  <img src='/slides/assets/20121108/picklist.png' style='margin:0px auto;width:800px;' />
 </section>
 <section>
   <h2>Ressources</h2>
@@ -282,6 +300,7 @@
     <a href='https://github.com/paulrouget/dzslides/'>DZSlides :</a>
     https://github.com/paulrouget/dzslides/
   </p>
+  <h2>Questions ?</h2>
 </section>
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' />
 <div id='progress-bar'></div>
