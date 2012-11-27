@@ -17,7 +17,7 @@ h1 {
   margin-top: 10%;
   font-size: 80px;
   line-height: 100px;
-  text-shadow: 0 1px 0 #CCC, 0 2px 0 #C9C9C9, 0 3px 0 #BBB, 0 4px 0 #B9B9B9, 0 5px 0 #AAA, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 20px 20px rgba(0, 0, 0, .15);
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -28,6 +28,20 @@ h2 {
   margin-top: 20px;
 }
 
+section {
+  padding: 0px 20px;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  section {
+    padding: 0px 15px;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  section {
+    padding: 0px 10px;
+  }
+}
 .centered {
   margin: 0px auto;
 }
@@ -52,16 +66,16 @@ ul > li > ul {
 /* -------------------------------------------------------------------------------- */
 /* Core CSS */
 /* -------------------------------------------------------------------------------- */
-
-html,.view body {
+html, .view body {
   counter-reset: slideidx;
 }
 
-body,.view section {
-  border-radius: 12px
+body, .view section {
+  border-radius: 12px;
 }
+
 /* A section is a slide. It's size is 800x600, and this will never change */
-section,.view head>title {
+section, .view head > title {
   font-family: 'Oswald', arial, serif;
 }
 
@@ -88,11 +102,11 @@ figure {
   height: 100%;
 }
 
-figure>* {
+figure > * {
   position: absolute;
 }
 
-figure>img,figure>video {
+figure > img, figure > video {
   width: 100%;
   height: 100%;
 }
@@ -136,29 +150,30 @@ section {
 section {
   left: -150%;
 }
+
 /* Now */
 section[aria-selected] {
   left: 0;
 }
+
 /* After */
-section[aria-selected]  ~ section {
-  left: +150%;
+section[aria-selected] ~ section {
+  left: 150%;
 }
 
 /* Incremental elements */
-
 /* By default, visible */
-.incremental>* {
+.incremental > * {
   opacity: 1;
 }
 
 /* The current item */
-.incremental>*[aria-selected] {
+.incremental > *[aria-selected] {
   opacity: 1;
 }
 
 /* The items to-be-selected */
-.incremental>*[aria-selected]  ~ * {
+.incremental > *[aria-selected] ~ * {
   opacity: 0;
 }
 
@@ -208,8 +223,8 @@ body {
   -ms-transform: none !important;
 }
 
-.view head,.view head>title {
-  display: block
+.view head, .view head > title {
+  display: block;
 }
 
 section {
@@ -226,14 +241,14 @@ section {
   height: 600px;
   margin: -150px -200px;
   float: left;
-  transform: scale(.4);
-  -moz-transform: scale(.4);
-  -webkit-transform: scale(.4);
-  -o-transform: scale(.4);
-  -ms-transform: scale(.4);
+  transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  -webkit-transform: scale(0.4);
+  -o-transform: scale(0.4);
+  -ms-transform: scale(0.4);
 }
 
-.view section>* {
+.view section > * {
   pointer-events: none;
 }
 

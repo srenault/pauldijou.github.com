@@ -2,13 +2,65 @@
 <feed xml:lang='en-US' xmlns='http://www.w3.org/2005/Atom'>
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2012-08-07T00:00:00Z</updated>
+  <updated>2012-11-27T17:17:36+01:00</updated>
   <link href='http://pauldijou.fr/feed.atom' rel='self' type='application/atom+xml' />
   <link href='http://pauldijou.fr/' rel='alternate' type='text/html' />
   <entry>
+    <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
+    <title>Some POCs to share</title>
+    <updated>2012-11-27T17:17:36+01:00</updated>
+    <published>2012-11-27T00:00:00Z</published>
+    <link href='http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html' rel='alternate' type='text/html' />
+    <summary>
+      
+English version
+Version Française
+
+
+
+Some POCs
+Hi there,
+I&#8217;ve been a bit busy lately but I&#8217;m back on game. Looking for a job in Paris, I&#8217;ve been asked to do some code over more or less funny subjects and now that it&#8217;s done, I will share them, maybe it could help people to see some code around some technologies. It&#8217;s not at all perfect code, more experiments I&#8217;ve done.
+Mowing is mainly a CoffeeScript project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it&#8217;s quite cool. You...
+    </summary>
+    <content type='html'>
+      &lt;ul class=&quot;nav nav-tabs&quot;&gt;
+&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#2012-11-27-some-pocs-to-share-en&quot; data-toggle=&quot;tab&quot;&gt;English version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2012-11-27-some-pocs-to-share-fr&quot; data-toggle=&quot;tab&quot;&gt;Version Française&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;tab-content&quot;&gt;
+&lt;div class=&quot;tab-pane active&quot; id=&quot;2012-11-27-some-pocs-to-share-en&quot;&gt;
+&lt;h3&gt;Some POCs&lt;/h3&gt;
+&lt;p&gt;Hi there,&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ve been a bit busy lately but I&amp;#8217;m back on game. Looking for a job in Paris, I&amp;#8217;ve been asked to do some code over more or less funny subjects and now that it&amp;#8217;s done, I will share them, maybe it could help people to see some code around some technologies. It&amp;#8217;s not at all perfect code, more experiments I&amp;#8217;ve done.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mowing&lt;/strong&gt; is mainly a &lt;code&gt;CoffeeScript&lt;/code&gt; project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it&amp;#8217;s quite cool. You can see &lt;a href=&quot;http://pauldijou.fr/mowing/&quot;&gt;the result here&lt;/a&gt; (don&amp;#8217;t over do it too large grids). The source code is &lt;a href=&quot;https://github.com/pauldijou/mowing/&quot;&gt;here on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mowing-java&lt;/strong&gt; is the &lt;code&gt;Java&lt;/code&gt; version of &lt;strong&gt;Mowing&lt;/strong&gt;. So in fact, it&amp;#8217;s nearly the same syntax since you can create class in CoffeeScript but this one runs on a &lt;span class=&quot;caps&quot;&gt;JVM&lt;/span&gt;. &lt;a href=&quot;https://github.com/pauldijou/mowing-java&quot;&gt;See here&lt;/a&gt; for source code.&lt;/p&gt;
+&lt;p&gt;Finally, &lt;strong&gt;GSearch&lt;/strong&gt; is an &lt;code&gt;AngularJS&lt;/code&gt; application build using &lt;code&gt;Yeoman&lt;/code&gt;. Its goal is to plug on GitHub &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; and allow you to search through repositories and users and display informations and stats about them. &lt;a href=&quot;http://pauldijou.fr/gsearch/&quot;&gt;Here is the result&lt;/a&gt; and &lt;a href=&quot;https://github.com/pauldijou/gsearch/&quot;&gt;go there&lt;/a&gt; for source code.&lt;/p&gt;
+&lt;p&gt;Of course, &lt;strong&gt;any feedback&lt;/strong&gt; is welcome! I can be bugs, features, questions, anything&amp;#8230;&lt;/p&gt;
+&lt;h3&gt;NigthHacking Tour 2012&lt;/h3&gt;
+&lt;p&gt;I&amp;#8217;ve given a small quicky about &lt;code&gt;RichFaces Bootstrap&lt;/code&gt; and &lt;code&gt;RichFaces 5&lt;/code&gt; on Paris a few weeks ago. In order to share it, this site now has a &lt;a href=&quot;http://pauldijou.fr/slides/&quot;&gt;Slides section&lt;/a&gt; where you will be able to see all my last presentations (well, only one for now&amp;#8230; and in French, sorry).&lt;/p&gt;
+&lt;h3&gt;Are you in Paris?&lt;/h3&gt;
+&lt;p&gt;Let&amp;#8217;s finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;tab-pane&quot; id=&quot;2012-11-27-some-pocs-to-share-fr&quot;&gt;
+&lt;h3&gt;Quelques POCs&lt;/h3&gt;
+&lt;p&gt;J&amp;#8217;ai été un peu occupé ces derniers temps mais je suis de retour. Pendant ma recherche d&amp;#8217;emploi sur Paris, on m&amp;#8217;a demandé de réaliser quelques démos de code sur des sujets plus ou moins funs. Maintenant que c&amp;#8217;est fait, je me suis dit que je pourrais les partager, peut être que cela pourrait intéresser quelques personnes de voir du code autour de certaines technologies. Ledit code est loin d&amp;#8217;être parfait, il s&amp;#8217;agit plus d&amp;#8217;expériences que j&amp;#8217;ai faites.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mowing&lt;/strong&gt; est principalement réalisé en &lt;strong&gt;CoffeeScript&lt;/strong&gt; et son but est de donner des ordres à des tondeuses automatiques avant de les regarder tondre. L&amp;#8217;intérêt était de tester cette nouvelle syntaxe autour de JavaScript et je dois bien avouer que j&amp;#8217;ai été relativement séduit. Vous pouvez voir &lt;a href=&quot;http://pauldijou.fr/mowing/&quot;&gt;le résultat&lt;/a&gt; (n&amp;#8217;allez pas tout casser avec des grilles trop larges). Le code source est &lt;a href=&quot;https://github.com/pauldijou/mowing&quot;&gt;ici, sur GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mowing-java&lt;/strong&gt; est la version &lt;strong&gt;Java&lt;/strong&gt; de *Mowing&amp;quot;. Au final, c&amp;#8217;est pratiquement la même syntaxe puisque vous pouvez créer des classes en CoffeeScript mais cette version tourne sur la &lt;span class=&quot;caps&quot;&gt;JVM&lt;/span&gt;. Vous pouvez &lt;a href=&quot;https://github.com/pauldijou/mowing-java/&quot;&gt;regarder ici&lt;/a&gt; pour le code source.&lt;/p&gt;
+&lt;p&gt;Enfin, &lt;strong&gt;GSearch&lt;/strong&gt; est une application &lt;strong&gt;AngularJS&lt;/strong&gt; organisée grâce à l&amp;#8217;outil &lt;strong&gt;Yeoman&lt;/strong&gt;. Son but est de se connecter aux &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; de GitHub afin de vous permettre d&amp;#8217;effectuer des recherches sur les répertoires et les utilisateurs ainsi qu&amp;#8217;afficher des informations et des statistiques à leur sujet. &lt;a href=&quot;http://pauldijou.fr/gsearch/&quot;&gt;C&amp;#8217;est ici pour le résultat&lt;/a&gt; et &lt;a href=&quot;https://github.com/pauldijou/gsearch/&quot;&gt;plutôt par là&lt;/a&gt; pour le code source.&lt;/p&gt;
+&lt;p&gt;Bien entendu, &lt;strong&gt;les retours&lt;/strong&gt; sont les bienvenus, qu&amp;#8217;il s&amp;#8217;agisse de bugs, fonctionnalités, questions, ou n&amp;#8217;importe quoi d&amp;#8217;autre&amp;#8230;&lt;/p&gt;
+&lt;h3&gt;NigthHacking Tour 2012&lt;/h3&gt;
+&lt;p&gt;J&amp;#8217;ai eu la chance d&amp;#8217;y présenter un petit quicky sur &lt;strong&gt;RichFaces Bootstrap&lt;/strong&gt; et &lt;strong&gt;RichFaces 5&lt;/strong&gt; sur Paris il y a quelques semaines. Afin de partager cela, ce site possède désormais une &lt;a href=&quot;http://pauldijou.fr/slides/&quot;&gt;section Slides&lt;/a&gt; qui contient toutes mes dernières présentations (enfin, seulement celle-ci pour le moment&amp;#8230; mais en français au moins !).&lt;/p&gt;
+&lt;h3&gt;Du côté de Paris ?&lt;/h3&gt;
+&lt;p&gt;Je vais terminer avec une note personnelle. Il s&amp;#8217;avère que je vais vivre sur Paris à partir de maintenant et pour quelques temps. Donc si vous êtes dans le coin ou juste de passage et que vous voulez boire une bière tout en discutant de Java EE, HTML5, RichFaces ou n&amp;#8217;importe quel autre sujet sympa, n&amp;#8217;hésitez pas à me le faire savoir ! De même, si vous donnez des conférences ou réalisez des dojos ou des katas dans les environs, faites le moi savoir que je puisse venir au prochain. Merci d&amp;#8217;avance.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    </content>
+  </entry>
+  <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2012-08-07T00:00:00Z</updated>
+    <updated>2012-11-27T14:13:45+01:00</updated>
     <published>2012-08-07T00:00:00Z</published>
     <link href='http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html' rel='alternate' type='text/html' />
     <summary>
@@ -84,7 +136,7 @@ Semantic components are a brand new concept. I need to present it first so I can
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
     <title>News about RichFaces CDK</title>
-    <updated>2012-08-01T00:00:00Z</updated>
+    <updated>2012-11-27T14:13:45+01:00</updated>
     <published>2012-08-01T00:00:00Z</published>
     <link href='http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html' rel='alternate' type='text/html' />
     <summary>
@@ -134,7 +186,7 @@ Fragments are small portions of code inside the template that are defined outsid
   <entry>
     <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2012-05-08T00:00:00Z</updated>
+    <updated>2012-11-27T14:13:45+01:00</updated>
     <published>2012-05-08T00:00:00Z</published>
     <link href='http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html' rel='alternate' type='text/html' />
     <summary>
