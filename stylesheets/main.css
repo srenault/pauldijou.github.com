@@ -3359,7 +3359,7 @@ a.label {
   text-align: center;
 }
 .menu a {
-  padding: 15px 10px;
+  padding: 15px 5px;
   margin-left: -15px;
   margin-right: -15px;
   display: block;
@@ -3377,6 +3377,9 @@ a.label {
   display: none;
 }
 @media (min-width: 992px) {
+  .menu a {
+    padding: 15px 5px;
+  }
   .menu .nav-label {
     display: inline-block;
     vertical-align: top;
@@ -3895,9 +3898,16 @@ a:focus {
 }
 .contact .button {
   margin-top: 20px;
+  width: 100%;
 }
-.contact .button + .button {
-  margin-right: 20px;
+@media (min-width: 992px) {
+  .contact .button {
+    float: right;
+    width: auto;
+  }
+  .contact .button + .button {
+    margin-right: 20px;
+  }
 }
 .contact .control-group {
   margin-bottom: 20px;
