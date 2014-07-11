@@ -3154,8 +3154,8 @@ body {
   font-family: 'Lato', sans-serif;
 }
 .container {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @font-face {
   font-family: 'BirthOfAHero';
@@ -3648,6 +3648,8 @@ a:focus {
 }
 .post {
   padding-bottom: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .post h2,
 .post h3,
@@ -3659,7 +3661,6 @@ a:focus {
   max-width: 830px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
 }
 .post h2 {
   text-align: center;
