@@ -1,468 +1,243 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='no-cache' http-equiv='pragma' />
-    <meta content='no-cache' http-equiv='cache-control' />
-    <meta content='0' http-equiv='expires' />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
     <title>
-      Paul Dijou / Computer Science Engineer
+      Paul Dijou
     </title>
-    <link href='http://pauldijou.fr/stylesheets/style.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <link href="http://localhost:4242/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="http://localhost:4242/stylesheets/main.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <!--[if lt IE 8]>
-      <link href='http://pauldijou.fr/stylesheets/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
+      <link href="http://localhost:4242/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script src='http://pauldijou.fr/javascripts/jquery.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/bootstrap.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/prettify.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/main.js' type='text/javascript'></script>
-    <!--[if lt IE 9]>
-      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
-    <![endif]-->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
-  <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <header>
-  <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-    <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
-  </a>
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container'>
-        <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </a>
-        <a class='brand' href='/'>
-          Paul Dijou
-        </a>
-        <div class='nav-collapse'>
-          <ul class='nav'>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog/'>Blog</a>
-            </li>
-            <li>
-              <a href='/resume/'>Resume</a>
-            </li>
-            <li>
-              <a href='/projects/'>Projects</a>
-            </li>
-            <li>
-              <a href='/slides/'>Slides</a>
-            </li>
-            <li>
-              <a href='/about/'>About</a>
-            </li>
-            <li>
-              <a href='/todo/'>TODO</a>
-            </li>
-            <li>
-              <a href='/contact/'>Contact</a>
-            </li>
-          </ul>
+  <body>
+    <header class="menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="/">
+              <span class="fa fa-home fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Home
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/blog/">
+              <span class="fa fa-coffee fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Blog
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/resume/">
+              <span class="fa fa-code fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Resume
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/projects/">
+              <span class="fa fa-flask fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Projects
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/about/">
+              <span class="fa fa-user fa-2x fa-fw"></span>
+              <span class="nav-label">
+                About
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/contact/">
+              <span class="fa fa-envelope fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Contact
+              </span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      $(document).ready(function() {
-        var indexOfSharp = window.location.pathname.indexOf('#');
-        var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-        $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-      });
-    //]]>
-  </script>
-</header>
-<div class='container' id='container'>
-  <div class='row'>
-    <div class='span12'>
-      <div class='row'>
-  <div class='span9'>
-    <div class='posts'>
-      <article class='post'>
-  <h2>
-    <a href='/blog/2013/02/17/angularjs-routing-playframework/'>
-      AngularJS HTML5 routing on PlayFramework
-    </a>
-    <a class='twitter-share-button' data-text="Reading Paul Dijou's blog : AngularJS HTML5 routing on PlayFramework" data-url='http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/' href='https://twitter.com/share'>Tweet</a>
-  </h2>
-  <div class='meta'>
-    Posted by
-    <span class='authors'> Paul Dijou</span>
-    on
-    <span class='date'>Feb 17, 2013</span>
-    |
-     <a href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/#disqus_thread" data-disqus-identifier="a8663746cd47a55a1da0f18002d75aae0436c643">Comments</a>
-  </div>
-  <div class='content'>
-    <ul class="nav nav-tabs">
-<li class="active"><a href="#2013-02-17-angularjs-routing-playframework-en" data-toggle="tab">English version</a></li>
-<li><a href="#2013-02-17-angularjs-routing-playframework-fr" data-toggle="tab">Version Française</a></li>
-</ul>
-<div class="tab-content">
-<div class="tab-pane active" id="2013-02-17-angularjs-routing-playframework-en">
-<h3>The problem</h3>
-<p>AngularJS provides a nice <code>$location</code> service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html">History <span class="caps">API</span></a>. Since we love bleeding edge technologies, that&#8217;s obvious we want to use the History <span class="caps">API</span> if possible. Lucky us, it appears it&#8217;s quite easy to do so with a Play Framework application. Let&#8217;s see how to do that.</p>
-<p>The full code of the demo is available here: <a href="https://github.com/blogsamples/angularjs-play21-html5-routing">https://github.com/blogsamples/angularjs-play21-html5-routing</a></p>
-<h3>Simple configuration</h3>
-<p>Let&#8217;s keep things simple. Creating a new Play Framework application with <code>play new</code>. We will use a Scala application in this article, but it should as easy with a Java one. Then add AngularJS using <span class="caps">CDN</span> (see <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19">https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19</a>). Then we will create an Angular module for our app and enable the HTML5 routing mode which is disable by default.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">var app = angular.module("app", ["ngResource"])&#x000A;  .config(["$routeProvider", function($routeProvider) {&#x000A;      return $routeProvider.when("/", {&#x000A;        templateUrl: "/views/index",&#x000A;        controller: "AppCtrl"&#x000A;      }).otherwise({&#x000A;        redirectTo: "/"&#x000A;      });&#x000A;    }&#x000A;  ])&#x000A;  .config(["$locationProvider", function($locationProvider) {&#x000A;      return $locationProvider.html5Mode(true).hashPrefix("!");&#x000A;    }&#x000A;  ]);</code></pre>
-<p>Nice. Now we will make some modification to the default views generated by Play. We want a single-page application, which means our root url must map to a main page which will contains all resource dependencies and includes the <code>ng-view</code> of AngularJS. I&#8217;ve done that by editing the &#8220;main.scala.html&#8221; file as you can see here: <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html">https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html</a> and add a new Play route:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /                           controllers.Application.main(any = "none")</code></pre>
-<p>And a new <code>Action</code> in my Application controller:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">def main(any: String) = Action {&#x000A;  Ok(views.html.main())&#x000A;}</code></pre>
-<p>Wait. Why is there a String param for the main method? And why do we pass a default <code>any = "none"</code> value? It seems a bit useless&#8230; Fair enough, I will explain it later on the article, don&#8217;t mind it for now. So, we have our main page. Let&#8217;s add some content for the landing page. As we have specified in the AngularJS routing, our root url, which is defined with <code>$routeProvider.when("/", ...)</code> is pointing to <code>/views/index</code>. So we need a Play route for that&#8230; but before, let&#8217;s talk about all those routes.</p>
-<h3>Routes, routes, routes&#8230;</h3>
-<p>As we advance in our coding, we can see that the term &#8220;route&#8221; is used in different contexts. It&#8217;s important to fully understand them all. Play routes, which are defined in the <code>conf/routes</code> file, are the core of your application. It&#8217;s those routes which will answer to the <span class="caps">HTTP</span> requests, serving either <span class="caps">HTML</span>, <span class="caps">JSON</span>, or whatever. But you, as the developer, will be the only one to know about them. Users of your application will only use and see AngularJS routes, which are defined in your main module using the <code>$routeProvider</code>.</p>
-<p>The idea is that when a user land on your site, it should use AngularJS routing which will then use Play routes to load the template (= the content) of the page. So why not using the exact same url for both the AngularJS route and the templateUrl route? Well, in the case of the root, it&#8217;s obvious: the Play &#8220;/&#8221; route is already required for our main page. Ok. But in a more general case, could we do:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">$routeProvider.when("/page", {&#x000A;  templateUrl: "/page",&#x000A;  controller: "PageCtrl"&#x000A;})</code></pre>
-<p>Nope, you can&#8217;t. Well, that&#8217;s a small lie&#8230; you could do that, and it would work if your user <strong>always</strong> open your main page first. If he does that, then all AngularJS routing is loaded, and when the user will go to &#8220;/page&#8221; url, it will be catch by AngularJS which will ask for the &#8220;/page&#8221; on Play routes which will give him the content of the page. So what&#8217;s the problem? If you user <strong>directly</strong> land on the &#8220;/page&#8221; url, because he arrived for the first time on your application after having clicked on a link somewhere which was pointing at &#8220;/page&#8221;, then the Play route will be directly called since there is no AngularJS routing initialized at all&#8230; And that&#8217;s bad, right? The user would have the raw content of the page without any JavaScript or <span class="caps">CSS</span> from the main page. It&#8217;s a fail.</p>
-<p>In order to prevent that, I have chosen to use some conventions. There is nothing official, you can use your own, the only thing to keep in mind is that AngularJS routes and Play routes should <strong>never</strong> be equals. My solution to do that is to prefix all Play routes serving <span class="caps">HTML</span> with a &#8220;/views/&#8221; prefix, all Play routes serving <span class="caps">JSON</span> with a &#8220;/api/&#8221; prefix and, as it is by default, all Play routes serving resources with a &#8220;/assets/&#8221; prefix. Meaning I can now use all routes I want inside AngularJS routing but never starts them with one of those prefix.</p>
-<p>Of course, it will just modify the problem without solving it. Now, if a user land directly on &#8220;/page&#8221;, he will have a huge orange Play error telling him that the route doesn&#8217;t exist. As before, AngularJS routing isn&#8217;t loaded, so it&#8217;s Play routing which try to handle that and, since there is no longer any &#8220;/page&#8221; route in Play, it crash.</p>
-<p>So what&#8217;s the point of having different routes? The next trick is to redirect all unknow routes to our main page. By doing so, if the user land on &#8220;/page&#8221;, Play will say <span class="talk red">&#8220;I don&#8217;t know that route, go to the main page&#8221;</span>, so the user will indeed go to your main page, but then, all AngularJS routing will be loaded and super awesome AngularJS will say <span class="talk blue">&#8220;Hey, I do know that route, and I need the /views/page template&#8221;</span>, and then Play will respond <span class="talk red">&#8220;Oh yeah, I can serve you /views/page, here is the <span class="caps">HTML</span> to display&#8221;</span>, and your user will see the correct &#8220;/page1&#8221; content, even if he lands directly on it.</p>
-<p>Another question? Why didn&#8217;t we use this trick before and then have the same routes for both AngularJS and Play? Because it&#8217;s important that the trick apply only to unknow routes. We cannot redirect to the main page an existing Play route because it needs to serve its own content. So by using different routes, we can intercept AngularJS routes inside Play as &#8220;unknown routes&#8221; and redirect them to the main page so AngularJS can handle them. I hope I&#8217;m clear enough here, that might be the hardest part of the article. In order to achieve that, we just need to put a Play route at the end of the route file which intercept all routes and redirect them to the main page:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /*any                       controllers.Application.main(any)</code></pre>
-<p>And now you should understand why we had a <code>any: String</code> for our main page at the beginning.</p>
-<h3>First pages</h3>
-<p>Enough with all the theory, let&#8217;s do two concrete pages: creating &#8220;page1.scala.html&#8221; and &#8220;page2.scala.html&#8221; files with basic content (see source code, I&#8217;m using a template to stay <span class="caps">DRY</span> about the title and the menu but that&#8217;s not important), add then as Play routes (with a &#8220;/views/&#8221; as stated before) and also add them inside our controller:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;h2&gt;Page1&lt;/h2&gt;&#x000A;}</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /views/page1                controllers.Application.page1</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">def page1 = Action {&#x000A;  Ok(views.html.page1())&#x000A;}</code></pre>
-<p>And then add the AngularJS routing:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">.when("/page1", {&#x000A;  templateUrl: "/views/page1"&#x000A;})</code></pre>
-<p>That&#8217;s it. We can now create a link, using a <code>a</code> tag, to point to the url &#8220;/page1&#8221; and AngularJS will do the rest, loading the &#8220;/views/page1&#8221; template using Play route which will return the <span class="caps">HTML</span> code generated from our Scala template. Nice isn&#8217;t it? The url is correct: http://localhost:9000/page1, you can use the back button to return to the index page, no ugly hashbang, but all in Ajax with a single-page application.</p>
-<h3>Handling url parameters</h3>
-<p>So, we have our url working by using the History <span class="caps">API</span> thanks to the HTML5 mode of the AngularJS $routeProvider. But that&#8217;s only for raw url. What if we want to have dynamic parameters inside them? Just like <span class="caps">REST</span>, having url as &#8220;/colors/1&#8221; and &#8220;/colors/2&#8221; if we deal with colors (yeah, why not?). Do you think that&#8217;s easy? Well, you could, after all, both AngularJS and Play know how to handle parameters in their url. We could do something like:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">.when("/colors/:id", {&#x000A;  templateUrl: "/views/color/:id",&#x000A;  controller: "ColorCtrl"&#x000A;})</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /views/color/:id             controllers.Application.color(id: String)</code></pre>
-<p>Nope, we can&#8217;t. Why? Because the &#8220;templateUrl&#8221; cannot handle url parameters. It&#8217;s just a template. And of course, using <code>templateUrl: "/views/color"</code> will not pass any &#8220;id&#8221; parameter to the Play route. Damn&#8230;</p>
-<p>That&#8217;s not a problem in fact. Just keep to the AngularJS way of doing things: it&#8217;s not Play who should handle the data any longuer, it&#8217;s AngularJS who rules the world now, so you don&#8217;t need any params in your Scala code, just trust AngularJS. Ok, but we need a way to load the correct color depending on the id in the url right? Sure thing. It&#8217;s the role of AngularJS controller to that. That&#8217;s why there is a &#8220;ColorCtrl&#8221; along with our template, and guess what, the AngularJS controller know about the url params. Here is the code of the controller:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("ColorCtrl", ["$scope", "$routeParams", function($scope, $routeParams) {&#x000A;  // Thanks to scope inheritance, we can access the "db" from the AppCtrl scope&#x000A;  $scope.color = $scope.db[$routeParams.id];&#x000A;  if (!$scope.color) {&#x000A;    $scope.msg = "There is no color for id "+$routeParams.id;&#x000A;  } else {&#x000A;    $scope.msg = undefined;&#x000A;  }&#x000A;}])</code></pre>
-<p>And just for fun, I&#8217;ve defined the fake database in the &#8220;AppCtrl&#8221;:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("AppCtrl", ["$scope", function($scope) {&#x000A;  $scope.db = {&#x000A;    1: {&#x000A;      name: "black",&#x000A;      hex: "000000"&#x000A;    },&#x000A;    2: {&#x000A;      name: "white",&#x000A;      hex: "FFFFFF"&#x000A;    }&#x000A;  };&#x000A;}]);</code></pre>
-<p>So as we can see, using the <code>$routeParams</code> service, we can retrieve the url params and then load the correct color in the <code>$scope</code>. At the end, it&#8217;s just a matter of displaying that color in our view using AngularJS data-binding:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;Color {{color.name}}: # {{color.hex}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
-<p>And that&#8217;s it! you can now display some data depending of params inside your url (and show an error message in case the data doesn&#8217;t exist). Cool isn&#8217;t it?</p>
-<h3>Want more?</h3>
-<p>Oh God, you are still reading? You should already be able to do anything you need. But if you want, we can dive in a more complex example, using AngularJS <code>$resource</code> service and serve <span class="caps">JSON</span> from Play like a <span class="caps">REST</span> <span class="caps">API</span> would do. Sounds good for you? Ok, let&#8217;s do that. First, we will create a &#8220;Users&#8221; controller and it will have two methods: &#8220;all()&#8221; and &#8220;find(id: String)&#8221; which will return an Array of Json and a Json object representing our list of users and one particular user based on its id. I will not use a real database, but something like MongoDB would fit really good in there. Here is the code:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">package controllers</code>&#x000A;&#x000A;<code class="prettyprint linenums">import play.api._&#x000A;import play.api.mvc._&#x000A;import play.api.libs.json._</code>&#x000A;&#x000A;<code class="prettyprint linenums">object Users extends Controller {&#x000A;  val db = Json.arr(&#x000A;    Json.obj( "id" -&gt; "1", "name" -&gt; "John" ),&#x000A;    Json.obj( "id" -&gt; "2", "name" -&gt; "Suzanne" )&#x000A;  )</code>&#x000A;&#x000A;<code class="prettyprint linenums">  def all() = Action {&#x000A;    Ok(db)&#x000A;  }</code>&#x000A;&#x000A;<code class="prettyprint linenums">  def find(id: String) = Action {&#x000A;    Ok(db.value.filter(v =&gt; (v \ "id").as[JsString].value == id).headOption.getOrElse(new JsUndefined("")))&#x000A;  }&#x000A;}</code></pre>
-<p>If you don&#8217;t fully understand it, you can check the PlayFramework documentation about handling Json (<a href="http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests">http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests</a>). I am using the new Json <span class="caps">API</span> from Play 2.1 (<a href="http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package">http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package</a>). Next we need our &#8220;UserCtrl&#8221; which will use the <code>$resource</code> service to retrieve the data:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("UserCtrl", ["$scope", "$routeParams", "$resource", "apiUrl", function($scope, $routeParams, $resource, apiUrl) {&#x000A;  var Users = $resource(apiUrl + "/users/:id", {id:"@id"});</code>&#x000A;&#x000A;<code class="prettyprint linenums">  if($routeParams.id) {&#x000A;    $scope.user = Users.get({id: $routeParams.id}, function() {&#x000A;      if (!$scope.user.id) {&#x000A;        $scope.msg = "There is no user for id "+$routeParams.id;&#x000A;      } else {&#x000A;        $scope.msg = undefined;&#x000A;      }&#x000A;    });&#x000A;  } else {&#x000A;    $scope.users = Users.query();&#x000A;  }&#x000A;}])</code></pre>
-<p>To learn more about AngularJS $resource definition, see: <a href="http://docs.angularjs.org/api/ngResource.$resource">http://docs.angularjs.org/api/ngResource.$resource</a>. What is that &#8220;apiUrl&#8221; by the way? It&#8217;s a constant I&#8217;ve defined in my AngularJS app:</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">var app = angular.module("app", ["ngResource"])&#x000A;  .constant("apiUrl", "http://localhost:9000\:9000/api")</code></pre>
-<div class="alert alert-info"><strong>Pro tip</strong> Why is there the 9000 port twice? That&#8217;s because if we had written <code>http://localhost:9000/api</code>, AngularJS syntax would have analyzed that as a url with a dynamic parameter named &#8220;9000&#8221; because it&#8217;s placed right after a <code>:</code> character. So we need that strange syntax to tell AngularJS that this is not a parameter but a real value in our url.</div>
-<p>Next, we are creating our resource by extending this apiUrl with our routing &#8220;/users/:id&#8221;. This time, &#8220;:id&#8221; is a real parameter. We can now use &#8220;get&#8221; and &#8220;query&#8221; methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the <code>$scope</code>. We will need two Scala views: one for the list and one for the detail of course.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;h2&gt;Users&lt;/h2&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;ul&gt;&#x000A;    &lt;li data-ng-repeat="u in users"&gt;&#x000A;      &lt;a data-ng-href="/users/{{u.id}}"&gt;User# {{u.id}}: {{u.name}}&lt;/a&gt;&#x000A;    &lt;/li&gt;&#x000A;  &lt;/ul&gt;&#x000A;}</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;User# {{user.id}} {{user.name}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
-<p>And that&#8217;s it. We now have a list of users and links to each user detail, and all that data is fetch from a <span class="caps">REST</span> <span class="caps">API</span> using Json.</p>
-<div class="alert alert-info"><strong>Pro tip</strong> By the way, since our Play routes doesn&#8217;t clash with AngularJS routes, you can load them directly in your browser. It will works because the Play route handling the redirection to the main page is at the end of the route file, so any real Play route will be loaded before the redirection. If you have the demo running, check <a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a> and <a href="http://localhost:9000/api/users/1">http://localhost:9000/api/users/1</a> to see your <span class="caps">REST</span> <span class="caps">API</span> working nicely.</div>
-<h3>Conclusion</h3>
-<p>I hope this article will help you bootstrap your next awesome application using awesome tools like AngularJS and PlayFramework. Your next step (if that&#8217;s not already the case) would be to learn more about the new PlayFramework Json <span class="caps">API</span> so you can have typesafe Json (if I can say so). You would also probably need to plug a database on it. One choice could be a <a href="http://www.mongodb.org/">MongoDB</a> database since it can store raw Json, and interact with it using a nice driver like <a href="http://reactivemongo.org/">ReactiveMongo</a> if you want to go all the way down to asynchronous application.</p>
-<p>It&#8217;s up to you!</p>
-</div>
-<div class="tab-pane" id="2013-02-17-angularjs-routing-playframework-fr">
-<h3>Le problème</h3>
-<p>AngularJS fournit un service bien utile du nom de <code>$location</code> qui permet de gérer les urls et le routing de votre application. Il supporte à la fois un mode par défault utilisant un hashbang et un mode réellement HTML5 utilisant la nouvelle <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html">History <span class="caps">API</span></a>. Comme nous sommes partisants des technologies à la pointe, il est évident qu&#8217;il nous faut utiliser l&#8217;API History. Et comme nous sommes chanceux, c&#8217;est relativement simple de faire cela avec PlayFramework.</p>
-<p>Le code source de la démo est disponible ici : <a href="https://github.com/blogsamples/angularjs-play21-html5-routing">https://github.com/blogsamples/angularjs-play21-html5-routing</a></p>
-<h3>Simple configuration</h3>
-<p>Commençons par les bases en créant une nouvelle application Play Framework via la commande <code>play new</code>. Nous allons utiliser la version Scala dans cet article mais c&#8217;est tout aussi simple en Java. Une fois l&#8217;application générée, on va pouvoir ajouter AngularJS en utilisant un <span class="caps">CDN</span> (voir <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19">https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19</a>). Enfin, nous allons créer un module AngularJS pour configurer notre application et activer le routing HTML5 car il est désactivé par défaut.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">var app = angular.module("app", ["ngResource"])&#x000A;  .config(["$routeProvider", function($routeProvider) {&#x000A;      return $routeProvider.when("/", {&#x000A;        templateUrl: "/views/index",&#x000A;        controller: "AppCtrl"&#x000A;      }).otherwise({&#x000A;        redirectTo: "/"&#x000A;      });&#x000A;    }&#x000A;  ])&#x000A;  .config(["$locationProvider", function($locationProvider) {&#x000A;      return $locationProvider.html5Mode(true).hashPrefix("!");&#x000A;    }&#x000A;  ]);</code></pre>
-<p>Cool. On va maintenant modifier les vues générées par Play. Nous voulons réaliser une &#8220;single-page&#8221; application et pour cela, notre url racine doit pointer sur une page principale qui contiendra le chargement de toutes nos ressources et incluera la balise <code>ng-view</code> d&#8217;AngularJS. Pour cela, j&#8217;ai édité le fichier &#8220;main.scala.html&#8221; comme vous pouvez le voir ici : <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html">https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html</a> et j&#8217;ai ajouté la route Play suivante :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /                           controllers.Application.main(any = "none")</code></pre>
-<p>Ainsi qu&#8217;une nouvelle <code>Action</code> dans le controller Application :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">def main(any: String) = Action {&#x000A;  Ok(views.html.main())&#x000A;}</code></pre>
-<p>Attendez&#8230; Pourquoi y a-t-il un paramètre de type String dans la méthode main ? Et pourquoi lui passe-t-on in valeur par défault <code>any = "none"</code> ? Cela semble assez inutile&#8230; C&#8217;est pas faux. J&#8217;expliquerai plus tard le pourquoi du comment de ce paramètre, juste ignorez le pour le moment. Nous avons donc notre page principale. Ajoutons maintenant du contenu à la page d&#8217;accueil, laquelle est définie via <code>$routeProvider.when("/", ...)</code> qui pointe sur <code>/views/index</code>. Nous avons donc besoin d&#8217;une route Play pour cela&#8230; mais avant, parlons un peu de toutes ces routes.</p>
-<h3>Routes, routes, routes&#8230;</h3>
-<p>En même temps que notre code s&#8217;enrichit, on remarquera que le terme &#8220;route&#8221; est appliqué dans différents contextes. Il est très important de bien comprendre cette notion. Les routes Play, qui sont définies dans le fichier<code>conf/routes</code>, sont le socle de votre application. C&#8217;est elles qui vont répondre aux requêtes <span class="caps">HTTP</span> et retourner le code <span class="caps">HTML</span>, <span class="caps">JSON</span> ou n&#8217;importe quoi d&#8217;autre. Mais vous, en tant que développeur, serez le seul à les connaitre. Les utilisateurs de votre application, eux, ne verront et n&#8217;utiliseront que les routes AngularJS qui sont définies dans votre module via le service <code>$routeProvider</code>.</p>
-<p>L&#8217;idée est que lorsqu&#8217;un utilisateur arrive sur votre site, il va utiliser le routing d&#8217;AngularJS qui lui-même va utiliser les routes Play pour charger le template (= le contenu) de la page. Dans ce cas, pourquoi ne pas utiliser les mêmes urls pour à la fois AngularJS et Play ? Dans le cas de l&#8217;url racine, la réponse est évidente : la route &#8220;/&#8221; dans Play est déjà utilisée pour servir la page principale. D&#8217;accord, mais dans un cas plus général, est-ce qu&#8217;on ne pourrait pas avoir quelque chose de la forme :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">$routeProvider.when("/page", {&#x000A;  templateUrl: "/page",&#x000A;  controller: "PageCtrl"&#x000A;})</code></pre>
-<p>Et non, on ne peut pas. Enfin, c&#8217;est un peu un mensonge&#8230; vous pourriez faire cela, et ça fonctionnerait si votre utilisateur arrivait <strong>toujours</strong> sur la page principale en premier lieu. En faisant cela, il chargerait tout le routing d&#8217;AngularJS et, ensuite, quand il irait sur l&#8217;url &#8220;/page&#8221;, AngularJS se chargerait d&#8217;appeler la route Play &#8220;/page&#8221; et afficherait ainsi le bon contenu. Alors quel est le problème ? Si votre utilisateur arrivait <strong>directement</strong> sur l&#8217;url &#8220;/page&#8221;, parce qu&#8217;il aurait par exemple cliqué sur un lien depuis un autre site pointant directement sur &#8220;/page&#8221; dans votre site, et bien dans ce cas, le routing AngularJS ne serait pas du tout chargé&#8230; Et ça c&#8217;est mal parce que cela voudrait dire que c&#8217;est directement la route Play &#8220;/page&#8221; qui sera chargée, affichant le contenu de la page de manière brute sans aucune ressource JavaScript ou <span class="caps">CSS</span>. Gros fail.</p>
-<p>Afin d&#8217;éviter cela, j&#8217;ai opté pour quelques conventions. Il n&#8217;y a rien d&#8217;officiel bien entendu, vous pouvez utiliser les votres, la seule chose importante étant que les routes AngularJS et les routes Play ne doivent <strong>jamais</strong> être égales. Ma solution est de préfixer toutes les routes Play qui servent du <span class="caps">HTML</span> par &#8220;/views/&#8221;, toutes celles qui servent du <span class="caps">JSON</span> par &#8220;/api/&#8221; et, comme c&#8217;est le cas par défaut, toutes celles qui servent des ressources par &#8220;/assets/&#8221;. Je peux donc maintenant utiliser toutes les routes que je veux dans AngularJS tant qu&#8217;elles ne débutent pas par un de ces préfixes.</p>
-<p>Bien entendu, cela ne fait que déporter le problème. Maintenant, si un utilisateur arrive directement sur &#8220;/page&#8221;, il aura une grosse erreur orange de Play lui disant que la route n&#8217;existe pas. C&#8217;est exactement la même chose que précédemment : comme le routing AngularJS n&#8217;est pas encore chargé, c&#8217;est le routing Play qui essaye de s&#8217;occuper de la requête mais comme il n&#8217;y a plus de route &#8220;/page&#8221; dans Play, ça plante.</p>
-<p>Alors quoi ? Ca ne servait à rien de faire des routes différentes au final ? Pas de panique, j&#8217;ai une autre astuce à vous proposer ! Il s&#8217;agit de rediriger toutes les routes inconnues vers la page principale. Ce faisant, si l&#8217;utilisateur arrive directement sur l&#8217;url &#8220;/page&#8221;, Play va dire <span class="talk red">&#8220;Hey, je ne connais pas cette route, va sur la page principale&#8221;</span>, et l&#8217;utilisateur va donc être redirigé sur la page principale, et c&#8217;est alors que tout le routing AngularJS va être chargé et notre incroyable AngularJS va pouvoir s&#8217;exclamer <span class="talk blue">&#8220;Hey, moi je connais cette route, et d&#8217;ailleurs j&#8217;ai besoin du template /views/page pour l&#8217;afficher&#8221;</span>, ce à quoi Play va répondre <span class="talk red">&#8220;Ah ouais, je peux te filer /views/page, voici le code <span class="caps">HTML</span> à afficher&#8221;</span>, et votre utilisateur va ainsi afficher le bon contenu pour &#8220;/page&#8221;, et ce même s&#8217;il arrive directement sur cette url.</p>
-<p>Une autre question ? Pourquoi ne pas avoir utilisé cette astuce tout à l&#8217;heure et ainsi pouvoir avoir les mêmes routes pour AngularJS et Play ? Parce qu&#8217;il est important que l&#8217;astuce ne s&#8217;applique qu&#8217;aux routes inconnues de Play. En effet, on ne peut pas rediriger une route Play existante vers la page principale puisqu&#8217;elle a déjà son propre contenu à retourner. En utilisant des routes différentes entre AngularJS et Play, on peut ainsi considérer toutes les routes inconnues dans Play comme étant les routes AngularJS et les rediriger vers la page principale pour s&#8217;assurer que le routing AngularJS sera à même de les gérer. Pour faire cela, on a juste besoin de rajouter cette route à la toute fin du ficher de routes de Play :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /*any                       controllers.Application.main(any)</code></pre>
-<p>Maintenant, vous devriez comprendre pourquoi nous avions un paramètre <code>any: String</code> pour notre page principale précédemment.</p>
-<h3>Premières pages</h3>
-<p>Assez de théorie, créons quelques vraies pages ! Commençons par deux simples pages en créant les fichiers &#8220;page1.scala.html&#8221; et &#8220;page2.scala.html&#8221; avec un contenu minimaliste au possible (voir le code source, j&#8217;utilise un template pour rester <span class="caps">DRY</span> au niveau du titre et du menu mais c&#8217;est pas vraiment important), puis ajoutons les routes Play (avec un prefix &#8220;/views/&#8221; comme indiqué ci-dessus) ainsi que les méthodes dans notre controller Application :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;h2&gt;Page1&lt;/h2&gt;&#x000A;}</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /views/page1                controllers.Application.page1</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">def page1 = Action {&#x000A;  Ok(views.html.page1())&#x000A;}</code></pre>
-<p>Et bien sur le routing AngularJS correspondant :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">.when("/page1", {&#x000A;  templateUrl: "/views/page1"&#x000A;})</code></pre>
-<p>C&#8217;est tout. On peut maintenant créer des liens avec la balise <code>a</code> pour pointer sur l&#8217;url &#8220;/page1&#8221; et AngularJS se chargera de faire le reste, chargeant le template &#8220;/views/page1&#8221; via la route Play correspondante qui va retourner le code <span class="caps">HTML</span> généré via notre template Scala. Pas si mal n&#8217;est ce pas ? L&#8217;url est correct : http://localhost:9000/page1, vous pouvez utiliser le bouton retour de votre navigateur pour revenir à la page précédente, pas de hashbang tout moche, tout en Ajax dans une application &#8220;single-page&#8221;.</p>
-<h3>Gérer des paramètres dans les urls</h3>
-<p>Bon. Nous avons nos urls qui fonctionnent en utilisant l&#8217;API History grâce au mode HTML5 du $routeProvider d&#8217;AngularJS. C&#8217;est déjà pas mal. Mais il ne s&#8217;agit que d&#8217;urls fixes. Que se passerait-il si nous voulions introduire des paramètres dynamiques au sein de celles-ci ? Un peu comme faire du <span class="caps">REST</span>, avec des urls comme &#8220;/colors/1&#8221; et &#8220;/colors/2&#8221; si notre application gère des couleurs (oui, pourquoi pas ?). Est-ce que cela va être facile ? On pourrait le penser, après tout, AngularJS et Play savent tous les deux gérer de tels paramètres dans leurs urls. On pourrait tenter un truc comme :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">.when("/colors/:id", {&#x000A;  templateUrl: "/views/color/:id",&#x000A;  controller: "ColorCtrl"&#x000A;})</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">GET     /views/color/:id             controllers.Application.color(id: String)</code></pre>
-<p>Ou pas&#8230; En pratique, le &#8220;templateUrl&#8221; d&#8217;AngularJS ne gère pas les paramètres dans son url. Et bien entendu, utiliser <code>templateUrl: "/views/color"</code> ne va passer aucun paramètre à notre route Play. Pas de bol&#8230;</p>
-<p>En réalité, ce n&#8217;est pas vraiment un problème. Il faut juste revenir aux fondamentaux d&#8217;AngularJS : ce n&#8217;est pas à Play de gérer les données dans ses Action, c&#8217;est AngularJS qui domine le monde (enfin, l&#8217;application du moins), et vous n&#8217;avez donc pas besoin de paramètres dans votre code Scala, faites juste confiance à AngularJS. Après, on est d&#8217;accord qu&#8217;il va nous falloir un moyen de charger les bonnes données selon la valeur de l&#8217;url. Et c&#8217;est d&#8217;ailleurs le role des controllers AngularJS. C&#8217;est pour cela qu&#8217;il existe un &#8220;ColorCtrl&#8221; juste à côté de notre templateUrl. Et devinez quoi, les controllers AngularJS savent récupérer les paramètres au sein de vos urls. Voici comment faire :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("ColorCtrl", ["$scope", "$routeParams", function($scope, $routeParams) {&#x000A;  // Thanks to scope inheritance, we can access the "db" from the AppCtrl scope&#x000A;  $scope.color = $scope.db[$routeParams.id];&#x000A;  if (!$scope.color) {&#x000A;    $scope.msg = "There is no color for id "+$routeParams.id;&#x000A;  } else {&#x000A;    $scope.msg = undefined;&#x000A;  }&#x000A;}])</code></pre>
-<p>Et juste pour le fun, j&#8217;ai défini la fausse base de données dans le controller &#8220;AppCtrl&#8221; :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("AppCtrl", ["$scope", function($scope) {&#x000A;  $scope.db = {&#x000A;    1: {&#x000A;      name: "black",&#x000A;      hex: "000000"&#x000A;    },&#x000A;    2: {&#x000A;      name: "white",&#x000A;      hex: "FFFFFF"&#x000A;    }&#x000A;  };&#x000A;}]);</code></pre>
-<p>Comme on peut le voir, en utilisant le service <code>$routeParams</code>, on peut récupérer le paramètre de l&#8217;url et charger la bonne couleur dans le <code>$scope</code>. Au final, il ne reste plus qu&#8217;à afficher cela dans notre vue en utilisant le data-binding d&#8217;AngularJS :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;Color {{color.name}}: # {{color.hex}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
-<p>Et voilà ! Vous pouvez maintenant afficher différentes données selon les paramètres dans vos urls (et au passage également un message d&#8217;erreur dans le cas où l&#8217;url ne correspond à aucune donnée). Pas si mal n&#8217;est ce pas ?</p>
-<h3>Vous en voulez plus ?</h3>
-<p>Encore en train de lire ? Vous devriez déjà être en mesure de faire ce dont vous avez besoin. Mais si vous le souhaitez, on peut aborder un exemple un peu plus complexe qui utiliserait le service <code>$resource</code> d&#8217;AngularJS tout en servant du <span class="caps">JSON</span> depuis Play comme le ferait une <span class="caps">API</span> <span class="caps">REST</span>. Ca vous tente ? Ok, faisons cela. En premier lieu, on va créer un nouveau controller &#8220;Users&#8221; qui aura deux méthodes &#8220;all()&#8221; et &#8220;find(id: String)&#8221; qui retourneront réciproquement un Array de <span class="caps">JSON</span> et un objet <span class="caps">JSON</span> correspondant à la liste de nos utilisateurs et à un utilisateur en particulier basé sur son id. Je ne vais pas utiliser une vraie base de données mais un truc comme MongoDB irait assez bien dans ce cas. Voici le code :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">package controllers</code>&#x000A;&#x000A;<code class="prettyprint linenums">import play.api._&#x000A;import play.api.mvc._&#x000A;import play.api.libs.json._</code>&#x000A;&#x000A;<code class="prettyprint linenums">object Users extends Controller {&#x000A;  val db = Json.arr(&#x000A;    Json.obj( "id" -&gt; "1", "name" -&gt; "John" ),&#x000A;    Json.obj( "id" -&gt; "2", "name" -&gt; "Suzanne" )&#x000A;  )</code>&#x000A;&#x000A;<code class="prettyprint linenums">  def all() = Action {&#x000A;    Ok(db)&#x000A;  }</code>&#x000A;&#x000A;<code class="prettyprint linenums">  def find(id: String) = Action {&#x000A;    Ok(db.value.filter(v =&gt; (v \ "id").as[JsString].value == id).headOption.getOrElse(new JsUndefined("")))&#x000A;  }&#x000A;}</code></pre>
-<p>Si vous ne comprenez pas complètement le code, vous pouvez lire la documentation de PlayFramework sur comment gérer du <span class="caps">JSON</span> dans les requêtes (<a href="http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests">http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests</a>). J&#8217;utilise la nouvelle <span class="caps">API</span> <span class="caps">JSON</span> de Play 2.1 (<a href="http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package">http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package</a>). Nous allons ensuite avoir besoin d&#8217;un controller AngularJS du nom de &#8220;UserCtrl&#8221; qui utilisera le service <code>$resource</code> pour récupérer les données :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">app.controller("UserCtrl", ["$scope", "$routeParams", "$resource", "apiUrl", function($scope, $routeParams, $resource, apiUrl) {&#x000A;  var Users = $resource(apiUrl + "/users/:id", {id:"@id"});</code>&#x000A;&#x000A;<code class="prettyprint linenums">  if($routeParams.id) {&#x000A;    $scope.user = Users.get({id: $routeParams.id}, function() {&#x000A;      if (!$scope.user.id) {&#x000A;        $scope.msg = "There is no user for id "+$routeParams.id;&#x000A;      } else {&#x000A;        $scope.msg = undefined;&#x000A;      }&#x000A;    });&#x000A;  } else {&#x000A;    $scope.users = Users.query();&#x000A;  }&#x000A;}])</code></pre>
-<p>Pour en apprendre plus sur les possibilités du service $resource d&#8217;AngularJS, n&#8217;hésitez pas à lire <a href="http://docs.angularjs.org/api/ngResource.$resource">http://docs.angularjs.org/api/ngResource.$resource</a>. A quoi correspond cet &#8220;apiUrl&#8221; sorti de nul part ? C&#8217;est une constante que j&#8217;ai défini dans mon application AngularJS :</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">var app = angular.module("app", ["ngResource"])&#x000A;  .constant("apiUrl", "http://localhost:9000\:9000/api")</code></pre>
-<div class="alert alert-info"><strong>Pro tip</strong> Pourquoi est-ce que le port 9000 semble être présent deux fois ? Parce que si nous avions écrit <code>http://localhost:9000/api</code>, AngularJS aurait interprété cela comme un paramètre dynamique du nom de &#8220;9000&#8221; du fait qu&#8217;il soit place après un caractère <code>:</code>. Nous avons donc besoin de cette étrange syntaxe pour indiquer à AngularJS qui ne s&#8217;agit pas d&#8217;un paramètre mais bien d&#8217;une valeur fixe dans l&#8217;url.</div>
-<p>Ensuite, nous allons créer notre resource en étendant &#8220;apiUrl&#8221; par notre routing &#8220;/users/:id&#8221;. Cette fois-ci, &#8220;:id&#8221; est un vrai paramètre. Nous pouvons maintenant utiliser les méthodes &#8220;get&#8221; et &#8220;query&#8221; de la resource, lui passant ou non une valeur pour id, dans le but de récupérer notre code <span class="caps">JSON</span> et l&#8217;assigner dans le <code>$scope</code>. Nous aurons également besoin de deux vues Scala : une pour la liste des utilisateurs et une pour le détail d&#8217;un utilisateur.</p>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;h2&gt;Users&lt;/h2&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;ul&gt;&#x000A;    &lt;li data-ng-repeat="u in users"&gt;&#x000A;      &lt;a data-ng-href="/users/{{u.id}}"&gt;User# {{u.id}}: {{u.name}}&lt;/a&gt;&#x000A;    &lt;/li&gt;&#x000A;  &lt;/ul&gt;&#x000A;}</code></pre>
-<pre class="prettyprint linenums"><code class="prettyprint linenums">@()</code>&#x000A;&#x000A;<code class="prettyprint linenums">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="prettyprint linenums">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;User# {{user.id}} {{user.name}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
-<p>Et voilà. Nous avons maintenant un listing d&#8217;utilisateurs et pour chacun un lien vers son détail, tout cela grâce à des données <span class="caps">JSON</span> récupérées depuis une <span class="caps">API</span> <span class="caps">REST</span>.</p>
-<div class="alert alert-info"><strong>Pro tip</strong> Au passage, comme nos routes Play sont toutes différentes de nos routes AngularJS, vous pouvez sans soucis les charger directement dans votre navigateur. Comme la redirection d&#8217;une route inconnue vers la page principale n&#8217;arrive qu&#8217;en toute fin de votre fichier de routing, toutes les véritables routes Play seront chargées avant cette redirection. Si vous avez la démo qui tourne, affichez <a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a> et <a href="http://localhost:9000/api/users/1">http://localhost:9000/api/users/1</a> pour voir votre <span class="caps">API</span> <span class="caps">REST</span> qui fonctionne sans soucis.</div>
-<h3>Conclusion</h3>
-<p>J&#8217;espère que cet article vous aidera à démarrer votre prochaine géniale application en utilisant les incroyables outils que sont AngularJS et PlayFramework. Les prochaines étapes, le cas échéant, pourraient être d&#8217;en apprendre plus sur la nouvelle <span class="caps">API</span> <span class="caps">JSON</span> de PlayFramework afin d&#8217;avoir du <span class="caps">JSON</span> typé (si je puis dire). Vous pourriez aussi utiliser une vraie base de données. Un choix comme <a href="http://www.mongodb.org/">MongoDB</a> serait intéressant car cela permettrait de stocker directement le <span class="caps">JSON</span> tel quel, et vous pourriez intéragir avec en utilisant un driver comme <a href="http://reactivemongo.org/">ReactiveMongo</a> si vous voulez emprunter le chemin de l&#8217;asynchrone complet pour des applications non-bloquantes.</p>
-<p>Cela ne dépend que de vous !</p>
-</div>
-</div>
-  </div>
-  <div class='footer'>
-    <a href='/blog/2013/02/17/angularjs-routing-playframework/'>Permalink</a>
-    |
-     <a href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/#disqus_thread" data-disqus-identifier="a8663746cd47a55a1da0f18002d75aae0436c643">Comments</a>
-    |
-    <span class='tags'>
-      <i class='icon-tags'></i>
-      Tags :
-      <a class='tag' href='/blog/tags/en/'>en</a>
-      <a class='tag' href='/blog/tags/fr/'>fr</a>
-      <a class='tag' href='/blog/tags/angular/'>angular</a>
-      <a class='tag' href='/blog/tags/play/'>play</a>
-      <a class='tag' href='/blog/tags/html5/'>html5</a>
-    </span>
-  </div>
-</article>
-      
-                  <script type="text/javascript">
-                  var disqus_shortname = 'pauldijou';
-                  (function () {
-                    var s = document.createElement('script'); s.async = true;
-                    s.src = "http://disqus.com/forums/pauldijou/count.js";
-                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                  }());
-                  </script>
-    </div>
-    <div class='visible-phone'>
-      <ul class='pager'>
-        <li class='previous disabled'>
-          <a href='#'>Previous</a>
+    </header>
+    <div class="container">
+      <div class="posts">
+        <article class="post">
+          <h2>
+            <a href="/blog/2013/02/17/angularjs-routing-playframework/">
+              AngularJS HTML5 routing on PlayFramework
+            </a>
+          </h2>
+          <div class="meta">
+            Posted by
+            <span class="authors"> Paul Dijou</span>
+            on
+            <span class="date">Feb 17, 2013</span>
+            |
+            <span class="fa fa-comments fa-fw"></span>
+             <a href="http://localhost:4242/blog/2013/02/17/angularjs-routing-playframework/#disqus_thread" data-disqus-identifier="a8663746cd47a55a1da0f18002d75aae0436c643">Comments</a>
+          </div>
+          <div class="content">
+            <h3>The problem</h3>
+            <p>AngularJS provides a nice <code>$location</code> service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html">History <span class="caps">API</span></a>. Since we love bleeding edge technologies, that&#8217;s obvious we want to use the History <span class="caps">API</span> if possible. Lucky us, it appears it&#8217;s quite easy to do so with a Play Framework application. Let&#8217;s see how to do that.</p>
+            <p>The full code of the demo is available here: <a href="https://github.com/blogsamples/angularjs-play21-html5-routing">https://github.com/blogsamples/angularjs-play21-html5-routing</a></p>
+            <h3>Simple configuration</h3>
+            <p>Let&#8217;s keep things simple. Creating a new Play Framework application with <code>play new</code>. We will use a Scala application in this article, but it should as easy with a Java one. Then add AngularJS using <span class="caps">CDN</span> (see <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19"> main.scala.html#L19</a>). Then we will create an Angular module for our app and enable the HTML5 routing mode which is disable by default.</p>
+            <pre class="language-javascript"><code class="language-javascript">var app = angular.module("app", ["ngResource"])&#x000A;  .config(["$routeProvider", function($routeProvider) {&#x000A;      return $routeProvider.when("/", {&#x000A;        templateUrl: "/views/index",&#x000A;        controller: "AppCtrl"&#x000A;      }).otherwise({&#x000A;        redirectTo: "/"&#x000A;      });&#x000A;    }&#x000A;  ])&#x000A;  .config(["$locationProvider", function($locationProvider) {&#x000A;      return $locationProvider.html5Mode(true).hashPrefix("!");&#x000A;    }&#x000A;  ]);</code></pre>
+            <p>Nice. Now we will make some modification to the default views generated by Play. We want a single-page application, which means our root url must map to a main page which will contains all resource dependencies and includes the <code>ng-view</code> of AngularJS. I&#8217;ve done that by editing the &#8220;main.scala.html&#8221; file as you can see here: <a href="https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html">https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html</a> and add a new Play route:</p>
+            <pre class="language-bash"><code class="language-bash">GET     /                           controllers.Application.main(any = "none")</code></pre>
+            <p>And a new <code>Action</code> in my Application controller:</p>
+            <pre class="language-java"><code class="language-java">def main(any: String) = Action {&#x000A;  Ok(views.html.main())&#x000A;}</code></pre>
+            <p>Wait. Why is there a String param for the main method? And why do we pass a default <code>any = "none"</code> value? It seems a bit useless&#8230; Fair enough, I will explain it later on the article, don&#8217;t mind it for now. So, we have our main page. Let&#8217;s add some content for the landing page. As we have specified in the AngularJS routing, our root url, which is defined with <code>$routeProvider.when("/", ...)</code> is pointing to <code>/views/index</code>. So we need a Play route for that&#8230; but before, let&#8217;s talk about all those routes.</p>
+            <h3>Routes, routes, routes&#8230;</h3>
+            <p>As we advance in our coding, we can see that the term &#8220;route&#8221; is used in different contexts. It&#8217;s important to fully understand them all. Play routes, which are defined in the <code>conf/routes</code> file, are the core of your application. It&#8217;s those routes which will answer to the <span class="caps">HTTP</span> requests, serving either <span class="caps">HTML</span>, <span class="caps">JSON</span>, or whatever. But you, as the developer, will be the only one to know about them. Users of your application will only use and see AngularJS routes, which are defined in your main module using the <code>$routeProvider</code>.</p>
+            <p>The idea is that when a user land on your site, it should use AngularJS routing which will then use Play routes to load the template (= the content) of the page. So why not using the exact same url for both the AngularJS route and the templateUrl route? Well, in the case of the root, it&#8217;s obvious: the Play &#8220;/&#8221; route is already required for our main page. Ok. But in a more general case, could we do:</p>
+            <pre class="language-javascript"><code class="language-javascript">$routeProvider.when("/page", {&#x000A;  templateUrl: "/page",&#x000A;  controller: "PageCtrl"&#x000A;})</code></pre>
+            <p>Nope, you can&#8217;t. Well, that&#8217;s a small lie&#8230; you could do that, and it would work if your user <strong>always</strong> open your main page first. If he does that, then all AngularJS routing is loaded, and when the user will go to &#8220;/page&#8221; url, it will be catch by AngularJS which will ask for the &#8220;/page&#8221; on Play routes which will give him the content of the page. So what&#8217;s the problem? If you user <strong>directly</strong> land on the &#8220;/page&#8221; url, because he arrived for the first time on your application after having clicked on a link somewhere which was pointing at &#8220;/page&#8221;, then the Play route will be directly called since there is no AngularJS routing initialized at all&#8230; And that&#8217;s bad, right? The user would have the raw content of the page without any JavaScript or <span class="caps">CSS</span> from the main page. It&#8217;s a fail.</p>
+            <p>In order to prevent that, I have chosen to use some conventions. There is nothing official, you can use your own, the only thing to keep in mind is that AngularJS routes and Play routes should <strong>never</strong> be equals. My solution to do that is to prefix all Play routes serving <span class="caps">HTML</span> with a &#8220;/views/&#8221; prefix, all Play routes serving <span class="caps">JSON</span> with a &#8220;/api/&#8221; prefix and, as it is by default, all Play routes serving resources with a &#8220;/assets/&#8221; prefix. Meaning I can now use all routes I want inside AngularJS routing but never starts them with one of those prefix.</p>
+            <p>Of course, it will just modify the problem without solving it. Now, if a user land directly on &#8220;/page&#8221;, he will have a huge orange Play error telling him that the route doesn&#8217;t exist. As before, AngularJS routing isn&#8217;t loaded, so it&#8217;s Play routing which try to handle that and, since there is no longer any &#8220;/page&#8221; route in Play, it crash.</p>
+            <p>So what&#8217;s the point of having different routes? The next trick is to redirect all unknow routes to our main page. By doing so, if the user land on &#8220;/page&#8221;, Play will say <span class="talk red">&#8220;I don&#8217;t know that route, go to the main page&#8221;</span>, so the user will indeed go to your main page, but then, all AngularJS routing will be loaded and super awesome AngularJS will say <span class="talk blue">&#8220;Hey, I do know that route, and I need the /views/page template&#8221;</span>, and then Play will respond <span class="talk red">&#8220;Oh yeah, I can serve you /views/page, here is the <span class="caps">HTML</span> to display&#8221;</span>, and your user will see the correct &#8220;/page1&#8221; content, even if he lands directly on it.</p>
+            <p>Another question? Why didn&#8217;t we use this trick before and then have the same routes for both AngularJS and Play? Because it&#8217;s important that the trick apply only to unknow routes. We cannot redirect to the main page an existing Play route because it needs to serve its own content. So by using different routes, we can intercept AngularJS routes inside Play as &#8220;unknown routes&#8221; and redirect them to the main page so AngularJS can handle them. I hope I&#8217;m clear enough here, that might be the hardest part of the article. In order to achieve that, we just need to put a Play route at the end of the route file which intercept all routes and redirect them to the main page:</p>
+            <pre class="language-bash"><code class="language-bash">GET     /*any                       controllers.Application.main(any)</code></pre>
+            <p>And now you should understand why we had a <code>any: String</code> for our main page at the beginning.</p>
+            <h3>First pages</h3>
+            <p>Enough with all the theory, let&#8217;s do two concrete pages: creating &#8220;page1.scala.html&#8221; and &#8220;page2.scala.html&#8221; files with basic content (see source code, I&#8217;m using a template to stay <span class="caps">DRY</span> about the title and the menu but that&#8217;s not important), add then as Play routes (with a &#8220;/views/&#8221; as stated before) and also add them inside our controller:</p>
+            <pre class="language-markup"><code class="language-markup">@()</code>&#x000A;&#x000A;<code class="language-markup">@template() {&#x000A;  &lt;h2&gt;Page1&lt;/h2&gt;&#x000A;}</code></pre>
+            <pre class="language-bash"><code class="language-bash">GET     /views/page1                controllers.Application.page1</code></pre>
+            <pre class="language-scala"><code class="language-scala">def page1 = Action {&#x000A;  Ok(views.html.page1())&#x000A;}</code></pre>
+            <p>And then add the AngularJS routing:</p>
+            <pre class="language-javascript"><code class="language-javascript">.when("/page1", {&#x000A;  templateUrl: "/views/page1"&#x000A;})</code></pre>
+            <p>That&#8217;s it. We can now create a link, using a <code>a</code> tag, to point to the url &#8220;/page1&#8221; and AngularJS will do the rest, loading the &#8220;/views/page1&#8221; template using Play route which will return the <span class="caps">HTML</span> code generated from our Scala template. Nice isn&#8217;t it? The url is correct: http://localhost:9000/page1, you can use the back button to return to the index page, no ugly hashbang, but all in Ajax with a single-page application.</p>
+            <h3>Handling url parameters</h3>
+            <p>So, we have our url working by using the History <span class="caps">API</span> thanks to the HTML5 mode of the AngularJS $routeProvider. But that&#8217;s only for raw url. What if we want to have dynamic parameters inside them? Just like <span class="caps">REST</span>, having url as &#8220;/colors/1&#8221; and &#8220;/colors/2&#8221; if we deal with colors (yeah, why not?). Do you think that&#8217;s easy? Well, you could, after all, both AngularJS and Play know how to handle parameters in their url. We could do something like:</p>
+            <pre class="language-javascript"><code class="language-javascript">.when("/colors/:id", {&#x000A;  templateUrl: "/views/color/:id",&#x000A;  controller: "ColorCtrl"&#x000A;})</code></pre>
+            <pre class="language-bash"><code class="language-bash">GET     /views/color/:id             controllers.Application.color(id: String)</code></pre>
+            <p>Nope, we can&#8217;t. Why? Because the &#8220;templateUrl&#8221; cannot handle url parameters. It&#8217;s just a template. And of course, using <code>templateUrl: "/views/color"</code> will not pass any &#8220;id&#8221; parameter to the Play route. Damn&#8230;</p>
+            <p>That&#8217;s not a problem in fact. Just keep to the AngularJS way of doing things: it&#8217;s not Play who should handle the data any longuer, it&#8217;s AngularJS who rules the world now, so you don&#8217;t need any params in your Scala code, just trust AngularJS. Ok, but we need a way to load the correct color depending on the id in the url right? Sure thing. It&#8217;s the role of AngularJS controller to that. That&#8217;s why there is a &#8220;ColorCtrl&#8221; along with our template, and guess what, the AngularJS controller know about the url params. Here is the code of the controller:</p>
+            <pre class="language-javascript"><code class="language-javascript">app.controller("ColorCtrl", ["$scope", "$routeParams", function($scope, $routeParams) {&#x000A;  // Thanks to scope inheritance, we can access the "db" from the AppCtrl scope&#x000A;  $scope.color = $scope.db[$routeParams.id];&#x000A;  if (!$scope.color) {&#x000A;    $scope.msg = "There is no color for id "+$routeParams.id;&#x000A;  } else {&#x000A;    $scope.msg = undefined;&#x000A;  }&#x000A;}])</code></pre>
+            <p>And just for fun, I&#8217;ve defined the fake database in the &#8220;AppCtrl&#8221;:</p>
+            <pre class="language-javascript"><code class="language-javascript">app.controller("AppCtrl", ["$scope", function($scope) {&#x000A;  $scope.db = {&#x000A;    1: {&#x000A;      name: "black",&#x000A;      hex: "000000"&#x000A;    },&#x000A;    2: {&#x000A;      name: "white",&#x000A;      hex: "FFFFFF"&#x000A;    }&#x000A;  };&#x000A;}]);</code></pre>
+            <p>So as we can see, using the <code>$routeParams</code> service, we can retrieve the url params and then load the correct color in the <code>$scope</code>. At the end, it&#8217;s just a matter of displaying that color in our view using AngularJS data-binding:</p>
+            <pre class="language-markup"><code class="language-markup">@()</code>&#x000A;&#x000A;<code class="language-markup">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="language-markup">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;Color {{color.name}}: # {{color.hex}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
+            <p>And that&#8217;s it! you can now display some data depending of params inside your url (and show an error message in case the data doesn&#8217;t exist). Cool isn&#8217;t it?</p>
+            <h3>Want more?</h3>
+            <p>Oh God, you are still reading? You should already be able to do anything you need. But if you want, we can dive in a more complex example, using AngularJS <code>$resource</code> service and serve <span class="caps">JSON</span> from Play like a <span class="caps">REST</span> <span class="caps">API</span> would do. Sounds good for you? Ok, let&#8217;s do that. First, we will create a &#8220;Users&#8221; controller and it will have two methods: &#8220;all()&#8221; and &#8220;find(id: String)&#8221; which will return an Array of Json and a Json object representing our list of users and one particular user based on its id. I will not use a real database, but something like MongoDB would fit really good in there. Here is the code:</p>
+            <pre class="language-java"><code class="language-java">package controllers</code>&#x000A;&#x000A;<code class="language-java">import play.api._&#x000A;import play.api.mvc._&#x000A;import play.api.libs.json._</code>&#x000A;&#x000A;<code class="language-java">object Users extends Controller {&#x000A;  val db = Json.arr(&#x000A;    Json.obj( "id" -&gt; "1", "name" -&gt; "John" ),&#x000A;    Json.obj( "id" -&gt; "2", "name" -&gt; "Suzanne" )&#x000A;  )</code>&#x000A;&#x000A;<code class="language-java">  def all() = Action {&#x000A;    Ok(db)&#x000A;  }</code>&#x000A;&#x000A;<code class="language-java">  def find(id: String) = Action {&#x000A;    Ok(db.value.filter(v =&gt; (v \ "id").as[JsString].value == id).headOption.getOrElse(new JsUndefined("")))&#x000A;  }&#x000A;}</code></pre>
+            <p>If you don&#8217;t fully understand it, you can check the PlayFramework documentation about handling Json (<a href="http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests">ScalaJsonRequests</a>). I am using the new Json <span class="caps">API</span> from Play 2.1 (<a href="http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package">play.api.libs.json.package</a>). Next we need our &#8220;UserCtrl&#8221; which will use the <code>$resource</code> service to retrieve the data:</p>
+            <pre class="language-javascript"><code class="language-javascript">app.controller("UserCtrl", ["$scope", "$routeParams", "$resource", "apiUrl", function($scope, $routeParams, $resource, apiUrl) {&#x000A;  var Users = $resource(apiUrl + "/users/:id", {id:"@id"});</code>&#x000A;&#x000A;<code class="language-javascript">  if($routeParams.id) {&#x000A;    $scope.user = Users.get({id: $routeParams.id}, function() {&#x000A;      if (!$scope.user.id) {&#x000A;        $scope.msg = "There is no user for id "+$routeParams.id;&#x000A;      } else {&#x000A;        $scope.msg = undefined;&#x000A;      }&#x000A;    });&#x000A;  } else {&#x000A;    $scope.users = Users.query();&#x000A;  }&#x000A;}])</code></pre>
+            <p>To learn more about AngularJS $resource definition, see: <a href="http://docs.angularjs.org/api/ngResource.$resource">ngResource.$resource</a>. What is that &#8220;apiUrl&#8221; by the way? It&#8217;s a constant I&#8217;ve defined in my AngularJS app:</p>
+            <pre class="language-javascript"><code class="language-javascript">var app = angular.module("app", ["ngResource"])&#x000A;  .constant("apiUrl", "http://localhost:9000\:9000/api")</code></pre>
+            <div class="alert alert-info"><strong>Pro tip</strong> Why is there the 9000 port twice? That&#8217;s because if we had written <code>http://localhost:9000/api</code>, AngularJS syntax would have analyzed that as a url with a dynamic parameter named &#8220;9000&#8221; because it&#8217;s placed right after a <code>:</code> character. So we need that strange syntax to tell AngularJS that this is not a parameter but a real value in our url.</div>
+            <p>Next, we are creating our resource by extending this apiUrl with our routing &#8220;/users/:id&#8221;. This time, &#8220;:id&#8221; is a real parameter. We can now use &#8220;get&#8221; and &#8220;query&#8221; methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the <code>$scope</code>. We will need two Scala views: one for the list and one for the detail of course.</p>
+            <pre class="language-markup"><code class="language-markup">@()</code>&#x000A;&#x000A;<code class="language-markup">@template() {&#x000A;  &lt;h2&gt;Users&lt;/h2&gt;</code>&#x000A;&#x000A;<code class="language-markup">  &lt;ul&gt;&#x000A;    &lt;li data-ng-repeat="u in users"&gt;&#x000A;      &lt;a data-ng-href="/users/{{u.id}}"&gt;User# {{u.id}}: {{u.name}}&lt;/a&gt;&#x000A;    &lt;/li&gt;&#x000A;  &lt;/ul&gt;&#x000A;}</code></pre>
+            <pre class="language-markup"><code class="language-markup">@()</code>&#x000A;&#x000A;<code class="language-markup">@template() {&#x000A;  &lt;div data-ng-show="msg"&gt;&#x000A;    &lt;h2&gt;{{msg}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;</code>&#x000A;&#x000A;<code class="language-markup">  &lt;div data-ng-hide="msg"&gt;&#x000A;    &lt;h2&gt;User# {{user.id}} {{user.name}}&lt;/h2&gt;&#x000A;  &lt;/div&gt;&#x000A;}</code></pre>
+            <p>And that&#8217;s it. We now have a list of users and links to each user detail, and all that data is fetch from a <span class="caps">REST</span> <span class="caps">API</span> using Json.</p>
+            <div class="alert alert-info"><strong>Pro tip</strong> By the way, since our Play routes doesn&#8217;t clash with AngularJS routes, you can load them directly in your browser. It will works because the Play route handling the redirection to the main page is at the end of the route file, so any real Play route will be loaded before the redirection. If you have the demo running, check <a href="http://localhost:9000/api/users">http://localhost:9000/api/users</a> and <a href="http://localhost:9000/api/users/1">http://localhost:9000/api/users/1</a> to see your <span class="caps">REST</span> <span class="caps">API</span> working nicely.</div>
+            <h3>Conclusion</h3>
+            <p>I hope this article will help you bootstrap your next awesome application using awesome tools like AngularJS and PlayFramework. Your next step (if that&#8217;s not already the case) would be to learn more about the new PlayFramework Json <span class="caps">API</span> so you can have typesafe Json (if I can say so). You would also probably need to plug a database on it. One choice could be a <a href="http://www.mongodb.org/">MongoDB</a> database since it can store raw Json, and interact with it using a nice driver like <a href="http://reactivemongo.org/">ReactiveMongo</a> if you want to go all the way down to asynchronous application.</p>
+            <p>It&#8217;s up to you!</p>
+          </div>
+          <div class="footer">
+            <span class="fa fa-link fa-fw"></span>
+            <a href="/blog/2013/02/17/angularjs-routing-playframework/">Permalink</a>
+            |
+            <span class="fa fa-comments fa-fw"></span>
+             <a href="http://localhost:4242/blog/2013/02/17/angularjs-routing-playframework/#disqus_thread" data-disqus-identifier="a8663746cd47a55a1da0f18002d75aae0436c643">Comments</a>
+            |
+            <span class="tags">
+              <span class="fa fa-tags fa-fw"></span>
+              Tags :
+              <a class="tag label label-default" href="/blog/tags/angular/">angular</a>
+              <a class="tag label label-default" href="/blog/tags/play/">play</a>
+              <a class="tag label label-default" href="/blog/tags/html5/">html5</a>
+            </span>
+          </div>
+        </article>
+        
+                    <script type="text/javascript">
+                    var disqus_shortname = 'pauldijou';
+                    (function () {
+                      var s = document.createElement('script'); s.async = true;
+                      s.src = "http://disqus.com/forums/pauldijou/count.js";
+                      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                    }());
+                    </script>
+      </div>
+      <ul class="list-inline pagination text-center visible-xs visible-sm">
+        <li>
+          <a class="button disabled" href="#">
+            <div class="fa fa-angle-left fa-lg"></div>
+            Previous
+          </a>
         </li>
-        <li class='disabled'>
-          <a href='#'>1 of 1</a>
+        <li class="disabled">
+          <a class="button" href="#">1 of 1</a>
         </li>
-        <li class='next disabled'>
-          <a href='#'>Next</a>
+        <li>
+          <a class="button disabled" href="#">
+            Next
+            <div class="fa fa-angle-right fa-lg"></div>
+          </a>
         </li>
       </ul>
-    </div>
-    <div class='pagination pagination-centered hidden-phone'>
-      <ul>
-        <li class='disabled'>
-          <a href='#'>First</a>
+      <ul class="list-inline pagination text-center hidden-xs hidden-sm">
+        <li>
+          <a class="button disabled" href="#">
+            <div class="fa fa-angle-double-left fa-lg"></div>
+            First
+          </a>
         </li>
-        <li class='disabled'>
-          <a href='#'>Previous</a>
+        <li>
+          <a class="button disabled" href="#">
+            <div class="fa fa-angle-left fa-lg"></div>
+            Previous
+          </a>
         </li>
-        <li class='active'>
-          <a href='#'>1 of 1</a>
+        <li class="active">
+          <a class="button" href="#">1 of 1</a>
         </li>
-        <li class='disabled'>
-          <a href='#'>Next</a>
+        <li>
+          <a class="button disabled" href="#">
+            Next
+            <div class="fa fa-angle-right fa-lg"></div>
+          </a>
         </li>
-        <li class='disabled'>
-          <a href='#'>Last</a>
+        <li>
+          <a class="button disabled" href="#">
+            Last
+            <div class="fa fa-angle-double-right fa-lg"></div>
+          </a>
         </li>
       </ul>
-    </div>
-  </div>
-  <div class='span3'>
-    <div class='follow-scroll hidden-phone'>
-      <div style='margin-bottom:20px;text-align:center;'>
-        <a class='btn' href='http://feeds2.feedburner.com/pauldijou'>
-          <img src='/images/icons/rss_16.png' />
+      <div style="margin-bottom:20px;text-align:center;">
+        <a class="button" href="http://feeds2.feedburner.com/pauldijou">
+          <span class="fa fa-rss fa-lg"></span>
           Subscribe
         </a>
       </div>
-      <ul class='nav nav-list well' style='clear:both;'>
-        <li class='nav-header'>
-          Tag Cloud
-        </li>
-        <li>
-          <div class='tag-cloud'>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/angular/'>angular</a>
-            </span>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/bootstrap/'>bootstrap</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/cdk/'>cdk</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/coffeescript/'>coffeescript</a>
-            </span>
-            <span class='tag tag-6'>
-              <a href='http://pauldijou.fr/blog/tags/en/'>en</a>
-            </span>
-            <span class='tag tag-5'>
-              <a href='http://pauldijou.fr/blog/tags/fr/'>fr</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/html5/'>html5</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/jquery/'>jquery</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/jsf/'>jsf</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/play/'>play</a>
-            </span>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/richfaces/'>richfaces</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/yeoman/'>yeoman</a>
-            </span>
-          </div>
-        </li>
-      </ul>
     </div>
-    <div class='visible-phone'>
-      <div style='margin-bottom:20px;text-align:center;'>
-        <a class='btn' href='http://feeds2.feedburner.com/pauldijou'>
-          <img src='/images/icons/rss_16.png' />
-          Subscribe
-        </a>
-      </div>
-      <ul class='nav nav-list well' style='clear:both;'>
-        <li class='nav-header'>
-          Tag Cloud
-        </li>
-        <li>
-          <div class='tag-cloud'>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/angular/'>angular</a>
-            </span>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/bootstrap/'>bootstrap</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/cdk/'>cdk</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/coffeescript/'>coffeescript</a>
-            </span>
-            <span class='tag tag-6'>
-              <a href='http://pauldijou.fr/blog/tags/en/'>en</a>
-            </span>
-            <span class='tag tag-5'>
-              <a href='http://pauldijou.fr/blog/tags/fr/'>fr</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/html5/'>html5</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/jquery/'>jquery</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/jsf/'>jsf</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/play/'>play</a>
-            </span>
-            <span class='tag tag-2'>
-              <a href='http://pauldijou.fr/blog/tags/richfaces/'>richfaces</a>
-            </span>
-            <span class='tag tag-0'>
-              <a href='http://pauldijou.fr/blog/tags/yeoman/'>yeoman</a>
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<script type='text/javascript'>
-  //<![CDATA[
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  //]]>
-</script>
-    </div>
-  </div>
-</div>
-<hr />
-<footer class='container'>
-  <div class='row'>
-    <div class='hidden-phone'>
-      <div class='span2'>
-        <ul class='nav nav-list'>
-          <li class='nav-header'>
-            Powered with
-          </li>
-          <li>
-            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
-          </li>
-          <li>
-            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
-          </li>
-          <li>
-            <a href='http://github.com/' target='_blank'>GitHub</a>
-          </li>
-          <li>
-            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
-          </li>
-          <li>
-            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>
-          Always connected!
-        </li>
-        <li>
-          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-        </li>
-        <li>
-          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-        </li>
-        <li>
-          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-        </li>
-        <li>
-          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-        </li>
-        <li>
-          <a href='http://feeds2.feedburner.com/pauldijou' target='_blank'>RSS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount','UA-25058935-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+    <script src="http://localhost:4242/javascripts/main.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
   </body>
 </html>

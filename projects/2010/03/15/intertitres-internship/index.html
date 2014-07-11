@@ -1,289 +1,225 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='no-cache' http-equiv='pragma' />
-    <meta content='no-cache' http-equiv='cache-control' />
-    <meta content='0' http-equiv='expires' />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
     <title>
-      Paul Dijou / Intertitres (intership)
+      Paul Dijou
     </title>
-    <link href='http://pauldijou.fr/stylesheets/style.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <link href="http://localhost:4242/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="http://localhost:4242/stylesheets/main.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <!--[if lt IE 8]>
-      <link href='http://pauldijou.fr/stylesheets/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
+      <link href="http://localhost:4242/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script src='http://pauldijou.fr/javascripts/jquery.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/bootstrap.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/prettify.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/main.js' type='text/javascript'></script>
-    <!--[if lt IE 9]>
-      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
-    <![endif]-->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
-  <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <header>
-  <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-    <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
-  </a>
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container'>
-        <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </a>
-        <a class='brand' href='/'>
-          Paul Dijou
-        </a>
-        <div class='nav-collapse'>
-          <ul class='nav'>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog/'>Blog</a>
-            </li>
-            <li>
-              <a href='/resume/'>Resume</a>
-            </li>
-            <li>
-              <a href='/projects/'>Projects</a>
-            </li>
-            <li>
-              <a href='/slides/'>Slides</a>
-            </li>
-            <li>
-              <a href='/about/'>About</a>
-            </li>
-            <li>
-              <a href='/todo/'>TODO</a>
-            </li>
-            <li>
-              <a href='/contact/'>Contact</a>
-            </li>
-          </ul>
+  <body>
+    <header class="menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="/">
+              <span class="fa fa-home fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Home
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/blog/">
+              <span class="fa fa-coffee fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Blog
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/resume/">
+              <span class="fa fa-code fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Resume
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/projects/">
+              <span class="fa fa-flask fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Projects
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/about/">
+              <span class="fa fa-user fa-2x fa-fw"></span>
+              <span class="nav-label">
+                About
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/contact/">
+              <span class="fa fa-envelope fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Contact
+              </span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      $(document).ready(function() {
-        var indexOfSharp = window.location.pathname.indexOf('#');
-        var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-        $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-      });
-    //]]>
-  </script>
-</header>
-<div class='container' id='container'>
-  <div class='row'>
-    <div class='span12'>
-      <div class='row'>
-  <div class='span12'>
-    <section class='project well' id='2010-03-15-intertitres-internship'>
-  <ul class='pager visible-desktop' style='float:right;'>
-    <li>
-      <a href='/projects/2009/06/15/reaction/'>Previous</a>
-    </li>
-    <li>
-      <a href='/projects/2011/06/15/noha/'>Next</a>
-    </li>
-  </ul>
-  <h2>
-    <a href='/projects/2010/03/15/intertitres-internship/'>
-      Intertitres (intership)
-    </a>
-  </h2>
-  <h5 class='date'>March - September 2010 : 6 months</h5>
-  <blockquote>
-    <dl class='dl-horizontal'>
-      <dt>
-        <h6>Project type</h6>
-      </dt>
-      <dd>Internship</dd>
-      <dt>
-        <h6>Description</h6>
-      </dt>
-      <dd>During my internship at <a href="http://celad.com">CELAD</a>, I had to develop from scratch a new administration application to manage and monitor other commercial websites. Based on Java EE, Seam 2 and JSF, this project was a perfect opportunity to learn lots of things since I've done everything from the specification redaction to developing and testing the application.</dd>
-      <dt>
-        <h6>Technologies</h6>
-      </dt>
-      <dd>Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces</dd>
-      <dt>
-        <h6>Tags</h6>
-      </dt>
-      <dd>
-        <a class='tag' href='/projects/tags/internship/'>internship</a>
-        <a class='tag' href='/projects/tags/java/'>java</a>
-        <a class='tag' href='/projects/tags/javaee/'>javaee</a>
-        <a class='tag' href='/projects/tags/spring/'>spring</a>
-        <a class='tag' href='/projects/tags/seam/'>seam</a>
-        <a class='tag' href='/projects/tags/jpa/'>jpa</a>
-        <a class='tag' href='/projects/tags/jsf/'>jsf</a>
-        <a class='tag' href='/projects/tags/richfaces/'>richfaces</a>
-      </dd>
-    </dl>
-  </blockquote>
-  <div class='content'>
-    <h2>The actors</h2>
-<p><a href="http://www.intertitres.natixis.com">Intertitres</a> is a subsidiary of <a href="http://www.natixis.com">Natixis</a> (a French bank) specialized in selling securities. They have several websites in order to do that depending on the type of the securities and the size of the clients (bigger clients have better applications with more features).</p>
-<p>Those website are mostly developed by <a href="http://celad.com"><span class="caps">CELAD</span></a>, the IT firm in which I was doing my internship. I was working in the headquarters in Balma, near Toulouse (France) inside the team dedicated to Intertitres which was composed of 6 members at that time.</p>
-<h2>The technologies</h2>
-<p>Even if Natixis delegates most of development to IT firms, they have their own core development department in order to give global directions and roadmap to everyone. Another task on their todo list is the development and the maintenance of Sphinx.</p>
-<p>Sphinx is an internal framework based on Java, Java EE, Spring, Seam 2 and <span class="caps">JSF</span> (with RichFaces). Its purpose is to give an abstract layer over all those technologies to ease development and increase productivity but also give a common structure to all Natixis&#8217; applications. At that time, it was quite a great stack to work with.</p>
-<h2>The project</h2>
-<p>All the previous websites we&#8217;ve been talking about are connected to a central database and manipulate the same tables. With each website growing, the necessity of having a cross-application administration console in order to see and manage all the data without any relation to each website appears.</p>
-<div id="backofficeScreenshots" class="carousel slide" style="max-width: 1015px;">
-<div class="carousel-inner">
-<div class="active item">
-<img src="/projects/assets/backoffice/login.PNG" alt="Accounts" />
-      <div class="carousel-caption"><h4>Login</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/histoCommandes.PNG" alt="Commands" />
-      <div class="carousel-caption"><h4>Commands</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/utilisateurs.PNG" alt="Users" />
-      <div class="carousel-caption"><h4>Users</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/editUtilisateur.PNG" alt="User edit" />
-      <div class="carousel-caption"><h4>User edit</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/gestionnaires.PNG" alt="Managers" />
-      <div class="carousel-caption"><h4>Managers</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/editEmail.PNG" alt="User quick email edit" />
-      <div class="carousel-caption"><h4>Manager email edit</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/detailGestionnaire.PNG" alt="Manager detail" />
-      <div class="carousel-caption"><h4>Manager detail</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/addOperation.PNG" alt="Add promotional operation" />
-      <div class="carousel-caption"><h4>Add promotional operation</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/produits.PNG" alt="Products" />
-      <div class="carousel-caption"><h4>Products</h4></div>
-</div>
-
-<div class="item">
-<img src="/projects/assets/backoffice/messages.PNG" alt="Messages" />
-      <div class="carousel-caption"><h4>Messages</h4></div>
-</div>
-</div>
-
-<a class="carousel-control left" href="#backofficeScreenshots" data-slide="prev">&lsaquo;</a>
-<a class="carousel-control right" href="#backofficeScreenshots" data-slide="next">&rsaquo;</a>
-</div>
-<script type="text/javascript">
-  $('#backofficeScreenshots').carousel({
-    interval: 4000
-  });
-</script>
-  </div>
-</section>
-    <div class='visible-desktop'>
-      <ul class='pager'>
-        <li class='previous'>
-          <a href='/projects/2009/06/15/reaction/'>Previous: REaction</a>
-        </li>
-        <li class='next'>
-          <a href='/projects/2011/06/15/noha/'>Next: Noha</a>
-        </li>
-      </ul>
-    </div>
-    <div class='hidden-desktop'>
-      <ul class='pager'>
-        <li class='previous'>
-          <a href='/projects/2009/06/15/reaction/'>Previous</a>
-        </li>
-        <li class='next'>
-          <a href='/projects/2011/06/15/noha/'>Next</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-<hr />
-<footer class='container'>
-  <div class='row'>
-    <div class='hidden-phone'>
-      <div class='span2'>
-        <ul class='nav nav-list'>
-          <li class='nav-header'>
-            Powered with
+    </header>
+    <div class="container">
+      <section class="project" id="2010-03-15-intertitres-internship">
+        <ul class="pager visible-desktop" style="float:right;">
+          <li>
+            <a href="/projects/2009/06/15/reaction/">Previous</a>
           </li>
           <li>
-            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
+            <a href="/projects/2011/06/15/noha/">Next</a>
           </li>
-          <li>
-            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
+        </ul>
+        <h2>
+          <a href="/projects/2010/03/15/intertitres-internship/">
+            Intertitres (intership)
+          </a>
+        </h2>
+        <h5 class="date">March - September 2010 : 6 months</h5>
+        <blockquote>
+          <dl class="dl-horizontal">
+            <dt>
+              <h6>Project type</h6>
+            </dt>
+            <dd>Internship</dd>
+            <dt>
+              <h6>Description</h6>
+            </dt>
+            <dd>During my internship at <a href="http://celad.com">CELAD</a>, I had to develop from scratch a new administration application to manage and monitor other commercial websites. Based on Java EE, Seam 2 and JSF, this project was a perfect opportunity to learn lots of things since I've done everything from the specification redaction to developing and testing the application.</dd>
+            <dt>
+              <h6>Technologies</h6>
+            </dt>
+            <dd>Java, Java EE, Spring, Seam 2, JPA, JSF, RichFaces</dd>
+            <dt>
+              <h6>Tags</h6>
+            </dt>
+            <dd>
+              <a class="tag" href="/projects/tags/internship/">internship</a>
+              <a class="tag" href="/projects/tags/java/">java</a>
+              <a class="tag" href="/projects/tags/javaee/">javaee</a>
+              <a class="tag" href="/projects/tags/spring/">spring</a>
+              <a class="tag" href="/projects/tags/seam/">seam</a>
+              <a class="tag" href="/projects/tags/jpa/">jpa</a>
+              <a class="tag" href="/projects/tags/jsf/">jsf</a>
+              <a class="tag" href="/projects/tags/richfaces/">richfaces</a>
+            </dd>
+          </dl>
+        </blockquote>
+        <div class="content">
+          <h2>The actors</h2>
+          <p><a href="http://www.intertitres.natixis.com">Intertitres</a> is a subsidiary of <a href="http://www.natixis.com">Natixis</a> (a French bank) specialized in selling securities. They have several websites in order to do that depending on the type of the securities and the size of the clients (bigger clients have better applications with more features).</p>
+          <p>Those website are mostly developed by <a href="http://celad.com"><span class="caps">CELAD</span></a>, the IT firm in which I was doing my internship. I was working in the headquarters in Balma, near Toulouse (France) inside the team dedicated to Intertitres which was composed of 6 members at that time.</p>
+          <h2>The technologies</h2>
+          <p>Even if Natixis delegates most of development to IT firms, they have their own core development department in order to give global directions and roadmap to everyone. Another task on their todo list is the development and the maintenance of Sphinx.</p>
+          <p>Sphinx is an internal framework based on Java, Java EE, Spring, Seam 2 and <span class="caps">JSF</span> (with RichFaces). Its purpose is to give an abstract layer over all those technologies to ease development and increase productivity but also give a common structure to all Natixis&#8217; applications. At that time, it was quite a great stack to work with.</p>
+          <h2>The project</h2>
+          <p>All the previous websites we&#8217;ve been talking about are connected to a central database and manipulate the same tables. With each website growing, the necessity of having a cross-application administration console in order to see and manage all the data without any relation to each website appears.</p>
+          <div id="backofficeScreenshots" class="carousel slide" style="max-width: 1015px;">
+          <div class="carousel-inner">
+          <div class="active item">
+          <img src="/projects/assets/backoffice/login.PNG" alt="Accounts" />
+                <div class="carousel-caption"><h4>Login</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/histoCommandes.PNG" alt="Commands" />
+                <div class="carousel-caption"><h4>Commands</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/utilisateurs.PNG" alt="Users" />
+                <div class="carousel-caption"><h4>Users</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/editUtilisateur.PNG" alt="User edit" />
+                <div class="carousel-caption"><h4>User edit</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/gestionnaires.PNG" alt="Managers" />
+                <div class="carousel-caption"><h4>Managers</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/editEmail.PNG" alt="User quick email edit" />
+                <div class="carousel-caption"><h4>Manager email edit</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/detailGestionnaire.PNG" alt="Manager detail" />
+                <div class="carousel-caption"><h4>Manager detail</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/addOperation.PNG" alt="Add promotional operation" />
+                <div class="carousel-caption"><h4>Add promotional operation</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/produits.PNG" alt="Products" />
+                <div class="carousel-caption"><h4>Products</h4></div>
+          </div>
+          
+          <div class="item">
+          <img src="/projects/assets/backoffice/messages.PNG" alt="Messages" />
+                <div class="carousel-caption"><h4>Messages</h4></div>
+          </div>
+          </div>
+          
+          <a class="carousel-control left" href="#backofficeScreenshots" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#backofficeScreenshots" data-slide="next">&rsaquo;</a>
+          </div>
+          <script type="text/javascript">
+            $('#backofficeScreenshots').carousel({
+              interval: 4000
+            });
+          </script>
+        </div>
+      </section>
+      <div class="visible-desktop">
+        <ul class="pager">
+          <li class="previous">
+            <a href="/projects/2009/06/15/reaction/">Previous: REaction</a>
           </li>
-          <li>
-            <a href='http://github.com/' target='_blank'>GitHub</a>
+          <li class="next">
+            <a href="/projects/2011/06/15/noha/">Next: Noha</a>
           </li>
-          <li>
-            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
+        </ul>
+      </div>
+      <div class="hidden-desktop">
+        <ul class="pager">
+          <li class="previous">
+            <a href="/projects/2009/06/15/reaction/">Previous</a>
           </li>
-          <li>
-            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
+          <li class="next">
+            <a href="/projects/2011/06/15/noha/">Next</a>
           </li>
         </ul>
       </div>
     </div>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>
-          Always connected!
-        </li>
-        <li>
-          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-        </li>
-        <li>
-          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-        </li>
-        <li>
-          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-        </li>
-        <li>
-          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-        </li>
-        <li>
-          <a href='http://feeds2.feedburner.com/pauldijou' target='_blank'>RSS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount','UA-25058935-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
+    <script src="http://localhost:4242/javascripts/main.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
   </body>
 </html>

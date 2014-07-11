@@ -1,666 +1,218 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='no-cache' http-equiv='pragma' />
-    <meta content='no-cache' http-equiv='cache-control' />
-    <meta content='0' http-equiv='expires' />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
     <title>
-      Paul Dijou / Resume
+      Paul Dijou
     </title>
-    <link href='http://pauldijou.fr/stylesheets/style.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <link href="http://localhost:4242/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="http://localhost:4242/stylesheets/main.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <!--[if lt IE 8]>
-      <link href='http://pauldijou.fr/stylesheets/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
+      <link href="http://localhost:4242/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script src='http://pauldijou.fr/javascripts/jquery.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/bootstrap.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/prettify.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/main.js' type='text/javascript'></script>
-    <!--[if lt IE 9]>
-      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
-    <![endif]-->
-  </head>
-  <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <header>
-  <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-    <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
-  </a>
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container'>
-        <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </a>
-        <a class='brand' href='/'>
-          Paul Dijou
-        </a>
-        <div class='nav-collapse'>
-          <ul class='nav'>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog/'>Blog</a>
-            </li>
-            <li>
-              <a href='/resume/'>Resume</a>
-            </li>
-            <li>
-              <a href='/projects/'>Projects</a>
-            </li>
-            <li>
-              <a href='/slides/'>Slides</a>
-            </li>
-            <li>
-              <a href='/about/'>About</a>
-            </li>
-            <li>
-              <a href='/todo/'>TODO</a>
-            </li>
-            <li>
-              <a href='/contact/'>Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      $(document).ready(function() {
-        var indexOfSharp = window.location.pathname.indexOf('#');
-        var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-        $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-      });
-    //]]>
-  </script>
-</header>
-<div class='page'>
-  <div class='title'>
-  <h1>Resume</h1>
-  <div class='btn-wrapper'>
-    <div class='btn-group' data-toggle='buttons-radio'>
-      <a class='btn lang-en' data-toggle='tab' href='#resume-en' onclick="window.location.hash='#en'">English</a>
-      <a class='btn lang-fr' data-toggle='tab' href='#resume-fr' onclick="window.location.hash='#fr'">Français</a>
-    </div>
-  </div>
-  <div class='clearfix'></div>
-</div>
-<div class='container' id='container'>
-  <div class='row'>
-    <div class='span12'>
-      <div class='tab-content cv'>
-        <div class='tab-pane' id='resume-en'>
-          <div class='row'>
-            <div class='span10'>
-              <div class='well clearfix'>
-                <div class='row-fluid'>
-                  <div class='span7'>
-                    <h2>About me</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Name</h6>
-                      </dt>
-                      <dd>
-                        Paul Dijou
-                      </dd>
-                      <dt>
-                        <h6>Age</h6>
-                      </dt>
-                      <dd>
-                        26 years old (10/11/1986)
-                      </dd>
-                      <dt>
-                        <h6>Email</h6>
-                      </dt>
-                      <dd>
-                        paul.dijou+dev at gmail.com
-                      </dd>
-                      <dt>
-                        <h6>GitHub</h6>
-                      </dt>
-                      <dd>
-                        <a href="https://github.com/pauldijou">pauldijou</a>
-                      </dd>
-                    </dl>
-                    <h2>Experience</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>2012 - now<br/>(3 months and couting)</h6>
-                      </dt>
-                      <dd>
-                        Working at <a href="http://www.zenexity.com/">Zenexity</a>, enjoying building uber websites using <strong>PlayFramework</strong>, Scala, MongoDB, and, of course, HTML5, CSS3, JavaScript, and all that awesome stuff we call open-source and internet.
-                      </dd>
-                      <dt>
-                        <h6>2012 (2 months)</h6>
-                      </dt>
-                      <dd>
-                        Through <a href="http://www.startupbootcamp.org/europeans-cities/amsterdam/">Startup Bootcamp</a> program which aims to help startups beginning their lives, I joined <a href="http://www.mipagar.com/">Mipagar</a> team to help them finishing their user interface based on JSF and RichFaces and their RESTful API using Java EE 6 new features. For the user interface, <strong>RichFaces Bootstrap</strong> has been used with really good feedbacks.
-                      </dd>
-                      <dt>
-                        <h6>2010 - 2012<br/>(2 years)</h6>
-                      </dt>
-                      <dd>
-                        Working at <a href="http://www.celad.com/">CELAD</a>, an IT firm, my first real job was to develop and maintain Java EE applications for <a href="http://www.intertitres.natixis.com">Intertitres</a>, a subsidiary of <a href="http://www.natixis.com">Natixis</a>, a french bank, using an internal framework based on Spring, Seam 2 and JSF.
-                      </dd>
-                      <dt>
-                        <h6>2009 - 2011<br/>(2 years)</h6>
-                      </dt>
-                      <dd>
-                        At the same time I was studying or working, I was also self-employed in order to realize e-commerce projects during my free time, using PHP or Java EE.
-                      </dd>
-                    </dl>
-                    <h2>Open-source</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>JBoss RichFaces</h6>
-                      </dt>
-                      <dd>
-                        After having initiated the <strong>RichFaces Bootstrap</strong> sandbox project which aims to build new JSF components in top of the Bootstrap framework but also jQuery and its plugins, I've developed several components and some brand new concepts (using LESS, semantic components, ...) together with the RichFaces team. The <strong>RichFaces Bootstrap</strong> project will be fully integrated in RichFaces 5, the next major version of <a href="http://www.jboss.org/richfaces">RichFaces</a>.
-                      </dd>
-                      <dt>
-                        <h6>Agorava</h6>
-                      </dt>
-                      <dd>
-                        Committer around the project's website and the demo application named <a href="http://socializer.agorava.cloudbees.net/home.jsf">Socializer</a>.
-                      </dd>
-                      <dt>
-                        <h6>JBoss Arquillian</h6>
-                      </dt>
-                      <dd>
-                        Translator of user guides.
-                      </dd>
-                      <dt>
-                        <h6>Speaker</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Conference at Toulouse JUG about Bootstrap and Awestruct.</li>
-                          <li>Quicky at NightHacking Tour 2012 about RichFaces Bootstrap.</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <h2>Studies</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>End 2009</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://www.polymtl.ca/en/"><abbr title="Ecole Polytechnique of Montreal">EPM</abbr></a> (Montreal, Canada), exchange program during one semester.
-                      </dd>
-                      <dt>
-                        <h6>2007 - 2010</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://www.enseeiht.fr/en/index.html"><abbr title="Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications">ENSEEIHT</abbr></a> (Toulouse, France), engineer degree in Mathematics and Computer Science.
-                      </dd>
-                      <dt>
-                        <h6>2004 - 2007</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php">Lycée Pierre de Fermat</a> (Toulouse, France), two-years highly selective classes to prepare for competitive exams to "Grandes Ecoles".
-                      </dd>
-                      <dt>
-                        <h6>2004</h6>
-                      </dt>
-                      <dd>
-                        Scientific "Baccalauréat", with distinction.
-                      </dd>
-                    </dl>
-                    <h2>Langs</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>French</h6>
-                      </dt>
-                      <dd>
-                        Native language
-                      </dd>
-                      <dt>
-                        <h6>English</h6>
-                      </dt>
-                      <dd>
-                        Professionnal level (TOEIC : 910 / 990)
-                      </dd>
-                      <dt>
-                        <h6>Spanish</h6>
-                      </dt>
-                      <dd>
-                        School level
-                      </dd>
-                      <dt>
-                        <h6>Chinese</h6>
-                      </dt>
-                      <dd>
-                        School level
-                      </dd>
-                    </dl>
-                  </div>
-                  <div class='span5'>
-                    <h2>Skills</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Langages</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Java (Java SE, Java EE 6, JavaFX 2)</li>
-                          <li>HTML5, XHTML, XML</li>
-                          <li>CSS3, LESS, SASS</li>
-                          <li>JavaScript, JSON</li>
-                          <li>PHP</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Java EE</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li><abbr title="Context and Dependency Injection">CDI</abbr> (Weld, OpenWebBean)</li>
-                          <li>DeltaSpike</li>
-                          <li><abbr title="Java Server Faces">JSF</abbr></li>
-                          <li><abbr title="Java Persistence API">JPA</abbr> (Hibernate, OpenJPA)</li>
-                          <li><abbr title="Enterpriser Java Bean">EJB</abbr></li>
-                          <li>JAX-RS</li>
-                          <li>Seam</li>
-                          <li>Apache CODI</li>
-                          <li>Play! framework</li>
-                          <li>Spring</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>JSF Libraries</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Mojarra</li>
-                          <li>MyFaces</li>
-                          <li>Facelets</li>
-                          <li>RichFaces (committer)</li>
-                          <li>Primefaces</li>
-                          <li>Trinidad</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Servers</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Apache</li>
-                          <li>Tomcat, TomEE</li>
-                          <li>JBoss AS</li>
-                          <li>GlassFish</li>
-                          <li>Resine</li>
-                          <li>Websphere</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Databases</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>PostgreSQL</li>
-                          <li>MySQL</li>
-                          <li>Oracle</li>
-                          <li>HSQLDB</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Tools</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Eclipse, Intellij IDEA</li>
-                          <li>Maven, Ant, Gradle</li>
-                          <li>Git, SVN, Dimension</li>
-                          <li>Jenkins, Hudson</li>
-                          <li>Sonar</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='span2'>
-              <ul class='nav nav-list well'>
-                <li class='nav-header'>Downloads</li>
-                <li class='resume pdf'>
-                  <a href='/data/Resume_Paul_Dijou.pdf' target='_blank'>Resume (PDF)</a>
-                </li>
-                <li class='resume odt'>
-                  <a href='/data/Resume_Paul_Dijou.odt' target='_blank'>Resume (ODT)</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class='tab-pane' id='resume-fr'>
-          <div class='row'>
-            <div class='span10'>
-              <div class='well clearfix'>
-                <div class='row-fluid'>
-                  <div class='span7'>
-                    <h2>Généralités</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Nom</h6>
-                      </dt>
-                      <dd>
-                        Paul Dijou
-                      </dd>
-                      <dt>
-                        <h6>Age</h6>
-                      </dt>
-                      <dd>
-                        26 ans (11/10/1986)
-                      </dd>
-                      <dt>
-                        <h6>Email</h6>
-                      </dt>
-                      <dd>
-                        paul.dijou+dev at gmail.com
-                      </dd>
-                      <dt>
-                        <h6>GitHub</h6>
-                      </dt>
-                      <dd>
-                        <a href="https://github.com/pauldijou">pauldijou</a>
-                      </dd>
-                    </dl>
-                    <h2>Expérience</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>2012 - actuellement<br/>(3 mois)</h6>
-                      </dt>
-                      <dd>
-                        Employé chez <a href="http://www.zenexity.com/">Zenexity</a>, je m'amuse à réaliser de bien jolis sites web grâce à des magnifiques technologies comme <strong>PlayFramework</strong>, Scala, MongoDB, et bien entendu HTML5, CSS3, JavaScript et tous ces trucs qu'on appelle open-source et internet.
-                      </dd>
-                      <dt>
-                        <h6>2012 (2 mois)</h6>
-                      </dt>
-                      <dd>
-                        Dans le cadre du programme <a href="http://www.startupbootcamp.org/europeans-cities/amsterdam/">Startup Bootcamp</a> ayant pour but d'aider au démarrage de startups européennes, j'ai pu rejoindre l'équipe de <a href="http://www.mipagar.com/">Mipagar</a> à Amsterdam pour les aider à finaliser leur interface JSF – RichFaces et leurs API RESTful utilisant les nouveautés de Java EE 6. Pour la réalisation de l'interface web, c'est directement <strong> RichFaces Bootstrap </strong> qui a été utilisé avec des retours très positifs.
-                      </dd>
-                      <dt>
-                        <h6>2010 - 2012<br/>(2 ans)</h6>
-                      </dt>
-                      <dd>
-                        Au sein de la SSII <a href="http://www.celad.com/">CELAD</a>, j'ai effectué ma première expérience professionnelle. Il s'agissait de développer et maintenir des applications Java EE pour le compte de la société <a href="http://www.intertitres.natixis.com">Intertitres</a>, filiale de la banque <a href="http://www.natixis.com">Natixis</a>, en utilisant un framework interne basé sur Spring, Seam 2 et JSF.
-                      </dd>
-                      <dt>
-                        <h6>2009 - 2011<br/>(2 ans)</h6>
-                      </dt>
-                      <dd>
-                        En parallèle de mes études et de mon début de carrière, j'ai opté pour un régime d'auto-entrepreneur afin de réaliser quelques projets e-commerce, soit en PHP soit en Java EE, sur mon temps libre.
-                      </dd>
-                    </dl>
-                    <h2>Open-source</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>JBoss RichFaces</h6>
-                      </dt>
-                      <dd>
-                        Après avoir initié le projet sandbox <strong>RichFaces Bootstrap</strong> qui a pour but de développer de nouveaux composants JSF en se basant sur le framework Bootstrap, mais également sur jQuery UI et ses plugins, j'y ai développé de nombreux composants ainsi que de nouveaux concepts (utilisation de LESS, composants sémantiques, ...) en partenariat avec l'équipe RichFaces. Le projet <strong>RichFaces Bootstrap</strong> sera intégré en totalité dans RichFaces 5, prochaine version majeure de <a href="http://www.jboss.org/richfaces">RichFaces</a>.
-                      </dd>
-                      <dt>
-                        <h6>Agorava</h6>
-                      </dt>
-                      <dd>
-                        Contributeur autour du site du projet ainsi que de l'application de démonstration <a href="http://socializer.agorava.cloudbees.net/home.jsf">Socializer</a>.
-                      </dd>
-                      <dt>
-                        <h6>JBoss Arquillian</h6>
-                      </dt>
-                      <dd>
-                        Traducteur au niveau des guides utilisateurs.
-                      </dd>
-                      <dt>
-                        <h6>Speaker</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Conférence au Toulouse JUG au sujet de Bootstrap et Awestruct.</li>
-                          <li>Quicky au NightHacking Tour 2012 au sujet de RichFaces Bootstrap.</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                    <h2>Etudes</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Fin 2009</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://www.polymtl.ca/"><abbr title="Ecole Polytechnique de Montréal">EPM</abbr></a> (Montréal, Canada), programme d'échange durant un semestre.
-                      </dd>
-                      <dt>
-                        <h6>2007 - 2010</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://www.enseeiht.fr/fr/index.html"><abbr title="Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications">ENSEEIHT</abbr></a> (Toulouse, France), diplôme d'Ingénieur en Mathématiques Appliquées et Informatique.
-                      </dd>
-                      <dt>
-                        <h6>2004 - 2007</h6>
-                      </dt>
-                      <dd>
-                        <a href="http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php">Lycée Pierre de Fermat</a> (Toulouse, France), Classe Préparatoire aux Grandes Ecoles en Mathématiques et Physique, option Informatique.
-                      </dd>
-                      <dt>
-                        <h6>2004</h6>
-                      </dt>
-                      <dd>
-                        Baccalauréat Scientifique, Mention Bien.
-                      </dd>
-                    </dl>
-                    <h2>Langues</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Français</h6>
-                      </dt>
-                      <dd>
-                        Langue maternelle
-                      </dd>
-                      <dt>
-                        <h6>Anglais</h6>
-                      </dt>
-                      <dd>
-                        Niveau professionnel (TOEIC : 910 / 990)
-                      </dd>
-                      <dt>
-                        <h6>Espagnol</h6>
-                      </dt>
-                      <dd>
-                        Niveau scolaire
-                      </dd>
-                      <dt>
-                        <h6>Chinois</h6>
-                      </dt>
-                      <dd>
-                        Niveau scolaire
-                      </dd>
-                    </dl>
-                  </div>
-                  <div class='span5'>
-                    <h2>Compétences</h2>
-                    <dl class='dl-horizontal'>
-                      <dt>
-                        <h6>Langages</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Java (Java SE, Java EE 6, JavaFX 2)</li>
-                          <li>HTML5, XHTML, XML</li>
-                          <li>CSS3, LESS, SASS</li>
-                          <li>JavaScript, JSON</li>
-                          <li>PHP</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Java EE</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li><abbr title="Context and Dependency Injection">CDI</abbr> (Weld, OpenWebBean)</li>
-                          <li>DeltaSpike</li>
-                          <li><abbr title="Java Server Faces">JSF</abbr></li>
-                          <li><abbr title="Java Persistence API">JPA</abbr> (Hibernate, OpenJPA)</li>
-                          <li><abbr title="Enterpriser Java Bean">EJB</abbr></li>
-                          <li>JAX-RS</li>
-                          <li>Seam</li>
-                          <li>Apache CODI</li>
-                          <li>Play! framework</li>
-                          <li>Spring</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Librairies JSF</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Mojarra</li>
-                          <li>MyFaces</li>
-                          <li>Facelets</li>
-                          <li>RichFaces (contributeur)</li>
-                          <li>Primefaces</li>
-                          <li>Trinidad</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Serveurs</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Apache</li>
-                          <li>Tomcat, TomEE</li>
-                          <li>JBoss AS</li>
-                          <li>GlassFish</li>
-                          <li>Resine</li>
-                          <li>Websphere</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Bases de données</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>PostgreSQL</li>
-                          <li>MySQL</li>
-                          <li>Oracle</li>
-                          <li>HSQLDB</li>
-                        </ul>
-                      </dd>
-                      <dt>
-                        <h6>Outils</h6>
-                      </dt>
-                      <dd>
-                        <ul class='unstyled'>
-                          <li>Eclipse, Intellij IDEA</li>
-                          <li>Maven, Ant, Gradle</li>
-                          <li>Git, SVN, Dimension</li>
-                          <li>Jenkins, Hudson</li>
-                          <li>Sonar</li>
-                        </ul>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='span2'>
-              <ul class='nav nav-list well'>
-                <li class='nav-header'>Téléchargements</li>
-                <li class='resume pdf'>
-                  <a href='/data/CV_Paul_Dijou.pdf' target='_blank'>CV (PDF)</a>
-                </li>
-                <li class='resume odt'>
-                  <a href='/data/CV_Paul_Dijou.odt' target='_blank'>CV (ODT)</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script type='text/javascript'>
-  //<![CDATA[
-    $('ul.cv > li:first').addClass('active');
-    
-    var langs = ['en', 'fr'], lang = window.location.hash.substr(1);
-    
-    if(langs.indexOf(lang) < 0) {
-      lang = langs[0];
-      window.location.hash = '#'+lang;
-    }
-    
-    $('.title .btn-group > a.lang-'+lang).addClass('active');
-    $('#resume-'+lang).addClass('active');
-  //]]>
-</script>
-</div>
-<hr />
-<footer class='container'>
-  <div class='row'>
-    <div class='hidden-phone'>
-      <div class='span2'>
-        <ul class='nav nav-list'>
-          <li class='nav-header'>
-            Powered with
-          </li>
-          <li>
-            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
-          </li>
-          <li>
-            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
-          </li>
-          <li>
-            <a href='http://github.com/' target='_blank'>GitHub</a>
-          </li>
-          <li>
-            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
-          </li>
-          <li>
-            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>
-          Always connected!
-        </li>
-        <li>
-          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-        </li>
-        <li>
-          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-        </li>
-        <li>
-          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-        </li>
-        <li>
-          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-        </li>
-        <li>
-          <a href='http://feeds2.feedburner.com/pauldijou' target='_blank'>RSS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
     <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount','UA-25058935-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
     </script>
+  </head>
+  <body>
+    <header class="menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="/">
+              <span class="fa fa-home fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Home
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/blog/">
+              <span class="fa fa-coffee fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Blog
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/resume/">
+              <span class="fa fa-code fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Resume
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/projects/">
+              <span class="fa fa-flask fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Projects
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/about/">
+              <span class="fa fa-user fa-2x fa-fw"></span>
+              <span class="nav-label">
+                About
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/contact/">
+              <span class="fa fa-envelope fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Contact
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row resume">
+        <div class="col col-md-7">
+          <section class="about-me">
+            <h2>Paul Dijou</h2>
+            <dl class="dl-horizontal dl-title-100">
+              <dt>Age</dt>
+              <dd>
+                <span>27 years old (Oct 10, 1986)</span>
+              </dd>
+              <dt>Email</dt>
+              <dd>
+                <span>paul.dijou at gmail.com</span>
+              </dd>
+              <dt>GitHub</dt>
+              <dd>
+                <span>
+                  <a href="https://github.com/pauldijou">pauldijou</a>
+                </span>
+              </dd>
+            </dl>
+          </section>
+          <section class="experience">
+            <h2>Experience</h2>
+            <dl>
+              <dt>2014 - Now</dt>
+              <dd>
+                Working at <a href="http://movio.co/">Movio</a>
+              </dd>
+              <dt>2012 - 2014 (2 years)</dt>
+              <dd>
+                Working at <a href="http://www.zengularity.com/">Zengularity</a> (previously Zenexity), enjoying building uber websites using <a href="http://www.playframework.com/">Play</a>, Scala, MongoDB, and, of course, HTML5, CSS3, JavaScript, and all that awesome stuff we call open-source and internet.
+              </dd>
+              <dt>2012 (2 months)</dt>
+              <dd>
+                Through <a href="http://www.startupbootcamp.org/europeans-cities/amsterdam/">Startup Bootcamp</a> program which aims to help startups beginning their lives, I joined <a href="http://www.mipagar.com/">Mipagar</a> team to help them finishing their user interface based on JSF and RichFaces and their RESTful API using Java EE 6 new features. For the user interface, <strong>RichFaces Bootstrap</strong> has been used with really good feedbacks.
+              </dd>
+              <dt>2010 - 2012 (2 years)</dt>
+              <dd>
+                Working at <a href="http://www.celad.com/">CELAD</a>, an IT firm, my first real job was to develop and maintain Java EE applications for <a href="http://www.intertitres.natixis.com">Intertitres</a>, a subsidiary of <a href="http://www.natixis.com">Natixis</a>, a french bank, using an internal framework based on Spring, Seam 2 and JSF.
+              </dd>
+              <dt>2009 - 2011 (2 years)</dt>
+              <dd>
+                At the same time I was studying or working, I was also self-employed in order to realize e-commerce projects during my free time, using PHP or Java EE.
+              </dd>
+            </dl>
+          </section>
+          <section class="studies">
+            <h2>Studies</h2>
+            <dd>
+              <dt>End 2009</dt>
+              <dd><a href="http://www.polymtl.ca/en/"><abbr title="Ecole Polytechnique of Montreal">EPM</abbr></a> (Montreal, Canada), exchange program during one semester.</dd>
+              <dt>2007 - 2010</dt>
+              <dd><a href="http://www.enseeiht.fr/en/index.html"><abbr title="Ecole Nationale Supérieure d'Electrotechnique, d'Electronique, d'Informatique, d'Hydraulique et des Télécommunications">ENSEEIHT</abbr></a> (Toulouse, France), engineer degree in Mathematics and Computer Science.</dd>
+              <dt>2004 - 2007</dt>
+              <dd><a href="http://pedagogie.ac-toulouse.fr/lyc-fermat-toulouse/rens_cpge/mppc.php">Lycée Pierre de Fermat</a> (Toulouse, France), two-years highly selective classes to prepare for competitive exams to "Grandes Ecoles".</dd>
+              <dt>2004</dt>
+              <dd>Scientific "Baccalauréat", with distinction.</dd>
+            </dd>
+          </section>
+          <section class="langs">
+            <h2>Langs</h2>
+            <dl class="dl-horizontal dl-title-100">
+              <dt>French</dt>
+              <dd>
+                <span>Native speaker</span>
+              </dd>
+              <dt>English</dt>
+              <dd>
+                <span>Professional (TOEIC: 910 / 990)</span>
+              </dd>
+            </dl>
+          </section>
+        </div>
+        <div class="col col-md-5">
+          <section class="skills">
+            <h2>Skills</h2>
+            <dl>
+              <dt>Languages</dt>
+              <dd>
+                <ul>
+                  <li>Scala</li>
+                  <li>Java</li>
+                  <li>HTML5</li>
+                  <li>CSS3, LESS, SASS</li>
+                  <li>JavaScript, JSON</li>
+                </ul>
+              </dd>
+              <dt>Web</dt>
+              <dd>
+                <ul>
+                  <li>AngularJS, Ionic</li>
+                  <li>Node</li>
+                  <li>Too many JavaScript libraries</li>
+                </ul>
+              </dd>
+              <dt>JVM</dt>
+              <dd>
+                <ul>
+                  <li>Play Framework</li>
+                  <li>Akka</li>
+                  <li>Spray.io (-> Akka HTTP)</li>
+                  <li>Java EE</li>
+                </ul>
+              </dd>
+              <dt>Databases</dt>
+              <dd>
+                <ul>
+                  <li>MongoDB</li>
+                  <li>PostgreSQL</li>
+                  <li>MySQL</li>
+                  <li>Oracle</li>
+                </ul>
+              </dd>
+              <dt>Tools</dt>
+              <dd>
+                <ul>
+                  <li>Git, SVN, Dimension</li>
+                  <li>Gulp, Grunt, Broccoli</li>
+                  <li>NPM, Bower</li>
+                  <li>Cordova, PhoneGap</li>
+                  <li>Mavent, Ant, Gradle</li>
+                  <li>Jenkins, Hudson</li>
+                  <li>Sonar</li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost:4242/javascripts/main.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
   </body>
 </html>

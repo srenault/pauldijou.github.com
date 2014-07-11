@@ -1,253 +1,176 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='no-cache' http-equiv='pragma' />
-    <meta content='no-cache' http-equiv='cache-control' />
-    <meta content='0' http-equiv='expires' />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
     <title>
-      Paul Dijou / About
+      Paul Dijou
     </title>
-    <link href='http://pauldijou.fr/stylesheets/style.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <link href="http://localhost:4242/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="http://localhost:4242/stylesheets/main.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <!--[if lt IE 8]>
-      <link href='http://pauldijou.fr/stylesheets/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
+      <link href="http://localhost:4242/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script src='http://pauldijou.fr/javascripts/jquery.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/bootstrap.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/prettify.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/main.js' type='text/javascript'></script>
-    <!--[if lt IE 9]>
-      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
-    <![endif]-->
-  </head>
-  <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <header>
-  <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-    <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
-  </a>
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container'>
-        <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </a>
-        <a class='brand' href='/'>
-          Paul Dijou
-        </a>
-        <div class='nav-collapse'>
-          <ul class='nav'>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog/'>Blog</a>
-            </li>
-            <li>
-              <a href='/resume/'>Resume</a>
-            </li>
-            <li>
-              <a href='/projects/'>Projects</a>
-            </li>
-            <li>
-              <a href='/slides/'>Slides</a>
-            </li>
-            <li>
-              <a href='/about/'>About</a>
-            </li>
-            <li>
-              <a href='/todo/'>TODO</a>
-            </li>
-            <li>
-              <a href='/contact/'>Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      $(document).ready(function() {
-        var indexOfSharp = window.location.pathname.indexOf('#');
-        var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-        $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-      });
-    //]]>
-  </script>
-</header>
-<div class='page'>
-  <div class='title'>
-  <h1>About</h1>
-</div>
-<div class='container' id='container'>
-  <div class='row'>
-    <div class='span7'>
-      <div class='well'>
-        <h6>About me</h6>
-        <p class='clearfix'>
-          <img class='pull-left' src='https://secure.gravatar.com/avatar/083b6c8764b4c418ce359f23aababbae?size=60' style='margin-right:20px;' />
-          Hi there! My name is
-          <code>Paul Dijou</code>
-          and I'm a Java EE developer interested in anything that is both new and cool in this world (currently, it's CDI, DeltaSpike, JSF 2.2, HTML5, ...). Like lots of people, I'm an open-source advocate, I use OSS every day (big fan of most of JBoss and Apache projects).
-        </p>
-        <p>
-          Recently, I'm trying to contribute. Time for payback! You can follow my pull requests on
-          <a href='https://github.com/pauldijou'>my GitHub page.</a>
-          I'm mainly working on
-          <a href='https://github.com/richfaces'>RichFaces</a>
-          right now and making some translations for
-          <a href='https://github.com/arquillian'>Arquillian</a>
-          when I have free time, but
-          <a href='https://github.com/agorava'>Agorava</a>
-          is on my planning and I didn't have loose hope to code something for
-          <a href='https://github.com/deltaspike'>DeltaSpike</a>
-          one day.
-        </p>
-        <p>
-          More personnaly, I'm French and so I love cheese... I mean, real cheese! That's also explain why there might be quite some English mistakes on my blog. For all English native speaker, I'm really sorry about that. Be sure I do my best to improve my skills. When I have lot of free time (like twice a year), I enjoy taking photos and skiing.
-        </p>
-        <p>
-          Under is my social world. Feel free to plug in any of those.
-        </p>
-        <div class='clearfix'>
-          <ul class='unstyled icons'>
-            <li data-original-title='Twitter' rel='tooltip-bottom'>
-              <a class='icon32' href='https://twitter.com/#!/paul_dijou' target='_blank'>
-                <img src='/images/icons/twitter_32.png' />
-              </a>
-            </li>
-            <li data-original-title='GitHub' rel='tooltip-bottom'>
-              <a class='icon32' href='https://github.com/pauldijou' target='_blank'>
-                <img src='/images/icons/github_32.png' />
-              </a>
-            </li>
-            <li data-original-title='Google+' rel='tooltip-bottom'>
-              <a class='icon32' href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>
-                <img src='/images/icons/google_plus_32.png' />
-              </a>
-            </li>
-            <li data-original-title='Klout' rel='tooltip-bottom'>
-              <a class='icon32' href='http://klout.com/#/paul_dijou' target='_blank'>
-                <img src='/images/icons/klout_32.png' />
-              </a>
-            </li>
-            <li data-original-title='RSS' rel='tooltip-bottom'>
-              <a class='icon32' href='http://feeds2.feedburner.com/pauldijou' target='_blank'>
-                <img src='/images/icons/rss_32.png' />
-              </a>
-            </li>
-            <li data-original-title='Email' rel='tooltip-bottom'>
-              <a class='icon32' href='mailto:paul.dijou+dev@gmail.com' target='_blank'>
-                <img src='/images/icons/email_32.png' />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class='span5'>
-      <div class='well'>
-        <h6>About the website</h6>
-        <p>
-          The core design is powered with
-          <a href='http://twitter.github.com/bootstrap/index.html'>Twitter Boostrap.</a>
-          Thanks to it, this website is fully responsive on any device and has a great look. There is also inspiration from
-          <a href='http://line25.com/'>Line25</a>
-          for the title style.
-        </p>
-        <p>
-          The website code is generated by using
-          <a href='http://awestruct.org/'>Awestruct</a>
-          which is a real awesome tool. If you want a generator engine for HTML website and you are not afraid by a bit of Ruby code, you need to give it a try! Lots of inspiration from
-          <a href='http://arquillian.org'>Arquillian website</a>
-          which is also build using
-          <a href='http://awestruct.org/'>Awestruct</a>
-          but with some many hand-made functionnalities.
-        </p>
-        <p>
-          The whole site is hosted at
-          <a href='https://github.com/'>GitHub</a>
-          in a
-          <a href='https://github.com/pauldijou/pauldijou.github.com'>Git repo.</a>
-          The
-          <code>master</code>
-          branch contains the generated code you are currently seeing in your browser, the
-          <code>develop</code>
-          branch contains the
-          <a href='http://awestruct.org/'>Awestruct</a>
-          code in order to generate this code. For more info about hosting a website on
-          <a href='https://github.com/'>GitHub</a>
-          , read
-          <a href='http://help.github.com/pages/'>GitHub Pages help.</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<hr />
-<footer class='container'>
-  <div class='row'>
-    <div class='hidden-phone'>
-      <div class='span2'>
-        <ul class='nav nav-list'>
-          <li class='nav-header'>
-            Powered with
-          </li>
-          <li>
-            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
-          </li>
-          <li>
-            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
-          </li>
-          <li>
-            <a href='http://github.com/' target='_blank'>GitHub</a>
-          </li>
-          <li>
-            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
-          </li>
-          <li>
-            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>
-          Always connected!
-        </li>
-        <li>
-          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-        </li>
-        <li>
-          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-        </li>
-        <li>
-          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-        </li>
-        <li>
-          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-        </li>
-        <li>
-          <a href='http://feeds2.feedburner.com/pauldijou' target='_blank'>RSS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
     <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount','UA-25058935-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
     </script>
+  </head>
+  <body>
+    <header class="menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="/">
+              <span class="fa fa-home fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Home
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/blog/">
+              <span class="fa fa-coffee fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Blog
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/resume/">
+              <span class="fa fa-code fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Resume
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/projects/">
+              <span class="fa fa-flask fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Projects
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/about/">
+              <span class="fa fa-user fa-2x fa-fw"></span>
+              <span class="nav-label">
+                About
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/contact/">
+              <span class="fa fa-envelope fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Contact
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row about">
+        <div class="col col-lg-7">
+          <section class="about-me">
+            <h2>About me</h2>
+            <p class="clearfix">
+              <img class="pull-left avatar" src="https://secure.gravatar.com/avatar/083b6c8764b4c418ce359f23aababbae?size=60">
+              Hi there! My name is
+              <code>Paul Dijou</code>
+              and I'm a web developer interested in anything that is both new and cool in this world. Like lots of people, I'm an open-source advocate, I use OSS every day and it's like eating cookies with peanut butter and whipped cream and ice cream without getting fat (== awesome).
+            </p>
+            <p>
+              Recently, I'm trying to contribute. Time for payback! You can follow my pull requests on
+              <a href="https://github.com/pauldijou">my GitHub page.</a>
+            </p>
+            <p>
+              More personnaly, I'm French. It probably explains why there might be quite some English mistakes on my blog. For all English native speakers, I'm really sorry about that. Be sure I do my best to improve my skills. When I have lot of free time (like twice a year), I enjoy taking photos, traveling and skiing (best sport ever).
+            </p>
+            <p>
+              Under is my social world. Feel free to plug in any of those.
+            </p>
+            <div class="clearfix">
+              <ul class="social list-inline visible" id="social">
+                <li class="">
+                  <a class="twitter" href="https://twitter.com/paul_dijou" target="_blank">
+                    <span class="fa fa-twitter fa-3x fa-fw"></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="github" href="https://github.com/pauldijou" target="_blank">
+                    <span class="fa fa-github fa-3x fa-fw"></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="google_plus" href="https://plus.google.com/u/0/102994553784447043819" target="_blank">
+                    <span class="fa fa-google-plus fa-3x fa-fw"></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="linkedin" href="http://www.linkedin.com/pub/paul-dijou/40/10/883/en" target="_blank">
+                    <span class="fa fa-linkedin fa-3x fa-fw"></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="rss" href="http://feeds2.feedburner.com/pauldijou" target="_blank">
+                    <span class="fa fa-rss fa-3x fa-fw"></span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="email" href="mailto:paul.dijou@gmail.com" target="_blank">
+                    <span class="fa fa-envelope fa-3x fa-fw"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col col-lg-5">
+          <section class="about-website">
+            <h2>About the website</h2>
+            <p>
+              The website code is generated by using
+              <a href="http://awestruct.org/">Awestruct</a>
+              which is a real awesome tool. If you want a generator engine for HTML website and you are not afraid by a bit of Ruby code, you need to give it a try! Lot of inspiration from
+              <a href="http://arquillian.org">Arquillian website</a>
+              which is also built using
+              <a href="http://awestruct.org/">Awestruct</a>
+              but with some many hand-made features.
+            </p>
+            <p>
+              The whole site is hosted at
+              <a href="https://github.com/">GitHub</a>
+              in a
+              <a href="https://github.com/pauldijou/pauldijou.github.com">Git repo.</a>
+              The
+              <code>master</code>
+              branch contains the generated code you are currently seeing in your browser, the
+              <code>develop</code>
+              branch contains the
+              <a href="http://awestruct.org/">Awestruct</a>
+              code in order to generate this code. For more info about hosting a website on
+              <a href="https://github.com/">GitHub</a>
+              , read
+              <a href="http://help.github.com/pages/">GitHub Pages help.</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost:4242/javascripts/main.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
   </body>
 </html>

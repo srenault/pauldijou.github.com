@@ -1,345 +1,200 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <meta content='no-cache' http-equiv='pragma' />
-    <meta content='no-cache' http-equiv='cache-control' />
-    <meta content='0' http-equiv='expires' />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="no-cache" http-equiv="cache-control">
+    <meta content="0" http-equiv="expires">
     <title>
-      Paul Dijou / Contact
+      Paul Dijou
     </title>
-    <link href='http://pauldijou.fr/stylesheets/style.css' media='screen, projection' rel='stylesheet' type='text/css' />
+    <link href="http://localhost:4242/images/favicon.ico" rel="shortcut icon" type="image/png">
+    <link href="http://localhost:4242/stylesheets/main.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <!--[if lt IE 8]>
-      <link href='http://pauldijou.fr/stylesheets/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
+      <link href="http://localhost:4242/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css">
     <![endif]-->
-    <script src='http://pauldijou.fr/javascripts/jquery.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/bootstrap.min.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/prettify.js' type='text/javascript'></script>
-    <script src='http://pauldijou.fr/javascripts/main.js' type='text/javascript'></script>
-    <!--[if lt IE 9]>
-      <script src='//html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
-    <![endif]-->
-  </head>
-  <body data-offset='60' data-spy='scroll' data-target='.spynav'>
-    <header>
-  <a class='github-fork  hidden-tablet hidden-phone' href='http://github.com/pauldijou' target='_blank'>
-    <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' style='position:fixed;top:0;left:0;border:0;z-index:5000' />
-  </a>
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='navbar-inner'>
-      <div class='container'>
-        <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </a>
-        <a class='brand' href='/'>
-          Paul Dijou
-        </a>
-        <div class='nav-collapse'>
-          <ul class='nav'>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/blog/'>Blog</a>
-            </li>
-            <li>
-              <a href='/resume/'>Resume</a>
-            </li>
-            <li>
-              <a href='/projects/'>Projects</a>
-            </li>
-            <li>
-              <a href='/slides/'>Slides</a>
-            </li>
-            <li>
-              <a href='/about/'>About</a>
-            </li>
-            <li>
-              <a href='/todo/'>TODO</a>
-            </li>
-            <li>
-              <a href='/contact/'>Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      $(document).ready(function() {
-        var indexOfSharp = window.location.pathname.indexOf('#');
-        var pathname = indexOfSharp > 0 ? window.location.pathname.substring(0, indexOfSharp) : window.location.pathname;
-        $("body > header > .navbar a[href='"+pathname+"']").closest("li").addClass("active");
-      });
-    //]]>
-  </script>
-</header>
-<div class='page'>
-  <div class='title'>
-  <h1>Contact</h1>
-  <h6>Choose your weapon!</h6>
-</div>
-<div class='container' id='container'>
-  <div class='row'>
-    <div class='span8'>
-      <div class='well'>
-        <h6 class='bot10'>Contact form</h6>
-        <div id='contactFeedback'></div>
-        <form class='form-horizontal' id='formContact' style='margin:0px;'>
-          <div class='control-group contactName'>
-            <label class='control-label' for='contactName'>
-              Name
-              <span class='required'>*</span>
-            </label>
-            <div class='controls'>
-              <input class='span4' id='contactName' name='contactName' type='text' />
-            </div>
-          </div>
-          <div class='control-group contactEmail'>
-            <label class='control-label' for='contactEmail'>
-              Email
-              <span class='required'>*</span>
-            </label>
-            <div class='controls'>
-              <input class='span4' id='contactEmail' name='contactEmail' type='text' />
-            </div>
-          </div>
-          <div class='control-group contactSubject' for='contactSubject'>
-            <label class='control-label' for='contactSubject'>
-              Subject
-              <span class='required'>*</span>
-            </label>
-            <div class='controls'>
-              <input class='span4' id='contactSubject' name='contactSubject' type='text' />
-            </div>
-          </div>
-          <div class='control-group contactMessage'>
-            <label class='control-label' for='contactMessage'>
-              Message
-              <span class='required'>*</span>
-            </label>
-            <div class='controls'>
-              <textarea class='span4' id='contactMessage' name='contactMessage' style='height: 100px'></textarea>
-            </div>
-          </div>
-          <div class='form-actions' style='margin:0px -19px -19px -19px;'>
-            <button class='btn btn-primary' onclick='submitContact();return false;' type='button'>
-              Submit
-            </button>
-            <button class='btn' type='reset'>
-              Cancel
-            </button>
-          </div>
-        </form>
-        <script type='text/javascript'>
-          //<![CDATA[
-            $(function() { $('#contactMessage').autogrow(); })
-            
-            function submitContact() {
-              cleanForm("#formContact");
-              
-              var contactTo = "paul.dijou+dev" + "@" + "gmail" + ".com";
-              var contactName = $("input#contactName").val();
-              var contactEmail = $("input#contactEmail").val();
-              var contactSubject = $("input#contactSubject").val();
-              var contactMessage = $("textarea#contactMessage").val();
-              
-              var hasErrors = false;
-              var errorMsgRequired="Required field";
-              
-              var regexMail = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$/;
-                          
-              if(contactName.length == 0) {
-                hasErrors = true;
-                addErrorMessage("contactName", errorMsgRequired);
-              }
-              
-              if(contactEmail.length == 0) {
-                hasErrors = true;
-                addErrorMessage("contactEmail", errorMsgRequired);
-              } else if(!regexMail.test(contactEmail)) {
-                hasErrors = true;
-                addErrorMessage("contactEmail", "Email is not valid");
-              }
-              
-              if(contactSubject.length == 0) {
-                hasErrors = true;
-                addErrorMessage("contactSubject", errorMsgRequired);
-              }
-              
-              if(contactMessage.length == 0) {
-                hasErrors = true;
-                addErrorMessage("contactMessage", errorMsgRequired);
-              }
-              
-              if(!hasErrors) {
-                var request = $.ajax({
-                  type: "POST",
-                  url: "http://data.pauldijou.fr/sendMail.php",
-                  data: {to: contactTo, from: contactName + "<" + contactEmail + ">", subject: contactSubject, content: contactMessage, submit: "doIt"},
-                  success: function(data, textStatus, jqXHR) {
-                    $('#contactFeedback ').html('<div class="alert alert-success alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Congrats!</h4>You successfully send your message. I will answer it as soon as possible.</div>');
-                    $("input#contactName").val("");
-                    $("input#contactEmail").val("");
-                    $("input#contactSubject").val("");
-                    $("textarea#contactMessage").val("");
-                  },
-                  error: function(jqXHR, textStatus, errorThrown) {
-                    $('#contactFeedback ').html('<div class="alert alert-error alert-block"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">Dammit!</h4>An error has occured. If it persists, send me a mail instead. Really sorry...</div>');
-                  }
-                });
-              }
-              
-              return false;
-            }
-            
-            function cleanForm(selector) {
-              $('#contactFeedback .alert').remove();
-              $(selector + ' .control-group').removeClass('error');
-              $(selector + ' .control-group .help-block').remove();
-            }
-            
-            function addErrorMessage(selector, msg) {
-              $('#formContact .control-group.'+selector).addClass('error');
-              $('#formContact .control-group.'+selector+' .controls').append('<p class="help-block">'+msg+'</p>');
-            }
-            
-            function sendGmail(opts) {
-              var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-                '&to=' + opts.to +
-                '&su=' + opts.subject +
-                '&body=' + opts.message.replace(/\n/g,'%0A') +
-                '&ui=1';
-              location.href = str;
-            }
-          //]]>
-        </script>
-      </div>
-    </div>
-    <div class='span4'>
-      <div class='well'>
-        <h6 class='bot10'>Email</h6>
-        <p>
-          paul.dijou+dev at gmail.com
-        </p>
-      </div>
-      <div class='well'>
-        <h6 class='bot10'>Twitter</h6>
-        <p>
-          <a class='twitter-follow-button' href='https://twitter.com/paul_dijou'>Follow @paul_dijou</a>
-          <script type='text/javascript'>
-            //<![CDATA[
-              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-            //]]>
-          </script>
-        </p>
-        <p>
-          <a class='twitter-mention-button' data-related='paul_dijou' href='https://twitter.com/intent/tweet?screen_name=paul_dijou'>Tweet to @paul_dijou</a>
-          <script type='text/javascript'>
-            //<![CDATA[
-              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-            //]]>
-          </script>
-        </p>
-      </div>
-      <div class='well'>
-        <h6>IRC</h6>
-        <p>
-          I'm killing time on
-          <a href='http://freenode.net/'>irc.freenode.net</a>
-          on one of the following channels:
-        </p>
-        <div class='row-fluid'>
-          <div class='span6'>
-            <ul class='unstyled' style='margin-left:20px;'>
-              <li>#richfaces</li>
-              <li>#deltaspike</li>
-              <li>#agorava</li>
-              <li>#jbosstesting</li>
-            </ul>
-          </div>
-          <div class='span6'>
-            <ul class='unstyled' style='margin-left:20px;'>
-              <li>#forge</li>
-              <li>#aerogear</li>
-              <li>#awestruct</li>
-              <li>#seam-dev</li>
-            </ul>
-          </div>
-        </div>
-        <p>
-          If you don't have an IRC client, just click on this link:
-          <a href='http://webchat.freenode.net/' target='_blank'>webchat.freenode.net</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<hr />
-<footer class='container'>
-  <div class='row'>
-    <div class='hidden-phone'>
-      <div class='span2'>
-        <ul class='nav nav-list'>
-          <li class='nav-header'>
-            Powered with
-          </li>
-          <li>
-            <a href='http://awestruct.org/' target='_blank'>Awestruct</a>
-          </li>
-          <li>
-            <a href='http://twitter.github.com/bootstrap/' target='_blank'>Bootstrap</a>
-          </li>
-          <li>
-            <a href='http://github.com/' target='_blank'>GitHub</a>
-          </li>
-          <li>
-            <a href='http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html' target='_blank'>HAML</a>
-          </li>
-          <li>
-            <a href='http://redcloth.org/textile/' target='_blank'>Textile</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class='span2'>
-      <ul class='nav nav-list'>
-        <li class='nav-header'>
-          Always connected!
-        </li>
-        <li>
-          <a href='https://twitter.com/#!/paul_dijou' target='_blank'>Twitter</a>
-        </li>
-        <li>
-          <a href='https://github.com/pauldijou' target='_blank'>GitHub</a>
-        </li>
-        <li>
-          <a href='https://plus.google.com/u/0/102994553784447043819' target='_blank'>Google+</a>
-        </li>
-        <li>
-          <a href='http://klout.com/#/paul_dijou' target='_blank'>Klout</a>
-        </li>
-        <li>
-          <a href='http://feeds2.feedburner.com/pauldijou' target='_blank'>RSS</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
     <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount','UA-25058935-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-25058935-1', 'auto');
+      ga('send', 'pageview');
     </script>
+  </head>
+  <body>
+    <header class="menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <a href="/">
+              <span class="fa fa-home fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Home
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/blog/">
+              <span class="fa fa-coffee fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Blog
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/resume/">
+              <span class="fa fa-code fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Resume
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/projects/">
+              <span class="fa fa-flask fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Projects
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/about/">
+              <span class="fa fa-user fa-2x fa-fw"></span>
+              <span class="nav-label">
+                About
+              </span>
+            </a>
+          </div>
+          <div class="col-xs-2">
+            <a href="/contact/">
+              <span class="fa fa-envelope fa-2x fa-fw"></span>
+              <span class="nav-label">
+                Contact
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="contact">
+        <div class="row">
+          <section class="social">
+            <ul class="social list-inline visible" id="social">
+              <li class="">
+                <a class="twitter" href="https://twitter.com/paul_dijou" target="_blank">
+                  <span class="fa fa-twitter fa-3x fa-fw"></span>
+                </a>
+              </li>
+              <li class="">
+                <a class="github" href="https://github.com/pauldijou" target="_blank">
+                  <span class="fa fa-github fa-3x fa-fw"></span>
+                </a>
+              </li>
+              <li class="">
+                <a class="google_plus" href="https://plus.google.com/u/0/102994553784447043819" target="_blank">
+                  <span class="fa fa-google-plus fa-3x fa-fw"></span>
+                </a>
+              </li>
+              <li class="">
+                <a class="linkedin" href="http://www.linkedin.com/pub/paul-dijou/40/10/883/en" target="_blank">
+                  <span class="fa fa-linkedin fa-3x fa-fw"></span>
+                </a>
+              </li>
+              <li class="">
+                <a class="rss" href="http://feeds2.feedburner.com/pauldijou" target="_blank">
+                  <span class="fa fa-rss fa-3x fa-fw"></span>
+                </a>
+              </li>
+              <li class="">
+                <a class="email" href="mailto:paul.dijou@gmail.com" target="_blank">
+                  <span class="fa fa-envelope fa-3x fa-fw"></span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="row">
+          <section class="email col col-md-7">
+            <form class="form-horizontal" id="contactForm" novalidate="novalidate" style="margin:0px;">
+              <h2>Contact form</h2>
+              <div class="control-group contactName">
+                <label class="control-label" for="contactName">
+                  Name
+                  <span class="required">*</span>
+                </label>
+                <input class="span4" id="contactName" name="contactName" required="required" type="text">
+              </div>
+              <div class="control-group contactEmail">
+                <label class="control-label" for="contactEmail">
+                  Email
+                  <span class="required">*</span>
+                </label>
+                <input class="span4" id="contactEmail" name="contactEmail" required="required" type="email">
+              </div>
+              <div class="control-group contactSubject" for="contactSubject">
+                <label class="control-label" for="contactSubject">
+                  Subject
+                  <span class="required">*</span>
+                </label>
+                <input class="span4" id="contactSubject" name="contactSubject" required="required" type="text">
+              </div>
+              <div class="control-group contactMessage">
+                <label class="control-label" for="contactMessage">
+                  Message
+                  <span class="required">*</span>
+                </label>
+                <textarea class="span4" id="contactMessage" name="contactMessage" required="required"></textarea>
+              </div>
+              <button class="button submit pull-right" type="submit">
+                <span class="fa fa-check-circle fa-lg fa-fw"></span>
+                Send
+              </button>
+              <button class="button reset pull-right" type="reset">
+                <span class="fa fa-times-circle fa-lg fa-fw"></span>
+                Cancel
+              </button>
+            </form>
+          </section>
+          <section class="irc col col-md-5">
+            <h2>IRC</h2>
+            <p>
+              I'm killing time on
+              <a href="http://freenode.net/">irc.freenode.net</a>
+              on one of the following channels:
+            </p>
+            <div class="row">
+              <div class="col col-md-6">
+                <ul class="list-unstyled" style="margin-left:20px;">
+                  <li>#angularjs</li>
+                  <li>#richfaces</li>
+                  <li>#deltaspike</li>
+                  <li>#agorava</li>
+                </ul>
+              </div>
+              <div class="col col-md-6">
+                <ul class="list-unstyled" style="margin-left:20px;">
+                  <li>#forge</li>
+                  <li>#aerogear</li>
+                  <li>#awestruct</li>
+                  <li>#jbosstesting</li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              If you don't have an IRC client, just click on this link:
+              <a href="http://webchat.freenode.net/" target="_blank">webchat.freenode.net</a>
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost:4242/javascripts/main.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
   </body>
 </html>
