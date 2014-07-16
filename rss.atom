@@ -2,13 +2,13 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2014-07-16T19:06:33+12:00</updated>
+  <updated>2014-07-16T19:11:14+12:00</updated>
   <link href="http://pauldijou.fr/rss.atom" rel="self" type="application/atom+xml" />
   <link href="http://pauldijou.fr/" rel="alternate" type="text/html" />
   <entry>
     <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html</id>
     <title>AngularJS HTML5 routing on PlayFramework</title>
-    <updated>2014-07-16T19:06:33+12:00</updated>
+    <updated>2014-07-16T19:11:14+12:00</updated>
     <published>2013-02-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -279,7 +279,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
     <title>Some POCs to share</title>
-    <updated>2014-07-16T19:06:33+12:00</updated>
+    <updated>2014-07-16T19:11:14+12:00</updated>
     <published>2012-11-27T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -323,7 +323,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2014-07-16T19:06:33+12:00</updated>
+    <updated>2014-07-16T19:11:14+12:00</updated>
     <published>2012-08-07T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -389,7 +389,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
     <title>News about RichFaces CDK</title>
-    <updated>2014-07-16T19:06:33+12:00</updated>
+    <updated>2014-07-16T19:11:14+12:00</updated>
     <published>2012-08-01T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -434,7 +434,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2014-07-16T19:06:33+12:00</updated>
+    <updated>2014-07-16T19:11:14+12:00</updated>
     <published>2012-05-08T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html" rel="alternate" type="text/html" />
     <category term="jsf"></category>
