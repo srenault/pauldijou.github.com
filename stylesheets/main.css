@@ -3241,6 +3241,9 @@ code {
 code a {
   color: inherit !important;
 }
+pre[class*="language-"] {
+  background-color: #353535 !important;
+}
 pre > code {
   background-color: transparent;
   padding: 0;
@@ -3406,7 +3409,7 @@ pre > code {
 }
 body {
   color: #353535;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
 }
 a {
@@ -3660,7 +3663,7 @@ a:focus {
   }
 }
 .posts .post {
-  border-bottom: 2px solid #353535;
+  border-bottom: 2px solid #686868;
 }
 .post {
   padding-bottom: 20px;
@@ -3678,8 +3681,7 @@ a:focus {
 .post ol,
 .post dl {
   max-width: 830px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 3em auto;
 }
 @media (min-width: 992px) {
   .post pre {
@@ -3702,8 +3704,9 @@ a:focus {
 }
 .post p {
   text-align: justify;
-  padding-top: 1em;
-  padding-bottom: 1em;
+}
+.post pre {
+  font-size: 16px;
 }
 .post .meta a,
 .post .content a,
@@ -3726,6 +3729,9 @@ a:focus {
 .post .separator::before {
   content: "|";
   margin: 0 5px;
+}
+.post .footer .tags {
+  margin-top: 20px;
 }
 .post .pagination {
   text-align: center;
@@ -3763,7 +3769,6 @@ a:focus {
     display: block;
     text-align: center;
     border: 2px solid #353535;
-    margin-top: 20px;
   }
   .post .footer .tags .tag {
     display: block;
