@@ -3681,6 +3681,12 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 992px) {
+  .post pre {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
 .post h2 {
   text-align: center;
   font-size: 2em;
@@ -3719,8 +3725,49 @@ a:focus {
 }
 .post .pagination {
   text-align: center;
+  font-size: 14px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .post .pagination {
+    font-size: 18px;
+  }
+}
+@media (max-width: 991px) {
+  .post .separator {
+    display: none;
+  }
+  .post [data-disqus-identifier] {
+    display: none;
+  }
+  .post a.button,
+  .post .tags {
+    width: 80%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .post a.button {
+    color: #353535 !important;
+    text-decoration: none !important;
+  }
+  .post a.button:hover {
+    color: #ecf0f1 !important;
+  }
+  .post .tags {
+    display: block;
+    text-align: center;
+    border: 2px solid #353535;
+    margin-top: 20px;
+  }
+  .post .tags .tag {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    font-size: 18px;
+  }
 }
 .projects {
   padding: 0;
