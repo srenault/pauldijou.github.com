@@ -3741,27 +3741,27 @@ a:focus {
   .post [data-disqus-identifier] {
     display: none;
   }
-  .post a.button,
-  .post .tags {
+  .post .footer a.button,
+  .post .footer .tags {
     width: 80%;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
   }
-  .post a.button {
+  .post .footer a.button {
     color: #353535 !important;
     text-decoration: none !important;
   }
-  .post a.button:hover {
+  .post .footer a.button:hover {
     color: #ecf0f1 !important;
   }
-  .post .tags {
+  .post .footer .tags {
     display: block;
     text-align: center;
     border: 2px solid #353535;
     margin-top: 20px;
   }
-  .post .tags .tag {
+  .post .footer .tags .tag {
     display: block;
     width: 80%;
     padding: 10px;
