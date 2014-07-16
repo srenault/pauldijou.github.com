@@ -3150,9 +3150,11 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
-@font-face {
-  font-family: 'BirthOfAHero';
-  src: url('fonts/birthofahero/BIRTH_OF_A_HERO.ttf') format('truetype');
+::selection {
+  background-color: #049372;
+}
+::-moz-selection {
+  background-color: #049372;
 }
 .text-center {
   text-align: center;
@@ -3244,6 +3246,15 @@ pre > code {
   padding: 0;
   border-radius: 0;
 }
+.talk.red {
+  color: #96281b;
+}
+.talk.blue {
+  color: #22313f;
+}
+.talk.green {
+  color: #049372;
+}
 .button {
   display: inline-block;
   color: #353535;
@@ -3333,11 +3344,8 @@ pre > code {
 .alert.alert-info:before {
   content: '\f05a';
 }
-.alert.alert-info a {
-  color: #ecf0f1;
-}
-.alert.alert-info a:hover {
-  color: #bdc3c7;
+.alert.alert-info code {
+  background-color: #96281b;
 }
 .alert.alert-danger {
   background-color: #96281b;
@@ -3345,11 +3353,11 @@ pre > code {
 .alert.alert-danger:before {
   content: '\f06a';
 }
-.alert.alert-danger a {
-  color: #ecf0f1;
+.alert.alert-success {
+  background-color: #049372;
 }
-.alert.alert-danger a:hover {
-  color: #bdc3c7;
+.alert.alert-success:before {
+  content: '\f058';
 }
 @media (min-width: 480px) {
   .alert {

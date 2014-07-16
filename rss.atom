@@ -2,32 +2,43 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2014-07-13T14:31:08+12:00</updated>
+  <updated>2014-07-16T12:28:39+12:00</updated>
   <link href="http://pauldijou.fr/rss.atom" rel="self" type="application/atom+xml" />
   <link href="http://pauldijou.fr/" rel="alternate" type="text/html" />
   <entry>
     <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html</id>
     <title>AngularJS HTML5 routing on PlayFramework</title>
-    <updated>2014-07-13T14:31:08+12:00</updated>
+    <updated>2014-07-16T12:28:39+12:00</updated>
     <published>2013-02-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
     <category term="play"></category>
     <category term="html5"></category>
     <summary>
+      
       The problem
-      AngularJS provides a nice $location service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new History API. Since we love bleeding edge technologies, that&#8217;s obvious we want to use the History API if possible. Lucky us, it appears it&#8217;s quite easy to do so with a Play Framework application. Let&#8217;s see how to do that.
-      The full code of the demo is available here: https://github.com/blogsamples/angularjs-play21-html5-routing
+      
+      AngularJS provides a nice $location service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new History API. Since we love bleeding edge technologies, that's obvious we want to use the History API if possible. Lucky us, it appears it's quite easy to do so with a Play Framework application. Let's see how to do that.
+      
+      The full code of the demo is available on GitHub.
+      
       Simple configuration
-      Let&#8217;s keep things simple. Creating a new Play Framework application with play new. We will use...
+      
+      Let's keep things simple. Creating a new Play Framework application with play new. We will use...
     </summary>
     <content type="html">
-      &lt;h3&gt;The problem&lt;/h3&gt;
-      &lt;p&gt;AngularJS provides a nice &lt;code&gt;$location&lt;/code&gt; service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new &lt;a href=&quot;http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html&quot;&gt;History &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;&lt;/a&gt;. Since we love bleeding edge technologies, that’s obvious we want to use the History &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; if possible. Lucky us, it appears it’s quite easy to do so with a Play Framework application. Let’s see how to do that.&lt;/p&gt;
-      &lt;p&gt;The full code of the demo is available here: &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing&quot;&gt;https://github.com/blogsamples/angularjs-play21-html5-routing&lt;/a&gt;&lt;/p&gt;
-      &lt;h3&gt;Simple configuration&lt;/h3&gt;
-      &lt;p&gt;Let’s keep things simple. Creating a new Play Framework application with &lt;code&gt;play new&lt;/code&gt;. We will use a Scala application in this article, but it should as easy with a Java one. Then add AngularJS using &lt;span class=&quot;caps&quot;&gt;CDN&lt;/span&gt; (see &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19&quot;&gt; main.scala.html#L19&lt;/a&gt;). Then we will create an Angular module for our app and enable the HTML5 routing mode which is disable by default.&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;var app = angular.module(&quot;app&quot;, [&quot;ngResource&quot;])
+      
+      &lt;h3 id=&quot;the-problem&quot;&gt;The problem&lt;/h3&gt;
+      
+      &lt;p&gt;AngularJS provides a nice &lt;code&gt;$location&lt;/code&gt; service which allows you to deal with routing and url inside your application. It supports both a fallback mode using hashbang and a real HTML5 routing using the new &lt;a href=&quot;http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html&quot;&gt;History API&lt;/a&gt;. Since we love bleeding edge technologies, that's obvious we want to use the History API if possible. Lucky us, it appears it's quite easy to do so with a Play Framework application. Let's see how to do that.&lt;/p&gt;
+      
+      &lt;p&gt;The full code of the demo is available &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;simple-configuration&quot;&gt;Simple configuration&lt;/h3&gt;
+      
+      &lt;p&gt;Let's keep things simple. Creating a new Play Framework application with &lt;code&gt;play new&lt;/code&gt;. We will use a Scala application in this article, but it should as easy with a Java one. Then add AngularJS using CDN (see &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html#L19&quot;&gt;main.scala.html#L19&lt;/a&gt;). Then we will create an Angular module for our app and enable the HTML5 routing mode which is disable by default.&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var app = angular.module(&quot;app&quot;, [&quot;ngResource&quot;])
         .config([&quot;$routeProvider&quot;, function($routeProvider) {
             return $routeProvider.when(&quot;/&quot;, {
               templateUrl: &quot;/views/index&quot;,
@@ -40,54 +51,96 @@
         .config([&quot;$locationProvider&quot;, function($locationProvider) {
             return $locationProvider.html5Mode(true).hashPrefix(&quot;!&quot;);
           }
-        ]);&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;Nice. Now we will make some modification to the default views generated by Play. We want a single-page application, which means our root url must map to a main page which will contains all resource dependencies and includes the &lt;code&gt;ng-view&lt;/code&gt; of AngularJS. I’ve done that by editing the “main.scala.html” file as you can see here: &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html&quot;&gt;https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html&lt;/a&gt; and add a new Play route:&lt;/p&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /                           controllers.Application.main(any = &quot;none&quot;)&lt;/code&gt;&lt;/pre&gt;
+        ]);
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Nice. Now we will make some modification to the default views generated by Play. We want a single-page application, which means our root url must map to a main page which will contains all resource dependencies and includes the &lt;code&gt;ng-view&lt;/code&gt; of AngularJS. I've done that by editing the &lt;code&gt;main.scala.html&lt;/code&gt; file as you can &lt;a href=&quot;https://github.com/blogsamples/angularjs-play21-html5-routing/blob/master/app/views/main.scala.html&quot;&gt;see here&lt;/a&gt; and add a new Play route:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /                           controllers.Application.main(any = &quot;none&quot;)
+      &lt;/code&gt;&lt;/pre&gt;
+      
       &lt;p&gt;And a new &lt;code&gt;Action&lt;/code&gt; in my Application controller:&lt;/p&gt;
-      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;def main(any: String) = Action {
+      
+      &lt;pre&gt;&lt;code class=&quot;language-scala&quot;&gt;def main(any: String) = Action {
         Ok(views.html.main())
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;Wait. Why is there a String param for the main method? And why do we pass a default &lt;code&gt;any = &quot;none&quot;&lt;/code&gt; value? It seems a bit useless… Fair enough, I will explain it later on the article, don’t mind it for now. So, we have our main page. Let’s add some content for the landing page. As we have specified in the AngularJS routing, our root url, which is defined with &lt;code&gt;$routeProvider.when(&quot;/&quot;, ...)&lt;/code&gt; is pointing to &lt;code&gt;/views/index&lt;/code&gt;. So we need a Play route for that… but before, let’s talk about all those routes.&lt;/p&gt;
-      &lt;h3&gt;Routes, routes, routes…&lt;/h3&gt;
-      &lt;p&gt;As we advance in our coding, we can see that the term “route” is used in different contexts. It’s important to fully understand them all. Play routes, which are defined in the &lt;code&gt;conf/routes&lt;/code&gt; file, are the core of your application. It’s those routes which will answer to the &lt;span class=&quot;caps&quot;&gt;HTTP&lt;/span&gt; requests, serving either &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt;, &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt;, or whatever. But you, as the developer, will be the only one to know about them. Users of your application will only use and see AngularJS routes, which are defined in your main module using the &lt;code&gt;$routeProvider&lt;/code&gt;.&lt;/p&gt;
-      &lt;p&gt;The idea is that when a user land on your site, it should use AngularJS routing which will then use Play routes to load the template (= the content) of the page. So why not using the exact same url for both the AngularJS route and the templateUrl route? Well, in the case of the root, it’s obvious: the Play “/” route is already required for our main page. Ok. But in a more general case, could we do:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;$routeProvider.when(&quot;/page&quot;, {
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Wait. Why is there a String param for the main method? And why do we pass a default &lt;code&gt;any = &quot;none&quot;&lt;/code&gt; value? It seems a bit useless… Fair enough, I will explain it later on the article, don't mind it for now. So, we have our main page. Let's add some content for the landing page. As we have specified in the AngularJS routing, our root url, which is defined with &lt;code&gt;$routeProvider.when(&quot;/&quot;, ...)&lt;/code&gt; is pointing to &lt;code&gt;/views/index&lt;/code&gt;. So we need a Play route for that… but before, let's talk about all those routes.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;routes-routes-routes&quot;&gt;Routes, routes, routes…&lt;/h3&gt;
+      
+      &lt;p&gt;As we advance in our coding, we can see that the term &quot;route&quot; is used in different contexts. It's important to fully understand them all. Play routes, which are defined in the &lt;code&gt;conf/routes&lt;/code&gt; file, are the core of your application. It's those routes which will answer to the HTTP requests, serving either HTML, JSON, or whatever. But you, as the developer, will be the only one to know about them. Users of your application will only use and see AngularJS routes, which are defined in your main module using the &lt;code&gt;$routeProvider&lt;/code&gt;.&lt;/p&gt;
+      
+      &lt;p&gt;The idea is that when a user land on your site, it should use AngularJS routing which will then use Play routes to load the template (= the content) of the page. So why not using the exact same url for both the AngularJS route and the templateUrl route? Well, in the case of the root, it's obvious: the Play &quot;/&quot; route is already required for our main page. Ok. But in a more general case, could we do:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;$routeProvider.when(&quot;/page&quot;, {
         templateUrl: &quot;/page&quot;,
         controller: &quot;PageCtrl&quot;
-      })&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;Nope, you can’t. Well, that’s a small lie… you could do that, and it would work if your user &lt;strong&gt;always&lt;/strong&gt; open your main page first. If he does that, then all AngularJS routing is loaded, and when the user will go to “/page” url, it will be catch by AngularJS which will ask for the “/page” on Play routes which will give him the content of the page. So what’s the problem? If you user &lt;strong&gt;directly&lt;/strong&gt; land on the “/page” url, because he arrived for the first time on your application after having clicked on a link somewhere which was pointing at “/page”, then the Play route will be directly called since there is no AngularJS routing initialized at all… And that’s bad, right? The user would have the raw content of the page without any JavaScript or &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; from the main page. It’s a fail.&lt;/p&gt;
-      &lt;p&gt;In order to prevent that, I have chosen to use some conventions. There is nothing official, you can use your own, the only thing to keep in mind is that AngularJS routes and Play routes should &lt;strong&gt;never&lt;/strong&gt; be equals. My solution to do that is to prefix all Play routes serving &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; with a “/views/” prefix, all Play routes serving &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; with a “/api/” prefix and, as it is by default, all Play routes serving resources with a “/assets/” prefix. Meaning I can now use all routes I want inside AngularJS routing but never starts them with one of those prefix.&lt;/p&gt;
-      &lt;p&gt;Of course, it will just modify the problem without solving it. Now, if a user land directly on “/page”, he will have a huge orange Play error telling him that the route doesn’t exist. As before, AngularJS routing isn’t loaded, so it’s Play routing which try to handle that and, since there is no longer any “/page” route in Play, it crash.&lt;/p&gt;
-      &lt;p&gt;So what’s the point of having different routes? The next trick is to redirect all unknow routes to our main page. By doing so, if the user land on “/page”, Play will say &lt;span class=&quot;talk red&quot;&gt;“I don’t know that route, go to the main page”&lt;/span&gt;, so the user will indeed go to your main page, but then, all AngularJS routing will be loaded and super awesome AngularJS will say &lt;span class=&quot;talk blue&quot;&gt;“Hey, I do know that route, and I need the /views/page template”&lt;/span&gt;, and then Play will respond &lt;span class=&quot;talk red&quot;&gt;“Oh yeah, I can serve you /views/page, here is the &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; to display”&lt;/span&gt;, and your user will see the correct “/page1” content, even if he lands directly on it.&lt;/p&gt;
-      &lt;p&gt;Another question? Why didn’t we use this trick before and then have the same routes for both AngularJS and Play? Because it’s important that the trick apply only to unknow routes. We cannot redirect to the main page an existing Play route because it needs to serve its own content. So by using different routes, we can intercept AngularJS routes inside Play as “unknown routes” and redirect them to the main page so AngularJS can handle them. I hope I’m clear enough here, that might be the hardest part of the article. In order to achieve that, we just need to put a Play route at the end of the route file which intercept all routes and redirect them to the main page:&lt;/p&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /*any                       controllers.Application.main(any)&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;And now you should understand why we had a &lt;code&gt;any: String&lt;/code&gt; for our main page at the beginning.&lt;/p&gt;
-      &lt;h3&gt;First pages&lt;/h3&gt;
-      &lt;p&gt;Enough with all the theory, let’s do two concrete pages: creating “page1.scala.html” and “page2.scala.html” files with basic content (see source code, I’m using a template to stay &lt;span class=&quot;caps&quot;&gt;DRY&lt;/span&gt; about the title and the menu but that’s not important), add then as Play routes (with a “/views/” as stated before) and also add them inside our controller:&lt;/p&gt;
-      &lt;pre class=&quot;language-markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;@()&lt;/code&gt;
+      })
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;@template() {
+      &lt;p&gt;Nope, you can't. Well, that's a small lie… you could do that, and it would work if your user &lt;strong&gt;always&lt;/strong&gt; open your main page first. If he does that, then all AngularJS routing is loaded, and when the user will go to &quot;/page&quot; url, it will be catch by AngularJS which will ask for the &quot;/page&quot; on Play routes which will give him the content of the page. So what's the problem? If you user &lt;strong&gt;directly&lt;/strong&gt; land on the &quot;/page&quot; url, because he arrived for the first time on your application after having clicked on a link somewhere which was pointing at &quot;/page&quot;, then the Play route will be directly called since there is no AngularJS routing initialized at all… And that's bad, right? The user would have the raw content of the page without any JavaScript or CSS from the main page. It's a fail.&lt;/p&gt;
+      
+      &lt;p&gt;In order to prevent that, I have chosen to use some conventions. There is nothing official, you can use your own, the only thing to keep in mind is that AngularJS routes and Play routes should &lt;strong&gt;never&lt;/strong&gt; be equals. My solution to do that is to prefix all Play routes serving HTML with a &quot;/views/&quot; prefix, all Play routes serving JSON with a &quot;/api/&quot; prefix and, as it is by default, all Play routes serving resources with a &quot;/assets/&quot; prefix. Meaning I can now use all routes I want inside AngularJS routing but never starts them with one of those prefix.&lt;/p&gt;
+      
+      &lt;p&gt;Of course, it will just modify the problem without solving it. Now, if a user land directly on &quot;/page&quot;, he will have a huge orange Play error telling him that the route doesn't exist. As before, AngularJS routing isn't loaded, so it's Play routing which try to handle that and, since there is no longer any &quot;/page&quot; route in Play, it crash.&lt;/p&gt;
+      
+      &lt;p&gt;So what's the point of having different routes? The next trick is to redirect all unknow routes to our main page. By doing so, if the user land on &quot;/page&quot;, Play will say &lt;em class=&quot;talk red&quot;&gt;&quot;I don't know that route, go to the main page&quot;&lt;/em&gt;, so the user will indeed go to your main page, but then, all AngularJS routing will be loaded and super awesome AngularJS will say &lt;em class=&quot;talk green&quot;&gt;&quot;Hey, I do know that route, and I need the /views/page template&quot;&lt;/em&gt;, and then Play will respond &lt;em class=&quot;talk red&quot;&gt;&quot;Oh yeah, I can serve you /views/page, here is the HTML to display&quot;&lt;/em&gt;, and your user will see the correct &quot;/page1&quot; content, even if he lands directly on it.&lt;/p&gt;
+      
+      &lt;p&gt;Another question? Why didn't we use this trick before and then have the same routes for both AngularJS and Play? Because it's important that the trick apply only to unknow routes. We cannot redirect to the main page an existing Play route because it needs to serve its own content. So by using different routes, we can intercept AngularJS routes inside Play as &quot;unknown routes&quot; and redirect them to the main page so AngularJS can handle them. I hope I'm clear enough here, that might be the hardest part of the article. In order to achieve that, we just need to put a Play route at the end of the route file which intercept all routes and redirect them to the main page:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /*any                       controllers.Application.main(any)
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;And now you should understand why we had a &lt;code&gt;any: String&lt;/code&gt; for our main page at the beginning.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;first-pages&quot;&gt;First pages&lt;/h3&gt;
+      
+      &lt;p&gt;Enough with all the theory, let's do two concrete pages: creating &quot;page1.scala.html&quot; and &quot;page2.scala.html&quot; files with basic content (see source code, I'm using a template to stay DRY about the title and the menu but that's not important), add then as Play routes (with a &quot;/views/&quot; as stated before) and also add them inside our controller:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;@()
+      
+      @template() {
         &amp;lt;h2&amp;gt;Page1&amp;lt;/h2&amp;gt;
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /views/page1                controllers.Application.page1&lt;/code&gt;&lt;/pre&gt;
-      &lt;pre class=&quot;language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt;def page1 = Action {
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /views/page1                controllers.Application.page1
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-scala&quot;&gt;def page1 = Action {
         Ok(views.html.page1())
-      }&lt;/code&gt;&lt;/pre&gt;
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
       &lt;p&gt;And then add the AngularJS routing:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;.when(&quot;/page1&quot;, {
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;.when(&quot;/page1&quot;, {
         templateUrl: &quot;/views/page1&quot;
-      })&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;That’s it. We can now create a link, using a &lt;code&gt;a&lt;/code&gt; tag, to point to the url “/page1” and AngularJS will do the rest, loading the “/views/page1” template using Play route which will return the &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; code generated from our Scala template. Nice isn’t it? The url is correct: http://localhost:9000/page1, you can use the back button to return to the index page, no ugly hashbang, but all in Ajax with a single-page application.&lt;/p&gt;
-      &lt;h3&gt;Handling url parameters&lt;/h3&gt;
-      &lt;p&gt;So, we have our url working by using the History &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; thanks to the HTML5 mode of the AngularJS $routeProvider. But that’s only for raw url. What if we want to have dynamic parameters inside them? Just like &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt;, having url as “/colors/1” and “/colors/2” if we deal with colors (yeah, why not?). Do you think that’s easy? Well, you could, after all, both AngularJS and Play know how to handle parameters in their url. We could do something like:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;.when(&quot;/colors/:id&quot;, {
+      })
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;That's it. We can now create a link, using a &lt;code&gt;a&lt;/code&gt; tag, to point to the url &quot;/page1&quot; and AngularJS will do the rest, loading the &quot;/views/page1&quot; template using Play route which will return the HTML code generated from our Scala template. Nice isn't it? The url is correct: &lt;a href=&quot;http://localhost:9000/page1&quot;&gt;http://localhost:9000/page1&lt;/a&gt;, you can use the back button to return to the index page, no ugly hashbang, but all in Ajax with a single-page application.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;handling-url-parameters&quot;&gt;Handling url parameters&lt;/h3&gt;
+      
+      &lt;p&gt;So, we have our url working by using the History API thanks to the HTML5 mode of the AngularJS $routeProvider. But that's only for raw url. What if we want to have dynamic parameters inside them? Just like REST, having url as &quot;/colors/1&quot; and &quot;/colors/2&quot; if we deal with colors (yeah, why not?). Do you think that's easy? Well, you could, after all, both AngularJS and Play know how to handle parameters in their url. We could do something like:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;.when(&quot;/colors/:id&quot;, {
         templateUrl: &quot;/views/color/:id&quot;,
         controller: &quot;ColorCtrl&quot;
-      })&lt;/code&gt;&lt;/pre&gt;
-      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /views/color/:id             controllers.Application.color(id: String)&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;Nope, we can’t. Why? Because the “templateUrl” cannot handle url parameters. It’s just a template. And of course, using &lt;code&gt;templateUrl: &quot;/views/color&quot;&lt;/code&gt; will not pass any “id” parameter to the Play route. Damn…&lt;/p&gt;
-      &lt;p&gt;That’s not a problem in fact. Just keep to the AngularJS way of doing things: it’s not Play who should handle the data any longuer, it’s AngularJS who rules the world now, so you don’t need any params in your Scala code, just trust AngularJS. Ok, but we need a way to load the correct color depending on the id in the url right? Sure thing. It’s the role of AngularJS controller to that. That’s why there is a “ColorCtrl” along with our template, and guess what, the AngularJS controller know about the url params. Here is the code of the controller:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;ColorCtrl&quot;, [&quot;$scope&quot;, &quot;$routeParams&quot;, function($scope, $routeParams) {
+      })
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;GET     /views/color/:id             controllers.Application.color(id: String)
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Nope, we can't. Why? Because the &quot;templateUrl&quot; cannot handle url parameters. It's just a template. And of course, using &lt;code&gt;templateUrl: &quot;/views/color&quot;&lt;/code&gt; will not pass any &quot;id&quot; parameter to the Play route. Damn…&lt;/p&gt;
+      
+      &lt;p&gt;That's not a problem in fact. Just keep to the AngularJS way of doing things: it's not Play who should handle the data any longuer, it's AngularJS who rules the world now, so you don't need any params in your Scala code, just trust AngularJS. Ok, but we need a way to load the correct color depending on the id in the url right? Sure thing. It's the role of AngularJS controller to that. That's why there is a &quot;ColorCtrl&quot; along with our template, and guess what, the AngularJS controller know about the url params. Here is the code of the controller:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;ColorCtrl&quot;, [&quot;$scope&quot;, &quot;$routeParams&quot;, function($scope, $routeParams) {
         // Thanks to scope inheritance, we can access the &quot;db&quot; from the AppCtrl scope
         $scope.color = $scope.db[$routeParams.id];
         if (!$scope.color) {
@@ -95,9 +148,12 @@
         } else {
           $scope.msg = undefined;
         }
-      }])&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;And just for fun, I’ve defined the fake database in the “AppCtrl”:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;AppCtrl&quot;, [&quot;$scope&quot;, function($scope) {
+      }])
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;And just for fun, I've defined the fake database in the &quot;AppCtrl&quot;:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;AppCtrl&quot;, [&quot;$scope&quot;, function($scope) {
         $scope.db = {
           1: {
             name: &quot;black&quot;,
@@ -108,47 +164,58 @@
             hex: &quot;FFFFFF&quot;
           }
         };
-      }]);&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;So as we can see, using the &lt;code&gt;$routeParams&lt;/code&gt; service, we can retrieve the url params and then load the correct color in the &lt;code&gt;$scope&lt;/code&gt;. At the end, it’s just a matter of displaying that color in our view using AngularJS data-binding:&lt;/p&gt;
-      &lt;pre class=&quot;language-markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;@()&lt;/code&gt;
+      }]);
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;@template() {
+      &lt;p&gt;So as we can see, using the &lt;code&gt;$routeParams&lt;/code&gt; service, we can retrieve the url params and then load the correct color in the &lt;code&gt;$scope&lt;/code&gt;. At the end, it's just a matter of displaying that color in our view using AngularJS data-binding:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;@()
+      
+      @template() {
         &amp;lt;div data-ng-show=&quot;msg&quot;&amp;gt;
           &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
-        &amp;lt;/div&amp;gt;&lt;/code&gt;
+        &amp;lt;/div&amp;gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;  &amp;lt;div data-ng-hide=&quot;msg&quot;&amp;gt;
+        &amp;lt;div data-ng-hide=&quot;msg&quot;&amp;gt;
           &amp;lt;h2&amp;gt;Color {{color.name}}: # {{color.hex}}&amp;lt;/h2&amp;gt;
         &amp;lt;/div&amp;gt;
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;And that’s it! you can now display some data depending of params inside your url (and show an error message in case the data doesn’t exist). Cool isn’t it?&lt;/p&gt;
-      &lt;h3&gt;Want more?&lt;/h3&gt;
-      &lt;p&gt;Oh God, you are still reading? You should already be able to do anything you need. But if you want, we can dive in a more complex example, using AngularJS &lt;code&gt;$resource&lt;/code&gt; service and serve &lt;span class=&quot;caps&quot;&gt;JSON&lt;/span&gt; from Play like a &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; would do. Sounds good for you? Ok, let’s do that. First, we will create a “Users” controller and it will have two methods: “all()” and “find(id: String)” which will return an Array of Json and a Json object representing our list of users and one particular user based on its id. I will not use a real database, but something like MongoDB would fit really good in there. Here is the code:&lt;/p&gt;
-      &lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;package controllers&lt;/code&gt;
+      }
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-java&quot;&gt;import play.api._
+      &lt;p&gt;And that's it! you can now display some data depending of params inside your url (and show an error message in case the data doesn't exist). Cool isn't it?&lt;/p&gt;
+      
+      &lt;h3 id=&quot;want-more&quot;&gt;Want more?&lt;/h3&gt;
+      
+      &lt;p&gt;Oh God, you are still reading? You should already be able to do anything you need. But if you want, we can dive in a more complex example, using AngularJS &lt;code&gt;$resource&lt;/code&gt; service and serve JSON from Play like a REST API would do. Sounds good for you? Ok, let's do that. First, we will create a &quot;Users&quot; controller and it will have two methods: &quot;all()&quot; and &quot;find(id: String)&quot; which will return an Array of Json and a Json object representing our list of users and one particular user based on its id. I will not use a real database, but something like MongoDB would fit really good in there. Here is the code:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-scala&quot;&gt;package controllers
+      
+      import play.api._
       import play.api.mvc._
-      import play.api.libs.json._&lt;/code&gt;
+      import play.api.libs.json._
       
-      &lt;code class=&quot;language-java&quot;&gt;object Users extends Controller {
+      object Users extends Controller {
         val db = Json.arr(
           Json.obj( &quot;id&quot; -&amp;gt; &quot;1&quot;, &quot;name&quot; -&amp;gt; &quot;John&quot; ),
           Json.obj( &quot;id&quot; -&amp;gt; &quot;2&quot;, &quot;name&quot; -&amp;gt; &quot;Suzanne&quot; )
-        )&lt;/code&gt;
+        )
       
-      &lt;code class=&quot;language-java&quot;&gt;  def all() = Action {
+        def all() = Action {
           Ok(db)
-        }&lt;/code&gt;
+        }
       
-      &lt;code class=&quot;language-java&quot;&gt;  def find(id: String) = Action {
+        def find(id: String) = Action {
           Ok(db.value.filter(v =&amp;gt; (v \ &quot;id&quot;).as[JsString].value == id).headOption.getOrElse(new JsUndefined(&quot;&quot;)))
         }
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;If you don’t fully understand it, you can check the PlayFramework documentation about handling Json (&lt;a href=&quot;http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests&quot;&gt;ScalaJsonRequests&lt;/a&gt;). I am using the new Json &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; from Play 2.1 (&lt;a href=&quot;http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package&quot;&gt;play.api.libs.json.package&lt;/a&gt;). Next we need our “UserCtrl” which will use the &lt;code&gt;$resource&lt;/code&gt; service to retrieve the data:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;UserCtrl&quot;, [&quot;$scope&quot;, &quot;$routeParams&quot;, &quot;$resource&quot;, &quot;apiUrl&quot;, function($scope, $routeParams, $resource, apiUrl) {
-        var Users = $resource(apiUrl + &quot;/users/:id&quot;, {id:&quot;@id&quot;});&lt;/code&gt;
+      }
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-javascript&quot;&gt;  if($routeParams.id) {
+      &lt;p&gt;If you don't fully understand it, you can check the PlayFramework documentation about handling Json (&lt;a href=&quot;http://www.playframework.com/documentation/2.1.0/ScalaJsonRequests&quot;&gt;ScalaJsonRequests&lt;/a&gt;). I am using the new Json API from Play 2.1 (&lt;a href=&quot;http://www.playframework.com/documentation/api/2.1.0/scala/index.html#play.api.libs.json.package&quot;&gt;play.api.libs.json.package&lt;/a&gt;). Next we need our &quot;UserCtrl&quot; which will use the `$resource&amp;lt;/code&amp;gt; service to retrieve the data:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;app.controller(&quot;UserCtrl&quot;, [&quot;$scope&quot;, &quot;$routeParams&quot;, &quot;$resource&quot;, &quot;apiUrl&quot;, function($scope, $routeParams, $resource, apiUrl) {
+        var Users = $resource(apiUrl + &quot;/users/:id&quot;, {id:&quot;@id&quot;});
+      
+        if($routeParams.id) {
           $scope.user = Users.get({id: $routeParams.id}, function() {
             if (!$scope.user.id) {
               $scope.msg = &quot;There is no user for id &quot;+$routeParams.id;
@@ -159,174 +226,250 @@
         } else {
           $scope.users = Users.query();
         }
-      }])&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;To learn more about AngularJS $resource definition, see: &lt;a href=&quot;http://docs.angularjs.org/api/ngResource.%24resource&quot;&gt;ngResource.$resource&lt;/a&gt;. What is that “apiUrl” by the way? It’s a constant I’ve defined in my AngularJS app:&lt;/p&gt;
-      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;var app = angular.module(&quot;app&quot;, [&quot;ngResource&quot;])
-        .constant(&quot;apiUrl&quot;, &quot;http://localhost:9000\:9000/api&quot;)&lt;/code&gt;&lt;/pre&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; Why is there the 9000 port twice? That’s because if we had written &lt;code&gt;http://localhost:9000/api&lt;/code&gt;, AngularJS syntax would have analyzed that as a url with a dynamic parameter named “9000” because it’s placed right after a &lt;code&gt;:&lt;/code&gt; character. So we need that strange syntax to tell AngularJS that this is not a parameter but a real value in our url.&lt;/div&gt;
-      &lt;p&gt;Next, we are creating our resource by extending this apiUrl with our routing “/users/:id”. This time, “:id” is a real parameter. We can now use “get” and “query” methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the &lt;code&gt;$scope&lt;/code&gt;. We will need two Scala views: one for the list and one for the detail of course.&lt;/p&gt;
-      &lt;pre class=&quot;language-markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;@()&lt;/code&gt;
+      }])
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;@template() {
-        &amp;lt;h2&amp;gt;Users&amp;lt;/h2&amp;gt;&lt;/code&gt;
+      &lt;p&gt;To learn more about AngularJS $resource definition, see: &lt;a href=&quot;http://docs.angularjs.org/api/ngResource.%24resource&quot;&gt;ngResource.$resource&lt;/a&gt;. What is that &quot;apiUrl&quot; by the way? It's a constant I've defined in my AngularJS app:&lt;/p&gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;  &amp;lt;ul&amp;gt;
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;var app = angular.module(&quot;app&quot;, [&quot;ngResource&quot;])
+        .constant(&quot;apiUrl&quot;, &quot;http://localhost:9000\:9000/api&quot;)
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; Why is there the 9000 port twice? That's because if we had written &lt;code&gt;http://localhost:9000/api&lt;/code&gt;, AngularJS syntax would have analyzed that as a url with a dynamic parameter named &quot;9000&quot; because it's placed right after a &lt;code&gt;:&lt;/code&gt; character. So we need that strange syntax to tell AngularJS that this is not a parameter but a real value in our url.&lt;/p&gt;
+      
+      &lt;p&gt;Next, we are creating our resource by extending this apiUrl with our routing &quot;/users/:id&quot;. This time, &quot;:id&quot; is a real parameter. We can now use &quot;get&quot; and &quot;query&quot; methods on the resource, passing or not a value to the id, in order to retrieve our Json code and assign it to the &lt;code&gt;$scope&lt;/code&gt;. We will need two Scala views: one for the list and one for the detail of course.&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;@()
+      
+      @template() {
+        &amp;lt;h2&amp;gt;Users&amp;lt;/h2&amp;gt;
+      
+        &amp;lt;ul&amp;gt;
           &amp;lt;li data-ng-repeat=&quot;u in users&quot;&amp;gt;
             &amp;lt;a data-ng-href=&quot;/users/{{u.id}}&quot;&amp;gt;User# {{u.id}}: {{u.name}}&amp;lt;/a&amp;gt;
           &amp;lt;/li&amp;gt;
         &amp;lt;/ul&amp;gt;
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;pre class=&quot;language-markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;@()&lt;/code&gt;
+      }
+      &lt;/code&gt;&lt;/pre&gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;@template() {
+      &lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;@()
+      
+      @template() {
         &amp;lt;div data-ng-show=&quot;msg&quot;&amp;gt;
           &amp;lt;h2&amp;gt;{{msg}}&amp;lt;/h2&amp;gt;
-        &amp;lt;/div&amp;gt;&lt;/code&gt;
+        &amp;lt;/div&amp;gt;
       
-      &lt;code class=&quot;language-markup&quot;&gt;  &amp;lt;div data-ng-hide=&quot;msg&quot;&amp;gt;
+        &amp;lt;div data-ng-hide=&quot;msg&quot;&amp;gt;
           &amp;lt;h2&amp;gt;User# {{user.id}} {{user.name}}&amp;lt;/h2&amp;gt;
         &amp;lt;/div&amp;gt;
-      }&lt;/code&gt;&lt;/pre&gt;
-      &lt;p&gt;And that’s it. We now have a list of users and links to each user detail, and all that data is fetch from a &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; using Json.&lt;/p&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; By the way, since our Play routes doesn’t clash with AngularJS routes, you can load them directly in your browser. It will works because the Play route handling the redirection to the main page is at the end of the route file, so any real Play route will be loaded before the redirection. If you have the demo running, check &lt;a href=&quot;http://localhost:9000/api/users&quot;&gt;http://localhost:9000/api/users&lt;/a&gt; and &lt;a href=&quot;http://localhost:9000/api/users/1&quot;&gt;http://localhost:9000/api/users/1&lt;/a&gt; to see your &lt;span class=&quot;caps&quot;&gt;REST&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; working nicely.&lt;/div&gt;
-      &lt;h3&gt;Conclusion&lt;/h3&gt;
-      &lt;p&gt;I hope this article will help you bootstrap your next awesome application using awesome tools like AngularJS and PlayFramework. Your next step (if that’s not already the case) would be to learn more about the new PlayFramework Json &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; so you can have typesafe Json (if I can say so). You would also probably need to plug a database on it. One choice could be a &lt;a href=&quot;http://www.mongodb.org/&quot;&gt;MongoDB&lt;/a&gt; database since it can store raw Json, and interact with it using a nice driver like &lt;a href=&quot;http://reactivemongo.org/&quot;&gt;ReactiveMongo&lt;/a&gt; if you want to go all the way down to asynchronous application.&lt;/p&gt;
-      &lt;p&gt;It’s up to you!&lt;/p&gt;
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;And that's it. We now have a list of users and links to each user detail, and all that data is fetch from a REST API using Json.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; By the way, since our Play routes doesn't clash with AngularJS routes, you can load them directly in your browser. It will works because the Play route handling the redirection to the main page is at the end of the route file, so any real Play route will be loaded before the redirection. If you have the demo running, check &lt;a href=&quot;http://localhost:9000/api/users&quot;&gt;http://localhost:9000/api/users&lt;/a&gt; and &lt;a href=&quot;http://localhost:9000/api/users/1&quot;&gt;http://localhost:9000/api/users/1&lt;/a&gt; to see your REST API working nicely.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+      
+      &lt;p&gt;I hope this article will help you bootstrap your next awesome application using awesome tools like AngularJS and PlayFramework. Your next step (if that's not already the case) would be to learn more about the new PlayFramework Json API so you can have typesafe Json (if I can say so). You would also probably need to plug a database on it. One choice could be a &lt;a href=&quot;http://www.mongodb.org/&quot;&gt;MongDB&lt;/a&gt; database since it can store raw Json, and interact with it using a nice driver like &lt;a href=&quot;http://reactivemongo.org/&quot;&gt;ReactiveMongo&lt;/a&gt; if you want to go all the way down to asynchronous application.&lt;/p&gt;
+      
+      &lt;p&gt;It's up to you!&lt;/p&gt;
     </content>
   </entry>
   <entry>
     <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
     <title>Some POCs to share</title>
-    <updated>2014-07-13T14:31:08+12:00</updated>
+    <updated>2014-07-16T11:52:40+12:00</updated>
     <published>2012-11-27T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
     <category term="coffeescript"></category>
     <category term="yeoman"></category>
     <summary>
+      
       Some POCs
+      
       Hi there,
-      I&#8217;ve been a bit busy lately but I&#8217;m back on game. Looking for a job in Paris, I&#8217;ve been asked to do some code over more or less funny subjects and now that it&#8217;s done, I will share them, maybe it could help people to see some code around some technologies. It&#8217;s not at all perfect code, more experiments I&#8217;ve done.
-      Mowing is mainly a CoffeeScript project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it&#8217;s quite cool. You can see...
+      
+      I've been a bit busy lately but I'm back on game. Looking for a job in Paris, I've been asked to do some code over more or less funny subjects and now that it's done, I will share them, maybe it could help people to see some code around some technologies. It's not at all perfect code, more experiments I've done.
+      
+      Mowing is mainly a CoffeeScript project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it's quite cool. You can see...
     </summary>
     <content type="html">
-      &lt;h3&gt;Some POCs&lt;/h3&gt;
+      
+      &lt;h3 id=&quot;some-pocs&quot;&gt;Some POCs&lt;/h3&gt;
+      
       &lt;p&gt;Hi there,&lt;/p&gt;
-      &lt;p&gt;I’ve been a bit busy lately but I’m back on game. Looking for a job in Paris, I’ve been asked to do some code over more or less funny subjects and now that it’s done, I will share them, maybe it could help people to see some code around some technologies. It’s not at all perfect code, more experiments I’ve done.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;Mowing&lt;/strong&gt; is mainly a &lt;code&gt;CoffeeScript&lt;/code&gt; project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it’s quite cool. You can see &lt;a href=&quot;http://pauldijou.fr/mowing/&quot;&gt;the result here&lt;/a&gt; (don’t over do it too large grids). The source code is &lt;a href=&quot;https://github.com/pauldijou/mowing/&quot;&gt;here on GitHub&lt;/a&gt;&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;Mowing-java&lt;/strong&gt; is the &lt;code&gt;Java&lt;/code&gt; version of &lt;strong&gt;Mowing&lt;/strong&gt;. So in fact, it’s nearly the same syntax since you can create class in CoffeeScript but this one runs on a &lt;span class=&quot;caps&quot;&gt;JVM&lt;/span&gt;. &lt;a href=&quot;https://github.com/pauldijou/mowing-java&quot;&gt;See here&lt;/a&gt; for source code.&lt;/p&gt;
-      &lt;p&gt;Finally, &lt;strong&gt;GSearch&lt;/strong&gt; is an &lt;code&gt;AngularJS&lt;/code&gt; application build using &lt;code&gt;Yeoman&lt;/code&gt;. Its goal is to plug on GitHub &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt; and allow you to search through repositories and users and display informations and stats about them. &lt;a href=&quot;http://pauldijou.fr/gsearch/&quot;&gt;Here is the result&lt;/a&gt; and &lt;a href=&quot;https://github.com/pauldijou/gsearch/&quot;&gt;go there&lt;/a&gt; for source code.&lt;/p&gt;
+      
+      &lt;p&gt;I've been a bit busy lately but I'm back on game. Looking for a job in Paris, I've been asked to do some code over more or less funny subjects and now that it's done, I will share them, maybe it could help people to see some code around some technologies. It's not at all perfect code, more experiments I've done.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;Mowing&lt;/strong&gt; is mainly a &lt;code&gt;CoffeeScript&lt;/code&gt; project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it's quite cool. You can see &lt;a href=&quot;http://pauldijou.fr/mowing/&quot;&gt;the result here&lt;/a&gt; (don't ever do it in large grids). The source code is &lt;a href=&quot;https://github.com/pauldijou/mowing/&quot;&gt;here on GitHub&lt;/a&gt;&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;Mowing-java&lt;/strong&gt; is the &lt;code&gt;Java&lt;/code&gt; version of &lt;strong&gt;Mowing&lt;/strong&gt;. So in fact, it's nearly the same syntax since you can create class in CoffeeScript but this one runs on a JVM. &lt;a href=&quot;https://github.com/pauldijou/mowing-java&quot;&gt;See here&lt;/a&gt; for source code.&lt;/p&gt;
+      
+      &lt;p&gt;Finally, &lt;strong&gt;GSearch&lt;/strong&gt; is an &lt;code&gt;AngularJS&lt;/code&gt; application built using &lt;code&gt;Yeoman&lt;/code&gt;. Its goal is to plug on GitHub API and allow you to search through repositories and users and display informations and stats about them. &lt;a href=&quot;http://pauldijou.fr/gsearch/&quot;&gt;Here is the result&lt;/a&gt; and &lt;a href=&quot;https://github.com/pauldijou/gsearch/&quot;&gt;go there&lt;/a&gt; for source code.&lt;/p&gt;
+      
       &lt;p&gt;Of course, &lt;strong&gt;any feedback&lt;/strong&gt; is welcome! I can be bugs, features, questions, anything…&lt;/p&gt;
-      &lt;h3&gt;NigthHacking Tour 2012&lt;/h3&gt;
-      &lt;p&gt;I’ve given a small quicky about &lt;code&gt;RichFaces Bootstrap&lt;/code&gt; and &lt;code&gt;RichFaces 5&lt;/code&gt; on Paris a few weeks ago. In order to share it, this site now has a &lt;a href=&quot;http://pauldijou.fr/slides/&quot;&gt;Slides section&lt;/a&gt; where you will be able to see all my last presentations (well, only one for now… and in French, sorry).&lt;/p&gt;
-      &lt;h3&gt;Are you in Paris?&lt;/h3&gt;
-      &lt;p&gt;Let’s finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;nigthhacking-tour-2012&quot;&gt;NigthHacking Tour 2012&lt;/h3&gt;
+      
+      &lt;p&gt;I've given a small quicky about &lt;code&gt;RichFaces Bootstrap&lt;/code&gt; and &lt;code&gt;RichFaces 5&lt;/code&gt; on Paris a few weeks ago. Just so you know…&lt;/p&gt;
+      
+      &lt;h3 id=&quot;are-you-in-paris&quot;&gt;Are you in Paris?&lt;/h3&gt;
+      
+      &lt;p&gt;Let's finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.&lt;/p&gt;
     </content>
   </entry>
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2014-07-13T14:31:08+12:00</updated>
+    <updated>2014-07-16T12:16:30+12:00</updated>
     <published>2012-08-07T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
     <category term="bootstrap"></category>
     <category term="jquery"></category>
     <summary>
-      What&#8217;s new in RichFaces Bootstrap?
-      Red Alert! The RichFaces Bootstrap project is still under heavy development, tag and attribute names can change at any time and if you find something missing or buggy, there is high chance it&#8217;s not a bug but just hasn&#8217;t been done yet (&#8230; or it&#8217;s a real bug). So only use it for fun and prototype purposes.
+      
+      What's new in RichFaces Bootstrap?
+      
+      Red Alert! The RichFaces Bootstrap project is still under heavy development, tag and attribute names can change at any time and if you find something missing or buggy, there is high chance it's not a bug but just hasn't been done yet (… or it's a real bug). So only use it for fun and prototype purposes.
+      
       Semantic components are a brand new concept. I need to present it first so I can use it when talking next about the new components. Most of the time, for one JSF tag, you have one and only one HTML...
     </summary>
     <content type="html">
-      &lt;h3&gt;What’s new in RichFaces Bootstrap?&lt;/h3&gt;
-      &lt;div class=&quot;alert alert-danger&quot;&gt;
-      &lt;strong&gt;Red Alert!&lt;/strong&gt; The RichFaces Bootstrap project is still under heavy development, tag and attribute names can change at any time and if you find something missing or buggy, there is high chance it’s not a bug but just hasn’t been done yet (… or it’s a real bug). So only use it for fun and prototype purposes.&lt;/div&gt;
-      &lt;p&gt;&lt;strong&gt;Semantic components&lt;/strong&gt; are a brand new concept. I need to present it first so I can use it when talking next about the new components. Most of the time, for one &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; tag, you have one and only one &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; renderer, it’s a oneToOne relation (according to &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; naming convention). It seems logical: for one component, you should always have (nearly) the same generated &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; code. But with HTML5, the web is becoming more semantic and that’s good. Why not have the same with RichFaces? But before we dive into it, what is “semantic”? For a real definition see &lt;a href=&quot;http://en.wikipedia.org/wiki/Semantic_Web&quot;&gt;Wikipedia&lt;/a&gt; but here, we will say it’s when a component serves a global purpose like being a header or a footer but shouldn’t always render in the same way, instead the rendered result should depend on the context (like a table header isn’t the same as a column header).&lt;/p&gt;
-      &lt;p&gt;With RichFaces, a semantic component is a component &lt;strong&gt;with no renderer&lt;/strong&gt;! Yeah yeah, if you use a semantic component on its own, it will throw an exception because it doesn’t know how to render itself. The concept is that a semantic component will ask its parent in the &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; tree: “Hey dad, do you know how I can render myself?”, if it knows, the parent will provide the correct renderer to the semantic component which will render it, otherwise, the semantic component will ask one level higher the same question, and so on until the root element. If no one answers yes to the question, it will throw an exception. That means we also have components that accept semantic components in order to provide them the correct renderer.&lt;/p&gt;
-      &lt;p&gt;Let’s take a concrete example. The &lt;strong&gt;modal&lt;/strong&gt; component in RichFaces Bootstrap can support 3 semantic components: a header, a body and a footer. You can see that by looking at which interfaces the &lt;code&gt;AbstractModal&lt;/code&gt; implements (see &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L49&quot;&gt;GitHub&lt;/a&gt;). All interfaces with the syntax &lt;code&gt;Render{1}Capable&lt;/code&gt; are components that support the semantic component &lt;code&gt;{1}&lt;/code&gt;, so here, it’s &lt;strong&gt;headerFacet&lt;/strong&gt;, &lt;strong&gt;bodyFacet&lt;/strong&gt; and &lt;strong&gt;footerFacet&lt;/strong&gt;. And if you look at the rest of the code of the &lt;code&gt;AbstractModal&lt;/code&gt;, you will see methods with the syntax &lt;code&gt;public String get{1}RendererType()&lt;/code&gt; which are the methods giving the right renderer to use by semantic components. Inside a &lt;strong&gt;modal&lt;/strong&gt;, the &lt;strong&gt;headerFacet&lt;/strong&gt; component will render as a &lt;code&gt;div class=&quot;modal-header&quot;&lt;/code&gt; according to &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/templates/org/richfaces/bootstrap/modalHeaderFacet.template.xml&quot;&gt;the renderer provided&lt;/a&gt; by the &lt;strong&gt;modal&lt;/strong&gt;. But inside another component, it could have been totally different &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; code.&lt;/p&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; If you take a more accurate look to all current semantic components, you will see that they all follow the same syntax: first their purpose (like &lt;strong&gt;header&lt;/strong&gt; or &lt;strong&gt;footer&lt;/strong&gt;) and then a generic &lt;strong&gt;Facet&lt;/strong&gt; suffix. That give us the full list of semantic components: headerFacet, bodyFacet, footerFacet, menuFacet and positionFacet. Why using a suffix? Because we want to keep the no-suffix name for the real &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; tag. The RichFaces &lt;strong&gt;header&lt;/strong&gt; tag will always generate the &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; &lt;strong&gt;header&lt;/strong&gt; tag like a classic &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; tag (the oneToOne relation) but the &lt;strong&gt;headerFacet&lt;/strong&gt; tag is a semantic component so it can generate anything depending of the context. Also, it makes it easier to see if a RichFaces component is a semantic one or not by just looking at its name.&lt;/div&gt;
-      &lt;div class=&quot;alert alert-danger&quot;&gt;
-      &lt;strong&gt;Warning&lt;/strong&gt; Even if the suffix is &lt;strong&gt;Facet&lt;/strong&gt; keep in mind that semantic components &lt;strong&gt;are not facets&lt;/strong&gt;, they don’t have the same limitations: they have attributes, you can use the same semantic component several time inside the same parent, a semantic component doesn’t have to be a direct child of a component supporting it and a semantic component can have several children.&lt;/div&gt;
-      &lt;p&gt;Now, let’s dive into the new components. &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/input/&quot;&gt;input&lt;/a&gt; tag is a basic input with all Bootstrap features like prepend and append and several new attributes in order to support new &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; features. By the way, this &lt;strong&gt;input&lt;/strong&gt; centralizes and supports all HTML5 input types, you will no longer need one &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; component for each type, just use the &lt;code&gt;type&lt;/code&gt; attribute (default is “text” of course).&lt;/p&gt;
-      &lt;p&gt;&lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/modal/&quot;&gt;modal&lt;/a&gt; is like &lt;code&gt;rich:modalPanel&lt;/code&gt; or &lt;code&gt;rich:popupPanel&lt;/code&gt;, it will display a popup layout on top of your page, potentially covering your page with a dark layer to block any action outside of the modal. The default usage of the modal has a header, specified by using &lt;code&gt;header&lt;/code&gt; attribute or &lt;code&gt;header&lt;/code&gt; facet, a footer specified with &lt;code&gt;footer&lt;/code&gt; facet and a &lt;code&gt;body&lt;/code&gt; which will be the code inside the modal component. Concretely, what’s happening is that each part, header – body – footer, will be wrapped inside a &lt;code&gt;div class=&quot;modal-xxx&quot;&lt;/code&gt; where “xxx” is the name of the section in order to align with the Bootstrap syntax. Using footer as a facet might be limiting because you cannot have &lt;strong&gt;a form inside the modal&lt;/strong&gt; wrapping both body and footer because footer, as a facet, will always be outside. The default usage should be &lt;strong&gt;the modal inside the form&lt;/strong&gt; since you will probably not need several forms inside a modal most of the time.&lt;/p&gt;
-      &lt;p&gt;What if that isn’t enough? What if you do want the form inside and not outside? Even if this behavior should be enough in most of use-cases, you can still fully customize your modal the way you want! The moment you use one of the following semantic components, headerFacet – bodyFacet – footerFacet, it considers you are doing a custom modal and it will not generate the &lt;code&gt;div class=&quot;modal-xxx&quot;&lt;/code&gt; anymore. I’m talking about the modal itself. Because the semantic components will generate the corresponding &lt;code&gt;div&lt;/code&gt;. However using real components and not facets will allow you to put both bodyFacet and footerFacet inside a form for example.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;whats-new-in-richfaces-bootstrap&quot;&gt;What's new in RichFaces Bootstrap?&lt;/h3&gt;
+      
+      &lt;p class=&quot;alert alert-danger&quot;&gt;&lt;strong&gt;Red Alert!&lt;/strong&gt; The RichFaces Bootstrap project is still under heavy development, tag and attribute names can change at any time and if you find something missing or buggy, there is high chance it's not a bug but just hasn't been done yet (… or it's a real bug). So only use it for fun and prototype purposes.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;Semantic components&lt;/strong&gt; are a brand new concept. I need to present it first so I can use it when talking next about the new components. Most of the time, for one JSF tag, you have one and only one HTML renderer, it's a oneToOne relation (according to JSF naming convention). It seems logical: for one component, you should always have (nearly) the same generated HTML code. But with HTML5, the web is becoming more semantic and that's good. Why not have the same with RichFaces? But before we dive into it, what is &quot;semantic&quot;? For a real definition see &lt;a href=&quot;http://en.wikipedia.org/wiki/Semantic_Web&quot;&gt;Wikipedia&lt;/a&gt; but here, we will say it's when a component serves a global purpose like being a header or a footer but shouldn't always render in the same way, instead the rendered result should depend on the context (like a table header isn't the same as a column header).&lt;/p&gt;
+      
+      &lt;p&gt;With RichFaces, a semantic component is a component &lt;strong&gt;with no renderer&lt;/strong&gt;! Yeah yeah, if you use a semantic component on its own, it will throw an exception because it doesn't know how to render itself. The concept is that a semantic component will ask its parent in the JSF tree: &quot;Hey dad, do you know how I can render myself?&quot;, if it knows, the parent will provide the correct renderer to the semantic component which will render it, otherwise, the semantic component will ask one level higher the same question, and so on until the root element. If no one answers yes to the question, it will throw an exception. That means we also have components that accept semantic components in order to provide them the correct renderer.&lt;/p&gt;
+      
+      &lt;p&gt;Let's take a concrete example. The &lt;strong&gt;modal&lt;/strong&gt; component in RichFaces Bootstrap can support 3 semantic components: a header, a body and a footer. You can see that by looking at which interfaces the &lt;code&gt;AbstractModal&lt;/code&gt; implements (see &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L49&quot;&gt;GitHub&lt;/a&gt;). All interfaces with the syntax &lt;code&gt;Render{1}Capable&lt;/code&gt; are components that support the semantic component &lt;code&gt;{1}&lt;/code&gt;, so here, it's &lt;strong&gt;headerFacet&lt;/strong&gt;, &lt;strong&gt;bodyFacet&lt;/strong&gt; and &lt;strong&gt;footerFacet&lt;/strong&gt;. And if you look at the rest of the code of the &lt;code&gt;AbstractModal&lt;/code&gt;, you will see methods with the syntax &lt;code&gt;public String get{1}RendererType()&lt;/code&gt; which are the methods giving the right renderer to use by semantic components. Inside a &lt;strong&gt;modal&lt;/strong&gt;, the &lt;strong&gt;headerFacet&lt;/strong&gt; component will render as a &lt;code&gt;div class=&quot;modal-header&quot;&lt;/code&gt; according to &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/templates/org/richfaces/bootstrap/modalHeaderFacet.template.xml&quot;&gt;the renderer provided&lt;/a&gt; by the &lt;strong&gt;modal&lt;/strong&gt;. But inside another component, it could have been totally different HTML code.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; If you take a more accurate look to all current semantic components, you will see that they all follow the same syntax: first their purpose (like &lt;strong&gt;header&lt;/strong&gt; or &lt;strong&gt;footer&lt;/strong&gt;) and then a generic &lt;strong&gt;Facet&lt;/strong&gt; suffix. That give us the full list of semantic components: headerFacet, bodyFacet, footerFacet, menuFacet and positionFacet. Why using a suffix? Because we want to keep the no-suffix name for the real HTML tag. The RichFaces &lt;strong&gt;header&lt;/strong&gt; tag will always generate the HTML &lt;strong&gt;header&lt;/strong&gt; tag like a classic JSF tag (the oneToOne relation) but the &lt;strong&gt;headerFacet&lt;/strong&gt; tag is a semantic component so it can generate anything depending of the context. Also, it makes it easier to see if a RichFaces component is a semantic one or not by just looking at its name.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-danger&quot;&gt;&lt;strong&gt;Warning&lt;/strong&gt; Even if the suffix is &lt;strong&gt;Facet&lt;/strong&gt; keep in mind that semantic components &lt;strong&gt;are not facets&lt;/strong&gt;, they don't have the same limitations: they have attributes, you can use the same semantic component several time inside the same parent, a semantic component doesn't have to be a direct child of a component supporting it and a semantic component can have several children.&lt;/p&gt;
+      
+      &lt;p&gt;Now, let's dive into the new components. &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/input/&quot;&gt;input&lt;/a&gt; tag is a basic input with all Bootstrap features like prepend and append and several new attributes in order to support new HTML features. By the way, this &lt;strong&gt;input&lt;/strong&gt; centralizes and supports all HTML5 input types, you will no longer need one JSF component for each type, just use the &lt;code&gt;type&lt;/code&gt; attribute (default is &quot;text&quot; of course).&lt;/p&gt;
+      
+      &lt;p&gt;&lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/modal/&quot;&gt;modal&lt;/a&gt; is like &lt;code&gt;rich:modalPanel&lt;/code&gt; or &lt;code&gt;rich:popupPanel&lt;/code&gt;, it will display a popup layout on top of your page, potentially covering your page with a dark layer to block any action outside of the modal. The default usage of the modal has a header, specified by using &lt;code&gt;header&lt;/code&gt; attribute or &lt;code&gt;header&lt;/code&gt; facet, a footer specified with &lt;code&gt;footer&lt;/code&gt; facet and a &lt;code&gt;body&lt;/code&gt; which will be the code inside the modal component. Concretely, what's happening is that each part, header - body - footer, will be wrapped inside a &lt;code&gt;div class=&quot;modal-xxx&quot;&lt;/code&gt; where &quot;xxx&quot; is the name of the section in order to align with the Bootstrap syntax. Using footer as a facet might be limiting because you cannot have &lt;strong&gt;a form inside the modal&lt;/strong&gt; wrapping both body and footer because footer, as a facet, will always be outside. The default usage should be &lt;strong&gt;the modal inside the form&lt;/strong&gt; since you will probably not need several forms inside a modal most of the time.&lt;/p&gt;
+      
+      &lt;p&gt;What if that isn't enough? What if you do want the form inside and not outside? Even if this behavior should be enough in most of use-cases, you can still fully customize your modal the way you want! The moment you use one of the following semantic components, headerFacet - bodyFacet - footerFacet, it considers you are doing a custom modal and it will not generate the &lt;code&gt;div class=&quot;modal-xxx&quot;&lt;/code&gt; anymore. I'm talking about the modal itself. Because the semantic components will generate the corresponding &lt;code&gt;div&lt;/code&gt;. However using real components and not facets will allow you to put both bodyFacet and footerFacet inside a form for example.&lt;/p&gt;
+      
       &lt;p&gt;&lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/tooltip/&quot;&gt;tooltip&lt;/a&gt; and &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/popover/&quot;&gt;popover&lt;/a&gt; are two new ways to display bonus info when the mouse moves over particular content. The first one is for small texts and labels only, the second one can support custom content and a title. Right now, content can only be text but we are planning to improve this.&lt;/p&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; Even if &lt;strong&gt;popover&lt;/strong&gt; content only supports text, you can still put some light &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; in it. You just need to escape chevrons with &lt;code&gt;&amp;amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;amp;gt;&lt;/code&gt;.&lt;/div&gt;
-      &lt;p&gt;Finally, &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/orderingList/&quot;&gt;orderingList&lt;/a&gt; is the new RichFaces ordering list to allow you to re-arrange the order of some items. It already supports single drag-and-drop, multiple selection and “table” layout. Next features will be multiple drag-and-drop, maybe keyboard selection using &lt;span class=&quot;caps&quot;&gt;SHIFT&lt;/span&gt; (&lt;span class=&quot;caps&quot;&gt;CTRL&lt;/span&gt; is already supported). Thanks to Brian work, it is the first component mixing the power of the jQuery UI widget factory with Bootstrap design. If we can do it once, we can do it for lots of other widgets!&lt;/p&gt;
-      &lt;p&gt;New EL functions are also there. &lt;a href=&quot;https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L156&quot;&gt;jQuery&lt;/a&gt; and &lt;a href=&quot;https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L126&quot;&gt;jQuerySelector&lt;/a&gt; are part of RichFaces Core but have been created to help RichFaces Bootstrap. They will allow you to retrieve a jQuery object or the jQuery selector from a server-side &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; id.&lt;/p&gt;
-      &lt;p&gt;Next are more &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/el/&quot;&gt;specific Bootstrap EL functions&lt;/a&gt;. If you have take a look at Bootstrap JavaScript &lt;span class=&quot;caps&quot;&gt;API&lt;/span&gt;, you might have noticed that lots of JavaScript components have a set of functions with the following syntax: &lt;code&gt;$(sel).compName('singleParameter');&lt;/code&gt;, like for example: &lt;code&gt;$('#myModal').modal('show');&lt;/code&gt; for a &lt;strong&gt;modal&lt;/strong&gt;. The first approach to use it in &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; component was to use the previous &lt;strong&gt;jQuery&lt;/strong&gt; function like: &lt;code&gt;onclick=&quot;#{rich:jQuery( 'myModal' )}.modal('show')&quot;&lt;/code&gt;. It works fine but obviously, that wasn’t enough for Lukas since he built a different approach from scratch.&lt;/p&gt;
-      &lt;p&gt;The new concept is that the &lt;code&gt;compName&lt;/code&gt; part of the call is nearly useless if you can retrieve it from the component returned from the jQuery call. In the previous example, if you know that &lt;code&gt;#{rich:jQuery('myModal')}&lt;/code&gt; is actually a &lt;strong&gt;modal&lt;/strong&gt; component, then you also know that you will have to call the &lt;strong&gt;modal&lt;/strong&gt; function, only remains with importance the &lt;strong&gt;singleParameter&lt;/strong&gt;. So here is the new syntax: &lt;code&gt;#{b:singleParameter(sel)}&lt;/code&gt;. The previous example becomes: &lt;code&gt;onclick=&quot;#{b:show('myModal')}&quot;&lt;/code&gt;. Much more concise and readable, isn’t it? Right now, RichFaces Bootstrap supports &lt;strong&gt;show&lt;/strong&gt;, &lt;strong&gt;hide&lt;/strong&gt; and &lt;strong&gt;toggle&lt;/strong&gt; functions but others will follow soon.&lt;/p&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; Want to know how the EL function retrieves the name of the component? Easy. When the selector will be used to find the &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; component, it will find a &lt;strong&gt;UIComponent&lt;/strong&gt; (like a &lt;strong&gt;UIModal&lt;/strong&gt;) which, according to RichFaces &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; design, will extend an &lt;strong&gt;AbstractComponent&lt;/strong&gt; (like &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java&quot;&gt;AbstractModal&lt;/a&gt;). And if the &lt;strong&gt;AbstractComponent&lt;/strong&gt; supports Bootstrap EL functions, it will be annotated with &lt;code&gt;@BootstrapJSPlugin&lt;/code&gt; (like at &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L43&quot;&gt;line 43 of AbstractModal&lt;/a&gt;) and it’s the &lt;code&gt;name&lt;/code&gt; attribute of that annotation that will give us the &lt;code&gt;componentName&lt;/code&gt;. As I told you, really easy!&lt;/div&gt;
-      &lt;p&gt;&lt;strong&gt;&lt;span class=&quot;caps&quot;&gt;LESS&lt;/span&gt; support&lt;/strong&gt; is no longer a dream (for those who doesn’t know &lt;span class=&quot;caps&quot;&gt;LESS&lt;/span&gt;, it’s a more powerful way to write &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt;, see the &lt;a href=&quot;http://lesscss.org/&quot;&gt;project website&lt;/a&gt; for more infos). Thanks to Lukas’ awesome work, a first prototype of that feature is already working. You can &lt;a href=&quot;http://rik-ansikter.blogspot.fr/2012/08/jsf-meets-skinning-awesomeness-of-less.html&quot;&gt;read his post&lt;/a&gt; to know more about that. There is still work to do but it’s an incredible starting point.&lt;/p&gt;
-      &lt;h3&gt;What’s coming?&lt;/h3&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; Even if &lt;strong&gt;popover&lt;/strong&gt; content only supports text, you can still put some light HTML in it. You just need to escape chevrons with &lt;code&gt;&amp;amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;amp;gt;&lt;/code&gt;.&lt;/p&gt;
+      
+      &lt;p&gt;Finally, &quot;orderingList&quot;:http://bootstrap-richfaces.rhcloud.com/component/orderingList/ is the new RichFaces ordering list to allow you to re-arrange the order of some items. It already supports single drag-and-drop, multiple selection and &quot;table&quot; layout. Next features will be multiple drag-and-drop, maybe keyboard selection using SHIFT (CTRL is already supported). Thanks to Brian work, it is the first component mixing the power of the jQuery UI widget factory with Bootstrap design. If we can do it once, we can do it for lots of other widgets!&lt;/p&gt;
+      
+      &lt;p&gt;New EL functions are also there. &lt;a href=&quot;https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L156&quot;&gt;jQuery&lt;/a&gt; and &lt;a href=&quot;https://github.com/richfaces/components/blob/develop/misc/ui/src/main/java/org/richfaces/function/RichFunction.java#L126&quot;&gt;jQuerySelector&lt;/a&gt; are part of RichFaces Core but have been created to help RichFaces Bootstrap. They will allow you to retrieve a jQuery object or the jQuery selector from a server-side JSF id.&lt;/p&gt;
+      
+      &lt;p&gt;Next are more &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com/component/el/&quot;&gt;specific Bootstrap EL functions&lt;/a&gt;. If you have take a look at Bootstrap JavaScript API, you might have noticed that lots of JavaScript components have a set of functions with the following syntax: &lt;code&gt;$(sel).compName('singleParameter');&lt;/code&gt;, like for example: &lt;code&gt;$('#myModal').modal('show');&lt;/code&gt; for a &lt;strong&gt;modal&lt;/strong&gt;. The first approach to use it in JSF component was to use the previous &lt;strong&gt;jQuery&lt;/strong&gt; function like: &lt;code&gt;onclick=&quot;#{rich:jQuery( 'myModal' )}.modal('show')&quot;&lt;/code&gt;. It works fine but obviously, that wasn't enough for Lukas since he built a different approach from scratch.&lt;/p&gt;
+      
+      &lt;p&gt;The new concept is that the &lt;code&gt;compName&lt;/code&gt; part of the call is nearly useless if you can retrieve it from the component returned from the jQuery call. In the previous example, if you know that &lt;code&gt;#{rich:jQuery('myModal')}&lt;/code&gt; is actually a &lt;strong&gt;modal&lt;/strong&gt; component, then you also know that you will have to call the &lt;strong&gt;modal&lt;/strong&gt; function, only remains with importance the &lt;strong&gt;singleParameter&lt;/strong&gt;. So here is the new syntax: &lt;code&gt;#{b:singleParameter(sel)}&lt;/code&gt;. The previous example becomes: &lt;code&gt;onclick=&quot;#{b:show('myModal')}&quot;&lt;/code&gt;. Much more concise and readable, isn't it? Right now, RichFaces Bootstrap supports &lt;strong&gt;show&lt;/strong&gt;, &lt;strong&gt;hide&lt;/strong&gt; and &lt;strong&gt;toggle&lt;/strong&gt; functions but others will follow soon.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; Want to know how the EL function retrieves the name of the component? Easy. When the selector will be used to find the JSF component, it will find a &lt;strong&gt;UIComponent&lt;/strong&gt; (like a &lt;strong&gt;UIModal&lt;/strong&gt;) which, according to RichFaces CDK design, will extend an &lt;strong&gt;AbstractComponent&lt;/strong&gt; (like &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java&quot;&gt;AbstractModal&lt;/a&gt;). And if the &lt;strong&gt;AbstractComponent&lt;/strong&gt; supports Bootstrap EL functions, it will be annotated with &lt;code&gt;@BootstrapJSPlugin&lt;/code&gt; (like at &lt;a href=&quot;https://github.com/richfaces/sandbox/blob/develop/bootstrap/ui/src/main/java/org/richfaces/bootstrap/component/AbstractModal.java#L43&quot;&gt;line 43 of AbstractModal&lt;/a&gt;) and it's the &lt;code&gt;name&lt;/code&gt; attribute of that annotation that will give us the &lt;code&gt;componentName&lt;/code&gt;. As I told you, really easy!&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;LESS support&lt;/strong&gt; is no longer a dream (for those who doesn't know LESS, it's a more powerful way to write CSS, see the &lt;a href=&quot;http://lesscss.org/&quot;&gt;project website&lt;/a&gt; for more infos). Thanks to Lukas' awesome work, a first prototype of that feature is already working. You can &lt;a href=&quot;http://rik-ansikter.blogspot.fr/2012/08/jsf-meets-skinning-awesomeness-of-less.html&quot;&gt;read his post&lt;/a&gt; to know more about that. There is still work to do but it's an incredible starting point.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;whats-coming&quot;&gt;What's coming?&lt;/h3&gt;
+      
       &lt;p&gt;Want more? Great, because we have tons of other plans to improve RichFaces!&lt;/p&gt;
+      
       &lt;p&gt;&lt;strong&gt;New build design&lt;/strong&gt; is currently under &lt;a href=&quot;https://community.jboss.org/wiki/RichFaces43BuildRedesign&quot;&gt;discussion on RichFaces wiki&lt;/a&gt; so be sure to take a look and give feedback if you care about the future of RichFaces.&lt;/p&gt;
+      
       &lt;p&gt;&lt;strong&gt;Theming all current components&lt;/strong&gt; from RichFaces Core with Bootstrap design is planned so you can use both projects at the same time.&lt;/p&gt;
+      
       &lt;p&gt;The orderingList is just a beginning. &lt;strong&gt;More jQuery UI widget factory based components&lt;/strong&gt; are incoming. Feel free to comment &lt;a href=&quot;https://community.jboss.org/thread/200343&quot;&gt;here&lt;/a&gt; to propose the ones you would like to see supported in RichFaces Bootstrap.&lt;/p&gt;
     </content>
   </entry>
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
     <title>News about RichFaces CDK</title>
-    <updated>2014-07-13T14:31:08+12:00</updated>
+    <updated>2014-07-16T12:00:03+12:00</updated>
     <published>2012-08-01T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
     <category term="cdk"></category>
     <summary>
+      
       RichFaces CDK new features
+      
       As the RichFaces Bootstrap project grows, we need more tools to achieve new goals and keep the code clean and readable. More tools means a stronger CDK and here are the last features.
+      
       Fragments are small portions of code inside the template that are defined outside of the main implementation but can be called inside it or inside other fragments or even inside itself! Say hello to recursion in RichFaces CDK templates. In term of Java, fragments are methods. So when you write a fragment, it will generates a Java method in the final renderer. Knowing that makes...
     </summary>
     <content type="html">
-      &lt;h3 id=&quot;news-richfaces-cdk-en&quot;&gt;RichFaces &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; new features&lt;/h3&gt;
-      &lt;p&gt;As the RichFaces Bootstrap project grows, we need more tools to achieve new goals and keep the code clean and readable. More tools means a stronger &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; and here are the last features.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;Fragments&lt;/strong&gt; are small portions of code inside the template that are defined outside of the main implementation but can be called inside it or inside other fragments or even inside itself! Say hello to recursion in RichFaces &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; templates. In term of Java, fragments are methods. So when you write a fragment, it will generates a Java method in the final renderer. Knowing that makes fragments really easy to understand and to use. See the &lt;a href=&quot;https://issues.jboss.org/browse/RF-12226&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12226&lt;/a&gt; for a fully explained example.&lt;/p&gt;
-      &lt;div class=&quot;alert alert-info&quot;&gt;
-      &lt;strong&gt;Pro tip&lt;/strong&gt; Notice that in the signature of the generated Java method, 3 arguments are always passed without having to specify them inside the template : ResponseWriter, FacesContext and UIComponent.&lt;/div&gt;
-      &lt;div class=&quot;alert alert-danger&quot;&gt;
-      &lt;strong&gt;Warning&lt;/strong&gt; Currently, if you want to use a fragment1 inside a fragment2, you need to write fragment1 first in your template so its signature has been parsed before calling it in fragment2. Problem is reported in &lt;a href=&quot;https://issues.jboss.org/browse/RF-12326&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12326&lt;/a&gt;.&lt;/div&gt;
-      &lt;p&gt;&lt;strong&gt;cc:renderFacet&lt;/strong&gt; is a new tag you can use inside a &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; template, equivalent of the same tag from &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; composite component. Its usage is quite straightforward: it will render the facet that you will specify in the &lt;code&gt;name&lt;/code&gt; attribute. If you put some content inside the tag, it will be used as default value in case the facet is missing. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12260&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12260&lt;/a&gt; for full description.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;varStatus&lt;/strong&gt; is a new attribute for the &lt;strong&gt;c:forEach&lt;/strong&gt; &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; tag. It will perform the exact same thing as the one in the original &lt;strong&gt;c:forEach&lt;/strong&gt; tag, giving you more tools inside a forEach loop. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12232&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12232&lt;/a&gt;.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;wildcard&lt;/strong&gt; can now be used inside &lt;strong&gt;cdk:passThrough&lt;/strong&gt; and &lt;strong&gt;cdk:passThroughWithExclusions&lt;/strong&gt; attributes in order to pass all attributes starting with the same prefix. Especially useful with JavaScript events &lt;code&gt;on*&lt;/code&gt;. Wildcard can be use with attribute mapping like &lt;code&gt;onkey*:oninputkey*&lt;/code&gt;. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12200&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12200&lt;/a&gt;.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;component&lt;/strong&gt; variable is now directly casted to the correct class based on &lt;code&gt;cdk:class&lt;/code&gt; tag in the template. You will no longer need to write explicitly the cast inside 95% of your templates. Enjoy less verbose code and see &lt;a href=&quot;https://issues.jboss.org/browse/RF-12248&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12248&lt;/a&gt; for more details.&lt;/p&gt;
-      &lt;p&gt;&lt;strong&gt;In general&lt;/strong&gt;, &lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; has been improved to be more type-safe which allows to catch more issues at compilte-time.&lt;/p&gt;
-      &lt;h3&gt;What’s next?&lt;/h3&gt;
-      &lt;p&gt;There are still a few points undone in the &lt;a href=&quot;https://community.jboss.org/wiki/CDKWish-List&quot;&gt;&lt;span class=&quot;caps&quot;&gt;CDK&lt;/span&gt; wish-list&lt;/a&gt; and I hope some of them will be realized. One of the most important is probably generating methods from interfaces! See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12339&quot;&gt;&lt;span class=&quot;caps&quot;&gt;JIRA&lt;/span&gt; issue 12339&lt;/a&gt; to fully understand the concept.&lt;/p&gt;
-      &lt;p&gt;In another topic, another post will follow next week to talk about what’s new in &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com&quot;&gt;RichFaces Bootstrap project&lt;/a&gt;.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;richfaces-cdk-new-features&quot;&gt;RichFaces CDK new features&lt;/h3&gt;
+      
+      &lt;p&gt;As the RichFaces Bootstrap project grows, we need more tools to achieve new goals and keep the code clean and readable. More tools means a stronger CDK and here are the last features.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;Fragments&lt;/strong&gt; are small portions of code inside the template that are defined outside of the main implementation but can be called inside it or inside other fragments or even inside itself! Say hello to recursion in RichFaces CDK templates. In term of Java, fragments are methods. So when you write a fragment, it will generates a Java method in the final renderer. Knowing that makes fragments really easy to understand and to use. See the &lt;a href=&quot;https://issues.jboss.org/browse/RF-12226&quot;&gt;JIRA issue 12226&lt;/a&gt; for a fully explained example.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro tip&lt;/strong&gt; Notice that in the signature of the generated Java method, 3 arguments are always passed without having to specify them inside the template : ResponseWriter, FacesContext and UIComponent.&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-danger&quot;&gt;&lt;strong&gt;Warning&lt;/strong&gt; Currently, if you want to use a fragment1 inside a fragment2, you need to write fragment1 first in your template so its signature has been parsed before calling it in fragment2. Problem is reported in &lt;a href=&quot;https://issues.jboss.org/browse/RF-12326&quot;&gt;JIRA issue 12326&lt;/a&gt;.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;code&gt;cc:renderFacet&lt;/code&gt; is a new tag you can use inside a CDK template, equivalent of the same tag from JSF composite component. Its usage is quite straightforward: it will render the facet that you will specify in the &lt;code&gt;name&lt;/code&gt; attribute. If you put some content inside the tag, it will be used as default value in case the facet is missing. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12260&quot;&gt;JIRA issue 12260&lt;/a&gt; for full description.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;code&gt;varStatus&lt;/code&gt; is a new attribute for the &lt;code&gt;c:forEach&lt;/code&gt; CDK tag. It will perform the exact same thing as the one in the original &lt;code&gt;c:forEach&lt;/code&gt; tag, giving you more tools inside a forEach loop. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12232&quot;&gt;JIRA issue 12232&lt;/a&gt;.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;strong&gt;wildcard&lt;/strong&gt; can now be used inside &lt;code&gt;cdk:passThrough&lt;/code&gt; and &lt;em&gt;cdk:passThroughWithExclusions&lt;/em&gt; attributes in order to pass all attributes starting with the same prefix. Especially useful with JavaScript events &lt;code&gt;on*&lt;/code&gt;. Wildcard can be use with attribute mapping like &lt;code&gt;onkey*:oninputkey*&lt;/code&gt;. See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12200&quot;&gt;JIRA issue 12200&lt;/a&gt;.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;em&gt;component&lt;/em&gt; variable is now directly casted to the correct class based on &lt;code&gt;cdk:class&lt;/code&gt; tag in the template. You will no longer need to write explicitly the cast inside 95% of your templates. Enjoy less verbose code and see &lt;a href=&quot;https://issues.jboss.org/browse/RF-12248&quot;&gt;JIRA issue 12248&lt;/a&gt; for more details.&lt;/p&gt;
+      
+      &lt;p&gt;&lt;em&gt;In general&lt;/em&gt;, CDK has been improved to be more type-safe which allows to catch more issues at compilte-time.&lt;/p&gt;
+      
+      &lt;p&gt;h3. What's next?&lt;/p&gt;
+      
+      &lt;p&gt;There are still a few points undone in the &lt;a href=&quot;https://community.jboss.org/wiki/CDKWish-List&quot;&gt;CDK wish-list&lt;/a&gt; and I hope some of them will be realized. One of the most important is probably generating methods from interfaces! See &lt;a href=&quot;https://issues.jboss.org/browse/RF-12339&quot;&gt;JIRA issue 12339&lt;/a&gt; to fully understand the concept.&lt;/p&gt;
+      
+      &lt;p&gt;In another topic, another post will follow next week to talk about what's new in &lt;a href=&quot;http://bootstrap-richfaces.rhcloud.com&quot;&gt;RichFaces Bootstrap project&lt;/a&gt;.&lt;/p&gt;
     </content>
   </entry>
   <entry>
     <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2014-07-13T14:31:08+12:00</updated>
+    <updated>2014-07-16T11:55:22+12:00</updated>
     <published>2012-05-08T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html" rel="alternate" type="text/html" />
     <category term="jsf"></category>
     <category term="bootstrap"></category>
     <summary>
       The problem
+      
       So, the other day, I was playing with Twitter Bootstrap on a JSF application. Everything was fine until I decide to use a render="@all" somewhere in the page in order to refresh all my components after quite an heavy operation. Working fine.
-      But Bootstrap was no longuer fully healthy. The CSS and design were ok, but the Javascript was all broken : nearly all effects didn&#8217;t appear anymore. It was a bit strange so I hit F5 and everything was fine, all Javascript events were back. But the moment my render="@all" was called, they dissapear again.
+      
+      But Bootstrap was no longer fully healthy. The CSS and design were ok, but the JavaScript was all broken : nearly all effects didn't appear anymore. It was a bit strange so I hit F5 and everything was fine, all JavaScript events were back. But the moment my render="@all" was called, they disappear again.
+      
       Why?
+      
       After some investigations, the reason...
     </summary>
     <content type="html">
-      &lt;h3&gt;The problem&lt;/h3&gt;
-      &lt;p&gt;So, the other day, I was playing with &lt;a href=&quot;http://twitter.github.com/bootstrap/index.html&quot;&gt;Twitter Bootstrap&lt;/a&gt; on a &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; application. Everything was fine until I decide to use a &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; somewhere in the page in order to refresh all my components after quite an heavy operation. Working fine.&lt;/p&gt;
-      &lt;p&gt;But Bootstrap was no longuer fully healthy. The &lt;span class=&quot;caps&quot;&gt;CSS&lt;/span&gt; and design were ok, but the Javascript was all broken : nearly all effects didn’t appear anymore. It was a bit strange so I hit F5 and everything was fine, all Javascript events were back. But the moment my &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; was called, they dissapear again.&lt;/p&gt;
-      &lt;h3&gt;Why?&lt;/h3&gt;
-      &lt;p&gt;After some investigations, the reason was that Bootstrap calls a Javascript function that will attach most of its events to the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; when the &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; is ready. Its doing so in order to catch all user interactions when they bubble up to the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag which wrap the whole page. With that, you can use Ajax as much as you want and update your &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; since there is no event attach to a particular &lt;span class=&quot;caps&quot;&gt;HTML&lt;/span&gt; tag, they are all in the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
-      &lt;p&gt;That’s really good but that’s also the reason of the problem. I said Ajax is always fine, and it’s true as long as you don’t touch the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag. The moment you update this tag, it will probably be reset to it’s initial state, without any Javascript event, and since the Bootstrap Javascript function is only called once when the &lt;span class=&quot;caps&quot;&gt;DOM&lt;/span&gt; is ready the first time, Javascript events will not come back. Guess what, &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; will render your &lt;code&gt;&amp;lt;h:body&amp;gt;&lt;/code&gt; and so will broke all Bootstrap Javascipt events.&lt;/p&gt;
-      &lt;h3&gt;A workaround&lt;/h3&gt;
-      &lt;p&gt;The true solution would be to call the Bootstrap Javascript function after each &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; in order to attach all Javascript events again. But since I have no idea how to do that right now, I have choosen to use an easier workaround.&lt;/p&gt;
-      &lt;p&gt;Just wrapping your whole page in a &lt;span class=&quot;caps&quot;&gt;JSF&lt;/span&gt; panel and render it instead of &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; should be enough in most use case. It is not exactly the same behaviour, but in most case, when calling &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt;, what you really want is just refreshing your whole page using Ajax. For example:&lt;/p&gt;
-      &lt;pre class=&quot;language-markup&quot;&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+      &lt;h3 id=&quot;the-problem&quot;&gt;The problem&lt;/h3&gt;
+      
+      &lt;p&gt;So, the other day, I was playing with &lt;a href=&quot;http://twitter.github.com/bootstrap/index.html&quot;&gt;Twitter Bootstrap&lt;/a&gt; on a JSF application. Everything was fine until I decide to use a &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; somewhere in the page in order to refresh all my components after quite an heavy operation. Working fine.&lt;/p&gt;
+      
+      &lt;p&gt;But Bootstrap was no longer fully healthy. The CSS and design were ok, but the JavaScript was all broken : nearly all effects didn't appear anymore. It was a bit strange so I hit F5 and everything was fine, all JavaScript events were back. But the moment my &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; was called, they disappear again.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;why&quot;&gt;Why?&lt;/h3&gt;
+      
+      &lt;p&gt;After some investigations, the reason was that Bootstrap calls a JavaScript function that will attach most of its events to the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; when the HTML DOM is ready. Its doing so in order to catch all user interactions when they bubble up to the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag which wrap the whole page. With that, you can use Ajax as much as you want and update your DOM since there is no event attach to a particular HTML tag, they are all in the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+      
+      &lt;p&gt;That's really good but that's also the reason of the problem. I said Ajax is always fine, and it's true as long as you don't touch the @&amp;lt;body&amp;gt;@ tag. The moment you update this tag, it will probably be reset to it's initial state, without any JavaScript event, and since the Bootstrap JavaScript function is only called once when the DOM is ready the first time, JavaScript events will not come back. Guess what, &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; will render your &lt;code&gt;&amp;lt;h:body&amp;gt;&lt;/code&gt; and so will broke all Bootstrap JavaScript events.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;a-workaround&quot;&gt;A workaround&lt;/h3&gt;
+      
+      &lt;p&gt;The true solution would be to call the Bootstrap JavaScript function after each &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; in order to attach all JavaScript events again. But since I have no idea how to do that right now, I have chosen to use an easier workaround.&lt;/p&gt;
+      
+      &lt;p&gt;Just wrapping your whole page in a JSF panel and render it instead of &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; should be enough in most use case. It is not exactly the same behaviour, but in most case, when calling &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt;, what you really want is just refreshing your whole page using Ajax. For example:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-markup&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;
       &amp;lt;html lang=&quot;en-US&quot;
             xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
             xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
@@ -340,7 +483,9 @@
               ... your code...
           &amp;lt;/h:panelGroup&amp;gt;
       &amp;lt;/h:body&amp;gt;
-      &amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+      &amp;lt;/html&amp;gt;
+      &lt;/code&gt;&lt;/pre&gt;
+      
       &lt;p&gt;And replace all your &lt;code&gt;render=&quot;@all&quot;&lt;/code&gt; with &lt;code&gt;render=&quot;all&quot;&lt;/code&gt;.&lt;/p&gt;
     </content>
   </entry>
