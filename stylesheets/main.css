@@ -3723,6 +3723,10 @@ a:focus {
 .post .alert a:hover {
   color: #bdc3c7;
 }
+.post .separator::before {
+  content: "|";
+  margin: 0 5px;
+}
 .post .pagination {
   text-align: center;
   font-size: 14px;
