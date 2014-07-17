@@ -2965,99 +2965,6 @@ a.label:focus {
 .fa-bomb:before {
   content: "\f1e2";
 }
-.await-opacity-10 {
-  -webkit-transition: opacity 1s 5s;
-  -o-transition: opacity 1s 5s;
-  transition: opacity 1s 5s;
-}
-.await-opacity-9 {
-  -webkit-transition: opacity 1s 4.5s;
-  -o-transition: opacity 1s 4.5s;
-  transition: opacity 1s 4.5s;
-}
-.await-opacity-8 {
-  -webkit-transition: opacity 1s 4s;
-  -o-transition: opacity 1s 4s;
-  transition: opacity 1s 4s;
-}
-.await-opacity-7 {
-  -webkit-transition: opacity 1s 3.5s;
-  -o-transition: opacity 1s 3.5s;
-  transition: opacity 1s 3.5s;
-}
-.await-opacity-6 {
-  -webkit-transition: opacity 1s 3s;
-  -o-transition: opacity 1s 3s;
-  transition: opacity 1s 3s;
-}
-.await-opacity-5 {
-  -webkit-transition: opacity 1s 2.5s;
-  -o-transition: opacity 1s 2.5s;
-  transition: opacity 1s 2.5s;
-}
-.await-opacity-4 {
-  -webkit-transition: opacity 1s 2s;
-  -o-transition: opacity 1s 2s;
-  transition: opacity 1s 2s;
-}
-.await-opacity-3 {
-  -webkit-transition: opacity 1s 1.5s;
-  -o-transition: opacity 1s 1.5s;
-  transition: opacity 1s 1.5s;
-}
-.await-opacity-2 {
-  -webkit-transition: opacity 1s 1s;
-  -o-transition: opacity 1s 1s;
-  transition: opacity 1s 1s;
-}
-.await-opacity-1 {
-  -webkit-transition: opacity 1s 0.5s;
-  -o-transition: opacity 1s 0.5s;
-  transition: opacity 1s 0.5s;
-}
-@-webkit-keyframes bounce-vertical {
-  0%,
-  100% {
-    top: 0;
-  }
-  50% {
-    top: 30px;
-  }
-}
-@-moz-keyframes bounce {
-  0%,
-  100% {
-    top: 0;
-  }
-  50% {
-    top: 30px;
-  }
-}
-@-o-keyframes bounce {
-  0%,
-  100% {
-    top: 0;
-  }
-  50% {
-    top: 30px;
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    top: 0;
-  }
-  50% {
-    top: 30px;
-  }
-}
-.bounce-vertical {
-  position: relative;
-  -webkit-animation: bounce-vertical 1.5s infinite;
-  -moz-animation: bounce-vertical 1.5s infinite;
-  -o-animation: bounce-vertical 1.5s infinite;
-  animation: bounce-vertical 1.5s infinite;
-}
 @-webkit-keyframes bounce-horizontal {
   0%,
   100% {
@@ -3463,55 +3370,6 @@ a:focus {
 .section-red h3 {
   border-color: #c0392b;
 }
-.social {
-  text-align: center;
-}
-.social li {
-  opacity: 0;
-  width: 32%;
-  margin-bottom: 20px;
-}
-.social.visible li {
-  opacity: 1;
-}
-.social a {
-  display: inline-block;
-  color: #22313f;
-  border: 2px solid #ffffff;
-  -webkit-transition: color 1s, background-color 1s, border-color;
-  -o-transition: color 1s, background-color 1s, border-color;
-  transition: color 1s, background-color 1s, border-color;
-  border-radius: 50%;
-  padding-top: 12px;
-  width: 85px;
-  height: 80px;
-}
-.social a:hover {
-  border-color: #bdc3c7;
-}
-.social a:hover.twitter {
-  color: #00ACEE;
-}
-.social a:hover.github {
-  color: #555555;
-}
-.social a:hover.google_plus {
-  color: #CF3E2C;
-}
-.social a:hover.linkedin {
-  color: #3399CC;
-}
-.social a:hover.rss {
-  color: #EC8232;
-}
-.social a:hover.email {
-  color: #353535;
-}
-@media (min-width: 768px) {
-  .social li {
-    width: auto;
-  }
-}
 .index .name,
 .index .job {
   font-weight: 400;
@@ -3561,9 +3419,14 @@ a:focus {
   display: block;
   padding: 10px;
   margin: 0 -10px;
-  -webkit-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  -webkit-transition: background-color 1000ms;
+  -o-transition: background-color 1000ms;
+  transition: background-color 1000ms;
+}
+.index section .last a:hover {
+  -webkit-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
+  transition: background-color 500ms;
 }
 .index section .last a h4 {
   margin-top: 0;
@@ -3574,9 +3437,9 @@ a:focus {
   position: relative;
   top: -30px;
   opacity: 0;
-  -webkit-transition: opacity 0.5s, top 1s;
-  -o-transition: opacity 0.5s, top 1s;
-  transition: opacity 0.5s, top 1s;
+  -webkit-transition: opacity 500ms, top 1s;
+  -o-transition: opacity 500ms, top 1s;
+  transition: opacity 500ms, top 1s;
 }
 .index .job.visible {
   top: 0px;
@@ -3784,21 +3647,12 @@ a:focus {
 .projects .project {
   position: relative;
   padding: 50px 30px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: opacity 1.5s;
-  -o-transition: opacity 1.5s;
-  transition: opacity 1.5s;
   border-bottom-width: 3px;
   border-bottom-style: solid;
 }
 .projects .project h2 {
   padding-top: 0;
   margin-top: 0;
-}
-.projects .project.visible {
-  visibility: visible;
-  opacity: 1;
 }
 .projects .project.alt {
   border-color: #049372;
@@ -3929,6 +3783,38 @@ a:focus {
   margin-top: 7px;
   margin-right: 20px;
 }
+.about a {
+  color: #049372;
+}
+.about a:hover {
+  color: #00b16a;
+}
+.archives {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.archives .archive {
+  padding: 2em 1em;
+  display: block;
+  -webkit-transition: background-color 1000ms, color 1000ms;
+  -o-transition: background-color 1000ms, color 1000ms;
+  transition: background-color 1000ms, color 1000ms;
+}
+.archives .archive:hover {
+  background-color: #049372;
+  color: #ecf0f1;
+  -webkit-transition: background-color 500ms, color 500ms;
+  -o-transition: background-color 500ms, color 500ms;
+  transition: background-color 500ms, color 500ms;
+}
+.archives .archive .title,
+.archives .archive .meta {
+  display: block;
+}
+.archives .archive .title {
+  font-size: 1.5em;
+}
 .contact h2 {
   border-bottom-width: 3px;
   border-bottom-style: solid;
@@ -3995,4 +3881,53 @@ a:focus {
 .contact .control-group.error .error-message {
   color: #d73927;
   font-weight: bold;
+}
+.social {
+  text-align: center;
+}
+.social li {
+  opacity: 0;
+  width: 32%;
+  margin-bottom: 20px;
+}
+.social.visible li {
+  opacity: 1;
+}
+.social a {
+  display: inline-block;
+  color: #22313f;
+  border: 2px solid #ffffff;
+  -webkit-transition: color 1s, background-color 1s, border-color;
+  -o-transition: color 1s, background-color 1s, border-color;
+  transition: color 1s, background-color 1s, border-color;
+  border-radius: 50%;
+  padding-top: 10px;
+  width: 85px;
+  height: 80px;
+}
+.social a:hover {
+  border-color: #bdc3c7;
+}
+.social a:hover.twitter {
+  color: #00ACEE;
+}
+.social a:hover.github {
+  color: #555555;
+}
+.social a:hover.google_plus {
+  color: #CF3E2C;
+}
+.social a:hover.linkedin {
+  color: #3399CC;
+}
+.social a:hover.rss {
+  color: #EC8232;
+}
+.social a:hover.email {
+  color: #049372;
+}
+@media (min-width: 768px) {
+  .social li {
+    width: auto;
+  }
 }
