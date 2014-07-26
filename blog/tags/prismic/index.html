@@ -83,6 +83,76 @@
       <div class="posts">
         <article class="post">
           <h2>
+            <a href="/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/">
+              Prismic.io JavaScript kit: from callbacks to promises
+            </a>
+          </h2>
+          <div class="meta">
+            Posted by
+            <span class="authors"> Paul Dijou</span>
+            on
+            <span class="date">Jul 26, 2014</span>
+            <span class="separator"></span>
+            <span class="fa fa-comments fa-fw visible-md-inline visible-lg-inline"></span>
+             <a href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/#disqus_thread" data-disqus-identifier="02a0de510c7f667577219926ccb32e80a7e15f0c">Comments</a>
+            <span class="separator"></span>
+            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
+            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank">Improve this article</a>
+          </div>
+          <div class="content">
+            
+            <h3 id="holy-cow-callbacks">Holy cow, callbacks!</h3>
+            
+            <p>For the last (and only) website I did using prismic.io, I didn't want any back-end, all client-side, pure JavaScript man. This way, I could host it nearly anywhere for pretty much free (GitHub pages FTW). To ease stuff, I decided to use the <a href="https://github.com/prismicio/javascript-kit">JavaScript kit</a> from the prismic.io team.</p>
+            
+            <p>One choice they made and that I don't really like is using callbacks in it. For example, you have to write stuff like:</p>
+            
+            <pre><code class="language-javascript">// Get the current API&#x000A;Prismic.Api('/my/awesome/url', function (err, api) {&#x000A;  if (err) {&#x000A;    // handle error&#x000A;    return;&#x000A;  }&#x000A;&#x000A;  // Use the API there, retrieving documents&#x000A;  api.form('articles').ref(api.master()).submit(function (err, articles) {&#x000A;    if (err) {&#x000A;      // Also error again&#x000A;      return;&#x000A;    }&#x000A;&#x000A;    // But I also need authors...&#x000A;    api.form('authors').ref(api.master()).submit(function (err, authors) {&#x000A;      if (err) {&#x000A;        // One more time, handle error&#x000A;        return;&#x000A;      }&#x000A;&#x000A;      // Now I got all my data&#x000A;      // I can finally display it on my page&#x000A;    }&#x000A;  });&#x000A;}, 'my_token_far_below_at_the_end');&#x000A;</code></pre>
+            
+            <p>Can you see it? This ugly thing JavaScript experts name "callback hell"? And that's a super simple example. In 2014, the way to do that is using Promises. That's what's hype (and readable, and nice, and cool, and swag). But I quite understand why they made this choice. Promises are not native everywhere yet, so going with it mean either writing your own implementation or imposing an existing one. Fair enough to have callbacks in the kit then, but we are hackers here, we can override it to use Promises!</p>
+            
+            <p class="alert alert-danger">I will use the last spec Promise syntax, native way baby!, but it is really important to keep in mind that it has <a href="http://caniuse.com/#search=promises">a really poor support</a> right now. You should probably be using a Javascript library as Promise implementation. I will link a snippet of code using the <a href="http://documentup.com/kriskowal/q/">Q library</a> at the end of the article. But I wanted this article to be future proof.</p>
+            
+            <h3 id="omg-promises-o">OMG, promises \o/</h3>
+            
+            <p>There are two main callbacks in the kit: when retrieving the API and when making a <code>submit</code>. What I want to write is something like:</p>
+            
+            <pre><code class="language-javascript">Api('/my/awesome/url', 'my_token_right_here_at_the_start')&#x000A;  .then(function (api) {&#x000A;    Promise.all([&#x000A;      api.form('articles').ref(api.master()).submit(),&#x000A;      api.form('authors').ref(api.master()).submit()&#x000A;    ]);&#x000A;  })&#x000A;  .then(function (data) {&#x000A;    var articles = data[0];&#x000A;    var authors = data[1];&#x000A;    // Display the results&#x000A;  })&#x000A;  .catch(function (error) {&#x000A;    // Handle error&#x000A;  });&#x000A;</code></pre>
+            
+            <p>Sooooo much more readable and swag… Overriding the Api callback is really simple:</p>
+            
+            <pre><code class="language-javascript">// Remove the callback from the function signature&#x000A;function Api(url, accessToken, maybeRequestHandler, maybeApiCache) {&#x000A;  return new Promise(function (resolve, reject) {&#x000A;    // Put a callback that will only resolve/reject the deferred depending&#x000A;    // on the presence of an error or not&#x000A;    Prismic.Api(url, function (err, resolvedApi) {&#x000A;      if (err) {&#x000A;        reject(err);&#x000A;      } else {&#x000A;        // Save point 1 (see below)&#x000A;        resolve(resolvedApi);&#x000A;      }&#x000A;    }, accessToken, maybeRequestHandler, maybeApiCache);&#x000A;  });&#x000A;}&#x000A;</code></pre>
+            
+            <p>Overriding the <code>submit</code> call is a bit more tricky because it is a prototype function of the <code>SearchForm</code> object, which is totally hidden inside Prismic clojure. This is a bit (super) sad but we can deal with it by creating a fake form and not submitting it. The easiest way I found so far is doing it right after getting the Api. Let's add the following code at <code>Save point 1</code> (see previous code).</p>
+            
+            <pre><code class="language-javascript">// You might need a polyfill for 'getPrototypeOf' if you support old browser&#x000A;var SearchFormProto = Object.getPrototypeOf(resolvedApi.forms('everything'));&#x000A;// We are saving the original function so we can call it inside our override&#x000A;var originalSubmit = SearchFormProto.submit;&#x000A;&#x000A;// Let's override!&#x000A;SearchFormProto.submit = function () {&#x000A;  return new Promise(function (resolve, reject) {&#x000A;    // As before, the callback will only resolve / reject the deferred&#x000A;    // depending on the returned value&#x000A;    originalSubmit.call(this, function (err, docs) {&#x000A;      if (err) {&#x000A;        reject(err);&#x000A;      } else {&#x000A;        resolve(docs);&#x000A;      }&#x000A;    });&#x000A;  });&#x000A;};&#x000A;</code></pre>
+            
+            <p>And after that, you just need to use the new <code>Api</code> function in place of <code>Prismic.Api</code>. You can see <a href="https://github.com/pauldijou/farewell/blob/9a744565d7/scripts%2Fapi.js#L8-L32">the full code here</a> using <code>Q</code> library. This refers to a particular commit to ensure the line highlight is correct but you can freely switch to the master branch to see the most recent code (which shouldn't be much different… but who knows…).</p>
+            
+            <p>Thanks for reading. Next time we will talk about responsive images inside StructuredText.</p>
+          </div>
+          <div class="footer">
+            <span class="fa fa-link fa-fw hidden-xs hidden-sm"></span>
+            <a class="hidden-xs hidden-sm" href="/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/">Permalink</a>
+            <span class="separator"></span>
+            <span class="fa fa-comments fa-fw hidden-xs hidden-sm"></span>
+             <a href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/#disqus_thread" data-disqus-identifier="02a0de510c7f667577219926ccb32e80a7e15f0c">Comments</a>
+            <span class="separator"></span>
+            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
+            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank">Improve this article</a>
+            <a class="improve button block hidden-md hidden-lg" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-07-26-prismicio-javascript-kit-from-callbacks-to-promises.md" target="_blank">
+              <span class="fa fa-pencil-square-o fa-fw"></span>
+              Improve this article
+            </a>
+            <div class="tags">
+              <span class="fa fa-tags fa-fw"></span>
+              Tags :
+              <a class="tag label label-default" href="/blog/tags/prismic/">prismic</a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h2>
             <a href="/blog/2014/07/17/prismicio-when-happiness-met-disappointment/">
               Prismic.io: when happiness met disappointment
             </a>

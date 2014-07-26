@@ -2,13 +2,145 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2014-07-17T13:09:52+12:00</updated>
+  <updated>2014-07-26T16:46:35+12:00</updated>
   <link href="http://pauldijou.fr/feed.atom" rel="self" type="application/atom+xml" />
   <link href="http://pauldijou.fr/" rel="alternate" type="text/html" />
   <entry>
+    <id>http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html</id>
+    <title>Prismic.io JavaScript kit: from callbacks to promises</title>
+    <updated>2014-07-26T16:46:35+12:00</updated>
+    <published>2014-07-26T00:00:00+00:00</published>
+    <link href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html" rel="alternate" type="text/html" />
+    <category term="prismic"></category>
+    <summary>
+      
+      Holy cow, callbacks!
+      
+      For the last (and only) website I did using prismic.io, I didn't want any back-end, all client-side, pure JavaScript man. This way, I could host it nearly anywhere for pretty much free (GitHub pages FTW). To ease stuff, I decided to use the JavaScript kit from the prismic.io team.
+      
+      One choice they made and that I don't really like is using callbacks in it. For example, you have to write stuff like:
+      
+      // Get the current API
+      Prismic.Api('/my/awesome/url', function (err, api) {
+        if (err) {
+          // handle error
+          return;
+        }
+      
+        // Use...
+    </summary>
+    <content type="html">
+      
+      &lt;h3 id=&quot;holy-cow-callbacks&quot;&gt;Holy cow, callbacks!&lt;/h3&gt;
+      
+      &lt;p&gt;For the last (and only) website I did using prismic.io, I didn't want any back-end, all client-side, pure JavaScript man. This way, I could host it nearly anywhere for pretty much free (GitHub pages FTW). To ease stuff, I decided to use the &lt;a href=&quot;https://github.com/prismicio/javascript-kit&quot;&gt;JavaScript kit&lt;/a&gt; from the prismic.io team.&lt;/p&gt;
+      
+      &lt;p&gt;One choice they made and that I don't really like is using callbacks in it. For example, you have to write stuff like:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Get the current API
+      Prismic.Api('/my/awesome/url', function (err, api) {
+        if (err) {
+          // handle error
+          return;
+        }
+      
+        // Use the API there, retrieving documents
+        api.form('articles').ref(api.master()).submit(function (err, articles) {
+          if (err) {
+            // Also error again
+            return;
+          }
+      
+          // But I also need authors...
+          api.form('authors').ref(api.master()).submit(function (err, authors) {
+            if (err) {
+              // One more time, handle error
+              return;
+            }
+      
+            // Now I got all my data
+            // I can finally display it on my page
+          }
+        });
+      }, 'my_token_far_below_at_the_end');
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Can you see it? This ugly thing JavaScript experts name &quot;callback hell&quot;? And that's a super simple example. In 2014, the way to do that is using Promises. That's what's hype (and readable, and nice, and cool, and swag). But I quite understand why they made this choice. Promises are not native everywhere yet, so going with it mean either writing your own implementation or imposing an existing one. Fair enough to have callbacks in the kit then, but we are hackers here, we can override it to use Promises!&lt;/p&gt;
+      
+      &lt;p class=&quot;alert alert-danger&quot;&gt;I will use the last spec Promise syntax, native way baby!, but it is really important to keep in mind that it has &lt;a href=&quot;http://caniuse.com/#search=promises&quot;&gt;a really poor support&lt;/a&gt; right now. You should probably be using a Javascript library as Promise implementation. I will link a snippet of code using the &lt;a href=&quot;http://documentup.com/kriskowal/q/&quot;&gt;Q library&lt;/a&gt; at the end of the article. But I wanted this article to be future proof.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;omg-promises-o&quot;&gt;OMG, promises \o/&lt;/h3&gt;
+      
+      &lt;p&gt;There are two main callbacks in the kit: when retrieving the API and when making a &lt;code&gt;submit&lt;/code&gt;. What I want to write is something like:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;Api('/my/awesome/url', 'my_token_right_here_at_the_start')
+        .then(function (api) {
+          Promise.all([
+            api.form('articles').ref(api.master()).submit(),
+            api.form('authors').ref(api.master()).submit()
+          ]);
+        })
+        .then(function (data) {
+          var articles = data[0];
+          var authors = data[1];
+          // Display the results
+        })
+        .catch(function (error) {
+          // Handle error
+        });
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Sooooo much more readable and swag… Overriding the Api callback is really simple:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// Remove the callback from the function signature
+      function Api(url, accessToken, maybeRequestHandler, maybeApiCache) {
+        return new Promise(function (resolve, reject) {
+          // Put a callback that will only resolve/reject the deferred depending
+          // on the presence of an error or not
+          Prismic.Api(url, function (err, resolvedApi) {
+            if (err) {
+              reject(err);
+            } else {
+              // Save point 1 (see below)
+              resolve(resolvedApi);
+            }
+          }, accessToken, maybeRequestHandler, maybeApiCache);
+        });
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;Overriding the &lt;code&gt;submit&lt;/code&gt; call is a bit more tricky because it is a prototype function of the &lt;code&gt;SearchForm&lt;/code&gt; object, which is totally hidden inside Prismic clojure. This is a bit (super) sad but we can deal with it by creating a fake form and not submitting it. The easiest way I found so far is doing it right after getting the Api. Let's add the following code at &lt;code&gt;Save point 1&lt;/code&gt; (see previous code).&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;// You might need a polyfill for 'getPrototypeOf' if you support old browser
+      var SearchFormProto = Object.getPrototypeOf(resolvedApi.forms('everything'));
+      // We are saving the original function so we can call it inside our override
+      var originalSubmit = SearchFormProto.submit;
+      
+      // Let's override!
+      SearchFormProto.submit = function () {
+        return new Promise(function (resolve, reject) {
+          // As before, the callback will only resolve / reject the deferred
+          // depending on the returned value
+          originalSubmit.call(this, function (err, docs) {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(docs);
+            }
+          });
+        });
+      };
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p&gt;And after that, you just need to use the new &lt;code&gt;Api&lt;/code&gt; function in place of &lt;code&gt;Prismic.Api&lt;/code&gt;. You can see &lt;a href=&quot;https://github.com/pauldijou/farewell/blob/9a744565d7/scripts%2Fapi.js#L8-L32&quot;&gt;the full code here&lt;/a&gt; using &lt;code&gt;Q&lt;/code&gt; library. This refers to a particular commit to ensure the line highlight is correct but you can freely switch to the master branch to see the most recent code (which shouldn't be much different… but who knows…).&lt;/p&gt;
+      
+      &lt;p&gt;Thanks for reading. Next time we will talk about responsive images inside StructuredText.&lt;/p&gt;
+    </content>
+  </entry>
+  <entry>
     <id>http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html</id>
     <title>Prismic.io: when happiness met disappointment</title>
-    <updated>2014-07-17T13:09:52+12:00</updated>
+    <updated>2014-07-21T11:57:56+12:00</updated>
     <published>2014-07-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html" rel="alternate" type="text/html" />
     <category term="prismic"></category>
@@ -227,7 +359,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html</id>
     <title>AngularJS HTML5 routing on PlayFramework</title>
-    <updated>2014-07-16T21:33:33+12:00</updated>
+    <updated>2014-07-21T11:57:56+12:00</updated>
     <published>2013-02-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -498,7 +630,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
     <title>Some POCs to share</title>
-    <updated>2014-07-16T21:33:33+12:00</updated>
+    <updated>2014-07-21T11:57:56+12:00</updated>
     <published>2012-11-27T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -542,7 +674,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2014-07-16T21:33:33+12:00</updated>
+    <updated>2014-07-22T16:45:40+12:00</updated>
     <published>2012-08-07T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -608,7 +740,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
     <title>News about RichFaces CDK</title>
-    <updated>2014-07-16T21:33:33+12:00</updated>
+    <updated>2014-07-21T11:57:56+12:00</updated>
     <published>2012-08-01T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -653,7 +785,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2014-07-16T21:33:33+12:00</updated>
+    <updated>2014-07-21T11:57:56+12:00</updated>
     <published>2012-05-08T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html" rel="alternate" type="text/html" />
     <category term="jsf"></category>
