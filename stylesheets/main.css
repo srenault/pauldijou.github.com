@@ -3175,7 +3175,7 @@ pre > code {
   border-width: 2px;
   border-style: solid;
   border-color: #353535;
-  padding: 15px 20px;
+  padding: 15px 10px;
   -webkit-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
   -o-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
   transition: color 0.5s, background-color 0.5s, border-color 0.5s;
@@ -3218,6 +3218,11 @@ pre > code {
 }
 .button.disabled:hover {
   background-color: inherit;
+}
+@media (min-width: 768px) {
+  .button {
+    padding: 15px 20px;
+  }
 }
 .alert {
   color: #ecf0f1;
@@ -3607,6 +3612,14 @@ a:focus {
   font-size: 14px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+.post .pagination .button {
+  text-transform: initial;
+}
+@media (min-width: 768px) {
+  .post .pagination .button {
+    text-transform: uppercase;
+  }
 }
 @media (min-width: 992px) {
   .post .pagination {

@@ -116,7 +116,7 @@
           
           <p>There are two main callbacks in the kit: when retrieving the API and when making a <code>submit</code>. What I want to write is something like:</p>
           
-          <pre><code class="language-javascript">Api('/my/awesome/url', 'my_token_right_here_at_the_start')&#x000A;  .then(function (api) {&#x000A;    Promise.all([&#x000A;      api.form('articles').ref(api.master()).submit(),&#x000A;      api.form('authors').ref(api.master()).submit()&#x000A;    ]);&#x000A;  })&#x000A;  .then(function (data) {&#x000A;    var articles = data[0];&#x000A;    var authors = data[1];&#x000A;    // Display the results&#x000A;  })&#x000A;  .catch(function (error) {&#x000A;    // Handle error&#x000A;  });&#x000A;</code></pre>
+          <pre><code class="language-javascript">Api('/my/awesome/url', 'my_token_right_here_at_the_start')&#x000A;  .then(function (api) {&#x000A;    return Promise.all([&#x000A;      api.form('articles').ref(api.master()).submit(),&#x000A;      api.form('authors').ref(api.master()).submit()&#x000A;    ]);&#x000A;  })&#x000A;  .then(function (data) {&#x000A;    var articles = data[0];&#x000A;    var authors = data[1];&#x000A;    // Display the results&#x000A;  })&#x000A;  .catch(function (error) {&#x000A;    // Handle error&#x000A;  });&#x000A;</code></pre>
           
           <p>Sooooo much more readable and swag… Overriding the Api callback is really simple:</p>
           
