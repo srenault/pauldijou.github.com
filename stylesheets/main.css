@@ -2965,6 +2965,56 @@ a.label:focus {
 .fa-bomb:before {
   content: "\f1e2";
 }
+.await-opacity-10 {
+  -webkit-transition: opacity 1s 5s;
+  -o-transition: opacity 1s 5s;
+  transition: opacity 1s 5s;
+}
+.await-opacity-9 {
+  -webkit-transition: opacity 1s 4.5s;
+  -o-transition: opacity 1s 4.5s;
+  transition: opacity 1s 4.5s;
+}
+.await-opacity-8 {
+  -webkit-transition: opacity 1s 4s;
+  -o-transition: opacity 1s 4s;
+  transition: opacity 1s 4s;
+}
+.await-opacity-7 {
+  -webkit-transition: opacity 1s 3.5s;
+  -o-transition: opacity 1s 3.5s;
+  transition: opacity 1s 3.5s;
+}
+.await-opacity-6 {
+  -webkit-transition: opacity 1s 3s;
+  -o-transition: opacity 1s 3s;
+  transition: opacity 1s 3s;
+}
+.await-opacity-5 {
+  -webkit-transition: opacity 1s 2.5s;
+  -o-transition: opacity 1s 2.5s;
+  transition: opacity 1s 2.5s;
+}
+.await-opacity-4 {
+  -webkit-transition: opacity 1s 2s;
+  -o-transition: opacity 1s 2s;
+  transition: opacity 1s 2s;
+}
+.await-opacity-3 {
+  -webkit-transition: opacity 1s 1.5s;
+  -o-transition: opacity 1s 1.5s;
+  transition: opacity 1s 1.5s;
+}
+.await-opacity-2 {
+  -webkit-transition: opacity 1s 1s;
+  -o-transition: opacity 1s 1s;
+  transition: opacity 1s 1s;
+}
+.await-opacity-1 {
+  -webkit-transition: opacity 1s 0.5s;
+  -o-transition: opacity 1s 0.5s;
+  transition: opacity 1s 0.5s;
+}
 @-webkit-keyframes bounce-horizontal {
   0%,
   100% {
@@ -3142,8 +3192,7 @@ code {
   background-color: #22313f;
   color: #ecf0f1;
   border-radius: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 2px 5px;
 }
 code a {
   color: inherit !important;
@@ -3581,6 +3630,11 @@ a:focus {
 }
 .post pre {
   font-size: 16px;
+}
+.post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .post .meta a,
 .post .content a,
