@@ -2,13 +2,116 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2014-08-01T21:10:22+12:00</updated>
+  <updated>2014-08-04T12:20:02+12:00</updated>
   <link href="http://pauldijou.fr/feed.atom" rel="self" type="application/atom+xml" />
   <link href="http://pauldijou.fr/" rel="alternate" type="text/html" />
   <entry>
+    <id>http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text.html</id>
+    <title>Prismic.io: responsive images inside a StructuredText</title>
+    <updated>2014-08-04T12:20:02+12:00</updated>
+    <published>2014-08-04T00:00:00+00:00</published>
+    <link href="http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text.html" rel="alternate" type="text/html" />
+    <category term="prismic"></category>
+    <summary>
+      
+      Once again, I will not explain what prismic.io is (but it's a tool to manage your website content), I will only focus on one limitation and how to solve it. If you don't know about prismic.io, you should quickly check its website before reading any further.
+      
+      What's the problem?
+      
+      In prismic.io, you are creating Documents which are composed of Fragments. A fragment is data organized in a more or less semantic way. For example, a fragment can be a Number, or a Date, … Among them, there is the type Image which is really nice because you can not only fully resize...
+    </summary>
+    <content type="html">
+      
+      &lt;p&gt;Once again, I will not explain what &lt;a href=&quot;http://prismic.io&quot;&gt;prismic.io&lt;/a&gt; is (but it's a tool to manage your website content), I will only focus on one limitation and how to solve it. If you don't know about prismic.io, you should quickly check its website before reading any further.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;whats-the-problem&quot;&gt;What's the problem?&lt;/h3&gt;
+      
+      &lt;p&gt;In prismic.io, you are creating Documents which are composed of Fragments. A fragment is data organized in a more or less semantic way. For example, a fragment can be a Number, or a Date, … Among them, there is the type Image which is really nice because you can not only fully resize / crop your raw picture, but also add smaller images based on the original one for responsive purpose. You can upload your awesome photo of this beautiful sunset, fully sized at 4000 x 3000 pixels, resize it for desktop at 1920 x 1080, and finally add a mobile version at 320 * 480. Note that the last one doesn't respect the ratio at all, but that's the goal: you are creating a subset of your image with the best match possible regarding the targeted screen.&lt;/p&gt;
+      
+      &lt;p&gt;Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WISIWIG editor inside which you will put new fragments (paragraphs, links, titles, images, …). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;you-dont-want-to-do-that&quot;&gt;You don't want to do that!&lt;/h3&gt;
+      
+      &lt;p&gt;And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WISIWIG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.&lt;/p&gt;
+      
+      &lt;p&gt;So, what's the idea? The only way to have responsive images is to use a real Image fragment, no choice here. So let's create one, and let's put it inside a Group fragment. This way, you can add and remove as many images as you want and they will all be responsive. Wait, you can't do that inside the StructuredText, right? Indeed, that's why we will do outside of it and then find a way to bring back the images inside of it. Here is the mask for such a group:&lt;/p&gt;
+      
+      &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;&quot;Images&quot; : {
+        &quot;images&quot; : {
+          &quot;type&quot; : &quot;Group&quot;,
+          &quot;fieldset&quot; : &quot;Images&quot;,
+          &quot;config&quot; : {
+            &quot;fields&quot; : {
+              &quot;name&quot; : {
+                &quot;type&quot; : &quot;Text&quot;,
+                &quot;config&quot; : {
+                  &quot;label&quot; : &quot;Name&quot;
+                }
+              },
+              &quot;caption&quot; : {
+                &quot;type&quot; : &quot;Text&quot;,
+                &quot;config&quot; : {
+                  &quot;label&quot; : &quot;Caption&quot;
+                }
+              },
+              &quot;image&quot; : {
+                &quot;type&quot; : &quot;Image&quot;,
+                &quot;config&quot; : {
+                  &quot;thumbnails&quot; : [ {
+                    &quot;name&quot; : &quot;mobile&quot;
+                  }, {
+                    &quot;name&quot; : &quot;tablet&quot;
+                  } ]
+                }
+              }
+            }
+          }
+        }
+      }
+      &lt;/code&gt;&lt;/pre&gt;
+      
+      &lt;p class=&quot;alert alert-info&quot;&gt;&lt;strong&gt;Pro Tip&lt;/strong&gt; - When creating thumbnails for an Image fragment, the &lt;a href=&quot;https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#document-masks&quot;&gt;offical documentation&lt;/a&gt; states that both width and height are mandatory. This is &lt;strong&gt;wrong&lt;/strong&gt;, you can specify only one of the two or even none of them. Your UI might be a bit ugly (the resized thumbnails will only display after saving your draft) and sometimes you will have to click twice on a button (this one, I really don't understand) but otherwise, it works just fine. I hope prismic guys will make those attributes optional because… well… how can you anticipate how the writer wants to resize its image?&lt;/p&gt;
+      
+      &lt;p&gt;As you can see, I added two more fields. One is &lt;code&gt;name&lt;/code&gt; and we will use it to reference our images inside the StructuredText. The other one is &lt;code&gt;caption&lt;/code&gt;, that's because I want to put one on my images but prismic didn't allow me to do that at all by default. Thanks God, using this solution, I can finally do it, killing two birds with one stone. Now we can add as many responsive images as we want, yeah! Let's grab some orange juice to celebrate!&lt;/p&gt;
+      
+      &lt;h3 id=&quot;lets-hack-some-html&quot;&gt;Let's hack some HTML&lt;/h3&gt;
+      
+      &lt;p&gt;As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WISIWIG editor but we can do it when rendering the final HTML. We will need two more things here:&lt;/p&gt;
+      
+      &lt;ul&gt;
+        &lt;li&gt;having a placeholder inside the StructuredText to indicate we should insert an image&lt;/li&gt;
+        &lt;li&gt;extend the default HTML renderer to support such placeholder&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;As for the placeholder, I decided to use a simple format like &lt;code&gt;{image-[name of the image]}&lt;/code&gt;. Meaning that if the content of a paragraph inside my StructuredText is &lt;code&gt;{image-sunset}&lt;/code&gt;, it will actually render the image named &lt;code&gt;sunset&lt;/code&gt; from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the gretter good. You could, of course, use another syntax, eventually support attributes, whatever.&lt;/p&gt;
+      
+      &lt;p&gt;The final task, and probably the hardest one, is to extend the HTML rendering system. Each primisc fragment has its own way to render as HTML. Unfortunately, there is no way to extend it, you can only, eventually, override it. And the one for StructuredText is by far the most complex one. The easiest way to do that is to copy/paste the default one from the kit you are using (if you are not using any kit, you are free to do whatever you want, so it's fine) and edit it. You will then edit the part responsible for rendering a paragraph, test if its content match our placeholder syntax, if so, render an image, if not, just render the text as it is. Since I'm using the JavaScript kit, here is the &lt;a href=&quot;https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L65-L159&quot;&gt;full copy/paste&lt;/a&gt; but that's the &lt;a href=&quot;https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L105-L117&quot;&gt;important part&lt;/a&gt; where we are rendering the image. My &lt;code&gt;model&lt;/code&gt; is actually a JavaScript class extracted from the original prismic Document, but you could use the raw Document of course.&lt;/p&gt;
+      
+      &lt;h3 id=&quot;conclusion-and-limitations&quot;&gt;Conclusion and limitations&lt;/h3&gt;
+      
+      &lt;p&gt;That's pretty much it. Here is a quick summary of what to do:&lt;/p&gt;
+      
+      &lt;ul&gt;
+        &lt;li&gt;inside the mask, add a Group of Images with, at least, a Text fragment for the name.&lt;/li&gt;
+        &lt;li&gt;choose a naming convention to write placeholders inside a StructuredText, ex: &lt;code&gt;{image-[name]}&lt;/code&gt;
+      &lt;/li&gt;
+        &lt;li&gt;override the StructuredText HTML rendering function with a custom one inserting images from the Document when finding a placeholder&lt;/li&gt;
+        &lt;li&gt;you can add more attributes and render them (like a caption)&lt;/li&gt;
+      &lt;/ul&gt;
+      
+      &lt;p&gt;What are the bad points / limitations of the solution?&lt;/p&gt;
+      
+      &lt;ul&gt;
+        &lt;li&gt;writers need to write placeholders rather than having a nice UI to insert images&lt;/li&gt;
+        &lt;li&gt;images do not display natively in the WISIWIG editor anymore&lt;/li&gt;
+        &lt;li&gt;you cannot re-order a Group fragment right now, meaning images will be sorted based on their created date and not on their place inside the StructuredText&lt;/li&gt;
+      &lt;/ul&gt;
+    </content>
+  </entry>
+  <entry>
     <id>http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days.html</id>
     <title>Doing a conference website in two days</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-04T12:10:50+12:00</updated>
     <published>2014-08-01T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days.html" rel="alternate" type="text/html" />
     <category term="web"></category>
@@ -80,7 +183,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html</id>
     <title>Prismic.io JavaScript kit: from callbacks to promises</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2014-07-26T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html" rel="alternate" type="text/html" />
     <category term="prismic"></category>
@@ -212,7 +315,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html</id>
     <title>Prismic.io: when happiness met disappointment</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2014-07-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html" rel="alternate" type="text/html" />
     <category term="prismic"></category>
@@ -431,7 +534,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html</id>
     <title>AngularJS HTML5 routing on PlayFramework</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2013-02-17T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -702,7 +805,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
     <title>Some POCs to share</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2012-11-27T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html" rel="alternate" type="text/html" />
     <category term="angular"></category>
@@ -746,7 +849,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2012-08-07T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -812,7 +915,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
     <title>News about RichFaces CDK</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2012-08-01T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
@@ -857,7 +960,7 @@
   <entry>
     <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2014-08-01T21:10:22+12:00</updated>
+    <updated>2014-08-03T21:31:57+12:00</updated>
     <published>2012-05-08T00:00:00+00:00</published>
     <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html" rel="alternate" type="text/html" />
     <category term="jsf"></category>

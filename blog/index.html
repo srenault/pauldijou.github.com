@@ -83,6 +83,98 @@
       <div class="posts">
         <article class="post">
           <h2>
+            <a href="/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/">
+              Prismic.io: responsive images inside a StructuredText
+            </a>
+          </h2>
+          <div class="meta">
+            Posted by
+            <span class="authors"> Paul Dijou</span>
+            on
+            <span class="date">Aug 04, 2014</span>
+            <span class="separator"></span>
+            <span class="fa fa-comments fa-fw visible-md-inline visible-lg-inline"></span>
+             <a href="http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/#disqus_thread" data-disqus-identifier="ceef6c40d5be7a3d70875f200dc62ffad7df28d3">Comments</a>
+            <span class="separator"></span>
+            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
+            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-08-04-prismicio-responsive-images-inside-structured-text.md" target="_blank">Improve this article</a>
+          </div>
+          <div class="content">
+            
+            <p>Once again, I will not explain what <a href="http://prismic.io">prismic.io</a> is (but it's a tool to manage your website content), I will only focus on one limitation and how to solve it. If you don't know about prismic.io, you should quickly check its website before reading any further.</p>
+            
+            <h3 id="whats-the-problem">What's the problem?</h3>
+            
+            <p>In prismic.io, you are creating Documents which are composed of Fragments. A fragment is data organized in a more or less semantic way. For example, a fragment can be a Number, or a Date, … Among them, there is the type Image which is really nice because you can not only fully resize / crop your raw picture, but also add smaller images based on the original one for responsive purpose. You can upload your awesome photo of this beautiful sunset, fully sized at 4000 x 3000 pixels, resize it for desktop at 1920 x 1080, and finally add a mobile version at 320 * 480. Note that the last one doesn't respect the ratio at all, but that's the goal: you are creating a subset of your image with the best match possible regarding the targeted screen.</p>
+            
+            <p>Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WISIWIG editor inside which you will put new fragments (paragraphs, links, titles, images, …). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.</p>
+            
+            <h3 id="you-dont-want-to-do-that">You don't want to do that!</h3>
+            
+            <p>And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WISIWIG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.</p>
+            
+            <p>So, what's the idea? The only way to have responsive images is to use a real Image fragment, no choice here. So let's create one, and let's put it inside a Group fragment. This way, you can add and remove as many images as you want and they will all be responsive. Wait, you can't do that inside the StructuredText, right? Indeed, that's why we will do outside of it and then find a way to bring back the images inside of it. Here is the mask for such a group:</p>
+            
+            <pre><code class="language-javascript">"Images" : {&#x000A;  "images" : {&#x000A;    "type" : "Group",&#x000A;    "fieldset" : "Images",&#x000A;    "config" : {&#x000A;      "fields" : {&#x000A;        "name" : {&#x000A;          "type" : "Text",&#x000A;          "config" : {&#x000A;            "label" : "Name"&#x000A;          }&#x000A;        },&#x000A;        "caption" : {&#x000A;          "type" : "Text",&#x000A;          "config" : {&#x000A;            "label" : "Caption"&#x000A;          }&#x000A;        },&#x000A;        "image" : {&#x000A;          "type" : "Image",&#x000A;          "config" : {&#x000A;            "thumbnails" : [ {&#x000A;              "name" : "mobile"&#x000A;            }, {&#x000A;              "name" : "tablet"&#x000A;            } ]&#x000A;          }&#x000A;        }&#x000A;      }&#x000A;    }&#x000A;  }&#x000A;}&#x000A;</code></pre>
+            
+            <p class="alert alert-info"><strong>Pro Tip</strong> - When creating thumbnails for an Image fragment, the <a href="https://developers.prismic.io/documentation/UjBeuLGIJ3EKtgBV/repository-administrators-manual#document-masks">offical documentation</a> states that both width and height are mandatory. This is <strong>wrong</strong>, you can specify only one of the two or even none of them. Your UI might be a bit ugly (the resized thumbnails will only display after saving your draft) and sometimes you will have to click twice on a button (this one, I really don't understand) but otherwise, it works just fine. I hope prismic guys will make those attributes optional because… well… how can you anticipate how the writer wants to resize its image?</p>
+            
+            <p>As you can see, I added two more fields. One is <code>name</code> and we will use it to reference our images inside the StructuredText. The other one is <code>caption</code>, that's because I want to put one on my images but prismic didn't allow me to do that at all by default. Thanks God, using this solution, I can finally do it, killing two birds with one stone. Now we can add as many responsive images as we want, yeah! Let's grab some orange juice to celebrate!</p>
+            
+            <h3 id="lets-hack-some-html">Let's hack some HTML</h3>
+            
+            <p>As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WISIWIG editor but we can do it when rendering the final HTML. We will need two more things here:</p>
+            
+            <ul>
+              <li>having a placeholder inside the StructuredText to indicate we should insert an image</li>
+              <li>extend the default HTML renderer to support such placeholder</li>
+            </ul>
+            
+            <p>As for the placeholder, I decided to use a simple format like <code>{image-[name of the image]}</code>. Meaning that if the content of a paragraph inside my StructuredText is <code>{image-sunset}</code>, it will actually render the image named <code>sunset</code> from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the gretter good. You could, of course, use another syntax, eventually support attributes, whatever.</p>
+            
+            <p>The final task, and probably the hardest one, is to extend the HTML rendering system. Each primisc fragment has its own way to render as HTML. Unfortunately, there is no way to extend it, you can only, eventually, override it. And the one for StructuredText is by far the most complex one. The easiest way to do that is to copy/paste the default one from the kit you are using (if you are not using any kit, you are free to do whatever you want, so it's fine) and edit it. You will then edit the part responsible for rendering a paragraph, test if its content match our placeholder syntax, if so, render an image, if not, just render the text as it is. Since I'm using the JavaScript kit, here is the <a href="https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L65-L159">full copy/paste</a> but that's the <a href="https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L105-L117">important part</a> where we are rendering the image. My <code>model</code> is actually a JavaScript class extracted from the original prismic Document, but you could use the raw Document of course.</p>
+            
+            <h3 id="conclusion-and-limitations">Conclusion and limitations</h3>
+            
+            <p>That's pretty much it. Here is a quick summary of what to do:</p>
+            
+            <ul>
+              <li>inside the mask, add a Group of Images with, at least, a Text fragment for the name.</li>
+              <li>choose a naming convention to write placeholders inside a StructuredText, ex: <code>{image-[name]}</code></li>
+              <li>override the StructuredText HTML rendering function with a custom one inserting images from the Document when finding a placeholder</li>
+              <li>you can add more attributes and render them (like a caption)</li>
+            </ul>
+            
+            <p>What are the bad points / limitations of the solution?</p>
+            
+            <ul>
+              <li>writers need to write placeholders rather than having a nice UI to insert images</li>
+              <li>images do not display natively in the WISIWIG editor anymore</li>
+              <li>you cannot re-order a Group fragment right now, meaning images will be sorted based on their created date and not on their place inside the StructuredText</li>
+            </ul>
+          </div>
+          <div class="footer">
+            <span class="fa fa-link fa-fw hidden-xs hidden-sm"></span>
+            <a class="hidden-xs hidden-sm" href="/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/">Permalink</a>
+            <span class="separator"></span>
+            <span class="fa fa-comments fa-fw hidden-xs hidden-sm"></span>
+             <a href="http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/#disqus_thread" data-disqus-identifier="ceef6c40d5be7a3d70875f200dc62ffad7df28d3">Comments</a>
+            <span class="separator"></span>
+            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
+            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-08-04-prismicio-responsive-images-inside-structured-text.md" target="_blank">Improve this article</a>
+            <a class="improve button block hidden-md hidden-lg" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2014-08-04-prismicio-responsive-images-inside-structured-text.md" target="_blank">
+              <span class="fa fa-pencil-square-o fa-fw"></span>
+              Improve this article
+            </a>
+            <div class="tags">
+              <span class="fa fa-tags fa-fw"></span>
+              Tags :
+              <a class="tag label label-default" href="/blog/tags/prismic/">prismic</a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h2>
             <a href="/blog/2014/08/01/doing-conference-website-two-days/">
               Doing a conference website in two days
             </a>
@@ -558,70 +650,6 @@
               <a class="tag label label-default" href="/blog/tags/angular/">angular</a>
               <a class="tag label label-default" href="/blog/tags/play/">play</a>
               <a class="tag label label-default" href="/blog/tags/html5/">html5</a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h2>
-            <a href="/blog/2012/11/27/some-pocs-to-share/">
-              Some POCs to share
-            </a>
-          </h2>
-          <div class="meta">
-            Posted by
-            <span class="authors"> Paul Dijou</span>
-            on
-            <span class="date">Nov 27, 2012</span>
-            <span class="separator"></span>
-            <span class="fa fa-comments fa-fw visible-md-inline visible-lg-inline"></span>
-             <a href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share/#disqus_thread" data-disqus-identifier="bf3fc09d53df69403c37b96f39143f061a57e73a">Comments</a>
-            <span class="separator"></span>
-            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
-            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2012-11-27-some-pocs-to-share.md" target="_blank">Improve this article</a>
-          </div>
-          <div class="content">
-            
-            <h3 id="some-pocs">Some POCs</h3>
-            
-            <p>Hi there,</p>
-            
-            <p>I've been a bit busy lately but I'm back on game. Looking for a job in Paris, I've been asked to do some code over more or less funny subjects and now that it's done, I will share them, maybe it could help people to see some code around some technologies. It's not at all perfect code, more experiments I've done.</p>
-            
-            <p><strong>Mowing</strong> is mainly a <code>CoffeeScript</code> project about giving orders to some automatic mowers and see the result. My goal was to test that new syntax around JavaScript and I have to admit it's quite cool. You can see <a href="http://pauldijou.fr/mowing/">the result here</a> (don't ever do it in large grids). The source code is <a href="https://github.com/pauldijou/mowing/">here on GitHub</a></p>
-            
-            <p><strong>Mowing-java</strong> is the <code>Java</code> version of <strong>Mowing</strong>. So in fact, it's nearly the same syntax since you can create class in CoffeeScript but this one runs on a JVM. <a href="https://github.com/pauldijou/mowing-java">See here</a> for source code.</p>
-            
-            <p>Finally, <strong>GSearch</strong> is an <code>AngularJS</code> application built using <code>Yeoman</code>. Its goal is to plug on GitHub API and allow you to search through repositories and users and display informations and stats about them. <a href="http://pauldijou.fr/gsearch/">Here is the result</a> and <a href="https://github.com/pauldijou/gsearch/">go there</a> for source code.</p>
-            
-            <p>Of course, <strong>any feedback</strong> is welcome! I can be bugs, features, questions, anything…</p>
-            
-            <h3 id="nigthhacking-tour-2012">NigthHacking Tour 2012</h3>
-            
-            <p>I've given a small quicky about <code>RichFaces Bootstrap</code> and <code>RichFaces 5</code> on Paris a few weeks ago. Just so you know…</p>
-            
-            <h3 id="are-you-in-paris">Are you in Paris?</h3>
-            
-            <p>Let's finish with a personal note. I will be living in Paris from now and for quite some time. So if you living there or just passing by and want to grab a beer and talk about Java EE, HTML5, RichFaces, or anything cool, just let me now! Also if you are giving conferences or doing dojos or katas in the area, be sure to notice me so I can come to the next one. Thanks.</p>
-          </div>
-          <div class="footer">
-            <span class="fa fa-link fa-fw hidden-xs hidden-sm"></span>
-            <a class="hidden-xs hidden-sm" href="/blog/2012/11/27/some-pocs-to-share/">Permalink</a>
-            <span class="separator"></span>
-            <span class="fa fa-comments fa-fw hidden-xs hidden-sm"></span>
-             <a href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share/#disqus_thread" data-disqus-identifier="bf3fc09d53df69403c37b96f39143f061a57e73a">Comments</a>
-            <span class="separator"></span>
-            <span class="fa fa-pencil-square-o fa-fw visible-md-inline visible-lg-inline"></span>
-            <a class="improve visible-md-inline visible-lg-inline" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2012-11-27-some-pocs-to-share.md" target="_blank">Improve this article</a>
-            <a class="improve button block hidden-md hidden-lg" href="https://github.com/pauldijou/pauldijou.github.com/edit/develop/blog/2012-11-27-some-pocs-to-share.md" target="_blank">
-              <span class="fa fa-pencil-square-o fa-fw"></span>
-              Improve this article
-            </a>
-            <div class="tags">
-              <span class="fa fa-tags fa-fw"></span>
-              Tags :
-              <a class="tag label label-default" href="/blog/tags/angular/">angular</a>
-              <a class="tag label label-default" href="/blog/tags/coffeescript/">coffeescript</a>
-              <a class="tag label label-default" href="/blog/tags/yeoman/">yeoman</a>
             </div>
           </div>
         </article>
