@@ -2,15 +2,15 @@
 <feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
   <id>http://pauldijou.fr/</id>
   <title>Paul Dijou Blog</title>
-  <updated>2014-08-05T21:54:29+12:00</updated>
+  <updated>2014-08-05T22:01:12+12:00</updated>
   <link href="http://pauldijou.fr/rss.atom" rel="self" type="application/atom+xml" />
   <link href="http://pauldijou.fr/" rel="alternate" type="text/html" />
   <entry>
-    <id>http://pauldijou.fr/blog/2014/08/05/browser-sync-play-framework.html</id>
+    <id>http://pauldijou.fr/blog/2014/08/05/browser-sync-play-framework/</id>
     <title>BrowserSync proxy in top of a Play Framework server</title>
-    <updated>2014-08-05T21:54:29+12:00</updated>
+    <updated>2014-08-05T22:01:12+12:00</updated>
     <published>2014-08-05T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2014/08/05/browser-sync-play-framework.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2014/08/05/browser-sync-play-framework/" rel="alternate" type="text/html" />
     <category term="play"></category>
     <category term="browserSync"></category>
     <category term="gulp"></category>
@@ -31,13 +31,13 @@
       
       &lt;h3 id=&quot;tldr-coz-im-a-h4k3r&quot;&gt;TL;DR 'coz I'm a h4k3r&lt;/h3&gt;
       
-      &lt;p&gt;Full source code of the demo is &lt;a href=&quot;https://github.com/blogsamples/&quot;&gt;on GitHub&lt;/a&gt; with a nice and simple README on how to bootstrap the project.&lt;/p&gt;
+      &lt;p&gt;Full source code of the demo is &lt;a href=&quot;https://github.com/blogsamples/play-browserSync&quot;&gt;on GitHub&lt;/a&gt; with a nice and simple README on how to bootstrap the project.&lt;/p&gt;
       
       &lt;h3 id=&quot;what-are-you-talking-about-dude&quot;&gt;What are you talking about dude?&lt;/h3&gt;
       
-      &lt;p&gt;&lt;a href=&quot;www.playframework.com&quot;&gt;Play Framework&lt;/a&gt; is an HTTP server written in Scala. It is super cool and you should probably give it a try. Let's stay you are using it, you really enjoy how productive it is, only having to refresh your browser to see all your code modifications, but you want to go further, you want live-reloading! There are several tools doing that.&lt;/p&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.playframework.com&quot;&gt;Play Framework&lt;/a&gt; is an HTTP server written in Scala. It is super cool and you should probably give it a try. Let's stay you are using it, you really enjoy how productive it is, only having to refresh your browser to see all your code modifications, but you want to go further, you want live-reloading! There are several tools doing that.&lt;/p&gt;
       
-      &lt;p&gt;Introducing &lt;a href=&quot;www.browsersync.io&quot;&gt;BrowserSync&lt;/a&gt;. It provides 2 killers features. One is live-reloading: it can monitor resources, and when it detects some modifications, it will reload the browser page to load them. Even better, if possible, it will hot deploy them, meaning they will be loaded without reloading the page. That's the case for CSS files which are loaded and the page repainted to display the new design without any refresh. The second one is to keep synchronized several browsers across devices. And we are not talking about resources only but about all user actions. If you scroll on one browser, it will scroll on all connected browsers, same for clicking on a button, and so on…&lt;/p&gt;
+      &lt;p&gt;Introducing &lt;a href=&quot;http://www.browsersync.io&quot;&gt;BrowserSync&lt;/a&gt;. It provides 2 killers features. One is live-reloading: it can monitor resources, and when it detects some modifications, it will reload the browser page to load them. Even better, if possible, it will hot deploy them, meaning they will be loaded without reloading the page. That's the case for CSS files which are loaded and the page repainted to display the new design without any refresh. The second one is to keep synchronized several browsers across devices. And we are not talking about resources only but about all user actions. If you scroll on one browser, it will scroll on all connected browsers, same for clicking on a button, and so on…&lt;/p&gt;
       
       &lt;p&gt;Let me say it again with a concrete example. You are on your computer, one screen with your source code, another one with Chrome opened and a last one with Firefox. You also have an iPad tablet and an Android smartphone connected to your computer. All of those have your application main page opened. Each time your edit your code, they will all reload and display the new result (hot deploy in case of CSS). When you are ready to test interactions, you just go to, let's say, your Chrome browser and start scrolling and clicking. All your screens will start moving and doing the actions everywhere. Talk about increasing productivity!!&lt;/p&gt;
       
@@ -96,15 +96,15 @@
       
       &lt;p&gt;That's why in all my projects, front-end assets are handled by front-end tooling (mostly Gulp and NPM lately) and my back-end resources by back-end tools (SBT, Ivy, Maven, …). Not only do I get the best of each, but I do not have some limitations. For example, the other day, I came across a bug on a JavaScript library I was using. No biggy: fork the repo, correct the bug, do a pull request. And while waiting for the author to merge it (which can take some time), I am free to directly use my fork inside my &lt;code&gt;package.json&lt;/code&gt; so it's not blocking at all. It tooks me less than an hour. I would be curious on how to do that using webjars? Anyway, sorry for not planning any proof of concept using webjars if that's what you are using.&lt;/p&gt;
       
-      &lt;p&gt;And that's it! As I said at the beginning of the article, the demo is &lt;a href=&quot;https://github.com/blogsamples/&quot;&gt;on GitHub&lt;/a&gt;, feel free to clone and play with it. Enjoy and thanks for reading.&lt;/p&gt;
+      &lt;p&gt;And that's it! As I said at the beginning of the article, the demo is &lt;a href=&quot;https://github.com/blogsamples/play-browserSync&quot;&gt;on GitHub&lt;/a&gt;, feel free to clone and play with it. Enjoy and thanks for reading.&lt;/p&gt;
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text.html</id>
+    <id>http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/</id>
     <title>Prismic.io: responsive images inside a StructuredText</title>
-    <updated>2014-08-05T16:22:56+12:00</updated>
+    <updated>2014-08-05T22:01:09+12:00</updated>
     <published>2014-08-04T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2014/08/04/prismicio-responsive-images-inside-structured-text/" rel="alternate" type="text/html" />
     <category term="prismic"></category>
     <summary>
       
@@ -122,11 +122,11 @@
       
       &lt;p&gt;In prismic.io, you are creating Documents which are composed of Fragments. A fragment is data organized in a more or less semantic way. For example, a fragment can be a Number, or a Date, … Among them, there is the type Image which is really nice because you can not only fully resize / crop your raw picture, but also add smaller images based on the original one for responsive purpose. You can upload your awesome photo of this beautiful sunset, fully sized at 4000 x 3000 pixels, resize it for desktop at 1920 x 1080, and finally add a mobile version at 320 * 480. Note that the last one doesn't respect the ratio at all, but that's the goal: you are creating a subset of your image with the best match possible regarding the targeted screen.&lt;/p&gt;
       
-      &lt;p&gt;Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WISIWIG editor inside which you will put new fragments (paragraphs, links, titles, images, …). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.&lt;/p&gt;
+      &lt;p&gt;Another really powerful fragment in prismic is the StructuredText. It allows you to have a nice WYSIWYG editor inside which you will put new fragments (paragraphs, links, titles, images, …). It would be perfect if the image fragment inside a StructuredText was a real Image fragment, but it is not. You cannot specify any thumbnail. Meaning your content cannot be responsive at all. Your choice is: consume all the bandwith for mobiles with awesome full HD images or make the eyes of your desktop users bleed with super compressed images.&lt;/p&gt;
       
       &lt;h3 id=&quot;you-dont-want-to-do-that&quot;&gt;You don't want to do that!&lt;/h3&gt;
       
-      &lt;p&gt;And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WISIWIG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.&lt;/p&gt;
+      &lt;p&gt;And me neither! I want to have responsive images inside my StructuredText for God sake. I love tools which make my life easier, but they never should stand on my way to craft the best website possible. I will not lie to you, I couldn't find any solution that integrates nicely with the WYSIWYG editor since there is no way to extend it. The following solution will be a bit of hacking and your writers might complain about it at first.&lt;/p&gt;
       
       &lt;p&gt;So, what's the idea? The only way to have responsive images is to use a real Image fragment, no choice here. So let's create one, and let's put it inside a Group fragment. This way, you can add and remove as many images as you want and they will all be responsive. Wait, you can't do that inside the StructuredText, right? Indeed, that's why we will do outside of it and then find a way to bring back the images inside of it. Here is the mask for such a group:&lt;/p&gt;
       
@@ -170,14 +170,14 @@
       
       &lt;h3 id=&quot;lets-hack-some-html&quot;&gt;Let's hack some HTML&lt;/h3&gt;
       
-      &lt;p&gt;As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WISIWIG editor but we can do it when rendering the final HTML. We will need two more things here:&lt;/p&gt;
+      &lt;p&gt;As I already said it, the next step will be to bring those images inside the StructuredText. We cannot do that directly inside the WYSIWYG editor but we can do it when rendering the final HTML. We will need two more things here:&lt;/p&gt;
       
       &lt;ul&gt;
         &lt;li&gt;having a placeholder inside the StructuredText to indicate we should insert an image&lt;/li&gt;
         &lt;li&gt;extend the default HTML renderer to support such placeholder&lt;/li&gt;
       &lt;/ul&gt;
       
-      &lt;p&gt;As for the placeholder, I decided to use a simple format like &lt;code&gt;{image-[name of the image]}&lt;/code&gt;. Meaning that if the content of a paragraph inside my StructuredText is &lt;code&gt;{image-sunset}&lt;/code&gt;, it will actually render the image named &lt;code&gt;sunset&lt;/code&gt; from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the gretter good. You could, of course, use another syntax, eventually support attributes, whatever.&lt;/p&gt;
+      &lt;p&gt;As for the placeholder, I decided to use a simple format like &lt;code&gt;{image-[name of the image]}&lt;/code&gt;. Meaning that if the content of a paragraph inside my StructuredText is &lt;code&gt;{image-sunset}&lt;/code&gt;, it will actually render the image named &lt;code&gt;sunset&lt;/code&gt; from the group of images when generating the final HTML. Pretty easy right? Your writers might find it ugly, having to write those strange tags, and not seeing their images directly inside the StructuredText, but just tell them that's for the greater good. You could, of course, use another syntax, eventually support attributes, whatever.&lt;/p&gt;
       
       &lt;p&gt;The final task, and probably the hardest one, is to extend the HTML rendering system. Each primisc fragment has its own way to render as HTML. Unfortunately, there is no way to extend it, you can only, eventually, override it. And the one for StructuredText is by far the most complex one. The easiest way to do that is to copy/paste the default one from the kit you are using (if you are not using any kit, you are free to do whatever you want, so it's fine) and edit it. You will then edit the part responsible for rendering a paragraph, test if its content match our placeholder syntax, if so, render an image, if not, just render the text as it is. Since I'm using the JavaScript kit, here is the &lt;a href=&quot;https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L65-L159&quot;&gt;full copy/paste&lt;/a&gt; but that's the &lt;a href=&quot;https://github.com/pauldijou/farewell/blob/9a744565d7e66f06aa9a3edf7e360db0f00c70aa/scripts/prismic.js#L105-L117&quot;&gt;important part&lt;/a&gt; where we are rendering the image. My &lt;code&gt;model&lt;/code&gt; is actually a JavaScript class extracted from the original prismic Document, but you could use the raw Document of course.&lt;/p&gt;
       
@@ -197,17 +197,17 @@
       
       &lt;ul&gt;
         &lt;li&gt;writers need to write placeholders rather than having a nice UI to insert images&lt;/li&gt;
-        &lt;li&gt;images do not display natively in the WISIWIG editor anymore&lt;/li&gt;
+        &lt;li&gt;images do not display natively in the WYSIWYG editor anymore&lt;/li&gt;
         &lt;li&gt;you cannot re-order a Group fragment right now, meaning images will be sorted based on their created date and not on their place inside the StructuredText&lt;/li&gt;
       &lt;/ul&gt;
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days.html</id>
+    <id>http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days/</id>
     <title>Doing a conference website in two days</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2014-08-01T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2014/08/01/doing-conference-website-two-days/" rel="alternate" type="text/html" />
     <category term="web"></category>
     <summary>
       
@@ -275,11 +275,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html</id>
+    <id>http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/</id>
     <title>Prismic.io JavaScript kit: from callbacks to promises</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2014-07-26T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2014/07/26/prismicio-javascript-kit-from-callbacks-to-promises/" rel="alternate" type="text/html" />
     <category term="prismic"></category>
     <summary>
       
@@ -407,11 +407,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html</id>
+    <id>http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment/</id>
     <title>Prismic.io: when happiness met disappointment</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2014-07-17T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2014/07/17/prismicio-when-happiness-met-disappointment/" rel="alternate" type="text/html" />
     <category term="prismic"></category>
     <summary>
       
@@ -626,11 +626,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html</id>
+    <id>http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/</id>
     <title>AngularJS HTML5 routing on PlayFramework</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2013-02-17T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2013/02/17/angularjs-routing-playframework/" rel="alternate" type="text/html" />
     <category term="angular"></category>
     <category term="play"></category>
     <category term="html5"></category>
@@ -897,11 +897,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html</id>
+    <id>http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share/</id>
     <title>Some POCs to share</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2012-11-27T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2012/11/27/some-pocs-to-share/" rel="alternate" type="text/html" />
     <category term="angular"></category>
     <category term="coffeescript"></category>
     <category term="yeoman"></category>
@@ -941,11 +941,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html</id>
+    <id>http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap/</id>
     <title>News about RichFaces Bootstrap</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2012-08-07T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2012/08/07/news-richfaces-bootstrap/" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
     <category term="bootstrap"></category>
     <category term="jquery"></category>
@@ -1007,11 +1007,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html</id>
+    <id>http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk/</id>
     <title>News about RichFaces CDK</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2012-08-01T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2012/08/01/news-richfaces-cdk/" rel="alternate" type="text/html" />
     <category term="richfaces"></category>
     <category term="cdk"></category>
     <summary>
@@ -1052,11 +1052,11 @@
     </content>
   </entry>
   <entry>
-    <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html</id>
+    <id>http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all/</id>
     <title>JSF, Bootstrap and calling render=@all</title>
-    <updated>2014-08-04T20:02:09+12:00</updated>
+    <updated>2014-08-05T21:55:00+12:00</updated>
     <published>2012-05-08T00:00:00+00:00</published>
-    <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all.html" rel="alternate" type="text/html" />
+    <link href="http://pauldijou.fr/blog/2012/05/08/jsf-bootstrap-render-all/" rel="alternate" type="text/html" />
     <category term="jsf"></category>
     <category term="bootstrap"></category>
     <summary>

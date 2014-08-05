@@ -103,13 +103,13 @@
             
             <h3 id="tldr-coz-im-a-h4k3r">TL;DR 'coz I'm a h4k3r</h3>
             
-            <p>Full source code of the demo is <a href="https://github.com/blogsamples/">on GitHub</a> with a nice and simple README on how to bootstrap the project.</p>
+            <p>Full source code of the demo is <a href="https://github.com/blogsamples/play-browserSync">on GitHub</a> with a nice and simple README on how to bootstrap the project.</p>
             
             <h3 id="what-are-you-talking-about-dude">What are you talking about dude?</h3>
             
-            <p><a href="www.playframework.com">Play Framework</a> is an HTTP server written in Scala. It is super cool and you should probably give it a try. Let's stay you are using it, you really enjoy how productive it is, only having to refresh your browser to see all your code modifications, but you want to go further, you want live-reloading! There are several tools doing that.</p>
+            <p><a href="http://www.playframework.com">Play Framework</a> is an HTTP server written in Scala. It is super cool and you should probably give it a try. Let's stay you are using it, you really enjoy how productive it is, only having to refresh your browser to see all your code modifications, but you want to go further, you want live-reloading! There are several tools doing that.</p>
             
-            <p>Introducing <a href="www.browsersync.io">BrowserSync</a>. It provides 2 killers features. One is live-reloading: it can monitor resources, and when it detects some modifications, it will reload the browser page to load them. Even better, if possible, it will hot deploy them, meaning they will be loaded without reloading the page. That's the case for CSS files which are loaded and the page repainted to display the new design without any refresh. The second one is to keep synchronized several browsers across devices. And we are not talking about resources only but about all user actions. If you scroll on one browser, it will scroll on all connected browsers, same for clicking on a button, and so on…</p>
+            <p>Introducing <a href="http://www.browsersync.io">BrowserSync</a>. It provides 2 killers features. One is live-reloading: it can monitor resources, and when it detects some modifications, it will reload the browser page to load them. Even better, if possible, it will hot deploy them, meaning they will be loaded without reloading the page. That's the case for CSS files which are loaded and the page repainted to display the new design without any refresh. The second one is to keep synchronized several browsers across devices. And we are not talking about resources only but about all user actions. If you scroll on one browser, it will scroll on all connected browsers, same for clicking on a button, and so on…</p>
             
             <p>Let me say it again with a concrete example. You are on your computer, one screen with your source code, another one with Chrome opened and a last one with Firefox. You also have an iPad tablet and an Android smartphone connected to your computer. All of those have your application main page opened. Each time your edit your code, they will all reload and display the new result (hot deploy in case of CSS). When you are ready to test interactions, you just go to, let's say, your Chrome browser and start scrolling and clicking. All your screens will start moving and doing the actions everywhere. Talk about increasing productivity!!</p>
             
@@ -141,7 +141,7 @@
             
             <p>That's why in all my projects, front-end assets are handled by front-end tooling (mostly Gulp and NPM lately) and my back-end resources by back-end tools (SBT, Ivy, Maven, …). Not only do I get the best of each, but I do not have some limitations. For example, the other day, I came across a bug on a JavaScript library I was using. No biggy: fork the repo, correct the bug, do a pull request. And while waiting for the author to merge it (which can take some time), I am free to directly use my fork inside my <code>package.json</code> so it's not blocking at all. It tooks me less than an hour. I would be curious on how to do that using webjars? Anyway, sorry for not planning any proof of concept using webjars if that's what you are using.</p>
             
-            <p>And that's it! As I said at the beginning of the article, the demo is <a href="https://github.com/blogsamples/">on GitHub</a>, feel free to clone and play with it. Enjoy and thanks for reading.</p>
+            <p>And that's it! As I said at the beginning of the article, the demo is <a href="https://github.com/blogsamples/play-browserSync">on GitHub</a>, feel free to clone and play with it. Enjoy and thanks for reading.</p>
           </div>
           <div class="footer">
             <span class="fa fa-link fa-fw hidden-xs hidden-sm"></span>
